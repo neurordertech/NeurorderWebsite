@@ -502,3 +502,55 @@ svg {
     gap: 18px;
   }
 }
+/* ================================
+   FINAL NAVBAR MOBILE OVERRIDES
+================================ */
+
+.nav-logo {
+  height: 34px !important;
+  width: auto !important;
+  max-width: 160px !important;
+  object-fit: contain !important;
+}
+
+.mobile-menu-btn {
+  width: 44px !important;
+  height: 44px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  display: none;
+  grid-template-columns: repeat(2, 8px) !important;
+  grid-template-rows: repeat(2, 8px) !important;
+  gap: 7px !important;
+  justify-content: center !important;
+  align-content: center !important;
+}
+
+.mobile-menu-btn .dot {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background: #8fdfff !important;
+  box-shadow: 0 0 10px rgba(143,223,255,.8) !important;
+  display: block !important;
+}
+
+.mobile-menu-btn span:not(.dot) {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .mobile-menu-btn {
+    display: grid !important;
+  }
+
+  .nav-logo {
+    height: 30px !important;
+    max-width: 135px !important;
+  }
+}
