@@ -568,7 +568,20 @@
 /* Mobile */
 
 @media(max-width:900px){
+.province-grid {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  padding: 10px 4px 25px;
+  -webkit-overflow-scrolling: touch;
+}
 
+.province-card {
+  min-width: 82%;
+  scroll-snap-align: start;
+}
 .research-links{
 
 grid-template-columns:1fr;
