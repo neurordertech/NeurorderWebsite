@@ -97,20 +97,36 @@
 @media (max-width: 900px) {
   .research-hero {
     min-height: auto;
-    padding: 130px 22px 70px;
+    padding: 120px 22px 70px;
     text-align: center;
   }
 
   .research-hero h1 {
-    font-size: 48px;
+    font-size: 42px;
+    line-height: 1.05;
   }
 
   .research-hero p {
-    font-size: 18px;
+    font-size: 17px;
+  }
+
+  .research-focus {
+    overflow: visible;
   }
 
   .research-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    padding: 10px 4px 25px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .research-card {
+    min-width: 82%;
+    scroll-snap-align: start;
   }
 
   .research-system {
@@ -120,5 +136,15 @@
 
   .system-diagram div::before {
     display: none;
+  }
+
+  .research-visual {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .visual-card img {
+    width: 100%;
+    height: auto;
   }
 }
