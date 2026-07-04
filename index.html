@@ -7,15 +7,20 @@
 
     <title>Neurorder | New Order. Smarter Future.</title>
 
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
-    <link rel="apple-touch-icon" href="/images/logo.png">
+    
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/logo.png">
 
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="css/nous.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
 
 <body>
 
@@ -56,68 +61,110 @@
 
     <main>
 
-        <section class="home-hero">
-            <div class="hero-content">
-                <p class="eyebrow">Digital Public Infrastructure • AI • Financial Inclusion</p>
+  <section class="home-hero neurorder-orbit-hero">
 
-                <h1>New Order.<br>Smarter Future.</h1>
+    <div class="orbit-visual">
+      <div class="orbit-ring orbit-ring-one"></div>
+      <div class="orbit-ring orbit-ring-two"></div>
+      <div class="orbit-ring orbit-ring-three"></div>
 
-                <p class="hero-text">
-                    Neurorder is a South African research and technology company building practical systems
-                    for financial inclusion, alternative credit scoring, and digital public infrastructure.
-                </p>
+      <span class="orbit-dot dot-one"></span>
+      <span class="orbit-dot dot-two"></span>
+      <span class="orbit-dot dot-three"></span>
+      <span class="orbit-dot dot-four"></span>
 
-                <div class="hero-actions">
-                    <a href="research.html" class="btn btn-primary">Explore Research</a>
-                    <a href="credit-scoring.html" class="btn btn-outline">Credit Scoring</a>
-                </div>
-            </div>
+      <div class="orbit-core">
+        <img src="images/NeurorderBody.png" alt="Neurorder Symbol">
+        <span>NEURORDER</span>
+      </div>
+    </div>
 
-            <div class="hero-orb">
-                <img src="images/NeurorderBody.png" alt="Neurorder Symbol">
-            </div>
-        </section>
+    <div class="orbit-copy">
+      <p class="eyebrow">NEW ORDER. SMARTER FUTURE.</p>
 
-        <section class="section intro-section">
-            <h2 class="section-title">Technology for invisible economies.</h2>
+      <h1>NEURORDER</h1>
 
-            <p class="section-text">
-                We focus on people and communities often excluded from traditional financial systems:
-                informal traders, youth entrepreneurs, domestic workers, community initiatives, and small businesses.
-            </p>
-        </section>
+      <div class="hero-line"></div>
 
-        <section class="section pillar-section">
-            <div class="pillar-grid">
+      <p class="orbit-statement">
+        Artificial Intelligence is an invitation to deeper finance.
+        <strong>A New Order.</strong>
+      </p>
 
-                <article class="card pillar-card">
-                    <h3>Research</h3>
-                    <p>
-                        We investigate digital public infrastructure, AI, and data systems that can support
-                        inclusive economic participation.
-                    </p>
-                </article>
+      <p class="hero-text">
+        Neurorder is building alternative credit scoring systems, research tools,
+        and digital public infrastructure for Africa's invisible economies.
+      </p>
 
-                <article class="card pillar-card">
-                    <h3>Credit Scoring</h3>
-                    <p>
-                        Our alternative credit scoring work explores how transaction patterns can help informal
-                        earners build financial identity.
-                    </p>
-                </article>
+      <div class="hero-actions">
+        <a href="credit-scoring.html" class="btn btn-primary">Credit Scoring</a>
+        <a href="research.html" class="btn btn-outline">Explore Research</a>
+      </div>
+    </div>
 
-                <article class="card pillar-card">
-                    <h3>Foundation</h3>
-                    <p>
-                        Through iNtsikelelo Foundation, Neurorder connects technology, education, community
-                        support, and social development.
-                    </p>
-                </article>
+  </section>
 
-            </div>
-        </section>
+  <section class="intelligence-section">
+    <div class="page-container">
+      <p class="eyebrow">NEURORDER INTELLIGENCE</p>
 
-    </main>
+    <h2>
+        Africa's intelligence layer for<br>
+        research, AI and financial inclusion.
+    </h2>
+
+      <p>
+        Neurorder is building a new digital platform for African research,
+        fintech intelligence, alternative credit scoring and digital public infrastructure.
+      </p>
+
+      <div class="hero-actions">
+        <a href="news.html" class="btn btn-primary">Enter Intelligence</a>
+        <a href="signup.html" class="btn btn-outline">Join Neurorder</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section intro-section">
+    <h2 class="section-title">Technology for invisible economies.</h2>
+
+    <p class="section-text">
+      We focus on people and communities often excluded from traditional financial systems:
+      informal traders, youth entrepreneurs, domestic workers, community initiatives, and small businesses.
+    </p>
+  </section>
+
+  <section class="section pillar-section">
+    <div class="pillar-grid">
+
+      <article class="card pillar-card">
+        <h3>Research</h3>
+        <p>
+          We investigate digital public infrastructure, AI, and data systems that can support
+          inclusive economic participation.
+        </p>
+      </article>
+
+      <article class="card pillar-card">
+        <h3>Credit Scoring</h3>
+        <p>
+          Our alternative credit scoring work explores how transaction patterns can help informal
+          earners build financial identity.
+        </p>
+      </article>
+
+      <article class="card pillar-card">
+        <h3>Foundation</h3>
+        <p>
+          Through iNtsikelelo Foundation, Neurorder connects technology, education, community
+          support, and social development.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+</main>
 
     <footer class="site-footer">
         <div class="footer-top">
@@ -165,6 +212,56 @@
     </footer>
 
     <script src="js/script.js"></script>
+    
+    <!-- Nous toast -->
+    <div class="nouse-toast" id="nouseToast">
+  <div class="toast-dot"></div>
+
+  <div>
+    <strong>Nous Intelligence Network</strong>
+    <p>Hello, Fanatic. Understanding begins with connection.</p>
+    <button onclick="openNousFromToast()">Open Nous</button>
+  </div>
+</div>
+
+    <!-- Nous widget -->
+    <div class="nouse-widget" id="nouseWidget">
+  <button class="nouse-button" onclick="toggleNous()">
+    <img src="images/NeurorderBody.png" alt="Nous">
+  </button>
+
+  <div class="nouse-panel" id="nousePanel">
+    <div class="nouse-header">
+      <strong>Nous</strong>
+      <button onclick="toggleNous()">×</button>
+    </div>
+
+    <div class="nouse-body">
+      <p class="nouse-greeting">Hello Fanatic.</p>
+
+      <p>
+        I am Nous — Neurorder’s intelligence layer.
+        Credit scoring, research and financial inclusion are my first missions.
+      </p>
+
+      <div class="nouse-options">
+        <button>Explain credit scoring</button>
+        <button>Summarise research</button>
+        <button>Explore Neurorder</button>
+      </div>
+    </div>
+
+    <div class="nouse-input">
+      <input type="text" placeholder="Ask Nous soon...">
+      <button disabled>Send</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/script.js"></script>
+<script src="js/nouse.js"></script>
 
 </body>
 

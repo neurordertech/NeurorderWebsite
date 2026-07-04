@@ -29,3 +29,33 @@ newsButtons.forEach((button) => {
     button.classList.add("active");
   });
 });
+
+function toggleNous() {
+  const panel = document.getElementById("nousePanel");
+
+  if (panel) {
+    panel.classList.toggle("open");
+  }
+}
+
+function openNousFromToast() {
+  const toast = document.getElementById("nouseToast");
+  const panel = document.getElementById("nousePanel");
+
+  if (toast) toast.classList.remove("show");
+  if (panel) panel.classList.add("open");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const toast = document.getElementById("nouseToast");
+
+  if (toast) {
+    setTimeout(function () {
+      toast.classList.add("show");
+    }, 6000);
+
+    setTimeout(function () {
+      toast.classList.remove("show");
+    }, 16000);
+  }
+});

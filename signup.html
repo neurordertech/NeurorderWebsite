@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Create Account | Neurorder Intelligence</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/auth.js" defer></script>
+</head>
+
+<body>
+
+<section class="auth-page">
+
+  <div class="auth-glow"></div>
+
+  <div class="auth-card">
+
+   <div class="auth-logo-wrap">
+  <img src="images/favicon.png" alt="Neurorder Logo" class="auth-logo">
+</div>
+
+    <p class="auth-eyebrow">JOIN NEURORDER INTELLIGENCE</p>
+
+    <h1>Create your account.</h1>
+
+    <p class="auth-subtitle">
+      Join the platform built for AI, fintech, research, and South Africa’s digital future.
+    </p>
+
+    <button class="social-auth-btn" onclick="loginWithGoogle()">
+      <i class="fab fa-google"></i>
+      Continue with Google
+    </button>
+
+    <div class="auth-divider">
+      <span></span>
+      <p>or sign up with email</p>
+      <span></span>
+    </div>
+
+    <input id="signupName" type="text" placeholder="Full name">
+    <input id="signupEmail" type="email" placeholder="Email address">
+    <input id="signupPassword" type="password" placeholder="Create password">
+
+    <button class="auth-primary-btn" onclick="signUpWithEmail()">
+      Create Account
+    </button>
+
+    <p class="auth-switch">
+      Already have an account?
+      <a href="login.html">Sign in</a>
+    </p>
+
+    <p id="authMessage" class="auth-message"></p>
+
+  </div>
+
+</section>
+
+</body>
+</html>

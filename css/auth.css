@@ -1,0 +1,121 @@
+.auth-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0b1824 0%, #02050a 55%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 18px;
+  color: #fff;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(135, 206, 250, 0.25);
+  border-radius: 34px;
+  padding: 46px 44px;
+  backdrop-filter: blur(22px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  text-align: center;
+}
+
+.auth-logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 26px;
+}
+
+.auth-logo {
+  width: 86px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.login-logo {
+  width: 160px;
+  max-width: 45vw;
+  height: auto;
+}
+
+.auth-kicker {
+  color: #7ddcff;
+  letter-spacing: 5px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.auth-card h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.05;
+  margin: 0 0 20px;
+}
+
+.auth-card p {
+  color: #d6dde7;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 17px 20px;
+  margin-bottom: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(135, 206, 250, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+}
+
+.auth-card button {
+  width: 100%;
+  padding: 17px 20px;
+  border-radius: 999px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .auth-card {
+    padding: 34px 24px;
+    border-radius: 26px;
+  }
+
+  .auth-logo {
+    width: 72px;
+  }
+
+  .login-logo {
+    width: 125px;
+  }
+}
+
+.primary-auth-btn {
+  background: linear-gradient(135deg, #8fe7ff, #348cff);
+  color: #02050a;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.google-auth-btn {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(135, 206, 250, 0.35) !important;
+  margin-bottom: 24px;
+}
+
+.auth-switch {
+  font-size: 0.95rem;
+  color: #aeb9c7;
+  margin-bottom: 0 !important;
+}
+
+.auth-switch a {
+  color: #8fe7ff;
+  text-decoration: none;
+  font-weight: 700;
+}

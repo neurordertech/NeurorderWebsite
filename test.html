@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Supabase Test</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+</head>
+
+<body>
+
+<h1>Testing Supabase...</h1>
+
+<script src="js/supabase.js"></script>
+
+<script>
+
+async function test(){
+
+const {data,error}=await supabaseClient.auth.getSession();
+
+console.log(data);
+
+console.log(error);
+
+}
+
+test();
+
+</script>
+
+</body>
+
+</html>

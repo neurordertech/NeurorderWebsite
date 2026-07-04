@@ -135,44 +135,68 @@
   color: var(--primary);
 }
 
-.process-flow {
-  background: #07111c;
-}
-
-.flow-grid {
-  margin-top: 55px;
-  display: grid;
-  grid-template-columns: 1fr 80px 1fr 80px 1fr 80px 1fr;
-  align-items: center;
-}
-
-.flow-card {
-  padding: 30px;
-  border-radius: 26px;
-  background: rgba(255,255,255,.055);
-  border: 1px solid var(--border);
-  min-height: 210px;
-}
-
 .flow-card span {
   color: var(--primary);
   font-weight: 800;
 }
 
-.flow-card h3 {
-  font-size: 26px;
-  margin: 20px 0 12px;
+.process-flow {
+  text-align: center;
+  background: #07111c;
 }
 
-.flow-card p {
+.vertical-process {
+  margin: 60px auto 0;
+  max-width: 520px;
+  display: grid;
+  justify-items: center;
+}
+
+.process-node {
+  width: 100%;
+  padding: 26px;
+  border-radius: 26px;
+  background: rgba(255,255,255,.055);
+  border: 1px solid rgba(143,223,255,.18);
+}
+
+.process-node span {
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  color: #8fdfff;
+  font-weight: 900;
+  background: rgba(143,223,255,.08);
+  box-shadow: 0 0 28px rgba(143,223,255,.22);
+}
+
+.process-node h3 {
+  margin-bottom: 10px;
+  font-size: 1.45rem;
+}
+
+.process-node p {
   color: var(--text-soft);
   line-height: 1.7;
 }
 
-.flow-line {
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--primary), transparent);
-  animation: linePulse 2s ease-in-out infinite;
+.process-connector {
+  width: 2px;
+  height: 54px;
+  background: linear-gradient(180deg, transparent, #8fdfff, transparent);
+}
+
+.process-connector.dotted {
+  width: 2px;
+  background: repeating-linear-gradient(
+    180deg,
+    #8fdfff 0 6px,
+    transparent 6px 14px
+  );
+  opacity: .75;
 }
 
 .future-panel {
@@ -253,5 +277,281 @@
     width: 2px;
     margin: auto;
     background: linear-gradient(180deg, transparent, var(--primary), transparent);
+  }
+}
+
+.financial-journey {
+  background:
+    radial-gradient(circle at top right, rgba(143,223,255,.14), transparent 35%),
+    #02050a;
+}
+
+.journey-copy {
+  text-align: center;
+  max-width: 920px;
+  margin: 0 auto 55px;
+}
+
+.journey-copy .section-text {
+  margin: 0 auto;
+}
+
+.journey-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.journey-card {
+  display: grid;
+  gap: 20px;
+}
+
+.journey-card h3 {
+  font-size: 1.35rem;
+}
+
+.choice-grid {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.journey-choice,
+.journey-btn {
+  padding: 14px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(143,223,255,.22);
+  background: rgba(255,255,255,.045);
+  color: #8fdfff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.journey-choice.active,
+.journey-btn {
+  background: #8fdfff;
+  color: #02050a;
+}
+
+.journey-card label {
+  display: grid;
+  gap: 10px;
+  color: var(--text-soft);
+}
+
+.journey-card input,
+.journey-card select {
+  padding: 15px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(143,223,255,.2);
+  background: rgba(0,0,0,.3);
+  color: white;
+}
+
+.dna-bars {
+  display: grid;
+  gap: 16px;
+}
+
+.dna-bars div {
+  display: grid;
+  gap: 8px;
+}
+
+.dna-bars span {
+  color: var(--text-soft);
+}
+
+.dna-bars strong {
+  display: block;
+  height: 14px;
+  width: 50%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #8fdfff, #3678ff);
+  box-shadow: 0 0 25px rgba(143,223,255,.28);
+  transition: .35s ease;
+}
+
+.journey-score {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  margin: 20px auto;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background:
+    radial-gradient(circle, #07111c 45%, transparent 46%),
+    conic-gradient(#8fdfff, rgba(143,223,255,.08));
+  box-shadow: 0 0 70px rgba(143,223,255,.2);
+}
+
+.journey-score strong {
+  display: block;
+  font-size: 64px;
+  color: white;
+}
+
+.journey-score span {
+  color: #8fdfff;
+  font-weight: 800;
+}
+
+.nouse-reasoning {
+  padding: 22px;
+  border-radius: 20px;
+  background: rgba(143,223,255,.06);
+  border: 1px solid rgba(143,223,255,.14);
+}
+
+.nouse-reasoning h4 {
+  color: #8fdfff;
+  margin-bottom: 10px;
+}
+
+.nouse-reasoning p {
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+@media(max-width:900px) {
+  .journey-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.budget-plan {
+  padding: 22px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.045);
+  border: 1px solid rgba(143,223,255,.14);
+}
+
+.budget-plan h4 {
+  color: #8fdfff;
+  margin-bottom: 16px;
+}
+
+.budget-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.budget-row:last-child {
+  border-bottom: none;
+}
+
+.budget-row span {
+  color: var(--text-soft);
+}
+
+.budget-row strong {
+  color: white;
+}
+
+/* FINAL CREDIT PAGE RESPONSIVE FIX */
+
+.credit-hero,
+.credit-experience {
+  width: 100%;
+  overflow: hidden;
+}
+
+.credit-hero {
+  padding: 150px clamp(22px, 7vw, 120px) 80px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
+  gap: 50px;
+  align-items: center;
+}
+
+.credit-hero-copy {
+  min-width: 0;
+  max-width: 760px;
+}
+
+.credit-hero-copy h1 {
+  font-size: clamp(3rem, 6vw, 6.3rem);
+  line-height: 0.95;
+  letter-spacing: -3px;
+}
+
+.credit-hero-copy p {
+  max-width: 680px;
+  overflow-wrap: break-word;
+}
+
+.hero-score-card {
+  min-width: 0;
+  position: relative;
+}
+
+.hero-score-card img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 30px;
+}
+
+@media (max-width: 1050px) {
+  .credit-hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 130px 24px 70px;
+  }
+
+  .credit-hero-copy {
+    margin: 0 auto;
+  }
+
+  .credit-hero-copy h1 {
+    font-size: clamp(2.7rem, 10vw, 4.7rem);
+    letter-spacing: -2px;
+  }
+
+  .credit-hero-copy p {
+    margin: 0 auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-score-card {
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .score-preview {
+    margin: 35px auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .credit-hero-copy h1 {
+    font-size: 3rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-score-card img {
+    border-radius: 22px;
+  }
+
+  .nouse-toast {
+    right: 16px;
+    left: 16px;
+    width: auto;
   }
 }

@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Credit Scoring | Neurorder</title>
 
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
-<link rel="apple-touch-icon" href="/images/logo.png">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/nous.css">
   <link rel="stylesheet" href="css/credit.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
@@ -33,14 +33,12 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-   <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
-
+  <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
     <span class="dot"></span>
     <span class="dot"></span>
     <span class="dot"></span>
     <span class="dot"></span>
-
-    </button>
+  </button>
 </header>
 
 <div class="mobile-menu-panel" id="mobileMenu">
@@ -55,66 +53,299 @@
 
 <main>
 
-<section class="credit-experience">
+  <section class="credit-hero">
+    <div class="credit-hero-copy">
+      <p class="eyebrow">NEURORDER CREDIT INTELLIGENCE</p>
+      <h1>Financial identity for the invisible economy.</h1>
+      <p>
+        A transparent AI-assisted scoring system that turns financial behaviour,
+        digital activity and budgeting discipline into a living trust signal.
+      </p>
 
-  <div class="credit-copy">
-    <p class="eyebrow">Neurorder Credit Intelligence</p>
-    <h1>Financial identity for the invisible economy.</h1>
-    <p>
-      A transparent AI-assisted scoring system that turns digital transactions into economic trust.
-    </p>
-
-    <div class="score-preview">
-      <span>LIVE SCORE</span>
-      <strong id="liveScore">72</strong>
-      <small>Low Risk Signal</small>
-    </div>
-  </div>
-
-  </div>
-
-  <div class="credit-machine">
-    <img src="images/creditscore.png" alt="Neurorder credit scoring visual">
-
-    <div class="floating-chip chip-one">Activity</div>
-    <div class="floating-chip chip-two">Consistency</div>
-    <div class="floating-chip chip-three">Volume</div>
-  </div>
-
-</section>
-</section>
-
-<section class="scoring-console section">
-
-  <div class="console-left">
-    <h2 class="section-title">Move the data. Watch trust form.</h2>
-    <p class="section-text">
-      Adjust the transaction signals below. The score responds like a living financial profile.
-    </p>
-  </div>
-
-  <div class="console-card card">
-
-    <label>
-      Monthly Transactions
-      <input type="range" min="0" max="100" value="70" id="frequency">
-    </label>
-
-    <label>
-      Months Active
-      <input type="range" min="0" max="100" value="65" id="consistency">
-    </label>
-
-    <label>
-      Average Transaction Volume
-      <input type="range" min="0" max="100" value="80" id="volume">
-    </label>
-
-    <div class="score-ring">
-      <div>
-        <strong id="scoreOutput">72</strong>
-        <span id="riskOutput">Low Risk</span>
+      <div class="hero-actions">
+        <a href="#journey" class="btn btn-primary">Begin Financial Journey</a>
+        <a href="#simulator" class="btn btn-outline">Open Simulator</a>
       </div>
+    </div>
+
+    <div class="hero-score-card">
+      <div class="score-preview">
+        <span>LIVE SIGNAL</span>
+        <strong id="liveScore">72</strong>
+        <small id="liveRisk">Low Risk Signal</small>
+      </div>
+      <img src="images/creditscore.png" alt="Neurorder credit scoring visual">
+      <div class="floating-chip chip-one">Activity</div>
+      <div class="floating-chip chip-two">Stability</div>
+      <div class="floating-chip chip-three">Trust</div>
+    </div>
+  </section>
+
+  <section class="scoring-console section" id="simulator">
+    <div class="console-left">
+      <p class="eyebrow">LIVE SCORE SIMULATOR</p>
+      <h2 class="section-title">Move the data. Watch trust form.</h2>
+      <p class="section-text">
+        Adjust the transaction signals below. The score responds like a living financial profile.
+        This is a simplified research model, not a final bank decision.
+      </p>
+    </div>
+
+    <div class="console-card card">
+      <label>
+        Monthly Transactions
+        <input type="range" min="0" max="100" value="70" id="frequency">
+      </label>
+
+      <label>
+        Months Active
+        <input type="range" min="0" max="100" value="65" id="consistency">
+      </label>
+
+      <label>
+        Average Transaction Volume
+        <input type="range" min="0" max="100" value="80" id="volume">
+      </label>
+
+      <div class="score-ring">
+        <div>
+          <strong id="scoreOutput">72</strong>
+          <span id="riskOutput">Low Risk</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="financial-journey section" id="journey">
+    <div class="journey-copy">
+      <p class="eyebrow">NOUSE FINANCIAL JOURNEY</p>
+      <h2 class="section-title">Build your financial story.</h2>
+      <p class="section-text">
+        Choose how Nous should guide you, tell us your financial goal,
+        and watch your Credit DNA and budget plan form.
+      </p>
+    </div>
+
+    <div class="journey-grid">
+      <div class="journey-card card">
+        <h3>How should Nous communicate?</h3>
+
+        <div class="choice-grid">
+          <button type="button" class="journey-choice active" data-style="Coach">Coach</button>
+          <button type="button" class="journey-choice" data-style="Professional">Professional</button>
+          <button type="button" class="journey-choice" data-style="Explorer">Explorer</button>
+        </div>
+
+        <label>
+          Who are you today?
+          <select id="userType">
+            <option>Student</option>
+            <option>Entrepreneur</option>
+            <option>Street Vendor</option>
+            <option>Professional</option>
+            <option>Researcher</option>
+          </select>
+        </label>
+
+        <label>
+          Money available right now
+          <input type="number" id="moneyAvailable" value="2500" min="0">
+        </label>
+
+        <label>
+          Monthly spending discipline
+          <input type="range" id="discipline" min="0" max="100" value="55">
+        </label>
+
+        <label>
+          Saving consistency
+          <input type="range" id="saving" min="0" max="100" value="45">
+        </label>
+
+        <label>
+          Income stability
+          <input type="range" id="stability" min="0" max="100" value="60">
+        </label>
+
+        <label>
+          Main goal
+          <select id="goal">
+            <option>Build credit</option>
+            <option>Save for school</option>
+            <option>Start a business</option>
+            <option>Buy a laptop</option>
+            <option>Understand banking</option>
+          </select>
+        </label>
+
+        <button type="button" class="journey-btn" id="generateJourneyBtn">Generate My Journey</button>
+      </div>
+
+      <div class="journey-card card dna-card">
+        <h3>Your Credit DNA</h3>
+
+        <div class="dna-bars">
+          <div><span>Trust</span><strong id="trustBar"></strong></div>
+          <div><span>Discipline</span><strong id="disciplineBar"></strong></div>
+          <div><span>Stability</span><strong id="stabilityBar"></strong></div>
+          <div><span>Growth</span><strong id="growthBar"></strong></div>
+        </div>
+
+        <div class="journey-score">
+          <div>
+            <strong id="journeyScore">61</strong>
+            <span id="journeyLabel">Future Builder</span>
+          </div>
+        </div>
+
+        <div class="nouse-reasoning">
+          <h4>Nous reasoning</h4>
+          <p id="nousAdvice">
+            Your financial journey is forming. Adjust the inputs and Nous will explain your next step.
+          </p>
+        </div>
+
+        <div class="budget-plan">
+          <h4>Suggested Budget Split</h4>
+
+          <div class="budget-row">
+            <span>Needs</span>
+            <strong id="needsBudget">R0</strong>
+          </div>
+
+          <div class="budget-row">
+            <span>Savings</span>
+            <strong id="savingsBudget">R0</strong>
+          </div>
+
+          <div class="budget-row">
+            <span>Growth / Learning</span>
+            <strong id="growthBudget">R0</strong>
+          </div>
+
+          <div class="budget-row">
+            <span>Flexible Spend</span>
+            <strong id="flexBudget">R0</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="financial-journey section">
+
+  <div class="journey-copy">
+    <p class="eyebrow">NOUSE FINANCIAL JOURNEY</p>
+    <h2 class="section-title">Build your financial story.</h2>
+    <p class="section-text">
+      Choose how Nous should guide you, tell us your financial goal,
+      and watch your Credit DNA form.
+    </p>
+  </div>
+
+  <div class="journey-grid">
+
+    <div class="journey-card card">
+      <h3>How should Nous speak to you?</h3>
+
+      <div class="choice-grid">
+        <button class="journey-choice active" data-style="Coach">Coach</button>
+        <button class="journey-choice" data-style="Professional">Professional</button>
+        <button class="journey-choice" data-style="Explorer">Explorer</button>
+      </div>
+
+      <h3>Who are you today?</h3>
+
+      <select id="userType">
+        <option>Student</option>
+        <option>Entrepreneur</option>
+        <option>Street Vendor</option>
+        <option>Professional</option>
+        <option>Researcher</option>
+      </select>
+
+      <label>
+        Money available right now
+        <input type="number" id="moneyAvailable" value="2500" min="0">
+      </label>
+
+      <label>
+        Monthly spending discipline
+        <input type="range" id="discipline" min="0" max="100" value="55">
+      </label>
+
+      <label>
+        Saving consistency
+        <input type="range" id="saving" min="0" max="100" value="45">
+      </label>
+
+      <label>
+        Income stability
+        <input type="range" id="stability" min="0" max="100" value="60">
+      </label>
+
+      <label>
+        Main goal
+        <select id="goal">
+          <option>Build credit</option>
+          <option>Save for school</option>
+          <option>Start a business</option>
+          <option>Buy a laptop</option>
+          <option>Understand banking</option>
+        </select>
+      </label>
+
+      <button class="journey-btn" onclick="updateJourney()">Generate My Journey</button>
+    </div>
+
+    <div class="journey-card card dna-card">
+      <h3>Your Credit DNA</h3>
+
+      <div class="dna-bars">
+        <div><span>Trust</span><strong id="trustBar"></strong></div>
+        <div><span>Discipline</span><strong id="disciplineBar"></strong></div>
+        <div><span>Stability</span><strong id="stabilityBar"></strong></div>
+        <div><span>Growth</span><strong id="growthBar"></strong></div>
+      </div>
+
+      <div class="journey-score">
+        <div>
+          <strong id="journeyScore">61</strong>
+          <span id="journeyLabel">Future Builder</span>
+        </div>
+      </div>
+
+      <div class="nouse-reasoning">
+        <h4>Nous Reasoning</h4>
+        <p id="nousAdvice">
+          Your financial journey is forming. Adjust the inputs and Nous will explain your next step.
+        </p>
+      </div>
+
+      <div class="budget-plan">
+        <h4>Suggested Budget Split</h4>
+
+        <div class="budget-row">
+          <span>Needs</span>
+          <strong id="needsBudget">R0</strong>
+        </div>
+
+        <div class="budget-row">
+          <span>Savings</span>
+          <strong id="savingsBudget">R0</strong>
+        </div>
+
+        <div class="budget-row">
+          <span>Growth / Learning</span>
+          <strong id="growthBudget">R0</strong>
+        </div>
+
+        <div class="budget-row">
+          <span>Flexible Spend</span>
+          <strong id="flexBudget">R0</strong>
+        </div>
+      </div>
+
     </div>
 
   </div>
@@ -123,57 +354,59 @@
 
 <section class="process-flow section">
 
-  <h2 class="section-title">The credit signal journey.</h2>
+  <p class="eyebrow">NOUSE DECISION ENGINE</p>
+  <h2 class="section-title">How Nous builds financial trust.</h2>
 
-  <div class="flow-grid">
+  <div class="vertical-process">
 
-    <div class="flow-card">
+    <div class="process-node">
       <span>01</span>
-      <h3>Payment</h3>
-      <p>A customer pays a vendor digitally.</p>
+      <h3>Behaviour</h3>
+      <p>Payments, savings and daily habits begin your financial story.</p>
     </div>
 
-    <div class="flow-line"></div>
+    <div class="process-connector"></div>
 
-    <div class="flow-card">
+    <div class="process-node">
       <span>02</span>
-      <h3>Pattern</h3>
-      <p>Transactions form behaviour over time.</p>
+      <h3>Patterns</h3>
+      <p>Nous looks for consistency instead of judging one transaction.</p>
     </div>
 
-    <div class="flow-line"></div>
+    <div class="process-connector dotted"></div>
 
-    <div class="flow-card">
+    <div class="process-node">
       <span>03</span>
-      <h3>AI Signal</h3>
-      <p>The model interprets activity and stability.</p>
+      <h3>Understanding</h3>
+      <p>Your behaviour becomes an explainable financial profile.</p>
     </div>
 
-    <div class="flow-line"></div>
+    <div class="process-connector"></div>
 
-    <div class="flow-card">
+    <div class="process-node">
       <span>04</span>
-      <h3>Trust</h3>
-      <p>A transparent credit score is produced.</p>
+      <h3>Opportunity</h3>
+      <p>Better habits create stronger financial trust.</p>
     </div>
 
   </div>
 
 </section>
 
-<section class="future-panel section">
-  <h2>The next financial infrastructure of South Africa.</h2>
-  <p>
-    Neurorder is not just measuring transactions. It is designing a new language of trust for
-    people excluded from traditional credit systems.
-  </p>
-</section>
+  <section class="future-panel section">
+    <div>
+      <h2>The next financial infrastructure of South Africa.</h2>
+      <p>
+        Neurorder is not just measuring transactions. It is designing a new language of trust for
+        people excluded from traditional credit systems.
+      </p>
+    </div>
+  </section>
 
 </main>
 
 <footer class="site-footer">
   <div class="footer-top">
-
     <div class="footer-brand">
       <img src="images/logo.png" alt="Neurorder Logo" class="footer-logo">
       <h2>NEURORDER</h2>
@@ -199,7 +432,6 @@
       <a href="documents/NEURORDER_Legal_Documents.pdf#page=1" target="_blank">Privacy Policy</a>
       <a href="documents/NEURORDER_Legal_Documents.pdf#page=7" target="_blank">Terms & Conditions</a>
     </div>
-
   </div>
 
   <div class="footer-divider"></div>
@@ -208,47 +440,149 @@
     <div class="footer-socials">
       <a href="#"><i class="fab fa-linkedin-in"></i></a>
       <a href="#"><i class="fab fa-medium-m"></i></a>
-      <a href="#"><i class="fas fa-envelope"></i></a>
-      <a href="#"><i class="fas fa-rss"></i></a>
+      <a href="mailto:info@neurorder.com"><i class="fas fa-envelope"></i></a>
+      <a href="news.html"><i class="fas fa-rss"></i></a>
     </div>
 
     <p class="footer-copy">© 2026 Neurorder Research. All Rights Reserved.</p>
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
 <script src="js/script.js"></script>
 
 <script>
-const frequency = document.getElementById("frequency");
-const consistency = document.getElementById("consistency");
-const volume = document.getElementById("volume");
-const scoreOutput = document.getElementById("scoreOutput");
-const liveScore = document.getElementById("liveScore");
-const riskOutput = document.getElementById("riskOutput");
+document.addEventListener("DOMContentLoaded", function () {
 
-function updateScore() {
-  const score =
-    Number(frequency.value) * 0.3 +
-    Number(consistency.value) * 0.3 +
-    Number(volume.value) * 0.4;
+  const frequency = document.getElementById("frequency");
+  const consistency = document.getElementById("consistency");
+  const volume = document.getElementById("volume");
+  const scoreOutput = document.getElementById("scoreOutput");
+  const liveScore = document.getElementById("liveScore");
+  const riskOutput = document.getElementById("riskOutput");
 
-  const rounded = Math.round(score);
+  function updateScore() {
+    if (!frequency || !consistency || !volume) return;
 
-  scoreOutput.textContent = rounded;
-  liveScore.textContent = rounded;
+    const score =
+      Number(frequency.value) * 0.3 +
+      Number(consistency.value) * 0.3 +
+      Number(volume.value) * 0.4;
 
-  if (rounded < 40) {
-    riskOutput.textContent = "High Risk";
-  } else if (rounded < 70) {
-    riskOutput.textContent = "Medium Risk";
-  } else {
-    riskOutput.textContent = "Low Risk";
+    const rounded = Math.round(score);
+
+    scoreOutput.textContent = rounded;
+    liveScore.textContent = rounded;
+
+    if (rounded < 40) {
+      riskOutput.textContent = "High Risk";
+    } else if (rounded < 70) {
+      riskOutput.textContent = "Medium Risk";
+    } else {
+      riskOutput.textContent = "Low Risk";
+    }
   }
-}
 
-frequency.addEventListener("input", updateScore);
-consistency.addEventListener("input", updateScore);
-volume.addEventListener("input", updateScore);
+  if (frequency && consistency && volume) {
+    frequency.addEventListener("input", updateScore);
+    consistency.addEventListener("input", updateScore);
+    volume.addEventListener("input", updateScore);
+    updateScore();
+  }
+
+  let nousStyle = "Coach";
+
+  document.querySelectorAll(".journey-choice").forEach(button => {
+    button.addEventListener("click", function () {
+      document.querySelectorAll(".journey-choice").forEach(btn => {
+        btn.classList.remove("active");
+      });
+
+      button.classList.add("active");
+      nousStyle = button.dataset.style;
+      updateJourney();
+    });
+  });
+
+  function updateJourney() {
+    const money = Number(document.getElementById("moneyAvailable").value || 0);
+    const discipline = Number(document.getElementById("discipline").value || 0);
+    const saving = Number(document.getElementById("saving").value || 0);
+    const stability = Number(document.getElementById("stability").value || 0);
+    const userType = document.getElementById("userType").value;
+    const goal = document.getElementById("goal").value;
+
+    const trust = Math.round(
+      discipline * 0.35 +
+      saving * 0.3 +
+      stability * 0.35
+    );
+
+    const growth = Math.min(
+      100,
+      Math.round((money / 100) + saving * 0.55)
+    );
+
+    const finalScore = Math.round(
+      trust * 0.35 +
+      discipline * 0.25 +
+      stability * 0.25 +
+      growth * 0.15
+    );
+
+    document.getElementById("trustBar").style.width = trust + "%";
+    document.getElementById("disciplineBar").style.width = discipline + "%";
+    document.getElementById("stabilityBar").style.width = stability + "%";
+    document.getElementById("growthBar").style.width = growth + "%";
+
+    document.getElementById("journeyScore").textContent = finalScore;
+
+    let label = "Future Builder";
+
+    if (finalScore < 45) {
+      label = "Foundation Builder";
+    } else if (finalScore < 70) {
+      label = "Progress Builder";
+    } else {
+      label = "Trust Builder";
+    }
+
+    document.getElementById("journeyLabel").textContent = label;
+
+    const strongestSignal =
+      stability >= discipline && stability >= saving
+        ? "income stability"
+        : saving >= discipline
+        ? "saving consistency"
+        : "spending discipline";
+
+    document.getElementById("nousAdvice").textContent =
+      `${nousStyle} mode: As a ${userType.toLowerCase()} focused on "${goal.toLowerCase()}", your strongest signal is ${strongestSignal}. Nous suggests tracking your money weekly, avoiding unnecessary failed payments, and building one consistent financial habit before chasing a bigger score.`;
+
+    const needs = Math.round(money * 0.50);
+    const savingsBudget = Math.round(money * 0.20);
+    const growthBudget = Math.round(money * 0.15);
+    const flexBudget = Math.round(money * 0.15);
+
+    document.getElementById("needsBudget").textContent = `R${needs}`;
+    document.getElementById("savingsBudget").textContent = `R${savingsBudget}`;
+    document.getElementById("growthBudget").textContent = `R${growthBudget}`;
+    document.getElementById("flexBudget").textContent = `R${flexBudget}`;
+  }
+
+  ["moneyAvailable", "discipline", "saving", "stability", "userType", "goal"].forEach(id => {
+    const element = document.getElementById(id);
+
+    if (element) {
+      element.addEventListener("input", updateJourney);
+      element.addEventListener("change", updateJourney);
+    }
+  });
+
+  updateJourney();
+
+});
 </script>
 
 </body>
