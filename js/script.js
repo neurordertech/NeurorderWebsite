@@ -21,11 +21,12 @@ document.addEventListener("click", function (event) {
   }
 });
 
-const newsButtons = document.querySelectorAll(".news-sidebar button");
-
-newsButtons.forEach((button) => {
+document.querySelectorAll(".news-sidebar button").forEach((button) => {
   button.addEventListener("click", () => {
-    newsButtons.forEach((btn) => btn.classList.remove("active"));
+    document
+      .querySelectorAll(".news-sidebar button")
+      .forEach((btn) => btn.classList.remove("active"));
+
     button.classList.add("active");
   });
 });
