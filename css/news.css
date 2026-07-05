@@ -69,6 +69,14 @@ main {
   line-height: 1.75;
 }
 
+.news-lander-copy p,
+.hero-note{
+    max-width: 620px;
+    color: rgba(255,255,255,.72);
+    line-height: 1.8;
+    font-size: 1.08rem;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -105,35 +113,34 @@ main {
 
 /* ORB */
 
-.news-lander-orb {
-  min-height: 360px;
-  border-radius: 40px;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  padding: 34px;
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 50% 30%, rgba(143, 223, 255, 0.22), transparent 38%),
-    linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.025));
-  border: 1px solid var(--news-card-border);
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
+.news-lander-orb{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+
+    width: auto;
+    height: auto;
+
+    position: relative;
 }
 
-.news-lander-orb img {
-  width: min(180px, 70%);
-  opacity: 0.92;
-  filter: drop-shadow(0 0 32px rgba(143, 223, 255, 0.28));
+.news-lander-orb img{
+    width: min(100%, 460px);
+    height: auto;
+    display: block;
+    object-fit: contain;
+
+    filter: drop-shadow(0 0 45px rgba(130,220,255,.18));
+    transition: transform .45s ease;
 }
 
-.news-lander-orb span {
-  position: absolute;
-  bottom: 28px;
-  color: var(--news-muted);
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  font-weight: 700;
+.news-lander-orb img:hover{
+    transform: scale(1.03);
 }
 
 /* SHARED SECTION */
@@ -266,4 +273,39 @@ main {
     border-radius: 28px;
     margin-bottom: 64px;
   }
+}
+
+.news-lander-orb img {
+  width: min(100%, 420px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 42px rgba(143, 223, 255, 0.18));
+}
+
+.news-lander-orb span {
+  display: none;
+}
+
+.news-nous-gate{
+    text-align:center;
+    max-width:900px;
+    margin:0 auto;
+}
+
+.news-nous-gate h2{
+    margin:18px 0 20px;
+}
+
+.nous-gate-copy{
+    max-width:700px;
+    margin:0 auto 40px;
+    line-height:1.8;
+    color:rgba(255,255,255,.72);
+}
+
+.gate-actions{
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
 }

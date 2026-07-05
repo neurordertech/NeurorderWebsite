@@ -100,6 +100,15 @@ textarea {
     transform: scale(1.04);
 }
 
+.nav-dropdown::after{
+    content:"";
+    position:absolute;
+    left:0;
+    top:100%;
+    width:100%;
+    height:14px;
+}
+
 .desktop-nav {
   display: flex;
   align-items: center;
@@ -115,6 +124,52 @@ textarea {
 .desktop-nav a:hover,
 .desktop-nav a.active {
   color: var(--primary);
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-drop-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-drop-menu {
+  position: absolute;
+  top: 130%;
+  right: 0;
+  min-width: 190px;
+  padding: 10px;
+  border-radius: 16px;
+  background: rgba(5, 10, 18, 0.94);
+  border: 1px solid rgba(143, 223, 255, 0.18);
+  display: none;
+  z-index: 999;
+}
+
+.nav-dropdown:hover .nav-drop-menu {
+  display: grid;
+}
+
+.nav-drop-menu a {
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.nav-dropdown:hover .nav-drop-menu,
+.nav-drop-menu:hover{
+
+    opacity:1;
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+.auth-only {
+  display: none;
 }
 
 .mobile-menu-btn{
@@ -873,4 +928,15 @@ text-align:center;
   color: #8fdfff;
   font-weight: 800;
   cursor: pointer;
+}
+
+.protected-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lock-icon {
+  font-size: 0.75rem;
+  opacity: 0.7;
 }

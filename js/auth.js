@@ -80,3 +80,28 @@ async function logout() {
   await supabaseClient.auth.signOut();
   window.location.href = "login.html";
 }
+
+document.addEventListener("DOMContentLoaded", async () => {
+  if (!window.supabaseClient) return;
+
+  const { data } = await window.supabaseClient.auth.getUser();
+  const user = data?.user;
+
+  document.querySelectorAll(".auth-only").forEach(el => {
+    el.style.display = user ? "" : "none";
+  });
+
+  document.querySelectorAll(".guest-only").forEach(el => {
+    el.style.display = user ? "none" : "";
+  });
+
+  const logoutBtn = document.getElementById("logoutBtn");
+
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", async (e) => {
+      e.preventDefault();
+      await window.supabaseClient.auth.signOut();
+      window.location.href = "news.html";
+    });
+  }
+});

@@ -16,27 +16,8 @@
 
 <body>
 
-<header class="site-header">
-  <a href="index.html">
-    <img src="images/NeurorderBody.png" alt="Neurorder Logo" class="nav-logo">
-  </a>
-
-  <nav class="desktop-nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="research.html">Research</a>
-    <a href="credit-scoring.html">Credit Scoring</a>
-    <a href="foundation.html">Foundation</a>
-    <a href="news.html" class="active">News</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-
-  <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-</header>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/stylenews.css">
 
 <div class="mobile-menu-panel" id="mobileMenu">
   <a href="index.html">Home</a>
@@ -48,135 +29,117 @@
   <a href="contact.html">Contact</a>
 </div>
 
-<main>
+<main class="nous-intelligence-app">
 
-<section class="news-hero">
-  <div>
-    <p class="eyebrow">Neurorder Intelligence Feed</p>
-    <h1>Live ideas. Fast signals. Global awareness.</h1>
-    <p>
-      A news experience for AI, finance, banking, informal economies, and South Africa’s digital future.
-    </p>
-
-    <div class="hero-actions">
-      <a href="https://www.news24.com/" target="_blank" class="btn btn-primary">Open News24</a>
-      <a href="https://www.undp.org/" target="_blank" class="btn btn-outline">Open UNDP</a>
+  <aside class="nous-app-sidebar">
+    <div class="nous-app-brand">
+      <img src="images/NeurorderBody.png" alt="Neurorder">
+      <div>
+        <strong>Nous</strong>
+        <span>ORULE</span>
+      </div>
     </div>
-  </div>
 
-  <div class="weather-card">
-    <span>Cape Town</span>
-    <strong>18°C</strong>
-    <p>Research weather signal</p>
-  </div>
-</section>
-
-<section class="ticker-section">
-  <div class="ticker">
-    <div class="ticker-track">
-      <span>AI • Banking • Credit Scoring • Informal Economy • South Africa • Digital Public Infrastructure • Research • UN SDGs • Financial Inclusion •</span>
-      <span>AI • Banking • Credit Scoring • Informal Economy • South Africa • Digital Public Infrastructure • Research • UN SDGs • Financial Inclusion •</span>
-    </div>
-  </div>
-</section>
-
-<section class="news-layout section">
-
-  <aside class="news-sidebar">
-    <h3>Channels</h3>
-    <button class="active">All Signals</button>
-    <button>AI</button>
-    <button>Banking</button>
-    <button>South Africa</button>
-    <button>Research</button>
-    <button>Foundation</button>
+    <nav class="nous-app-nav">
+      <a href="#" class="active"><i class="fas fa-house"></i> Home</a>
+      <a href="#"><i class="fas fa-circle-nodes"></i> Signals</a>
+      <a href="#"><i class="fas fa-robot"></i> Companion</a>
+      <a href="#"><i class="fas fa-book-open"></i> Library</a>
+      <a href="#"><i class="fas fa-flask"></i> Research</a>
+      <a href="#"><i class="fas fa-graduation-cap"></i> Learn</a>
+      <a href="#"><i class="fas fa-chart-line"></i> Finance</a>
+      <a href="#"><i class="fas fa-folder-open"></i> Workspace</a>
+    </nav>
   </aside>
 
-  <section class="news-main">
-    <div class="section-heading">
-      <p class="eyebrow">Today’s Intelligence</p>
-      <h2>Top stories for builders.</h2>
-    </div>
+  <section class="nous-app-main">
 
-    <div class="story-grid">
+    <header class="nous-app-header">
+      <div>
+        <p class="nous-kicker">NOUS ORULE</p>
+        <h1>Good evening, Ntokozo.</h1>
+        <p>What would you like to understand today?</p>
+      </div>
 
-      <article class="story-card">
-        <div class="story-image ai"></div>
-        <span>AI</span>
-        <h3>How artificial intelligence is changing financial trust.</h3>
-        <p>Signals from data systems, payment behaviour and digital identity.</p>
-        <a href="#">Read Signal →</a>
+      <a href="news.html" class="nous-public-link">Public News</a>
+    </header>
+
+    <section class="nous-search-panel">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search AI, finance, research, DPI, SDG 2030...">
+      <button>Ask Nous</button>
+    </section>
+
+    <section class="nous-orule-strip">
+      <span><strong>O</strong>bserve</span>
+      <span><strong>R</strong>eason</span>
+      <span><strong>U</strong>nderstand</span>
+      <span><strong>L</strong>earn</span>
+      <span><strong>E</strong>volve</span>
+    </section>
+
+    <section class="nous-signal-tabs">
+      <button class="active">All Signals</button>
+      <button>AI</button>
+      <button>Finance</button>
+      <button>DPI</button>
+      <button>Research</button>
+      <button>South Africa</button>
+    </section>
+
+    <section class="nous-dashboard-grid">
+
+      <article class="nous-feature-signal">
+        <span>Featured Signal</span>
+        <h2>Digital public infrastructure is becoming the foundation of financial inclusion.</h2>
+        <p>
+          Nous tracks how identity, payments, AI and credit scoring connect into
+          new systems of economic participation.
+        </p>
+        <a href="#">Observe Signal →</a>
       </article>
 
-      <article class="story-card">
-        <div class="story-image bank"></div>
-        <span>Banking</span>
-        <h3>The future bank may not begin inside a bank.</h3>
-        <p>Informal economies are becoming data-rich through digital payments.</p>
-        <a href="#">Read Signal →</a>
-      </article>
+      <aside class="nous-companion-card">
+        <p class="nous-kicker">NOUS COMPANION</p>
+        <h3>Ask for clarity.</h3>
+        <p>
+          Let Nous help you reason through news, research, finance and learning.
+        </p>
+        <button>Open Companion</button>
+      </aside>
 
-      <article class="story-card">
-        <div class="story-image township"></div>
-        <span>Townships</span>
-        <h3>Township businesses are already economic infrastructure.</h3>
-        <p>The question is whether systems can see them properly.</p>
-        <a href="#">Read Signal →</a>
-      </article>
+    </section>
 
-      <article class="story-card">
-        <div class="story-image global"></div>
-        <span>Global</span>
-        <h3>Digital public infrastructure is becoming a national advantage.</h3>
-        <p>Identity, payments and data systems are reshaping development.</p>
-        <a href="#">Read Signal →</a>
-      </article>
+    <section class="nous-feed-section">
+      <div class="nous-section-heading">
+        <p class="nous-kicker">TODAY’S SIGNALS</p>
+        <h2>Selected intelligence for builders.</h2>
+      </div>
 
-      <article class="story-card">
-        <div class="story-image credit"></div>
-        <span>Credit</span>
-        <h3>Alternative credit scoring can unlock invisible markets.</h3>
-        <p>Trust can be calculated more transparently when behaviour is measured fairly.</p>
-        <a href="#">Read Signal →</a>
-      </article>
+      <div class="nous-feed-grid">
 
-      <article class="story-card">
-        <div class="story-image youth"></div>
-        <span>Youth</span>
-        <h3>Gen Z wants news that moves as fast as the world does.</h3>
-        <p>Short-form intelligence can make serious information easier to access.</p>
-        <a href="#">Read Signal →</a>
-      </article>
+        <article class="nous-feed-card">
+          <span>AI</span>
+          <h3>Reasoning systems are changing how people search and learn.</h3>
+          <p>O.R.U.L.E. stage: Observe → Reason</p>
+        </article>
 
-    </div>
+        <article class="nous-feed-card">
+          <span>Fintech</span>
+          <h3>Alternative credit scoring continues to grow across emerging markets.</h3>
+          <p>O.R.U.L.E. stage: Understand</p>
+        </article>
 
-    <div class="login-fade">
-      <h2>Log In. Be informed Fanatic.</h2>
-      <p>Unlock the full Neurorder intelligence feed, reels, saved stories and research briefings.</p>
-      <button>Login Coming Soon</button>
-    </div>
+        <article class="nous-feed-card">
+          <span>Research</span>
+          <h3>Informal economies are becoming visible through digital transaction behaviour.</h3>
+          <p>O.R.U.L.E. stage: Learn</p>
+        </article>
+
+      </div>
+    </section>
+
   </section>
-
-  <aside class="reels-panel">
-    <h3>Shorts / Reels</h3>
-
-    <div class="reel-card">
-      <span>01</span>
-      <p>AI in banking explained in 30 seconds.</p>
-    </div>
-
-    <div class="reel-card">
-      <span>02</span>
-      <p>Why informal traders need credit visibility.</p>
-    </div>
-
-    <div class="reel-card">
-      <span>03</span>
-      <p>Digital public infrastructure in plain English.</p>
-    </div>
-  </aside>
-
-</section>
 
 </main>
 
