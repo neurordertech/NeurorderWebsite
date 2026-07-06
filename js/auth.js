@@ -8,10 +8,6 @@ function showAuthMessage(message) {
   }
 }
 
-function signupPage() {
-  window.location.href = "signup.html";
-}
-
 async function signUpWithEmail() {
   const fullName = document.getElementById("signupName").value.trim();
   const email = document.getElementById("signupEmail").value.trim();
@@ -23,13 +19,13 @@ async function signUpWithEmail() {
   }
 
   const { error } = await supabaseClient.auth.signUp({
-    email: email,
-    password: password,
+    email,
+    password,
     options: {
       data: {
         full_name: fullName
       },
-      emailRedirectTo: window.location.origin + "/dashboard.html"
+      emailRedirectTo: "https://neurorder.com/login.html"
     }
   });
 
@@ -51,8 +47,8 @@ async function loginWithEmail() {
   }
 
   const { error } = await supabaseClient.auth.signInWithPassword({
-    email: email,
-    password: password
+    email,
+    password
   });
 
   if (error) {
@@ -60,19 +56,13 @@ async function loginWithEmail() {
     return;
   }
 
-  window.location.href = "dashboard.html";
-}
+  const destination = localStorage.getItem("neurorderDestination");
+  localStorage.removeItem("neurorderDestination");
 
-async function loginWithGoogle() {
-  const { error } = await supabaseClient.auth.signInWithOAuth({
-    provider: "google",
-    options: {
-      redirectTo: window.location.origin + "/dashboard.html"
-    }
-  });
-
-  if (error) {
-    showAuthMessage(error.message);
+  if (destination === "nous") {
+    window.location.href = "nous.html";
+  } else {
+    window.location.href = "nous-news.html";
   }
 }
 
@@ -87,11 +77,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   const { data } = await window.supabaseClient.auth.getUser();
   const user = data?.user;
 
-  document.querySelectorAll(".auth-only").forEach(el => {
+  document.querySelectorAll(".auth-only").forEach((el) => {
     el.style.display = user ? "" : "none";
   });
 
-  document.querySelectorAll(".guest-only").forEach(el => {
+  document.querySelectorAll(".guest-only").forEach((el) => {
     el.style.display = user ? "none" : "";
   });
 
@@ -100,8 +90,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (logoutBtn) {
     logoutBtn.addEventListener("click", async (e) => {
       e.preventDefault();
-      await window.supabaseClient.auth.signOut();
-      window.location.href = "news.html";
+      await logout();
     });
   }
 });

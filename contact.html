@@ -114,16 +114,29 @@
           </a>
         </div>
 
-        <form class="contact-card contact-form">
-          <h2>Send us a message</h2>
+<form class="contact-card contact-form" id="contactForm">
+  <h2>Send us a message</h2>
 
-          <input type="text" placeholder="Your name">
-          <input type="email" placeholder="Your email">
-          <input type="text" placeholder="Subject">
-          <textarea placeholder="Your message"></textarea>
+  <input id="contactName" type="text" placeholder="Your name" required>
+  <input id="contactEmail" type="email" placeholder="Your email" required>
+  <input id="contactSubject" type="text" placeholder="Subject">
 
-          <button type="submit">Send Message →</button>
-        </form>
+  <select id="contactDepartment" required>
+    <option value="">Choose department</option>
+    <option value="General">General</option>
+    <option value="Research">Research</option>
+    <option value="Credit Scoring">Credit Scoring</option>
+    <option value="Foundation">Foundation</option>
+    <option value="Nous">Neurorder Nous</option>
+    <option value="Partnerships">Partnerships</option>
+  </select>
+
+  <textarea id="contactMessage" placeholder="Your message" required></textarea>
+
+  <button type="submit">Send Message →</button>
+
+  <p id="contactStatus" class="contact-status"></p>
+</form>
 
       </div>
 
@@ -174,13 +187,46 @@
 
   <div class="footer-divider"></div>
 
-  <div class="footer-bottom">
-    <div class="footer-socials">
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#"><i class="fab fa-medium-m"></i></a>
-      <a href="#"><i class="fas fa-envelope"></i></a>
-      <a href="#"><i class="fas fa-rss"></i></a>
-    </div>
+<div class="footer-socials">
+
+    <!-- LinkedIn -->
+    <a href="#"
+       aria-label="LinkedIn">
+        <img
+            src="images/linkedin.png"
+            alt="LinkedIn"
+            class="footer-social-icon">
+    </a>
+
+    <!-- Substack -->
+    <a href="https://substack.com/@nmzekandaba"
+       target="_blank"
+       aria-label="Substack">
+        <img
+            src="images/substack.png"
+            alt="Substack"
+            class="footer-social-icon">
+    </a>
+
+    <!-- Gmail -->
+    <a href="mailto:info@neurorder.com"
+       aria-label="Email">
+        <img
+            src="images/gmail.png"
+            alt="Email"
+            class="footer-social-icon">
+    </a>
+
+    <!-- Neurorder News -->
+    <a href="news.html"
+       aria-label="Neurorder News">
+        <img
+            src="images/newsintelligence.png"
+            alt="Neurorder News"
+            class="footer-social-icon">
+    </a>
+
+</div>
 
     <p class="footer-copy">© 2026 Neurorder Research. All Rights Reserved. Connected by Nous</p>
   </div>
@@ -231,7 +277,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase.js"></script>
 <script src="js/script.js"></script>
-<script src="js/nous.js"></script>
+<script src="js/contact.js"></script>
 
 </body>
 </html>

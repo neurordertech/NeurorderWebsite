@@ -940,3 +940,33 @@ text-align:center;
   font-size: 0.75rem;
   opacity: 0.7;
 }
+
+.alpha-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 26px;
+    height: 26px;
+
+    margin-left: 8px;
+
+    border-radius: 50%;
+    background: rgba(143,223,255,0.15);
+    border: 1px solid rgba(143,223,255,0.35);
+
+    color: #8fdfff;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+.release-tag{
+    margin-left:10px;
+    padding:4px 10px;
+    border-radius:999px;
+    background:rgba(143,223,255,.12);
+    border:1px solid rgba(143,223,255,.35);
+    color:#8fdfff;
+    font-weight:700;
+    letter-spacing:.08em;
+}
+

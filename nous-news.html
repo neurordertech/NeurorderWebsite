@@ -5,19 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>News | Neurorder</title>
+  <title>My Nous | Neurorder</title>
 
 <link rel="icon" href="images/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="512x512" href="images/favicon.png">
 <link rel="apple-touch-icon" href="images/favicon.png">
 
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/nous.css">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
-
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/stylenews.css">
 
 <div class="mobile-menu-panel" id="mobileMenu">
   <a href="index.html">Home</a>
@@ -41,15 +41,20 @@
     </div>
 
     <nav class="nous-app-nav">
-      <a href="#" class="active"><i class="fas fa-house"></i> Home</a>
-      <a href="#"><i class="fas fa-circle-nodes"></i> Signals</a>
-      <a href="#"><i class="fas fa-robot"></i> Companion</a>
-      <a href="#"><i class="fas fa-book-open"></i> Library</a>
-      <a href="#"><i class="fas fa-flask"></i> Research</a>
-      <a href="#"><i class="fas fa-graduation-cap"></i> Learn</a>
-      <a href="#"><i class="fas fa-chart-line"></i> Finance</a>
-      <a href="#"><i class="fas fa-folder-open"></i> Workspace</a>
+      <a href="nous-news.html" class="active"><i class="fas fa-house"></i> Home</a>
+      <a href="#signals"><i class="fas fa-circle-nodes"></i> Signals</a>
+      <a href="#companion"><i class="fas fa-robot"></i> Companion</a>
+      <a href="#library"><i class="fas fa-book-open"></i> Library</a>
+      <a href="research.html"><i class="fas fa-flask"></i> Research</a>
+      <a href="#learn"><i class="fas fa-graduation-cap"></i> Learn</a>
+      <a href="credit-scoring.html"><i class="fas fa-chart-line"></i> Finance</a>
+      <a href="#workspace"><i class="fas fa-folder-open"></i> Workspace</a>
     </nav>
+
+    <div class="nous-sidebar-actions">
+      <a href="index.html">Back to Website</a>
+      <a href="nous.html">Nous ORULE</a>
+    </div>
   </aside>
 
   <section class="nous-app-main">
@@ -61,85 +66,112 @@
         <p>What would you like to understand today?</p>
       </div>
 
-      <a href="news.html" class="nous-public-link">Public News</a>
+      <div class="nous-header-actions">
+        <a href="index.html" class="nous-public-link">Website</a>
+        <a href="nous.html" class="nous-public-link nous-outline-link">Nous ORULE</a>
+      </div>
     </header>
 
-    <section class="nous-search-panel">
-      <i class="fas fa-search"></i>
-      <input type="text" placeholder="Search AI, finance, research, DPI, SDG 2030...">
-      <button>Ask Nous</button>
+      <section class="nous-search-panel">
+        <div class="nous-search-core">
+          <i class="fas fa-search"></i>
+
+          <input 
+            type="text" 
+            placeholder="Search signals, research, finance, DPI, ORULE..."
+          >
+        </div>
+
+        <a href="companion.html" class="ask-nous-btn">
+          Ask Nous
+        </a>
+      </section>
+
+      <section class="nous-placeholder-grid">
+        <article id="learn" class="nous-feed-card">
+          <span>Learn</span>
+          <h3>Learning Hub coming soon.</h3>
+          <p>Structured lessons, study paths and ORULE-guided explanations.</p>
+        </article>
+
+      <article id="workspace" class="nous-feed-card">
+        <span>Workspace</span>
+        <h3>Your Nous Workspace is being built.</h3>
+        <p>Saved research, notes, documents and personal projects will live here.</p>
+      </article>
     </section>
 
     <section class="nous-orule-strip">
-      <span><strong>O</strong>bserve</span>
-      <span><strong>R</strong>eason</span>
-      <span><strong>U</strong>nderstand</span>
-      <span><strong>L</strong>earn</span>
-      <span><strong>E</strong>volve</span>
-    </section>
-
-    <section class="nous-signal-tabs">
-      <button class="active">All Signals</button>
-      <button>AI</button>
-      <button>Finance</button>
-      <button>DPI</button>
-      <button>Research</button>
-      <button>South Africa</button>
-    </section>
-
-    <section class="nous-dashboard-grid">
-
-      <article class="nous-feature-signal">
-        <span>Featured Signal</span>
-        <h2>Digital public infrastructure is becoming the foundation of financial inclusion.</h2>
-        <p>
-          Nous tracks how identity, payments, AI and credit scoring connect into
-          new systems of economic participation.
-        </p>
-        <a href="#">Observe Signal →</a>
-      </article>
-
-      <aside class="nous-companion-card">
-        <p class="nous-kicker">NOUS COMPANION</p>
-        <h3>Ask for clarity.</h3>
-        <p>
-          Let Nous help you reason through news, research, finance and learning.
-        </p>
-        <button>Open Companion</button>
-      </aside>
-
-    </section>
-
-    <section class="nous-feed-section">
-      <div class="nous-section-heading">
-        <p class="nous-kicker">TODAY’S SIGNALS</p>
-        <h2>Selected intelligence for builders.</h2>
-      </div>
-
-      <div class="nous-feed-grid">
-
-        <article class="nous-feed-card">
-          <span>AI</span>
-          <h3>Reasoning systems are changing how people search and learn.</h3>
-          <p>O.R.U.L.E. stage: Observe → Reason</p>
-        </article>
-
-        <article class="nous-feed-card">
-          <span>Fintech</span>
-          <h3>Alternative credit scoring continues to grow across emerging markets.</h3>
-          <p>O.R.U.L.E. stage: Understand</p>
-        </article>
-
-        <article class="nous-feed-card">
-          <span>Research</span>
-          <h3>Informal economies are becoming visible through digital transaction behaviour.</h3>
-          <p>O.R.U.L.E. stage: Learn</p>
-        </article>
-
-      </div>
-    </section>
-
+    <span><strong>O</strong>bserve</span>
+    <span><strong>R</strong>eason</span>
+    <span><strong>U</strong>nderstand</span>
+    <span><strong>L</strong>earn</span>
+    <span><strong>E</strong>volve</span>
   </section>
+
+<section class="nous-signal-tabs" id="signals">
+  <button class="active">All Signals</button>
+  <button>AI</button>
+  <button>Finance</button>
+  <button>DPI</button>
+  <button>Research</button>
+  <button>South Africa</button>
+</section>
+
+<section class="nous-dashboard-grid">
+
+  <article class="nous-feature-signal">
+    <span>Featured Signal</span>
+    <h2>Digital public infrastructure is becoming the foundation of financial inclusion.</h2>
+    <p>
+      Nous tracks how identity, payments, AI and credit scoring connect into
+      new systems of economic participation.
+    </p>
+    <a href="#signals">Observe Signal →</a>
+  </article>
+
+  <aside class="nous-companion-card" id="companion">
+    <p class="nous-kicker">NOUS COMPANION</p>
+    <h3>Ask for clarity.</h3>
+    <p>
+      Let Nous help you reason through news, research, finance and learning.
+    </p>
+    <a href="companion.html" class="coming-soon-btn">
+    Nous Companion
+    <span class="release-tag">α</span>
+    </a>
+  </aside>
+
+</section>
+
+<section class="nous-feed-section" id="library">
+  <div class="nous-section-heading">
+    <p class="nous-kicker">TODAY'S SIGNALS</p>
+    <h2>Selected intelligence for builders.</h2>
+  </div>
+
+  <div class="nous-feed-grid">
+    <article class="nous-feed-card">
+      <span>AI</span>
+      <h3>Reasoning systems are changing how people search and learn.</h3>
+      <p>O.R.U.L.E. stage: Observe → Reason</p>
+    </article>
+
+    <article class="nous-feed-card">
+      <span>Fintech</span>
+      <h3>Alternative credit scoring continues to grow across emerging markets.</h3>
+      <p>O.R.U.L.E. stage: Understand</p>
+    </article>
+
+    <article class="nous-feed-card">
+      <span>Research</span>
+      <h3>Informal economies are becoming visible through digital transaction behaviour.</h3>
+      <p>O.R.U.L.E. stage: Learn</p>
+    </article>
+  </div>
+</section>
+
+</section>
 
 </main>
 
@@ -176,13 +208,46 @@
 
   <div class="footer-divider"></div>
 
-  <div class="footer-bottom">
-    <div class="footer-socials">
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#"><i class="fab fa-medium-m"></i></a>
-      <a href="#"><i class="fas fa-envelope"></i></a>
-      <a href="#"><i class="fas fa-rss"></i></a>
-    </div>
+<div class="footer-socials">
+
+    <!-- LinkedIn -->
+    <a href="#"
+       aria-label="LinkedIn">
+        <img
+            src="images/linkedin.png"
+            alt="LinkedIn"
+            class="footer-social-icon">
+    </a>
+
+    <!-- Substack -->
+    <a href="https://substack.com/@nmzekandaba"
+       target="_blank"
+       aria-label="Substack">
+        <img
+            src="images/substack.png"
+            alt="Substack"
+            class="footer-social-icon">
+    </a>
+
+    <!-- Gmail -->
+    <a href="mailto:info@neurorder.com"
+       aria-label="Email">
+        <img
+            src="images/gmail.png"
+            alt="Email"
+            class="footer-social-icon">
+    </a>
+
+    <!-- Neurorder News -->
+    <a href="news.html"
+       aria-label="Neurorder News">
+        <img
+            src="images/newsintelligence.png"
+            alt="Neurorder News"
+            class="footer-social-icon">
+    </a>
+
+</div>
 
     <p class="footer-copy">© 2026 Neurorder Research. All Rights Reserved.</p>
   </div>
@@ -190,6 +255,7 @@
 
 <script src="js/script.js"></script>
 <script src="js/news.js"></script>
+
 
 </body>
 </html>

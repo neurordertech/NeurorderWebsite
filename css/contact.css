@@ -337,3 +337,19 @@ opacity:.4;
 }
 
 }
+
+.contact-form select {
+  width: 100%;
+  padding: 17px 20px;
+  margin-bottom: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(135, 206, 250, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+}
+
+.contact-status {
+  margin-top: 18px;
+  color: #8fdfff;
+  font-size: 0.95rem;
+}

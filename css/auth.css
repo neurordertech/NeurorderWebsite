@@ -101,11 +101,10 @@
   margin-bottom: 16px;
 }
 
+/* Google option disabled until OAuth is configured */
+
 .google-auth-btn {
-  background: transparent;
-  color: white;
-  border: 1px solid rgba(135, 206, 250, 0.35) !important;
-  margin-bottom: 24px;
+  display: none;
 }
 
 .auth-switch {
@@ -118,4 +117,165 @@
   color: #8fe7ff;
   text-decoration: none;
   font-weight: 700;
+}
+
+.auth-forgot-link {
+  display: inline-block;
+  margin-top: 16px;
+  color: #8fdfff;
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.auth-forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* =====================================
+   FORGOT PASSWORD PAGE
+===================================== */
+
+.auth-header {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 10;
+}
+
+.auth-home {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.auth-home img {
+  width: 34px;
+  height: auto;
+}
+
+.auth-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-description {
+  color: #d6dde7;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 0 18px;
+  margin-bottom: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(135, 206, 250, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.input-group i {
+  color: #8fdfff;
+}
+
+.input-group input {
+  flex: 1;
+  margin: 0;
+  border: none;
+  background: transparent;
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 17px 20px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #8fe7ff, #348cff);
+  color: #02050a;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.auth-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.auth-links a {
+  color: #8fe7ff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+#message {
+  margin-top: 18px;
+  color: #8fdfff;
+}
+
+.auth-footer {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #9aa8b5;
+  font-size: 0.85rem;
+}
+
+.auth-footer {
+    width: 100%;
+    text-align: center;
+    padding: 40px 20px 30px;
+    margin-top: 50px;
+    color: #9aa8b5;
+    font-size: 0.9rem;
+}
+
+.auth-footer p {
+    margin-bottom: 18px;
+}
+
+.auth-footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;   /* Space between Website | News | Support */
+    flex-wrap: wrap;
+}
+
+.auth-footer-links a {
+    color: #8fdfff;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.auth-footer-links a:hover {
+    color: white;
+}
+
+@media (max-width: 680px) {
+  .auth-header {
+    position: static;
+    margin: 22px;
+  }
+
+  .auth-footer {
+    position: static;
+    padding: 24px 18px;
+  }
+
+  .auth-links {
+    flex-direction: column;
+    align-items: center;
+  }
 }
