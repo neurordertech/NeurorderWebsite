@@ -10,10 +10,16 @@
 <link rel="icon" type="image/png" sizes="512x512" href="images/favicon.png">
 <link rel="apple-touch-icon" href="images/favicon.png">
 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/nous.css">
-  <link rel="stylesheet" href="css/credit.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/nous.css">
+<link rel="stylesheet" href="css/credit.css">
+<link rel="stylesheet" href="css/credit-financial-story.css">
+<link rel="stylesheet" href="css/credit-account-access.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+ 
+  <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2116967709675155"
+crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -53,358 +59,843 @@
 
 <main>
 
+  <!-- HERO -->
+
   <section class="credit-hero">
+
     <div class="credit-hero-copy">
-      <p class="eyebrow">NEURORDER CREDIT INTELLIGENCE</p>
-      <h1>Financial identity for the invisible economy.</h1>
+
+      <p class="eyebrow">
+        NEURORDER FINANCIAL STORY
+      </p>
+
+      <h1>
+        Build a financial identity from the activity that traditional systems may overlook.
+      </h1>
+
       <p>
-        A transparent AI-assisted scoring system that turns financial behaviour,
-        digital activity and budgeting discipline into a living trust signal.
+        Neurorder Financial Story allows individuals, entrepreneurs and informal
+        businesses to voluntarily record their economic activity and begin creating
+        a structured financial profile.
       </p>
 
       <div class="hero-actions">
-        <a href="#journey" class="btn btn-primary">Begin Financial Journey</a>
-        <a href="#simulator" class="btn btn-outline">Open Simulator</a>
+
+        <a href="#financialProfile" class="btn btn-primary">
+          Create Financial Profile
+        </a>
+
+        <a href="#howItWorks" class="btn btn-outline">
+          See How It Works
+        </a>
+
       </div>
+
     </div>
 
-    <div class="hero-score-card">
-      <div class="score-preview">
-        <span>LIVE SIGNAL</span>
-        <strong id="liveScore">72</strong>
-        <small id="liveRisk">Low Risk Signal</small>
-      </div>
-      <br>
-      <br>
+<div class="hero-visual">
 
-      <img src="images/creditscore.png" alt="Neurorder credit scoring visual">
-      <div class="floating-chip chip-one">Activity</div>
-      <div class="floating-chip chip-two">Stability</div>
-      <div class="floating-chip chip-three">Trust</div>
+  <div class="prototype-badge">
+    <span>RESEARCH PROTOTYPE</span>
+
+    <strong>V1</strong>
+
+    <small>
+      Secure financial profile infrastructure
+    </small>
+  </div>
+
+  <div class="hero-image-frame">
+
+    <img
+      src="images/creditscore.png"
+      alt="Neurorder Financial Story infrastructure">
+
+    <div class="signal-bubble signal-trust">
+      Trust
     </div>
+
+    <div class="signal-bubble signal-activity">
+      Activity
+    </div>
+
+    <div class="signal-bubble signal-stability">
+      Stability
+    </div>
+
+  </div>
+
+
   </section>
 
-  <section class="scoring-console section" id="simulator">
-    <div class="console-left">
-      <p class="eyebrow">LIVE SCORE SIMULATOR</p>
-      <h2 class="section-title">Move the data. Watch trust form.</h2>
-      <p class="section-text">
-        Adjust the transaction signals below. The score responds like a living financial profile.
-        This is a simplified research model, not a final bank decision.
-      </p>
-    </div>
 
-    <div class="console-card card">
-      <label>
-        Monthly Transactions
-        <input type="range" min="0" max="100" value="70" id="frequency">
-      </label>
+  <!-- WHAT THE SERVICE DOES -->
 
-      <label>
-        Months Active
-        <input type="range" min="0" max="100" value="65" id="consistency">
-      </label>
+  <section
+    class="financial-story-intro section"
+    id="howItWorks">
 
-      <label>
-        Average Transaction Volume
-        <input type="range" min="0" max="100" value="80" id="volume">
-      </label>
-
-      <div class="score-ring">
-        <div>
-          <strong id="scoreOutput">72</strong>
-          <span id="riskOutput">Low Risk</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="financial-journey section" id="journey">
     <div class="journey-copy">
-      <p class="eyebrow">NOUSE FINANCIAL JOURNEY</p>
-      <h2 class="section-title">Build your financial story.</h2>
+
+      <p class="eyebrow">
+        WHAT THE SERVICE DOES
+      </p>
+
+      <h2 class="section-title">
+        A clearer path from economic activity to financial understanding.
+      </h2>
+
       <p class="section-text">
-        Choose how Nous should guide you, tell us your financial goal,
-        and watch your Credit DNA and budget plan form.
+        The service records information that you voluntarily provide, stores it
+        securely within your authenticated account, and organises it into a
+        financial history that may later support Neurorder research and scoring.
       </p>
+
     </div>
 
-    <div class="journey-grid">
-      <div class="journey-card card">
-        <h3>How should Nous communicate?</h3>
+    <div class="financial-story-steps">
 
-        <div class="choice-grid">
-          <button type="button" class="journey-choice active" data-style="Coach">Coach</button>
-          <button type="button" class="journey-choice" data-style="Professional">Professional</button>
-          <button type="button" class="journey-choice" data-style="Explorer">Explorer</button>
-        </div>
+      <article class="story-step card">
 
-        <label>
-          Who are you today?
-          <select id="userType">
-            <option>Student</option>
-            <option>Entrepreneur</option>
-            <option>Street Vendor</option>
-            <option>Professional</option>
-            <option>Researcher</option>
-          </select>
-        </label>
+        <span>
+          01
+        </span>
 
-        <label>
-          Money available right now
-          <input type="number" id="moneyAvailable" value="2500" min="0">
-        </label>
+        <h3>
+          Create your profile
+        </h3>
 
-        <label>
-          Monthly spending discipline
-          <input type="range" id="discipline" min="0" max="100" value="55">
-        </label>
-
-        <label>
-          Saving consistency
-          <input type="range" id="saving" min="0" max="100" value="45">
-        </label>
-
-        <label>
-          Income stability
-          <input type="range" id="stability" min="0" max="100" value="60">
-        </label>
-
-        <label>
-          Main goal
-          <select id="goal">
-            <option>Build credit</option>
-            <option>Save for school</option>
-            <option>Start a business</option>
-            <option>Buy a laptop</option>
-            <option>Understand banking</option>
-          </select>
-        </label>
-
-        <button type="button" class="journey-btn" id="generateJourneyBtn">Generate My Journey</button>
-      </div>
-
-      <div class="journey-card card dna-card">
-        <h3>Your Credit DNA</h3>
-
-        <div class="dna-bars">
-          <div><span>Trust</span><strong id="trustBar"></strong></div>
-          <div><span>Discipline</span><strong id="disciplineBar"></strong></div>
-          <div><span>Stability</span><strong id="stabilityBar"></strong></div>
-          <div><span>Growth</span><strong id="growthBar"></strong></div>
-        </div>
-
-        <div class="journey-score">
-          <div>
-            <strong id="journeyScore">61</strong>
-            <span id="journeyLabel">Future Builder</span>
-          </div>
-        </div>
-
-        <div class="nouse-reasoning">
-          <h4>Nous reasoning</h4>
-          <p id="nousAdvice">
-            Your financial journey is forming. Adjust the inputs and Nous will explain your next step.
-          </p>
-        </div>
-
-        <div class="budget-plan">
-          <h4>Suggested Budget Split</h4>
-
-          <div class="budget-row">
-            <span>Needs</span>
-            <strong id="needsBudget">R0</strong>
-          </div>
-
-          <div class="budget-row">
-            <span>Savings</span>
-            <strong id="savingsBudget">R0</strong>
-          </div>
-
-          <div class="budget-row">
-            <span>Growth / Learning</span>
-            <strong id="growthBudget">R0</strong>
-          </div>
-
-          <div class="budget-row">
-            <span>Flexible Spend</span>
-            <strong id="flexBudget">R0</strong>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<section class="financial-journey section">
-
-  <div class="journey-copy">
-    <p class="eyebrow">NOUSE FINANCIAL JOURNEY</p>
-    <h2 class="section-title">Build your financial story.</h2>
-    <p class="section-text">
-      Choose how Nous should guide you, tell us your financial goal,
-      and watch your Credit DNA form.
-    </p>
-  </div>
-
-  <div class="journey-grid">
-
-    <div class="journey-card card">
-      <h3>How should Nous speak to you?</h3>
-
-      <div class="choice-grid">
-        <button class="journey-choice active" data-style="Coach">Coach</button>
-        <button class="journey-choice" data-style="Professional">Professional</button>
-        <button class="journey-choice" data-style="Explorer">Explorer</button>
-      </div>
-
-      <h3>Who are you today?</h3>
-
-      <select id="userType">
-        <option>Student</option>
-        <option>Entrepreneur</option>
-        <option>Street Vendor</option>
-        <option>Professional</option>
-        <option>Researcher</option>
-      </select>
-
-      <label>
-        Money available right now
-        <input type="number" id="moneyAvailable" value="2500" min="0">
-      </label>
-
-      <label>
-        Monthly spending discipline
-        <input type="range" id="discipline" min="0" max="100" value="55">
-      </label>
-
-      <label>
-        Saving consistency
-        <input type="range" id="saving" min="0" max="100" value="45">
-      </label>
-
-      <label>
-        Income stability
-        <input type="range" id="stability" min="0" max="100" value="60">
-      </label>
-
-      <label>
-        Main goal
-        <select id="goal">
-          <option>Build credit</option>
-          <option>Save for school</option>
-          <option>Start a business</option>
-          <option>Buy a laptop</option>
-          <option>Understand banking</option>
-        </select>
-      </label>
-
-      <button class="journey-btn" onclick="updateJourney()">Generate My Journey</button>
-    </div>
-
-    <div class="journey-card card dna-card">
-      <h3>Your Credit DNA</h3>
-
-      <div class="dna-bars">
-        <div><span>Trust</span><strong id="trustBar"></strong></div>
-        <div><span>Discipline</span><strong id="disciplineBar"></strong></div>
-        <div><span>Stability</span><strong id="stabilityBar"></strong></div>
-        <div><span>Growth</span><strong id="growthBar"></strong></div>
-      </div>
-
-      <div class="journey-score">
-        <div>
-          <strong id="journeyScore">61</strong>
-          <span id="journeyLabel">Future Builder</span>
-        </div>
-      </div>
-
-      <div class="nouse-reasoning">
-        <h4>Nous Reasoning</h4>
-        <p id="nousAdvice">
-          Your financial journey is forming. Adjust the inputs and Nous will explain your next step.
+        <p>
+          Tell us whether you are an individual, entrepreneur, informal business
+          or small business.
         </p>
-      </div>
 
-      <div class="budget-plan">
-        <h4>Suggested Budget Split</h4>
+      </article>
 
-        <div class="budget-row">
-          <span>Needs</span>
-          <strong id="needsBudget">R0</strong>
-        </div>
+      <article class="story-step card">
 
-        <div class="budget-row">
-          <span>Savings</span>
-          <strong id="savingsBudget">R0</strong>
-        </div>
+        <span>
+          02
+        </span>
 
-        <div class="budget-row">
-          <span>Growth / Learning</span>
-          <strong id="growthBudget">R0</strong>
-        </div>
+        <h3>
+          Provide clear consent
+        </h3>
 
-        <div class="budget-row">
-          <span>Flexible Spend</span>
-          <strong id="flexBudget">R0</strong>
-        </div>
-      </div>
+        <p>
+          You choose whether Neurorder may store and process the information
+          that you submit.
+        </p>
+
+      </article>
+
+      <article class="story-step card">
+
+        <span>
+          03
+        </span>
+
+        <h3>
+          Record monthly activity
+        </h3>
+
+        <p>
+          Add transaction activity, income, expenses, repayment behaviour and
+          income consistency.
+        </p>
+
+      </article>
+
+      <article class="story-step card">
+
+        <span>
+          04
+        </span>
+
+        <h3>
+          Build your financial story
+        </h3>
+
+        <p>
+          Your monthly records gradually form a structured financial history
+          instead of relying on a single transaction.
+        </p>
+
+      </article>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
 
-<section class="process-flow section">
+  <!-- FOUNDER MESSAGE -->
 
-  <p class="eyebrow">NOUSE DECISION ENGINE</p>
-  <h2 class="section-title">How Nous builds financial trust.</h2>
+  <section class="founder-message-section section">
 
-  <div class="vertical-process">
+    <div class="founder-note card">
 
-    <div class="process-node">
-      <span>01</span>
-      <h3>Behaviour</h3>
-      <p>Payments, savings and daily habits begin your financial story.</p>
+      <p class="eyebrow">
+        A MESSAGE FROM THE FOUNDER
+      </p>
+
+      <h2>
+        Building Nous responsibly.
+      </h2>
+
+      <blockquote>
+        We believe that financial opportunity should not depend solely on
+        traditional credit history.
+        <br><br>
+        Today, Neurorder Financial Story allows you to begin building a voluntary
+        digital financial profile based on your own economic activity.
+        <br><br>
+        Nous Companion is still under active development. Behind the scenes, our
+        research, engineering and artificial intelligence teams are working to
+        deliver a highly improved version of Nous Companion.
+        <br><br>
+        Our long-term vision is for Nous Companion to help you understand your
+        financial story, explain your progress clearly and support you throughout
+        your future personal and financial adventures.
+        <br><br>
+        We are building carefully because trust, privacy and clarity must come
+        before speed.
+      </blockquote>
+
+      <p class="founder-signature">
+
+        Ntokozo Mzekandaba
+
+        <br>
+
+        <span>
+          Founder &amp; CEO
+          <br>
+          NEURORDER (Pty) Ltd
+        </span>
+
+      </p>
+
     </div>
 
-    <div class="process-connector"></div>
+  </section>
 
-    <div class="process-node">
-      <span>02</span>
-      <h3>Patterns</h3>
-      <p>Nous looks for consistency instead of judging one transaction.</p>
-    </div>
 
-    <div class="process-connector dotted"></div>
+  <!-- IMPORTANT SERVICE NOTICE -->
 
-    <div class="process-node">
-      <span>03</span>
-      <h3>Understanding</h3>
-      <p>Your behaviour becomes an explainable financial profile.</p>
-    </div>
+  <section class="service-notice section">
 
-    <div class="process-connector"></div>
+    <div class="service-notice-card card">
 
-    <div class="process-node">
-      <span>04</span>
-      <h3>Opportunity</h3>
-      <p>Better habits create stronger financial trust.</p>
-    </div>
+      <p class="eyebrow">
+        IMPORTANT SERVICE NOTICE
+      </p>
 
-  </div>
+      <h2>
+        What Neurorder Financial Story is today.
+      </h2>
 
-</section>
-
-  <section class="future-panel section">
-    <div>
-      <h2>The next financial infrastructure of South Africa.</h2>
       <p>
-        Neurorder is not just measuring transactions. It is designing a new language of trust for
-        people excluded from traditional credit systems.
+        This service is currently a research and infrastructure prototype.
+        It allows authenticated users to create a financial profile and record
+        voluntary monthly economic activity.
+      </p>
+
+      <p>
+        It does not currently issue loans, approve credit, replace a registered
+        credit bureau or make a final bank lending decision.
+      </p>
+
+      <p>
+        Any score produced during the research stage should be treated as an
+        experimental indicator only.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONSENT -->
+
+  <section
+    class="consent-section section"
+    id="consent">
+
+    <div class="journey-copy">
+
+      <p class="eyebrow">
+        CONSENT AND DATA USE
+      </p>
+
+      <h2 class="section-title">
+        Your information remains your decision.
+      </h2>
+
+      <p class="section-text">
+        Neurorder will only create your financial profile after you provide the
+        required permissions below.
+      </p>
+
+    </div>
+
+<div class="consent-card card">
+
+  <div class="consent-item">
+
+    <input
+      type="checkbox"
+      id="consentFinancialProfile">
+
+    <label for="consentFinancialProfile">
+      I consent to Neurorder creating and storing my financial profile.
+    </label>
+
+  </div>
+
+  <div class="consent-item">
+
+    <input
+      type="checkbox"
+      id="consentDataProcessing">
+
+    <label for="consentDataProcessing">
+      I consent to the processing of the financial information that I
+      voluntarily submit.
+    </label>
+
+  </div>
+
+  <div class="consent-item">
+
+    <input
+      type="checkbox"
+      id="consentResearch">
+
+    <label for="consentResearch">
+      I consent to my submitted information being used for Neurorder research
+      in a protected and responsible manner.
+    </label>
+
+  </div>
+
+  <div class="consent-item">
+
+    <input
+      type="checkbox"
+      id="consentFutureContact">
+
+    <label for="consentFutureContact">
+      I agree that Neurorder may contact me about future research or product
+      testing.
+
+      <span class="optional-consent">
+        Optional
+      </span>
+    </label>
+
+  </div>
+
+  <p class="consent-note">
+    You may withdraw consent later. Some features may become unavailable when
+    required consent is withdrawn.
+  </p>
+
+</div>
+
+  </section>
+
+
+  <!-- FINANCIAL PROFILE -->
+
+  <section
+    class="financial-profile-section section"
+    id="financialProfile">
+
+    <div class="journey-copy">
+
+      <p class="eyebrow">
+        STEP 1 — FINANCIAL PROFILE
+      </p>
+
+      <h2 class="section-title">
+        Create your financial identity.
+      </h2>
+
+      <p class="section-text">
+        Complete the form below. Your profile will be connected to your
+        authenticated Neurorder account.
+      </p>
+
+    </div>
+
+<div
+  id="financialStoryAuth"
+  class="account-access-card card"
+  aria-live="polite">
+
+  <div id="accountLoading" class="account-loading">
+    <span class="account-loader"></span>
+    Checking your Neurorder account...
+  </div>
+
+  <div id="accountRequired" class="account-required" hidden>
+
+    <p class="eyebrow">ACCOUNT REQUIRED</p>
+
+    <h3>Sign in to begin your Financial Story.</h3>
+
+    <p>
+      Your financial profile and monthly activity must be connected to a
+      secure Neurorder account.
+    </p>
+
+    <div class="account-actions">
+      <a href="login.html" class="btn btn-primary">Log In</a>
+      <a href="signup.html" class="btn btn-outline">Create Account</a>
+    </div>
+
+  </div>
+
+  <div id="accountConfirmed" class="account-confirmed" hidden>
+
+    <span class="account-confirmed-icon">✓</span>
+
+    <div>
+      <strong>Account verified</strong>
+      <p id="accountEmail">
+        Your Financial Story is connected securely.
       </p>
     </div>
+        <span class="account-confirmed-icon">
+      ✓
+    </span>
+
+    <div>
+      <strong>
+        Account verified
+      </strong>
+
+      <p id="accountEmail">
+        Your Financial Story is connected securely.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+  </div>
+
+</div>
+
+    <form
+      id="financialProfileForm"
+      class="financial-form card"
+      hidden>
+
+      <div class="form-grid">
+
+        <label>
+
+          Display name
+
+          <input
+            type="text"
+            id="displayName"
+            maxlength="120"
+            autocomplete="name"
+            required>
+
+        </label>
+
+        <label>
+
+          Profile type
+
+          <select
+            id="profileType"
+            required>
+
+            <option value="">
+              Select profile type
+            </option>
+
+            <option value="individual">
+              Individual
+            </option>
+
+            <option value="entrepreneur">
+              Entrepreneur
+            </option>
+
+            <option value="informal_business">
+              Informal business
+            </option>
+
+            <option value="small_business">
+              Small business
+            </option>
+
+          </select>
+
+        </label>
+
+        <label>
+
+          Business name
+
+          <span class="optional-label">
+            Optional
+          </span>
+
+          <input
+            type="text"
+            id="businessName"
+            maxlength="160"
+            autocomplete="organization">
+
+        </label>
+
+        <label>
+
+          Business type
+
+          <span class="optional-label">
+            Optional
+          </span>
+
+          <input
+            type="text"
+            id="businessType"
+            maxlength="160"
+            placeholder="Example: Street vending">
+
+        </label>
+
+        <label class="full-width">
+
+          Province
+
+          <select
+            id="province"
+            required>
+
+            <option value="">
+              Select province
+            </option>
+
+            <option value="Western Cape">
+              Western Cape
+            </option>
+
+            <option value="Gauteng">
+              Gauteng
+            </option>
+
+            <option value="Limpopo">
+              Limpopo
+            </option>
+
+            <option value="North West">
+              North West
+            </option>
+
+            <option value="KwaZulu-Natal">
+              KwaZulu-Natal
+            </option>
+
+            <option value="Eastern Cape">
+              Eastern Cape
+            </option>
+
+            <option value="Free State">
+              Free State
+            </option>
+
+            <option value="Mpumalanga">
+              Mpumalanga
+            </option>
+
+            <option value="Northern Cape">
+              Northern Cape
+            </option>
+
+          </select>
+
+        </label>
+
+      </div>
+
+      <button
+        type="submit"
+        class="journey-btn"
+        id="saveProfileBtn">
+
+        Create Financial Profile
+
+      </button>
+
+      <p
+        id="profileMessage"
+        class="form-message"
+        aria-live="polite">
+      </p>
+
+    </form>
+
   </section>
+
+
+  <!-- MONTHLY FINANCIAL ACTIVITY -->
+
+  <section
+    class="financial-activity-section section"
+    id="activitySection"
+    hidden>
+
+    <div class="journey-copy">
+
+      <p class="eyebrow">
+        STEP 2 — MONTHLY ACTIVITY
+      </p>
+
+      <h2 class="section-title">
+        Add one month to your financial story.
+      </h2>
+
+      <p class="section-text">
+        Submit one activity record per month. Saving the same month again will
+        update that record rather than create a duplicate.
+      </p>
+
+    </div>
+
+    <form
+      id="financialActivityForm"
+      class="financial-form card">
+
+      <div class="form-grid">
+
+        <label>
+
+          Activity month
+
+          <input
+            type="month"
+            id="activityMonth"
+            required>
+
+        </label>
+
+        <label>
+
+          Monthly transaction count
+
+          <input
+            type="number"
+            id="monthlyTransactionCount"
+            min="0"
+            step="1"
+            required>
+
+        </label>
+
+        <label>
+
+          Average transaction value
+
+          <input
+            type="number"
+            id="averageTransactionValue"
+            min="0"
+            step="0.01"
+            required>
+
+        </label>
+
+        <label>
+
+          Estimated monthly income
+
+          <input
+            type="number"
+            id="estimatedMonthlyIncome"
+            min="0"
+            step="0.01">
+
+        </label>
+
+        <label>
+
+          Estimated monthly expenses
+
+          <input
+            type="number"
+            id="estimatedMonthlyExpenses"
+            min="0"
+            step="0.01">
+
+        </label>
+
+        <label>
+
+          Months active
+
+          <input
+            type="number"
+            id="monthsActive"
+            min="0"
+            step="1"
+            required>
+
+        </label>
+
+        <label>
+
+          Repayment history
+
+          <select id="repaymentHistory">
+
+            <option value="">
+              Select repayment history
+            </option>
+
+            <option value="none">
+              No repayment history
+            </option>
+
+            <option value="poor">
+              Poor
+            </option>
+
+            <option value="inconsistent">
+              Inconsistent
+            </option>
+
+            <option value="good">
+              Good
+            </option>
+
+            <option value="excellent">
+              Excellent
+            </option>
+
+          </select>
+
+        </label>
+
+        <label>
+
+          Income consistency
+
+          <select id="incomeConsistency">
+
+            <option value="">
+              Select income consistency
+            </option>
+
+            <option value="unstable">
+              Unstable
+            </option>
+
+            <option value="irregular">
+              Irregular
+            </option>
+
+            <option value="moderate">
+              Moderate
+            </option>
+
+            <option value="stable">
+              Stable
+            </option>
+
+          </select>
+
+        </label>
+
+        <label class="full-width">
+
+          Notes
+
+          <span class="optional-label">
+            Optional
+          </span>
+
+          <textarea
+            id="activityNotes"
+            rows="4"
+            maxlength="1000"
+            placeholder="Add context that may help explain this month.">
+          </textarea>
+
+        </label>
+
+      </div>
+
+      <button
+        type="submit"
+        class="journey-btn"
+        id="saveActivityBtn">
+
+        Save Monthly Activity
+
+      </button>
+
+      <p
+        id="activityMessage"
+        class="form-message"
+        aria-live="polite">
+      </p>
+
+    </form>
+
+  </section>
+
+
+  <!-- FUTURE NOUS -->
+
+<section class="nous-development-section section">
+
+  <div class="nous-development-copy">
+
+    <p class="eyebrow">
+      NOUS COMPANION — IN DEVELOPMENT
+    </p>
+
+    <h2 class="section-title">
+      Building deeper financial understanding.
+    </h2>
+
+    <p class="section-text">
+      Nous Companion is being developed to understand different forms of
+      information, recognise financial patterns and provide clear, personal
+      guidance from a user's growing Financial Story.
+    </p>
+
+    <p class="nous-development-note">
+      Our research, engineering and artificial intelligence teams are currently
+      developing and testing these capabilities behind the scenes.
+    </p>
+
+    <div class="nous-status">
+      <span class="status-dot"></span>
+      Active research and development
+    </div>
+
+  </div>
+
+  <div class="nous-development-visual">
+
+    <img
+      src="images/multimodelunderstanding.png"
+      alt="Nous Companion multimodal understanding system">
+
+    <div class="nous-visual-glow"></div>
+
+  </div>
+
+</section>
 
 </main>
 
@@ -487,140 +978,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase.js"></script>
 <script src="js/script.js"></script>
-<script src="js/nouse.js"></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const frequency = document.getElementById("frequency");
-  const consistency = document.getElementById("consistency");
-  const volume = document.getElementById("volume");
-  const scoreOutput = document.getElementById("scoreOutput");
-  const liveScore = document.getElementById("liveScore");
-  const riskOutput = document.getElementById("riskOutput");
-
-  function updateScore() {
-    if (!frequency || !consistency || !volume) return;
-
-    const score =
-      Number(frequency.value) * 0.3 +
-      Number(consistency.value) * 0.3 +
-      Number(volume.value) * 0.4;
-
-    const rounded = Math.round(score);
-
-    scoreOutput.textContent = rounded;
-    liveScore.textContent = rounded;
-
-    if (rounded < 40) {
-      riskOutput.textContent = "High Risk";
-    } else if (rounded < 70) {
-      riskOutput.textContent = "Medium Risk";
-    } else {
-      riskOutput.textContent = "Low Risk";
-    }
-  }
-
-  if (frequency && consistency && volume) {
-    frequency.addEventListener("input", updateScore);
-    consistency.addEventListener("input", updateScore);
-    volume.addEventListener("input", updateScore);
-    updateScore();
-  }
-
-  let nousStyle = "Coach";
-
-  document.querySelectorAll(".journey-choice").forEach(button => {
-    button.addEventListener("click", function () {
-      document.querySelectorAll(".journey-choice").forEach(btn => {
-        btn.classList.remove("active");
-      });
-
-      button.classList.add("active");
-      nousStyle = button.dataset.style;
-      updateJourney();
-    });
-  });
-
-  function updateJourney() {
-    const money = Number(document.getElementById("moneyAvailable").value || 0);
-    const discipline = Number(document.getElementById("discipline").value || 0);
-    const saving = Number(document.getElementById("saving").value || 0);
-    const stability = Number(document.getElementById("stability").value || 0);
-    const userType = document.getElementById("userType").value;
-    const goal = document.getElementById("goal").value;
-
-    const trust = Math.round(
-      discipline * 0.35 +
-      saving * 0.3 +
-      stability * 0.35
-    );
-
-    const growth = Math.min(
-      100,
-      Math.round((money / 100) + saving * 0.55)
-    );
-
-    const finalScore = Math.round(
-      trust * 0.35 +
-      discipline * 0.25 +
-      stability * 0.25 +
-      growth * 0.15
-    );
-
-    document.getElementById("trustBar").style.width = trust + "%";
-    document.getElementById("disciplineBar").style.width = discipline + "%";
-    document.getElementById("stabilityBar").style.width = stability + "%";
-    document.getElementById("growthBar").style.width = growth + "%";
-
-    document.getElementById("journeyScore").textContent = finalScore;
-
-    let label = "Future Builder";
-
-    if (finalScore < 45) {
-      label = "Foundation Builder";
-    } else if (finalScore < 70) {
-      label = "Progress Builder";
-    } else {
-      label = "Trust Builder";
-    }
-
-    document.getElementById("journeyLabel").textContent = label;
-
-    const strongestSignal =
-      stability >= discipline && stability >= saving
-        ? "income stability"
-        : saving >= discipline
-        ? "saving consistency"
-        : "spending discipline";
-
-    document.getElementById("nousAdvice").textContent =
-      `${nousStyle} mode: As a ${userType.toLowerCase()} focused on "${goal.toLowerCase()}", your strongest signal is ${strongestSignal}. Nous suggests tracking your money weekly, avoiding unnecessary failed payments, and building one consistent financial habit before chasing a bigger score.`;
-
-    const needs = Math.round(money * 0.50);
-    const savingsBudget = Math.round(money * 0.20);
-    const growthBudget = Math.round(money * 0.15);
-    const flexBudget = Math.round(money * 0.15);
-
-    document.getElementById("needsBudget").textContent = `R${needs}`;
-    document.getElementById("savingsBudget").textContent = `R${savingsBudget}`;
-    document.getElementById("growthBudget").textContent = `R${growthBudget}`;
-    document.getElementById("flexBudget").textContent = `R${flexBudget}`;
-  }
-
-  ["moneyAvailable", "discipline", "saving", "stability", "userType", "goal"].forEach(id => {
-    const element = document.getElementById(id);
-
-    if (element) {
-      element.addEventListener("input", updateJourney);
-      element.addEventListener("change", updateJourney);
-    }
-  });
-
-  updateJourney();
-
-});
-</script>
-
+<script src="js/credit-scoring.js"></script>
 </body>
 </html>

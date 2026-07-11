@@ -234,3 +234,231 @@
     padding: 28px;
   }
 }
+
+/* =========================================================
+   RESEARCH INTELLIGENCE
+========================================================= */
+
+.research-intelligence-section {
+  width: min(1180px, calc(100% - 40px));
+  margin: 90px auto;
+}
+
+.research-intelligence-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 36px;
+  margin-bottom: 28px;
+}
+
+.research-kicker {
+  margin: 0 0 12px;
+  color: #8fdfff;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.research-intelligence-header h2 {
+  max-width: 760px;
+  margin: 0;
+  color: #f5f8fb;
+  font-size: clamp(2.2rem, 5vw, 4.4rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.research-intelligence-intro {
+  max-width: 760px;
+  margin: 22px 0 0;
+  color: #9aa8b5;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.research-live-link {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 10px;
+  min-height: 46px;
+  border: 1px solid rgba(143, 223, 255, 0.24);
+  border-radius: 999px;
+  padding: 11px 17px;
+  background: rgba(143, 223, 255, 0.07);
+  color: #8fdfff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.research-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #8fdfff;
+  box-shadow: 0 0 14px rgba(143, 223, 255, 0.75);
+  animation: researchLivePulse 2s ease-in-out infinite;
+}
+
+.research-topic-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+}
+
+.research-topic-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.research-topic-tabs span {
+  flex: 0 0 auto;
+  border: 1px solid rgba(143, 223, 255, 0.13);
+  border-radius: 999px;
+  padding: 10px 15px;
+  color: #9aa8b5;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.research-intelligence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.research-intelligence-card {
+  display: flex;
+  min-height: 330px;
+  flex-direction: column;
+  border: 1px solid rgba(143, 223, 255, 0.14);
+  border-radius: 22px;
+  padding: 28px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.055),
+      rgba(255, 255, 255, 0.018)
+    );
+}
+
+.research-card-label {
+  color: #8fdfff;
+  font-size: 0.69rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.research-intelligence-card h3 {
+  margin: 20px 0 14px;
+  color: #f5f8fb;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.research-intelligence-card p {
+  margin: 0;
+  color: #9aa8b5;
+  line-height: 1.7;
+}
+
+.research-intelligence-card a {
+  margin-top: auto;
+  padding-top: 28px;
+  color: #8fdfff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.research-intelligence-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 22px;
+  border: 1px solid rgba(143, 223, 255, 0.14);
+  border-radius: 22px;
+  padding: 26px 28px;
+  background: rgba(143, 223, 255, 0.035);
+}
+
+.research-intelligence-footer h3 {
+  max-width: 720px;
+  margin: 0;
+  color: #f5f8fb;
+  font-size: clamp(1.25rem, 2.6vw, 2rem);
+  line-height: 1.25;
+}
+
+.research-intelligence-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-height: 48px;
+  border: 1px solid rgba(143, 223, 255, 0.35);
+  border-radius: 999px;
+  padding: 12px 19px;
+  background: rgba(143, 223, 255, 0.1);
+  color: #8fdfff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+@keyframes researchLivePulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.55;
+    transform: scale(0.75);
+  }
+}
+
+@media (max-width: 900px) {
+  .research-intelligence-header,
+  .research-intelligence-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .research-intelligence-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .research-intelligence-section {
+    width: min(100% - 28px, 1180px);
+    margin: 64px auto;
+  }
+
+  .research-intelligence-header h2 {
+    font-size: clamp(2.35rem, 11vw, 3.5rem);
+  }
+
+  .research-live-link,
+  .research-intelligence-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .research-intelligence-card {
+    min-height: 0;
+    padding: 23px 20px;
+  }
+
+  .research-intelligence-footer {
+    padding: 22px 20px;
+  }
+}

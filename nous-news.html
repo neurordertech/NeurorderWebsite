@@ -1,261 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Neurorder Nous Intelligence Feed for African technology, finance, digital public infrastructure and development signals.">
 
   <title>My Nous | Neurorder</title>
 
-<link rel="icon" href="images/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="512x512" href="images/favicon.png">
-<link rel="apple-touch-icon" href="images/favicon.png">
+  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
 
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/nous.css">
-
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/nous-dashboard.css?v=6">
+  <link rel="stylesheet" href="css/stylenews.css?v=6">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <link rel="preload" as="image" href="images/newsintelligencersa.png">
+
+  <script async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2116967709675155"
+          crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-<div class="mobile-menu-panel" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="research.html">Research</a>
-  <a href="credit-scoring.html">Credit Scoring</a>
-  <a href="foundation.html">Foundation</a>
-  <a href="news.html">News</a>
-  <a href="contact.html">Contact</a>
-</div>
+  <main class="nous-intelligence-app">
 
-<main class="nous-intelligence-app">
+    <aside class="nous-app-sidebar">
+      <div class="nous-app-brand">
+        <img src="images/NeurorderBody.png" alt="Neurorder">
 
-  <aside class="nous-app-sidebar">
-    <div class="nous-app-brand">
-      <img src="images/NeurorderBody.png" alt="Neurorder">
-      <div>
-        <strong>Nous</strong>
-        <span>ORULE</span>
-      </div>
-    </div>
-
-    <nav class="nous-app-nav">
-      <a href="nous-news.html" class="active"><i class="fas fa-house"></i> Home</a>
-      <a href="#signals"><i class="fas fa-circle-nodes"></i> Signals</a>
-      <a href="#companion"><i class="fas fa-robot"></i> Companion</a>
-      <a href="#library"><i class="fas fa-book-open"></i> Library</a>
-      <a href="research.html"><i class="fas fa-flask"></i> Research</a>
-      <a href="#learn"><i class="fas fa-graduation-cap"></i> Learn</a>
-      <a href="credit-scoring.html"><i class="fas fa-chart-line"></i> Finance</a>
-      <a href="#workspace"><i class="fas fa-folder-open"></i> Workspace</a>
-    </nav>
-
-    <div class="nous-sidebar-actions">
-      <a href="index.html">Back to Website</a>
-      <a href="nous.html">Nous ORULE</a>
-    </div>
-  </aside>
-
-  <section class="nous-app-main">
-
-    <header class="nous-app-header">
-      <div>
-        <p class="nous-kicker">NOUS ORULE</p>
-        <h1>Good evening, Ntokozo.</h1>
-        <p>What would you like to understand today?</p>
+        <div>
+          <strong>Nous</strong>
+          <span>Intelligence</span>
+        </div>
       </div>
 
-      <div class="nous-header-actions">
-        <a href="index.html" class="nous-public-link">Website</a>
-        <a href="nous.html" class="nous-public-link nous-outline-link">Nous ORULE</a>
+      <nav class="nous-app-nav" aria-label="Nous navigation">
+        <a href="nous-news.html" class="active">
+          <i class="fas fa-house"></i>
+          <span>Home</span>
+        </a>
+
+        <a href="#signals">
+          <i class="fas fa-circle-nodes"></i>
+          <span>Signals</span>
+        </a>
+
+        <a href="#featuredSignal">
+          <i class="fas fa-star"></i>
+          <span>Featured</span>
+        </a>
+
+        <a href="companion.html">
+          <i class="fas fa-robot"></i>
+          <span>Companion</span>
+        </a>
+
+        <a href="research.html">
+          <i class="fas fa-flask"></i>
+          <span>Research</span>
+        </a>
+
+        <a href="credit-scoring.html">
+          <i class="fas fa-chart-line"></i>
+          <span>Finance</span>
+        </a>
+      </nav>
+
+      <div class="nous-sidebar-actions">
+        <a href="index.html">Back to Website</a>
+        <a href="nous.html">Nous ORULE</a>
       </div>
-    </header>
+    </aside>
 
-      <section class="nous-search-panel">
-        <div class="nous-search-core">
-          <i class="fas fa-search"></i>
+    <section class="nous-app-main">
 
-          <input 
-            type="text" 
-            placeholder="Search signals, research, finance, DPI, ORULE..."
-          >
+      <header class="nous-app-header">
+        <div>
+          <p class="nous-kicker">NOUS INTELLIGENCE</p>
+          <h1>Good evening, Ntokozo.</h1>
+          <p>What would you like to understand today?</p>
         </div>
 
-        <a href="companion.html" class="ask-nous-btn">
-          Ask Nous
-        </a>
+        <div class="nous-header-actions">
+          <a href="index.html" class="nous-public-link">Website</a>
+          <a href="nous.html" class="nous-public-link nous-outline-link">Nous ORULE</a>
+        </div>
+      </header>
+
+      <section class="nous-search-panel" aria-label="Search Nous Intelligence">
+        <div class="nous-search-core">
+          <i class="fas fa-search"></i>
+          <input
+            type="search"
+            id="nousSearch"
+            aria-label="Search Nous Intelligence"
+            placeholder="Search News24, UNDP, technology, finance..."
+            autocomplete="off">
+        </div>
+
+        <a href="companion.html" class="ask-nous-btn">Ask Nous</a>
       </section>
 
-      <section class="nous-placeholder-grid">
-        <article id="learn" class="nous-feed-card">
-          <span>Learn</span>
-          <h3>Learning Hub coming soon.</h3>
-          <p>Structured lessons, study paths and ORULE-guided explanations.</p>
+      <section class="nous-news-ticker" aria-label="Latest public intelligence headlines">
+        <span class="ticker-label">LIVE</span>
+
+        <div class="ticker-window">
+          <p id="newsTicker">
+            Connecting to the Neurorder intelligence feed…
+          </p>
+        </div>
+      </section>
+
+      <section class="nous-intelligence-hero">
+        <div class="nous-intelligence-visual">
+          <img
+            src="images/newsintelligencersa.png"
+            alt="Neurorder South African News Intelligence">
+        </div>
+
+        <div class="nous-intelligence-intro">
+          <p class="nous-kicker">TODAY'S INTELLIGENCE</p>
+
+          <h2>Signals shaping Africa’s digital future.</h2>
+
+          <p class="nous-intelligence-description">
+            Public intelligence from News24 and the United Nations Development Programme,
+            organised inside Nous for clearer understanding.
+          </p>
+
+          <div class="nous-intelligence-stats">
+            <div class="nous-stat">
+              <strong id="totalSignalCount">0</strong>
+              <span>Signals</span>
+            </div>
+
+            <div class="nous-stat">
+              <strong id="news24SignalCount">0</strong>
+              <span>News24</span>
+            </div>
+
+            <div class="nous-stat">
+              <strong id="undpSignalCount">0</strong>
+              <span>UNDP</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="nous-featured-section">
+        <article class="nous-feature-signal" id="featuredSignal">
+          <div class="featured-signal-meta">
+            <span>Featured Signal</span>
+            <span id="featuredSource">Public Intelligence</span>
+          </div>
+
+          <h2 id="featuredTitle">Connecting to today’s leading intelligence signal…</h2>
+
+          <p id="featuredSummary">Nous is retrieving the latest public intelligence.</p>
+
+          <div class="featured-signal-footer">
+            <time id="featuredDate"></time>
+            <a href="#intelligenceFeed" id="featuredLink">Read featured signal →</a>
+          </div>
         </article>
+      </section>
 
-      <article id="workspace" class="nous-feed-card">
-        <span>Workspace</span>
-        <h3>Your Nous Workspace is being built.</h3>
-        <p>Saved research, notes, documents and personal projects will live here.</p>
-      </article>
+      <section class="nous-signal-tabs" id="signals" aria-label="Intelligence filters">
+        <button type="button" class="active" data-filter="all">All Signals</button>
+        <button type="button" data-filter="News24">News24</button>
+        <button type="button" data-filter="UNDP">UNDP</button>
+        <button type="button" data-filter="Technology">Technology</button>
+        <button type="button" data-filter="Development">Development</button>
+        <button type="button" data-filter="South Africa">South Africa</button>
+      </section>
+
+      <section class="nous-feed-section" id="intelligenceFeed">
+        <div class="nous-section-heading">
+          <div>
+            <p class="nous-kicker">LATEST SIGNALS</p>
+            <h2>Selected public intelligence.</h2>
+          </div>
+
+          <p class="news-feed-status">News24 and UNDP</p>
+        </div>
+
+        <div
+          class="nous-feed-grid"
+          id="liveNewsList"
+          aria-live="polite"
+          aria-busy="true">
+
+          <article class="nous-feed-card live-news-item">
+            <div class="live-news-card-content">
+              <div class="live-news-meta">
+                <span class="live-news-source">Connecting</span>
+                <span class="live-news-category">Public Intelligence</span>
+              </div>
+
+              <h3>Loading the latest intelligence signals…</h3>
+              <p class="live-news-summary">Connecting to News24 and UNDP.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="news-empty-state" id="newsEmptyState" hidden>
+          <h3>No matching signals found.</h3>
+          <p>Select another category or search for a different topic.</p>
+        </div>
+
+        <div class="news-feed-disclaimer">
+          <p>
+            External headlines are displayed for informational purposes.
+            Articles remain the property of their respective publishers.
+          </p>
+        </div>
+      </section>
+
+      <section class="nous-insight-panel">
+        <div class="nous-insight-heading">
+          <p class="nous-kicker">NOUS INSIGHT</p>
+          <h2>Understanding comes next.</h2>
+        </div>
+
+        <p class="nous-insight-description">
+          Future versions of Nous will help explain patterns across public intelligence,
+          research and financial systems.
+        </p>
+      </section>
+
     </section>
+  </main>
 
-    <section class="nous-orule-strip">
-    <span><strong>O</strong>bserve</span>
-    <span><strong>R</strong>eason</span>
-    <span><strong>U</strong>nderstand</span>
-    <span><strong>L</strong>earn</span>
-    <span><strong>E</strong>volve</span>
-  </section>
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Neurorder Logo" class="footer-logo">
+        <h2>NEURORDER</h2>
+        <p>New Order.<br>Smarter Future.</p>
+      </div>
 
-<section class="nous-signal-tabs" id="signals">
-  <button class="active">All Signals</button>
-  <button>AI</button>
-  <button>Finance</button>
-  <button>DPI</button>
-  <button>Research</button>
-  <button>South Africa</button>
-</section>
+      <div class="footer-column">
+        <h3>Research</h3>
+        <a href="research.html">Digital Public Infrastructure</a>
+        <a href="credit-scoring.html">Credit Scoring</a>
+        <a href="news.html">Latest Research</a>
+      </div>
 
-<section class="nous-dashboard-grid">
+      <div class="footer-column">
+        <h3>Company</h3>
+        <a href="about.html">About</a>
+        <a href="foundation.html">Foundation</a>
+        <a href="contact.html">Contact</a>
+      </div>
 
-  <article class="nous-feature-signal">
-    <span>Featured Signal</span>
-    <h2>Digital public infrastructure is becoming the foundation of financial inclusion.</h2>
-    <p>
-      Nous tracks how identity, payments, AI and credit scoring connect into
-      new systems of economic participation.
-    </p>
-    <a href="#signals">Observe Signal →</a>
-  </article>
-
-  <aside class="nous-companion-card" id="companion">
-    <p class="nous-kicker">NOUS COMPANION</p>
-    <h3>Ask for clarity.</h3>
-    <p>
-      Let Nous help you reason through news, research, finance and learning.
-    </p>
-    <a href="companion.html" class="coming-soon-btn">
-    Nous Companion
-    <span class="release-tag">α</span>
-    </a>
-  </aside>
-
-</section>
-
-<section class="nous-feed-section" id="library">
-  <div class="nous-section-heading">
-    <p class="nous-kicker">TODAY'S SIGNALS</p>
-    <h2>Selected intelligence for builders.</h2>
-  </div>
-
-  <div class="nous-feed-grid">
-    <article class="nous-feed-card">
-      <span>AI</span>
-      <h3>Reasoning systems are changing how people search and learn.</h3>
-      <p>O.R.U.L.E. stage: Observe → Reason</p>
-    </article>
-
-    <article class="nous-feed-card">
-      <span>Fintech</span>
-      <h3>Alternative credit scoring continues to grow across emerging markets.</h3>
-      <p>O.R.U.L.E. stage: Understand</p>
-    </article>
-
-    <article class="nous-feed-card">
-      <span>Research</span>
-      <h3>Informal economies are becoming visible through digital transaction behaviour.</h3>
-      <p>O.R.U.L.E. stage: Learn</p>
-    </article>
-  </div>
-</section>
-
-</section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="footer-top">
-
-    <div class="footer-brand">
-      <img src="images/logo.png" alt="Neurorder Logo" class="footer-logo">
-      <h2>NEURORDER</h2>
-      <p>New Order.<br>Smarter Future.</p>
+      <div class="footer-column">
+        <h3>Legal</h3>
+        <a href="documents/NEURORDER_Legal_Documents.pdf#page=1" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+        <a href="documents/NEURORDER_Legal_Documents.pdf#page=7" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a>
+      </div>
     </div>
 
-    <div class="footer-column">
-      <h3>Research</h3>
-      <a href="research.html">Digital Public Infrastructure</a>
-      <a href="credit-scoring.html">Credit Scoring</a>
-      <a href="news.html">Latest Research</a>
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+      <div class="footer-socials">
+        <a href="#" aria-label="LinkedIn">
+          <img src="images/linkedin.png" alt="LinkedIn" class="footer-social-icon">
+        </a>
+
+        <a href="https://substack.com/@nmzekandaba" target="_blank" rel="noopener noreferrer" aria-label="Substack">
+          <img src="images/substack.png" alt="Substack" class="footer-social-icon">
+        </a>
+
+        <a href="mailto:info@neurorder.com" aria-label="Email">
+          <img src="images/gmail.png" alt="Email" class="footer-social-icon">
+        </a>
+
+        <a href="news.html" aria-label="Neurorder News">
+          <img src="images/newsintelligencersa.png" alt="Neurorder News" class="footer-social-icon">
+        </a>
+      </div>
+
+      <p class="footer-copy">© 2026 Neurorder Research. All Rights Reserved.</p>
     </div>
+  </footer>
 
-    <div class="footer-column">
-      <h3>Company</h3>
-      <a href="about.html">About</a>
-      <a href="foundation.html">Foundation</a>
-      <a href="contact.html">Contact</a>
-    </div>
-
-    <div class="footer-column">
-      <h3>Legal</h3>
-      <a href="documents/NEURORDER_Legal_Documents.pdf#page=1" target="_blank">Privacy Policy</a>
-      <a href="documents/NEURORDER_Legal_Documents.pdf#page=7" target="_blank">Terms & Conditions</a>
-    </div>
-
-  </div>
-
-  <div class="footer-divider"></div>
-
-<div class="footer-socials">
-
-    <!-- LinkedIn -->
-    <a href="#"
-       aria-label="LinkedIn">
-        <img
-            src="images/linkedin.png"
-            alt="LinkedIn"
-            class="footer-social-icon">
-    </a>
-
-    <!-- Substack -->
-    <a href="https://substack.com/@nmzekandaba"
-       target="_blank"
-       aria-label="Substack">
-        <img
-            src="images/substack.png"
-            alt="Substack"
-            class="footer-social-icon">
-    </a>
-
-    <!-- Gmail -->
-    <a href="mailto:info@neurorder.com"
-       aria-label="Email">
-        <img
-            src="images/gmail.png"
-            alt="Email"
-            class="footer-social-icon">
-    </a>
-
-    <!-- Neurorder News -->
-    <a href="news.html"
-       aria-label="Neurorder News">
-        <img
-            src="images/newsintelligence.png"
-            alt="Neurorder News"
-            class="footer-social-icon">
-    </a>
-
-</div>
-
-    <p class="footer-copy">© 2026 Neurorder Research. All Rights Reserved.</p>
-  </div>
-</footer>
-
-<script src="js/script.js"></script>
-<script src="js/news.js"></script>
-
+  <script src="js/script.js"></script>
+  <script src="js/news.js?v=6"></script>
 
 </body>
 </html>

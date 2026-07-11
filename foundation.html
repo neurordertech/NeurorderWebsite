@@ -3,22 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Foundation | Neurorder</title>
 
-<link rel="stylesheet" href="css/nous.css">
-<link rel="icon" href="images/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="512x512" href="images/favicon.png">
-<link rel="apple-touch-icon" href="images/favicon.png">
+  <title>Foundation | Neurorder</title>
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/foundation.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <script async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2116967709675155"
+          crossorigin="anonymous"></script>
 </head>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/supabase.js"></script>
-
-<body>
+<body class="foundation-page">
 
 <header class="site-header">
   <a href="index.html">
@@ -36,13 +39,11 @@
   </nav>
 
   <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
-
     <span class="dot"></span>
     <span class="dot"></span>
     <span class="dot"></span>
     <span class="dot"></span>
-
-    </button>
+  </button>
 </header>
 
 <div class="mobile-menu-panel" id="mobileMenu">
@@ -58,201 +59,172 @@
 <main>
 
 <section class="foundation-hero">
+
   <div class="foundation-copy">
     <p class="eyebrow">iNtsikelelo Foundation</p>
-    <h1>Hope for tomorrow, built with intelligence today.</h1>
-    <p>
-      Neurorder connects research, technology and community giving to understand township economies
-      and build systems that serve the greater good.
-    </p>
-  </div>
 
- <div class="research-links">
-
-    <!-- Khutsong -->
-    <a href="https://www.dailymaverick.co.za/article/2023-03-23-sinkhole-menace-khutsong-finally-to-be-declared-disaster-area/"
-       target="_blank"
-       class="research-link">
-
-        <img src="images/images6.png" alt="Khutsong Research">
-
-        <div class="research-overlay">
-            <h3>North West</h3>
-            <p>Khutsong Communities</p>
-        </div>
-
-    </a>
-
-
-    <!-- Western Cape -->
-
-    <a href="https://wandercapetown.com/info/entrepreneurs-small-businesses/"
-       target="_blank"
-       class="research-link">
-
-        <img src="images/images7.png" alt="Western Cape Research">
-
-        <div class="research-overlay">
-            <h3>Western Cape</h3>
-            <p>Entrepreneurs & Small Businesses</p>
-        </div>
-
-    </a>
-
-
-    <!-- Third Image -->
-
-    <a href="#"
-       class="research-link">
-
-        <img src="images/image8.png" alt="Future Research">
-
-        <div class="research-overlay">
-            <h3>Research Gallery</h3>
-            <p>More Coming Soon</p>
-        </div>
-
-    </a>
-
-</div>
-</section>
-
-<section class="quantum-strip">
-  <div class="node-field">
-    <span></span><span></span><span></span><span></span><span></span>
-  </div>
-</section>
-
-<section class="section province-section">
-  <p class="eyebrow">Research Journey 2026</p>
-  <h2 class="section-title">4 provinces. Countless stories. One economic mission.</h2>
-
-  <p class="section-text">
-    In 2026, Neurorder visited North West, Gauteng, Western Cape and Limpopo to understand what
-    truly happens inside the communities we call townships — and how alternative credit systems
-    can help shift South Africa into a better economic orchestra.
-  </p>
-
-  <div class="province-grid">
-    <button class="province-card" onclick="showProvince('northwest')">
-      <i class="fas fa-location-dot"></i>
-      <h3>North West</h3>
-      <p>Rural trade and survival economies.</p>
-    </button>
-
-    <button class="province-card" onclick="showProvince('gauteng')">
-      <i class="fas fa-city"></i>
-      <h3>Gauteng</h3>
-      <p>Township enterprise and youth business.</p>
-    </button>
-
-    <button class="province-card" onclick="showProvince('westerncape')">
-      <i class="fas fa-water"></i>
-      <h3>Western Cape</h3>
-      <p>Urban informal economies and digital access.</p>
-    </button>
-
-    <button class="province-card" onclick="showProvince('limpopo')">
-      <i class="fas fa-seedling"></i>
-      <h3>Limpopo</h3>
-      <p>Schools, communities and local trade.</p>
-    </button>
-  </div>
-
-  <div class="province-display card" id="provinceDisplay">
-
-  <div class="province-card-rotator">
-
-    <div class="language-card active">
-      <span>South Africa</span>
-      <h3>Hello Fanatics</h3>
-    </div>
-
-    <div class="language-card">
-      <span>IsiXhosa / IsiZulu Spirit</span>
-      <h3>Yebo Balandeli</h3>
-    </div>
-
-    <div class="language-card">
-      <span>Afrikaans</span>
-      <h3>Hallo Entoesiaste</h3>
-    </div>
-
-    <div class="language-card">
-      <span>Tshivenda</span>
-      <h3>Ndaa tsireledza Vhafuthi</h3>
-    </div>
-
-    <div class="language-card">
-      <span>Setswana</span>
-      <h3>Dumela Batswana</h3>
-    </div>
-
-  </div>
-
-  <p class="province-message">
-    Neurorder studied rural trade, small vendors, transport-linked businesses and how payment
-    visibility can support people operating outside traditional systems.
-  </p>
-
-</div>
-
-    <br>
-    </div>
-    <p>
-      Neurorder studied rural trade, small vendors, transport-linked businesses and how payment
-      visibility can support people operating outside traditional systems.
-    </p>
-  </div>
-</section>
-
-<section class="section impact-section">
-  <p class="eyebrow">Explore Our Impact</p>
-  <h2 class="section-title">Discover. Learn. Give.</h2>
-
-  <div class="impact-grid">
-    <article class="card impact-card">
-      <i class="fas fa-map-location-dot"></i>
-      <h3>Provinces Visited</h3>
-      <p>Explore research insights from four key provinces.</p>
-    </article>
-
-    <article class="card impact-card">
-      <i class="fas fa-images"></i>
-      <h3>Community Gallery</h3>
-      <p>A space for images of giving, dignity and community support.</p>
-    </article>
-
-    <article class="card impact-card">
-      <i class="fas fa-graduation-cap"></i>
-      <h3>Education Support</h3>
-      <p>Supporting learners with resources, confidence and digital opportunity.</p>
-    </article>
-
-    <article class="card impact-card">
-      <i class="fas fa-heart"></i>
-      <h3>Giving Back</h3>
-      <p>Meeting communities where they are and building forward with them.</p>
-    </article>
-  </div>
-</section>
-
-<section class="hope-section">
-
-
-  <div class="hope-message">
-    <p class="eyebrow">A Better World Is Coming</p>
-
-    <h2>Change begins with community.</h2>
+    <h1>
+      Hope for tomorrow, built with intelligence today.
+    </h1>
 
     <p>
-      Every child deserves opportunity. Every township deserves investment.
-      Every informal business deserves recognition. Neurorder exists to ensure
-      technology reaches everyone.
+      Neurorder connects research, technology and community giving to
+      understand township economies and build systems that serve the
+      greater good.
     </p>
   </div>
 
 </section>
+
+
+<section class="foundation-gallery-section">
+
+  <div class="foundation-gallery">
+
+    <a
+      href="https://www.dailymaverick.co.za/article/2023-03-23-sinkhole-menace-khutsong-finally-to-be-declared-disaster-area/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="foundation-gallery-card"
+    >
+      <img src="images/images6.png" alt="Khutsong Research">
+
+      <div class="foundation-gallery-overlay">
+        <h3>North West</h3>
+        <p>Khutsong Communities</p>
+      </div>
+    </a>
+
+
+    <a
+      href="https://wandercapetown.com/info/entrepreneurs-small-businesses/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="foundation-gallery-card"
+    >
+      <img src="images/images7.png" alt="Western Cape Research">
+
+      <div class="foundation-gallery-overlay">
+        <h3>Western Cape</h3>
+        <p>Entrepreneurs &amp; Small Businesses</p>
+      </div>
+    </a>
+
+
+    <a href="research.html" class="foundation-gallery-card">
+      <img src="images/image8.png" alt="Future Research">
+
+      <div class="foundation-gallery-overlay">
+        <h3>Research Gallery</h3>
+        <p>More Coming Soon</p>
+      </div>
+    </a>
+
+  </div>
+
+</section>
+
+  <section class="quantum-strip" aria-hidden="true">
+    <div class="node-field">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </section>
+
+  <section class="section province-section">
+    <p class="eyebrow">Research Journey 2026</p>
+    <h2 class="section-title">4 provinces. Countless stories. One economic mission.</h2>
+
+    <p class="section-text">
+      In 2026, Neurorder visited North West, Gauteng, Western Cape and Limpopo
+      to understand what truly happens inside the communities we call townships —
+      and how alternative credit systems can help shift South Africa into a better
+      economic orchestra.
+    </p>
+
+    <div class="province-grid">
+      <button type="button" class="province-card" onclick="showProvince('northwest')">
+        <i class="fas fa-location-dot"></i>
+        <h3>North West</h3>
+        <p>Rural trade and survival economies.</p>
+      </button>
+
+      <button type="button" class="province-card" onclick="showProvince('gauteng')">
+        <i class="fas fa-city"></i>
+        <h3>Gauteng</h3>
+        <p>Township enterprise and youth business.</p>
+      </button>
+
+      <button type="button" class="province-card" onclick="showProvince('westerncape')">
+        <i class="fas fa-water"></i>
+        <h3>Western Cape</h3>
+        <p>Urban informal economies and digital access.</p>
+      </button>
+
+      <button type="button" class="province-card" onclick="showProvince('limpopo')">
+        <i class="fas fa-seedling"></i>
+        <h3>Limpopo</h3>
+        <p>Schools, communities and local trade.</p>
+      </button>
+    </div>
+
+    <div class="province-display card" id="provinceDisplay">
+      <div class="province-card-rotator">
+        <div class="language-card"><span>South Africa</span><h3>Hello Fanatics</h3></div>
+        <div class="language-card"><span>IsiXhosa / IsiZulu Spirit</span><h3>Yebo Balandeli</h3></div>
+        <div class="language-card"><span>Afrikaans</span><h3>Hallo Entoesiaste</h3></div>
+        <div class="language-card"><span>Tshivenda</span><h3>Ndaa tsireledza Vhafuthi</h3></div>
+        <div class="language-card"><span>Setswana</span><h3>Dumela Batswana</h3></div>
+      </div>
+
+      <p class="province-message">
+        Neurorder studied rural trade, small vendors, transport-linked businesses
+        and how payment visibility can support people operating outside traditional systems.
+      </p>
+    </div>
+  </section>
+
+  <section class="section impact-section">
+    <p class="eyebrow">Explore Our Impact</p>
+    <h2 class="section-title">Discover. Learn. Give.</h2>
+
+    <div class="impact-grid">
+      <article class="card impact-card">
+        <i class="fas fa-map-location-dot"></i>
+        <h3>Provinces Visited</h3>
+        <p>Explore research insights from four key provinces.</p>
+      </article>
+
+      <article class="card impact-card">
+        <i class="fas fa-images"></i>
+        <h3>Community Gallery</h3>
+        <p>A space for images of giving, dignity and community support.</p>
+      </article>
+
+      <article class="card impact-card">
+        <i class="fas fa-graduation-cap"></i>
+        <h3>Education Support</h3>
+        <p>Supporting learners with resources, confidence and digital opportunity.</p>
+      </article>
+
+      <article class="card impact-card">
+        <i class="fas fa-heart"></i>
+        <h3>Giving Back</h3>
+        <p>Meeting communities where they are and building forward with them.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="hope-section">
+    <div class="hope-message">
+      <p class="eyebrow">A Better World Is Coming</p>
+      <h2>Change begins with community.</h2>
+      <p>
+        Every child deserves opportunity. Every township deserves investment.
+        Every informal business deserves recognition. Neurorder exists to ensure
+        technology reaches everyone.
+      </p>
+    </div>
+  </section>
 
 </main>
 
@@ -281,61 +253,33 @@
     <div class="footer-column">
       <h3>Legal</h3>
       <a href="documents/NEURORDER_Legal_Documents.pdf#page=1" target="_blank">Privacy Policy</a>
-      <a href="documents/NEURORDER_Legal_Documents.pdf#page=7" target="_blank">Terms & Conditions</a>
+      <a href="documents/NEURORDER_Legal_Documents.pdf#page=7" target="_blank">Terms &amp; Conditions</a>
     </div>
   </div>
 
   <div class="footer-divider"></div>
 
-<div class="footer-socials">
-
-    <!-- LinkedIn -->
-    <a href="#"
-       aria-label="LinkedIn">
-        <img
-            src="images/linkedin.png"
-            alt="LinkedIn"
-            class="footer-social-icon">
+  <div class="footer-socials">
+    <a href="#" aria-label="LinkedIn">
+      <img src="images/linkedin.png" alt="LinkedIn" class="footer-social-icon">
     </a>
-
-    <!-- Substack -->
-    <a href="https://substack.com/@nmzekandaba"
-       target="_blank"
-       aria-label="Substack">
-        <img
-            src="images/substack.png"
-            alt="Substack"
-            class="footer-social-icon">
+    <a href="https://substack.com/@nmzekandaba" target="_blank" rel="noopener noreferrer" aria-label="Substack">
+      <img src="images/substack.png" alt="Substack" class="footer-social-icon">
     </a>
-
-    <!-- Gmail -->
-    <a href="mailto:info@neurorder.com"
-       aria-label="Email">
-        <img
-            src="images/gmail.png"
-            alt="Email"
-            class="footer-social-icon">
+    <a href="mailto:info@neurorder.com" aria-label="Email">
+      <img src="images/gmail.png" alt="Email" class="footer-social-icon">
     </a>
-
-    <!-- Neurorder News -->
-    <a href="news.html"
-       aria-label="Neurorder News">
-        <img
-            src="images/newsintelligence.png"
-            alt="Neurorder News"
-            class="footer-social-icon">
+    <a href="news.html" aria-label="Neurorder News">
+      <img src="images/newsintelligence.png" alt="Neurorder News" class="footer-social-icon">
     </a>
-
-</div>
-
-    <p class="footer-copy">© 2026 Neurorder Research. All Rights Reserved.</p>
   </div>
+
+  <p class="footer-copy">© 2026 Neurorder Research. All Rights Reserved.</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase.js"></script>
 <script src="js/script.js"></script>
-<script src="js/nouse.js"></script>
 
 <script>
 function showProvince(province) {
@@ -360,7 +304,12 @@ function showProvince(province) {
     }
   };
 
-  display.innerHTML = `<h3>${data[province].title}</h3><p>${data[province].text}</p>`;
+  if (!data[province]) return;
+
+  display.innerHTML = `
+    <h3>${data[province].title}</h3>
+    <p>${data[province].text}</p>
+  `;
 }
 </script>
 

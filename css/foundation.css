@@ -1,247 +1,468 @@
+/* =========================================================
+   NEURORDER FOUNDATION — FINAL CLEAN STYLESHEET
+   Desktop: gallery cards side by side
+   Mobile: gallery cards stacked
+========================================================= */
+
+:root {
+  --foundation-bg: #02050a;
+  --foundation-bg-soft: #07111c;
+  --foundation-primary: #8fdfff;
+  --foundation-text: #ffffff;
+  --foundation-text-soft: rgba(235, 242, 250, 0.72);
+  --foundation-border: rgba(143, 223, 255, 0.24);
+  --foundation-card: rgba(255, 255, 255, 0.05);
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  background: var(--foundation-bg);
+}
+
+.foundation-page,
+.foundation-page *,
+.foundation-page *::before,
+.foundation-page *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
 .foundation-hero {
+  width: 100%;
   min-height: 100vh;
-  padding: 150px 10% 90px;
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 70px;
+  padding: 150px 8% 100px;
+
+  display: flex;
   align-items: center;
+
   background:
-    radial-gradient(circle at top right, rgba(143,223,255,.18), transparent 35%),
-    linear-gradient(to bottom, #02050a, #07111c);
+    radial-gradient(circle at top right, rgba(143, 223, 255, 0.15), transparent 34%),
+    linear-gradient(to bottom, var(--foundation-bg), var(--foundation-bg-soft));
+}
+
+.foundation-copy {
+  width: 100%;
+  max-width: 900px;
 }
 
 .foundation-copy h1 {
-  font-size: clamp(52px, 7vw, 96px);
-  line-height: .95;
+  margin: 20px 0 28px;
+
+  color: var(--foundation-text);
+
+  font-size: clamp(56px, 7vw, 100px);
+  line-height: 0.95;
   letter-spacing: -3px;
-  margin: 22px 0;
 }
 
-.foundation-copy p {
-  color: var(--text-soft);
+.foundation-copy > p:last-child {
+  max-width: 720px;
+  margin: 0;
+
+  color: var(--foundation-text-soft);
+
   font-size: 20px;
   line-height: 1.8;
 }
 
-.hope-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
+/* =========================================================
+   IMAGE GALLERY BELOW HERO
+========================================================= */
 
-.hope-gallery img {
-  height: 430px;
+.foundation-gallery-section {
   width: 100%;
+  padding: 72px 8% 95px;
+
+  background:
+    radial-gradient(circle at center, rgba(143, 223, 255, 0.07), transparent 55%),
+    var(--foundation-bg-soft);
+}
+
+.foundation-gallery {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.foundation-gallery-card {
+  position: relative;
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 4 / 3;
+
+  overflow: hidden;
+
+  text-decoration: none;
+
+  background: #07111c;
+
+  border: 1px solid var(--foundation-border);
+  border-radius: 22px;
+
+  box-shadow:
+    0 0 18px rgba(143, 223, 255, 0.12),
+    0 0 40px rgba(143, 223, 255, 0.06),
+    0 22px 50px rgba(0, 0, 0, 0.38);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.foundation-gallery-card::before {
+  content: "";
+
+  position: absolute;
+  inset: -1px;
+  z-index: 3;
+
+  pointer-events: none;
+
+  border-radius: inherit;
+
+  box-shadow:
+    inset 0 0 18px rgba(143, 223, 255, 0.08),
+    0 0 18px rgba(143, 223, 255, 0.12);
+}
+
+.foundation-gallery-card img {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
   object-fit: cover;
-  border-radius: 28px;
-  border: 1px solid var(--border);
-  box-shadow: 0 30px 90px rgba(0,0,0,.45);
+  object-position: center;
+
+  opacity: 1;
+  visibility: visible;
+
+  transition: transform 0.55s ease;
 }
 
-.hope-gallery img:nth-child(2) {
-  transform: translateY(45px);
+.foundation-gallery-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: 22px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(2, 5, 10, 0.02) 20%,
+      rgba(2, 5, 10, 0.88) 100%
+    );
 }
 
-/* QUANTUM STRIP */
+.foundation-gallery-overlay h3 {
+  margin: 0 0 6px;
+
+  color: var(--foundation-text);
+
+  font-size: 25px;
+  line-height: 1.08;
+}
+
+.foundation-gallery-overlay p {
+  margin: 0;
+
+  color: var(--foundation-primary);
+
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0.4px;
+}
+
+.foundation-gallery-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(143, 223, 255, 0.55);
+
+  box-shadow:
+    0 0 24px rgba(143, 223, 255, 0.22),
+    0 0 52px rgba(143, 223, 255, 0.10),
+    0 26px 58px rgba(0, 0, 0, 0.44);
+}
+
+.foundation-gallery-card:hover img {
+  transform: scale(1.045);
+}
+
+/* =========================================================
+   QUANTUM STRIP
+========================================================= */
 
 .quantum-strip {
-  height: 160px;
-  background:
-    radial-gradient(circle, rgba(143,223,255,.2), transparent 40%),
-    #02050a;
-  overflow: hidden;
   position: relative;
+
+  width: 100%;
+  height: 140px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle, rgba(143, 223, 255, 0.18), transparent 42%),
+    var(--foundation-bg);
 }
 
 .quantum-strip::before {
   content: "01001110 01000101 01010101 01010010 01001111 01010010 01000100 01000101 01010010";
+
   position: absolute;
   inset: 0;
-  color: rgba(143,223,255,.18);
-  font-family: monospace;
-  font-size: 22px;
-  letter-spacing: 10px;
+
   display: flex;
   align-items: center;
+
+  white-space: nowrap;
+
+  color: rgba(143, 223, 255, 0.16);
+
+  font-family: monospace;
+  font-size: 20px;
+  letter-spacing: 9px;
+
   animation: binaryMove 20s linear infinite;
+}
+
+@keyframes binaryMove {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-35%);
+  }
+}
+
+.node-field {
+  position: absolute;
+  inset: 0;
 }
 
 .node-field span {
   position: absolute;
+
   width: 10px;
   height: 10px;
-  background: var(--primary);
+
+  background: var(--foundation-primary);
   border-radius: 50%;
-  box-shadow: 0 0 30px rgba(143,223,255,.8);
+
+  box-shadow: 0 0 28px rgba(143, 223, 255, 0.8);
+
   animation: nodeFloat 5s ease-in-out infinite;
 }
 
 .node-field span:nth-child(1) { left: 10%; top: 40%; }
-.node-field span:nth-child(2) { left: 30%; top: 65%; animation-delay: .6s; }
+.node-field span:nth-child(2) { left: 30%; top: 65%; animation-delay: 0.6s; }
 .node-field span:nth-child(3) { left: 50%; top: 35%; animation-delay: 1.2s; }
 .node-field span:nth-child(4) { left: 70%; top: 70%; animation-delay: 1.8s; }
 .node-field span:nth-child(5) { left: 88%; top: 38%; animation-delay: 2.4s; }
 
-/* PROVINCES */
+@keyframes nodeFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
 
-.province-section {
-  background: #07111c;
+  50% {
+    transform: translateY(-16px);
+    opacity: 1;
+  }
 }
 
+/* =========================================================
+   SHARED SECTIONS
+========================================================= */
+
+.province-section,
+.impact-section {
+  width: 100%;
+  padding: 100px 8%;
+}
+
+.province-section {
+  background: var(--foundation-bg-soft);
+}
+
+.impact-section {
+  background: var(--foundation-bg);
+}
+
+.section-title {
+  max-width: 880px;
+  margin: 0;
+
+  color: var(--foundation-text);
+
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.section-text {
+  max-width: 850px;
+  margin: 24px 0 0;
+
+  color: var(--foundation-text-soft);
+
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   PROVINCES
+========================================================= */
+
 .province-grid {
-  margin-top: 50px;
+  width: 100%;
+  margin-top: 48px;
+
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
 }
 
 .province-card {
+  width: 100%;
+  min-width: 0;
+
+  padding: 28px;
+
   text-align: left;
-  padding: 30px;
-  border-radius: 26px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,.055);
-  color: white;
+  color: var(--foundation-text);
+
+  background: var(--foundation-card);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+
   cursor: pointer;
-  transition: .3s ease;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .province-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--primary);
-  box-shadow: 0 0 45px rgba(143,223,255,.15);
+  transform: translateY(-6px);
+
+  border-color: var(--foundation-primary);
+
+  box-shadow: 0 0 34px rgba(143, 223, 255, 0.12);
 }
 
 .province-card i {
-  color: var(--primary);
-  font-size: 30px;
-  margin-bottom: 22px;
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: var(--foundation-primary);
+
+  font-size: 28px;
 }
 
 .province-card h3 {
-  font-size: 24px;
-  margin-bottom: 12px;
+  margin: 0 0 10px;
+
+  font-size: 23px;
+  line-height: 1.2;
 }
 
 .province-card p {
-  color: var(--text-soft);
+  margin: 0;
+
+  color: var(--foundation-text-soft);
+
   line-height: 1.6;
 }
 
 .province-display {
-  margin-top: 35px;
+  width: 100%;
+  margin-top: 34px;
 }
 
 .province-display h3 {
-  color: var(--primary);
-  font-size: 30px;
-  margin-bottom: 14px;
+  margin: 0 0 12px;
+
+  color: var(--foundation-primary);
+
+  font-size: 28px;
 }
 
 .province-display p {
-  color: var(--text-soft);
+  margin: 0;
+
+  color: var(--foundation-text-soft);
+
   line-height: 1.8;
 }
 
-/* IMPACT */
-
-.impact-section {
-  background: #02050a;
-}
-
-.impact-grid {
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 26px;
-}
-
-.impact-card {
-  text-align: center;
-}
-
-.impact-card i {
-  color: var(--primary);
-  font-size: 34px;
-  margin-bottom: 22px;
-}
-
-.impact-card h3 {
-  font-size: 23px;
-  margin-bottom: 14px;
-}
-
-.impact-card p {
-  color: var(--text-soft);
-  line-height: 1.7;
-}
-
-/* ROLLING BALL HOPE SECTION */
-
-.hope-section {
-  position: relative;
-  overflow: hidden;
-  min-height: 520px;
-  padding: 110px 8%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background:
-    radial-gradient(circle at center, rgba(143,223,255,.12), transparent 55%),
-    linear-gradient(to bottom, #07111c, #02050a);
-}
-
-.hope-message {
-  position: relative;
-  z-index: 5;
-  max-width: 850px;
-  text-align: center;
-}
-
-.hope-message h2 {
-  font-size: clamp(42px, 6vw, 82px);
-  line-height: 1;
-  margin: 18px 0 25px;
-}
-
-.hope-message p {
-  color: var(--text-soft);
-  font-size: 20px;
-  line-height: 1.8;
-}
-
-/* LANGUAGE CARD ROTATOR */
+/* =========================================================
+   LANGUAGE ROTATOR
+========================================================= */
 
 .province-card-rotator {
   position: relative;
-  min-height: 180px;
-  margin-bottom: 30px;
+
+  width: 100%;
+  min-height: 185px;
+
+  margin-bottom: 26px;
+
   overflow: hidden;
-  border-radius: 28px;
+
+  border-radius: 26px;
 }
 
 .language-card {
   position: absolute;
   inset: 0;
-  padding: 35px;
+
+  padding: 30px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
 
-  border-radius: 28px;
+  color: var(--foundation-text);
+
   background:
-    radial-gradient(circle at top right, rgba(143,223,255,.18), transparent 40%),
-    linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.025));
+    radial-gradient(circle at top right, rgba(143, 223, 255, 0.18), transparent 40%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025));
 
-  border: 1px solid rgba(143,223,255,.22);
-  box-shadow: 0 0 45px rgba(143,223,255,.12);
+  border: 1px solid rgba(143, 223, 255, 0.22);
+  border-radius: 26px;
 
   opacity: 0;
-  transform: translateY(35px) scale(.96);
+
   animation: rotateLanguageCards 15s infinite;
 }
 
@@ -251,232 +472,318 @@
 .language-card:nth-child(4) { animation-delay: 9s; }
 .language-card:nth-child(5) { animation-delay: 12s; }
 
-.language-card::before {
-  content: "";
-  position: absolute;
-  width: 130px;
-  height: 130px;
-  right: 28px;
-  top: 50%;
-  transform: translateY(-50%);
-
-  border-radius: 50%;
-  background:
-    radial-gradient(circle, rgba(143,223,255,.28), transparent 65%);
-  filter: blur(2px);
-}
-
-.language-card::after {
-  content: "01001110";
-  position: absolute;
-  right: 45px;
-  bottom: 25px;
-
-  color: rgba(143,223,255,.35);
-  font-family: monospace;
-  letter-spacing: 5px;
-  font-size: 14px;
-}
-
 .language-card span {
-  color: var(--primary);
+  margin-bottom: 12px;
+
+  color: var(--foundation-primary);
+
   font-size: 13px;
-  text-transform: uppercase;
   letter-spacing: 3px;
-  margin-bottom: 14px;
+  text-transform: uppercase;
 }
 
 .language-card h3 {
-  color: white;
-  font-size: clamp(30px, 4vw, 52px);
-  line-height: 1;
   margin: 0;
+
+  font-size: clamp(30px, 4vw, 50px);
+  line-height: 1;
 }
 
 .province-message {
-  color: var(--text-soft);
-  line-height: 1.8;
+  margin: 0;
+
+  color: var(--foundation-text-soft);
+
   font-size: 18px;
+  line-height: 1.8;
 }
 
-/* 5 cards x 3 seconds = 15 seconds */
 @keyframes rotateLanguageCards {
-  0% {
-    opacity: 0;
-    transform: translateY(35px) scale(.96);
-  }
-
-  5% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-
-  18% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-
-  23% {
-    opacity: 0;
-    transform: translateY(-35px) scale(.96);
-  }
-
+  0%,
   100% {
     opacity: 0;
-    transform: translateY(-35px) scale(.96);
+    transform: translateY(24px);
+  }
+
+  6%,
+  18% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  24% {
+    opacity: 0;
+    transform: translateY(-24px);
   }
 }
 
-@media(max-width: 900px) {
+/* =========================================================
+   IMPACT
+========================================================= */
+
+.impact-grid {
+  width: 100%;
+  margin-top: 48px;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.impact-card {
+  min-width: 0;
+
+  padding: 30px 20px;
+
+  text-align: center;
+}
+
+.impact-card i {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: var(--foundation-primary);
+
+  font-size: 32px;
+}
+
+.impact-card h3 {
+  margin: 0 0 12px;
+
+  color: var(--foundation-text);
+
+  font-size: 22px;
+}
+
+.impact-card p {
+  margin: 0;
+
+  color: var(--foundation-text-soft);
+
+  line-height: 1.65;
+}
+
+/* =========================================================
+   HOPE SECTION
+========================================================= */
+
+.hope-section {
+  min-height: 500px;
+  padding: 100px 8%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(circle at center, rgba(143, 223, 255, 0.11), transparent 55%),
+    linear-gradient(to bottom, var(--foundation-bg-soft), var(--foundation-bg));
+}
+
+.hope-message {
+  width: 100%;
+  max-width: 850px;
+
+  text-align: center;
+}
+
+.hope-message h2 {
+  margin: 18px 0 24px;
+
+  color: var(--foundation-text);
+
+  font-size: clamp(42px, 6vw, 80px);
+  line-height: 1;
+}
+
+.hope-message p:last-child {
+  margin: 0;
+
+  color: var(--foundation-text-soft);
+
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media screen and (max-width: 1050px) {
+  .province-grid,
+  .impact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media screen and (max-width: 768px) {
+  .foundation-hero {
+    min-height: auto;
+    padding: 130px 18px 76px;
+
+    display: block;
+  }
+
+  .foundation-copy h1 {
+    font-size: clamp(46px, 14vw, 62px);
+    line-height: 0.98;
+    letter-spacing: -2px;
+  }
+
+  .foundation-copy > p:last-child {
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .foundation-gallery-section {
+    padding: 58px 18px 78px;
+  }
+
+  .foundation-gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .foundation-gallery-card {
+    width: min(100%, 420px);
+    margin: 0 auto;
+
+    aspect-ratio: 4 / 3;
+
+    border-radius: 20px;
+  }
+
+  .foundation-gallery-overlay {
+    padding: 20px;
+  }
+
+  .foundation-gallery-overlay h3 {
+    font-size: 25px;
+  }
+
+  .quantum-strip {
+    height: 110px;
+  }
+
+  .province-section,
+  .impact-section {
+    padding: 72px 18px;
+  }
+
+  .section-title {
+    font-size: clamp(38px, 12vw, 54px);
+  }
+
+  .section-text {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .province-grid,
+  .impact-grid {
+    display: flex;
+    flex-wrap: nowrap;
+
+    width: calc(100% + 36px);
+
+    margin-left: -18px;
+
+    padding: 8px 18px 22px;
+
+    gap: 16px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+  }
+
+  .province-grid::-webkit-scrollbar,
+  .impact-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .province-card,
+  .impact-card {
+    flex: 0 0 84%;
+
+    min-width: 84%;
+    max-width: 84%;
+
+    scroll-snap-align: start;
+  }
+
+  .province-card {
+    padding: 25px;
+  }
+
+  .impact-card {
+    padding: 28px 22px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 22px;
+  }
+
   .province-card-rotator {
-    min-height: 210px;
+    min-height: 215px;
   }
 
   .language-card {
+    padding: 24px 20px;
+
     align-items: center;
+
     text-align: center;
-    padding: 28px;
   }
 
-  .language-card::before {
-    right: 50%;
-    transform: translate(50%, -50%);
+  .province-message {
+    font-size: 16px;
+  }
+
+  .hope-section {
+    min-height: auto;
+    padding: 82px 18px;
+  }
+
+  .hope-message h2 {
+    font-size: clamp(42px, 12vw, 58px);
+  }
+
+  .hope-message p:last-child {
+    font-size: 17px;
+    line-height: 1.7;
   }
 }
 
-/* ==========================================
-   FOUNDATION RESEARCH LINKS
-========================================== */
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
 
-.research-links{
+@media (prefers-reduced-motion: reduce) {
+  .quantum-strip::before,
+  .node-field span,
+  .language-card {
+    animation: none;
+  }
 
-    margin-top:45px;
+  .language-card:first-child {
+    opacity: 1;
+    transform: none;
+  }
 
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:22px;
-
-}
-
-.research-link{
-
-    position:relative;
-
-    display:block;
-
-    overflow:hidden;
-
-    border-radius:24px;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    transition:.45s;
-
-    text-decoration:none;
-
-}
-
-.research-link img{
-
-    width:100%;
-
-    height:220px;
-
-    object-fit:cover;
-
-    display:block;
-
-    transition:transform .7s;
-
-}
-
-.research-link:hover img{
-
-    transform:scale(1.08);
-
-}
-
-.research-overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:flex-end;
-
-    padding:25px;
-
-    background:
-
-    linear-gradient(
-    transparent,
-    rgba(2,5,10,.88));
-
-}
-
-.research-overlay h3{
-
-    color:white;
-
-    font-size:24px;
-
-    margin-bottom:8px;
-
-}
-
-.research-overlay p{
-
-    color:#8fdfff;
-
-    font-size:15px;
-
-    letter-spacing:1px;
-
-}
-
-.research-link:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:0 20px 55px rgba(143,223,255,.20);
-
-    border-color:#8fdfff;
-
-}
-
-/* Mobile */
-
-@media(max-width:900px){
-.province-grid {
-  display: flex;
-  gap: 18px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  padding: 10px 4px 25px;
-  -webkit-overflow-scrolling: touch;
-}
-
-.province-card {
-  min-width: 82%;
-  scroll-snap-align: start;
-}
-.research-links{
-
-grid-template-columns:1fr;
-
-}
-
-.research-link img{
-
-height:260px;
-
-}
-
+  .foundation-gallery-card,
+  .foundation-gallery-card img,
+  .province-card {
+    transition: none;
+  }
 }
