@@ -1,0 +1,8 @@
+/nous-news.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/js/news.js
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/api/news
+  Cache-Control: no-cache, no-store, must-revalidate
