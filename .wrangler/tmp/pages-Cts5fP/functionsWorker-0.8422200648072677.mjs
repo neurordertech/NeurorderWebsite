@@ -70,20 +70,38 @@ __name(onRequestGet, "onRequestGet");
 async function fetchNewsFeed(feed) {
   try {
     const response = await fetch(feed.url, {
+      method: "GET",
       headers: {
-        Accept: "application/rss+xml, application/xml, text/xml"
-      }
+        "User-Agent": "Mozilla/5.0 (compatible; NeurorderNewsBot/1.0; +https://neurorder.com)",
+        Accept: "application/rss+xml, application/xml, text/xml, */*",
+        "Accept-Language": "en-ZA,en;q=0.9",
+        "Cache-Control": "no-cache"
+      },
+      redirect: "follow"
     });
+    const xml = await response.text();
+    console.log(
+      `${feed.source} ${feed.category}`,
+      {
+        status: response.status,
+        contentType: response.headers.get("content-type"),
+        length: xml.length,
+        preview: xml.slice(0, 200)
+      }
+    );
     if (!response.ok) {
       throw new Error(
         `${feed.source} feed returned ${response.status}`
       );
     }
-    const xml = await response.text();
-    return parseRssFeed(xml, feed);
+    const articles = parseRssFeed(xml, feed);
+    console.log(
+      `${feed.source} ${feed.category} parsed ${articles.length} articles`
+    );
+    return articles;
   } catch (error) {
     console.error(
-      `Unable to load ${feed.source}:`,
+      `Unable to load ${feed.source} ${feed.category}:`,
       error
     );
     return [];
@@ -718,7 +736,7 @@ var jsonError = /* @__PURE__ */ __name(async (request, env, _ctx, middlewareCtx)
 }, "jsonError");
 var middleware_miniflare3_json_error_default = jsonError;
 
-// ../.wrangler/tmp/bundle-2IUkH8/middleware-insertion-facade.js
+// ../.wrangler/tmp/bundle-VoBZvt/middleware-insertion-facade.js
 var __INTERNAL_WRANGLER_MIDDLEWARE__ = [
   middleware_ensure_req_body_drained_default,
   middleware_miniflare3_json_error_default
@@ -750,7 +768,7 @@ function __facade_invoke__(request, env, ctx, dispatch, finalMiddleware) {
 }
 __name(__facade_invoke__, "__facade_invoke__");
 
-// ../.wrangler/tmp/bundle-2IUkH8/middleware-loader.entry.ts
+// ../.wrangler/tmp/bundle-VoBZvt/middleware-loader.entry.ts
 var __Facade_ScheduledController__ = class ___Facade_ScheduledController__ {
   constructor(scheduledTime, cron, noRetry) {
     this.scheduledTime = scheduledTime;
