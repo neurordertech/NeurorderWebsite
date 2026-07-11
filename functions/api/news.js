@@ -48,7 +48,7 @@ export async function onRequestGet() {
       {
         headers: {
           "Cache-Control":
-            "public, max-age=300, s-maxage=1800",
+            "no-store, no-cache, must-revalidate",
           "X-Content-Type-Options": "nosniff"
         }
       }

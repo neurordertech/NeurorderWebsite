@@ -116,13 +116,16 @@ document.addEventListener("DOMContentLoaded", function () {
     showLoadingState();
 
     try {
-      const response = await fetch("/api/news", {
-        method: "GET",
-        headers: {
-          Accept: "application/json"
-        },
-        cache: "no-cache"
-      });
+      const response = await fetch(
+        `/api/news?refresh=${Date.now()}`,
+        {
+          method: "GET",
+          headers: {
+            Accept: "application/json"
+          },
+          cache: "no-store"
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`News API returned ${response.status}`);
