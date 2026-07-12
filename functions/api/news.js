@@ -19,17 +19,68 @@ const NEWS_FEEDS = [
   }
 ];
 
-export async function onRequestGet() {
+const NEWS_CACHE_KEY = "nous-intelligence-feed";
+const NEWS_CACHE_DURATION = 20 * 60 * 1000;
+
+export async function onRequestGet(context) {
+  const { env } = context;
+
   try {
+    /*
+     * STEP 1:
+     * Read the last successful feed from Cloudflare KV.
+     */
+    let cachedFeed = null;
+
+    if (env.NEWS_CACHE) {
+      cachedFeed = await env.NEWS_CACHE.get(
+        NEWS_CACHE_KEY,
+        "json"
+      );
+    }
+
+    /*
+     * STEP 2:
+     * If the cached feed is less than 20 minutes old,
+     * return it without requesting Google News again.
+     */
+    if (
+      cachedFeed &&
+      Array.isArray(cachedFeed.articles) &&
+      cachedFeed.articles.length > 0 &&
+      cachedFeed.cachedAt
+    ) {
+      const cacheAge =
+        Date.now() -
+        new Date(cachedFeed.cachedAt).getTime();
+
+    console.log("Serving articles from Cloudflare KV cache");
+
+      if (cacheAge < NEWS_CACHE_DURATION) {
+        return createNewsResponse({
+          articles: cachedFeed.articles,
+          generatedAt: cachedFeed.generatedAt,
+          cachedAt: cachedFeed.cachedAt,
+          cacheStatus: "fresh-cache"
+        });
+      }
+    }
+
+    /*
+     * STEP 3:
+     * Cache is missing or older than 20 minutes.
+     * Request fresh articles from every feed.
+     */
+    console.log("Fetching fresh RSS feeds...");
     const feedResults = await Promise.all(
       NEWS_FEEDS.map(fetchNewsFeed)
     );
 
-    const articles = removeDuplicates(
+    const freshArticles = removeDuplicates(
       feedResults.flat()
     )
       .filter(function (article) {
-        return article.title && article.url;
+        return article && article.title && article.url;
       })
       .sort(function (a, b) {
         return (
@@ -39,16 +90,69 @@ export async function onRequestGet() {
       })
       .slice(0, 30);
 
+    /*
+     * STEP 4:
+     * Save only a successful, non-empty feed.
+     */
+    if (freshArticles.length > 0) {
+      const generatedAt =
+        new Date().toISOString();
+
+      const cacheRecord = {
+        generatedAt,
+        cachedAt: generatedAt,
+        articles: freshArticles
+      };
+
+      if (env.NEWS_CACHE) {
+        await env.NEWS_CACHE.put(
+          NEWS_CACHE_KEY,
+          JSON.stringify(cacheRecord)
+        );
+      }
+
+      return createNewsResponse({
+        articles: freshArticles,
+        generatedAt,
+        cachedAt: generatedAt,
+        cacheStatus: "refreshed"
+      });
+    }
+
+    /*
+     * STEP 5:
+     * Google returned no usable articles.
+     * Serve the older successful cache instead.
+     */
+    if (
+      cachedFeed &&
+      Array.isArray(cachedFeed.articles) &&
+      cachedFeed.articles.length > 0
+    ) {
+      return createNewsResponse({
+        articles: cachedFeed.articles,
+        generatedAt: cachedFeed.generatedAt,
+        cachedAt: cachedFeed.cachedAt,
+        cacheStatus: "stale-fallback"
+      });
+    }
+
+    /*
+     * No fresh feed and no previous cache exists.
+     */
     return Response.json(
       {
-        success: true,
+        success: false,
+        message:
+          "No intelligence signals are currently available.",
         generatedAt: new Date().toISOString(),
-        articles
+        cacheStatus: "empty",
+        articles: []
       },
       {
+        status: 503,
         headers: {
-          "Cache-Control":
-            "no-store, no-cache, must-revalidate",
+          "Cache-Control": "no-store",
           "X-Content-Type-Options": "nosniff"
         }
       }
@@ -59,12 +163,51 @@ export async function onRequestGet() {
       error
     );
 
+    /*
+     * Try the stored cache one final time
+     * if an unexpected error occurs.
+     */
+    try {
+      if (env.NEWS_CACHE) {
+        const emergencyCache =
+          await env.NEWS_CACHE.get(
+            NEWS_CACHE_KEY,
+            "json"
+          );
+
+        if (
+          emergencyCache &&
+          Array.isArray(
+            emergencyCache.articles
+          ) &&
+          emergencyCache.articles.length > 0
+        ) {
+          return createNewsResponse({
+            articles:
+              emergencyCache.articles,
+            generatedAt:
+              emergencyCache.generatedAt,
+            cachedAt:
+              emergencyCache.cachedAt,
+            cacheStatus:
+              "emergency-fallback"
+          });
+        }
+      }
+    } catch (cacheError) {
+      console.error(
+        "Unable to read emergency news cache:",
+        cacheError
+      );
+    }
+
     return Response.json(
       {
         success: false,
         message:
           "The intelligence feed is temporarily unavailable.",
         generatedAt: new Date().toISOString(),
+        cacheStatus: "error",
         articles: []
       },
       {
@@ -76,6 +219,35 @@ export async function onRequestGet() {
       }
     );
   }
+}
+
+function createNewsResponse({
+  articles,
+  generatedAt,
+  cachedAt,
+  cacheStatus
+}) {
+  return Response.json(
+    {
+      success: true,
+      generatedAt:
+        generatedAt ||
+        new Date().toISOString(),
+      cachedAt:
+        cachedAt || null,
+      cacheStatus,
+      refreshIntervalMinutes: 20,
+      articles
+    },
+    {
+      headers: {
+        "Cache-Control":
+          "no-store, no-cache, must-revalidate",
+        "X-Content-Type-Options":
+          "nosniff"
+      }
+    }
+  );
 }
 
 async function fetchNewsFeed(feed) {
@@ -136,6 +308,8 @@ async function fetchNewsFeed(feed) {
     return [];
   }
 }
+
+
 
 function parseRssFeed(xml, feed) {
   const itemBlocks =
