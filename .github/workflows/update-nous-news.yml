@@ -1,0 +1,30 @@
+name: Update Nous News
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "*/20 * * * *"
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Collect news and update Cloudflare KV
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_KV_NAMESPACE_NAME: neurorder_news_cache
+        run: node scripts/collect-nous-news.mjs
