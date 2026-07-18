@@ -1,0 +1,72 @@
+@media (max-width: 760px) {
+    .topbar {
+        min-height: 68px;
+        padding: 0 20px;
+
+        grid-template-columns: 1fr auto;
+    }
+
+    .system-status {
+        display: none;
+    }
+
+    .workspace {
+        width: min(100% - 40px, 1180px);
+        padding-top: 76px;
+    }
+
+    .workspace-intro h1 {
+        font-size: clamp(3rem, 15vw, 4.8rem);
+    }
+
+    .nous-command {
+        grid-template-columns: 1fr;
+        border-radius: 24px;
+    }
+
+    .nous-command input {
+        min-height: 52px;
+    }
+
+    .nous-command button {
+        width: 100%;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .ros-option {
+        grid-template-columns: 42px 1fr auto;
+        gap: 12px;
+    }
+
+    .ros-copy {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .ros-view {
+        border-radius: 22px;
+    }
+}
+
+@media (max-width: 600px) {
+    .companion-visual {
+        width: 200px;
+        height: 200px;
+    }
+
+    .companion-core {
+        width: 182px;
+        height: 182px;
+    }
+
+    .companion-profile {
+        width: 66px;
+        height: 66px;
+    }
+}

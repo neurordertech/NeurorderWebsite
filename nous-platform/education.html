@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#03070d">
+
+    <title>Education | Nous</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/education.css">
+    <link rel="stylesheet" href="css/education-modules.css">
+    <link rel="stylesheet" href="css/access.css">
+</head>
+
+<body>
+
+    <div
+        class="education-app"
+        id="educationApp"
+    >
+
+        <header class="education-topbar">
+
+            <a
+                href="app.html"
+                class="education-brand"
+                aria-label="Return to Nous"
+            >
+                <img
+                    src="assets/logo/nouslogo.png"
+                    alt=""
+                    class="education-brand-symbol"
+                >
+
+                <span>NOUS</span>
+            </a>
+
+            <div class="education-space-label">
+
+                <span
+                    class="education-status-dot"
+                    aria-hidden="true"
+                ></span>
+
+                <span>Education</span>
+
+            </div>
+
+            <button
+                type="button"
+                class="education-profile"
+                id="educationProfileButton"
+                aria-label="Open your profile"
+            >
+                <img
+                    id="educationProfileImage"
+                    src="assets/logo/nouslogo.png"
+                    alt="User profile"
+                >
+            </button>
+
+        </header>
+
+        <main class="education-workspace">
+
+            <!-- ROLE SELECTION -->
+
+            <section
+                class="education-role-gate"
+                id="educationRoleGate"
+                aria-labelledby="roleGateTitle"
+            >
+
+                <div
+                    class="role-gate-glow"
+                    aria-hidden="true"
+                ></div>
+
+                <img
+                    src="assets/logo/nouslogo.png"
+                    alt=""
+                    class="role-gate-symbol"
+                >
+
+                <p>EDUCATION</p>
+
+                <h1 id="roleGateTitle">
+                    Nous accepts you.
+                </h1>
+
+                <span>
+                    How are you entering this learning space?
+                </span>
+
+                <div class="role-options">
+
+                    <button
+                        type="button"
+                        class="role-option"
+                        data-role="educator"
+                    >
+                        <small>01</small>
+
+                        <strong>
+                            Educator
+                        </strong>
+
+                        <span>
+                            Teach, guide and understand your classroom.
+                        </span>
+
+                        <b aria-hidden="true">
+                            →
+                        </b>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="role-option"
+                        onclick="window.location.href='student.html'"
+                    >
+                        <small>02</small>
+
+                        <strong>
+                            Student
+                        </strong>
+
+                        <span>
+                            Enter your personalised learning dashboard.
+                        </span>
+
+                        <b aria-hidden="true">
+                            →
+                        </b>
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- EDUCATION INTERFACE -->
+
+            <section
+                class="education-interface"
+                id="educationInterface"
+                hidden
+            >
+
+                <div class="education-role-strip">
+
+                    <button
+                        type="button"
+                        id="changeEducationRole"
+                    >
+                        ← Change role
+                    </button>
+
+                    <span id="activeRoleLabel">
+                        Educator workspace
+                    </span>
+
+                </div>
+
+                <!-- HERO -->
+
+                <section class="education-hero">
+
+                    <a
+                        href="app.html"
+                        class="education-back"
+                    >
+                        <span aria-hidden="true">
+                            ←
+                        </span>
+
+                        <span>
+                            Nous
+                        </span>
+                    </a>
+
+                    <div class="education-hero-layout">
+
+                        <div class="education-hero-copy">
+
+                            <p
+                                class="education-eyebrow"
+                                id="educationEyebrow"
+                            >
+                                EDUCATOR
+                            </p>
+
+                            <h1 id="educationGreeting">
+                                Good evening,
+                                <span id="educationUserName">
+                                    Ntokozo.
+                                </span>
+                            </h1>
+
+                            <div class="education-identity">
+
+                                <strong id="educationInstitution">
+                                    Your learning institution
+                                </strong>
+
+                                <span id="educationRoleText">
+                                    Educator
+                                </span>
+
+                            </div>
+
+                            <p
+                                class="education-description"
+                                id="educationDescription"
+                            >
+                                Teach, organise and understand your
+                                learning community through Nous.
+                            </p>
+
+                        </div>
+
+                        <div class="education-presence">
+
+                            <img
+                                src="assets/logo/nouslogo.png"
+                                alt="Nous Companion"
+                                class="education-companion-symbol"
+                            >
+
+                            <span>
+                                Companion is learning
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <form
+                        class="education-command"
+                        id="educationCommandForm"
+                    >
+
+                        <label
+                            for="educationCommandInput"
+                            class="visually-hidden"
+                        >
+                            Speak with Nous Companion
+                        </label>
+
+                        <input
+                            type="text"
+                            id="educationCommandInput"
+                            placeholder="Ask Nous about your classroom..."
+                            autocomplete="off"
+                            enterkeyhint="send"
+                        >
+
+                        <button type="submit">
+
+                            <span id="educationCommandText">
+                                Let us teach
+                            </span>
+
+                            <span aria-hidden="true">
+                                →
+                            </span>
+
+                        </button>
+
+                    </form>
+
+                </section>
+
+                <!-- BRIEFING -->
+
+                <section
+                    class="education-overview"
+                    aria-labelledby="educationOverviewTitle"
+                >
+
+                    <div class="education-section-heading">
+
+                        <div>
+
+                            <p id="overviewKicker">
+                                TODAY
+                            </p>
+
+                            <h2 id="educationOverviewTitle">
+                                Your education briefing
+                            </h2>
+
+                        </div>
+
+                        <time id="educationDate">
+                            Today
+                        </time>
+
+                    </div>
+
+                    <div class="education-overview-grid">
+
+                        <article class="education-brief-card">
+
+                            <div class="education-brief-header">
+
+                                <div>
+
+                                    <img
+                                        src="assets/logo/nouslogo.png"
+                                        alt=""
+                                    >
+
+                                    <span>
+                                        COMPANION BRIEF
+                                    </span>
+
+                                </div>
+
+                                <span class="education-ready-state">
+                                    Ready
+                                </span>
+
+                            </div>
+
+                            <h3 id="educationBriefTitle">
+                                Your classroom is ready.
+                            </h3>
+
+                            <p id="educationBriefMessage">
+                                Create a lesson, review learner activity
+                                or open your classroom stream.
+                            </p>
+
+                            <div class="education-brief-actions">
+
+                                <button
+                                    type="button"
+                                    id="primaryBriefAction"
+                                    data-open-module="lesson-room"
+                                >
+                                    Plan a lesson
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="secondary"
+                                    id="secondaryBriefAction"
+                                    data-open-module="classroom"
+                                >
+                                    Open classroom
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                        <article class="education-stat">
+
+                            <span id="statOneLabel">
+                                Classes
+                            </span>
+
+                            <strong id="statOneValue">
+                                4
+                            </strong>
+
+                            <small id="statOneNote">
+                                Active spaces
+                            </small>
+
+                        </article>
+
+                        <article class="education-stat">
+
+                            <span id="statTwoLabel">
+                                Learners
+                            </span>
+
+                            <strong id="statTwoValue">
+                                86
+                            </strong>
+
+                            <small id="statTwoNote">
+                                Across your classes
+                            </small>
+
+                        </article>
+
+                        <article class="education-stat">
+
+                            <span id="statThreeLabel">
+                                Reviews
+                            </span>
+
+                            <strong id="statThreeValue">
+                                7
+                            </strong>
+
+                            <small id="statThreeNote">
+                                Need attention
+                            </small>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <!-- LEARNING PLATFORM -->
+
+                <section
+                    class="education-platform"
+                    aria-labelledby="platformHeading"
+                >
+
+                    <div class="education-section-heading">
+
+                        <div>
+
+                            <p>
+                                LEARNING PLATFORM
+                            </p>
+
+                            <h2 id="platformHeading">
+                                Everything in one learning space
+                            </h2>
+
+                        </div>
+
+                        <span id="platformModeLabel">
+                            Educator tools
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="education-module-grid"
+                        id="educationModuleGrid"
+                    ></div>
+
+                    <section
+                        class="education-module-workspace"
+                        id="educationModuleWorkspace"
+                        aria-live="polite"
+                        hidden
+                    >
+
+                        <header class="education-module-workspace-header">
+
+                            <div>
+
+                                <p id="educationModuleLabel">
+                                    EDUCATION MODULE
+                                </p>
+
+                                <h2 id="educationModuleTitle">
+                                    Module
+                                </h2>
+
+                                <span id="educationModuleDescription">
+                                    Select an education tool to begin.
+                                </span>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                id="closeEducationModule"
+                                aria-label="Close education module"
+                            >
+                                ×
+                            </button>
+
+                        </header>
+
+                        <div
+                            class="education-module-content"
+                            id="educationModuleContent"
+                        ></div>
+
+                    </section>
+
+                </section>
+
+                <!-- EDUCATION AI -->
+
+                <section
+                    class="education-ai-lab"
+                    aria-labelledby="aiLabHeading"
+                >
+
+                    <div class="education-ai-copy">
+
+                        <p>
+                            NOUS EDUCATION AI
+                        </p>
+
+                        <h2 id="aiLabHeading">
+                            Intelligence that supports the learning
+                            process.
+                        </h2>
+
+                        <span id="aiLabDescription">
+                            Create lesson structures, explain difficult
+                            concepts, generate classroom activities and
+                            identify where learners may need support.
+                        </span>
+
+                    </div>
+
+                    <div class="education-ai-panel">
+
+                        <label for="educationAiPrompt">
+                            What should Nous help with?
+                        </label>
+
+                        <textarea
+                            id="educationAiPrompt"
+                            rows="5"
+                            placeholder="Create a 45-minute lesson on network topologies for first-year students..."
+                        ></textarea>
+
+                        <div class="education-ai-actions">
+
+                            <button
+                                type="button"
+                                id="generateEducationAi"
+                            >
+                                Connect to Nous
+                            </button>
+
+                            <span
+                                id="educationAiStatus"
+                                aria-live="polite"
+                            >
+                                Ready
+                            </span>
+
+                        </div>
+
+                        <article
+                            class="education-ai-response"
+                            id="educationAiResponse"
+                            aria-live="polite"
+                            hidden
+                        >
+
+                            <div class="education-ai-response-header">
+
+                                <img
+                                    src="assets/logo/nouslogo.png"
+                                    alt=""
+                                >
+
+                                <span>
+                                    NOUS COMPANION
+                                </span>
+
+                            </div>
+
+                            <p id="educationAiResponseText"></p>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+        <footer class="system-footer">
+
+            <div
+                class="system-footer-line"
+                aria-hidden="true"
+            ></div>
+
+            <p class="system-protection">
+                Protected by
+                <strong>NEURORDER (Pty) Ltd.</strong>
+            </p>
+
+            <p class="system-powered">
+                Powered by <span>Nous</span>
+            </p>
+
+            <div class="system-release">
+
+                <span>Workspace • Education</span>
+                <span>Release Alpha</span>
+                <span>Version 0.1.0</span>
+                <span>Build N-0001</span>
+
+            </div>
+
+            <p class="system-copyright">
+                Copyright ©
+                <span id="currentYear"></span>
+                NEURORDER (Pty) Ltd.
+                All rights reserved.
+            </p>
+
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/access.js"></script>
+    <script src="js/nous-core.js"></script>
+    <script src="js/education.js"></script>
+    <script src="js/education-modules.js"></script>
+
+</body>
+
+</html>

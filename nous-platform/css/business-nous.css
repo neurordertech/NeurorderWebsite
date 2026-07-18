@@ -1,0 +1,323 @@
+/* ==================================================
+   BUSINESS CONVERSATION
+================================================== */
+
+.business-nous-panel {
+    margin-top: 28px;
+    overflow: hidden;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.018)
+        );
+
+    box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.28);
+
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+}
+
+.business-nous-header {
+    min-height: 76px;
+    padding: 16px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+.business-nous-identity {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.business-nous-identity img {
+    width: 38px;
+    height: 38px;
+
+    object-fit: contain;
+
+    animation:
+        businessNousRotate
+        60s linear infinite;
+}
+
+.business-nous-identity div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.business-nous-identity strong {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.business-nous-identity span {
+    color: rgba(245, 248, 251, 0.5);
+
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.business-nous-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.business-nous-online {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    color: rgba(245, 248, 251, 0.55);
+
+    font-size: 0.72rem;
+}
+
+.business-nous-online > span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #9adfff;
+
+    box-shadow:
+        0 0 12px rgba(154, 223, 255, 0.7);
+}
+
+.business-nous-controls button {
+    min-height: 36px;
+    padding: 0 13px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 999px;
+
+    color: rgba(245, 248, 251, 0.72);
+    background: rgba(255, 255, 255, 0.035);
+
+    cursor: pointer;
+}
+
+#closeBusinessNousPanel {
+    width: 36px;
+    padding: 0;
+
+    font-size: 1.3rem;
+}
+
+.business-conversation {
+    max-height: 520px;
+    padding: 24px;
+
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+
+    scroll-behavior: smooth;
+}
+
+.business-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.business-message-user {
+    justify-content: flex-end;
+}
+
+.business-message-avatar {
+    flex: 0 0 auto;
+
+    width: 34px;
+    height: 34px;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 50%;
+
+    display: grid;
+    place-items: center;
+
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.business-message-avatar img {
+    width: 24px;
+    height: 24px;
+
+    object-fit: contain;
+}
+
+.business-message-user .business-message-avatar {
+    order: 2;
+}
+
+.business-message-content {
+    max-width: min(720px, 82%);
+}
+
+.business-message-user .business-message-content {
+    text-align: right;
+}
+
+.business-message-name {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: rgba(245, 248, 251, 0.48);
+
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.business-message-content p {
+    margin: 0;
+    padding: 14px 16px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius:
+        8px 20px 20px 20px;
+
+    color: rgba(245, 248, 251, 0.9);
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    line-height: 1.7;
+    white-space: pre-wrap;
+}
+
+.business-message-user .business-message-content p {
+    border-color:
+        rgba(154, 223, 255, 0.18);
+
+    border-radius:
+        20px 8px 20px 20px;
+
+    background:
+        rgba(154, 223, 255, 0.09);
+}
+
+.business-nous-typing {
+    padding: 0 24px 22px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: rgba(245, 248, 251, 0.5);
+
+    font-size: 0.76rem;
+}
+
+.business-nous-typing img {
+    width: 25px;
+    height: 25px;
+
+    object-fit: contain;
+
+    animation:
+        businessNousRotate
+        12s linear infinite;
+}
+
+.typing-dots {
+    display: inline-flex;
+    gap: 4px;
+}
+
+.typing-dots i {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #9adfff;
+
+    animation:
+        businessTypingDot
+        1.2s ease-in-out infinite;
+}
+
+.typing-dots i:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.typing-dots i:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes businessTypingDot {
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes businessNousRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 700px) {
+
+    .business-nous-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .business-nous-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .business-conversation {
+        max-height: 460px;
+        padding: 18px;
+    }
+
+    .business-message-content {
+        max-width: 88%;
+    }
+
+}

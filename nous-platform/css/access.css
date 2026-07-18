@@ -1,0 +1,366 @@
+/* =========================================================
+   NOUS MEMBERSHIP
+========================================================= */
+
+.membership-section{
+    margin-top:5rem;
+    padding:3rem;
+    border-radius:32px;
+
+    background:
+        radial-gradient(circle at top,
+        rgba(143,223,255,.08),
+        transparent 55%),
+
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.04),
+            rgba(255,255,255,.015)
+        );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(30px);
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.membership-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(143,223,255,.04),
+        transparent
+    );
+
+    pointer-events:none;
+
+}
+
+.membership-heading{
+
+    text-align:center;
+
+    max-width:760px;
+
+    margin:auto auto 3rem;
+
+}
+
+.membership-eyebrow{
+
+    color:#8fdfff;
+
+    letter-spacing:.35em;
+
+    font-size:.75rem;
+
+    text-transform:uppercase;
+
+}
+
+.membership-heading h2{
+
+    font-size:clamp(2rem,4vw,3.5rem);
+
+    margin:.8rem 0;
+
+    line-height:1.1;
+
+}
+
+.membership-description{
+
+    color:rgba(255,255,255,.72);
+
+    line-height:1.8;
+
+    font-size:1.05rem;
+
+}
+
+.membership-current{
+
+    margin:2rem auto 4rem;
+
+    max-width:850px;
+
+    padding:2rem;
+
+    border-radius:22px;
+
+    background:
+
+    rgba(255,255,255,.035);
+
+    border:
+
+    1px solid rgba(143,223,255,.12);
+
+    text-align:center;
+
+}
+
+.membership-current-label{
+
+    color:#8fdfff;
+
+    text-transform:uppercase;
+
+    letter-spacing:.25em;
+
+    font-size:.72rem;
+
+}
+
+#currentPlanName{
+
+    display:block;
+
+    margin-top:.6rem;
+
+    font-size:2rem;
+
+    color:white;
+
+}
+
+.membership-current-status{
+
+    display:inline-block;
+
+    margin-top:1rem;
+
+    padding:.55rem 1.4rem;
+
+    border-radius:100px;
+
+    background:#8fdfff20;
+
+    color:#8fdfff;
+
+    font-weight:600;
+
+}
+
+.membership-grid{
+
+    display:grid;
+
+    gap:2rem;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(260px,1fr));
+
+}
+
+.membership-card{
+
+    padding:2rem;
+
+    border-radius:24px;
+
+    background:
+
+    rgba(255,255,255,.03);
+
+    border:
+
+    1px solid rgba(255,255,255,.07);
+
+    transition:.35s ease;
+
+    position:relative;
+
+}
+
+.membership-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#8fdfff55;
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.45);
+
+}
+
+.membership-card-featured{
+
+    border:1px solid #8fdfff55;
+
+}
+
+.membership-card-unlimited{
+
+    background:
+
+    linear-gradient(
+
+        180deg,
+
+        rgba(214,160,74,.10),
+
+        rgba(255,255,255,.03)
+
+    );
+
+}
+
+.membership-price{
+
+    margin:2rem 0;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:.3rem;
+
+}
+
+.membership-price strong{
+
+    font-size:3.8rem;
+
+    line-height:1;
+
+}
+
+.membership-currency{
+
+    font-size:1.2rem;
+
+    margin-bottom:.8rem;
+
+}
+
+.membership-frequency{
+
+    margin-bottom:.8rem;
+
+    color:rgba(255,255,255,.6);
+
+}
+.membership-features{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:2rem 0;
+
+}
+
+.membership-features li{
+
+    padding:.7rem 0;
+
+    color:rgba(255,255,255,.72);
+
+    border-bottom:
+
+    1px solid rgba(255,255,255,.05);
+
+}
+
+.membership-features li::before{
+
+    content:"✦";
+
+    color:#8fdfff;
+
+    margin-right:.7rem;
+
+}
+
+.membership-features{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:2rem 0;
+
+}
+
+.membership-features li{
+
+    padding:.7rem 0;
+
+    color:rgba(255,255,255,.72);
+
+    border-bottom:
+
+    1px solid rgba(255,255,255,.05);
+
+}
+
+.membership-features li::before{
+
+    content:"✦";
+
+    color:#8fdfff;
+
+    margin-right:.7rem;
+
+}
+
+.membership-button{
+
+    width:100%;
+
+    padding:1rem;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    background:#8fdfff;
+
+    color:#02050a;
+
+}
+
+.membership-button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+
+    0 10px 35px
+
+    rgba(143,223,255,.35);
+
+}
+
+.membership-button-current{
+
+    background:#1a1a1a;
+
+    color:#999;
+
+    cursor:default;
+
+}

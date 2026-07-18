@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="theme-color" content="#02050a">
+    <title>Calendar | Nous</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/calendar.css">
+
+</head>
+        <body>
+        <div class="calendar-app">
+        <header class="topbar">
+        <a href="personal.html" class="back">← Personal</a>
+        <a href="app.html" class="brand"><img src="assets/apps/calendar.png" alt=""><span>CALENDAR</span></a>
+        <button class="profile" aria-label="Open profile"><img
+    src="assets/logo/nouslogo.png"
+    alt="User profile"
+></button>
+</header>
+
+<main class="workspace">
+    <section class="hero">
+        <div><p class="eyebrow">NOUS SCHEDULE</p><h1>Good <span id="dayPart">afternoon</span>, <span>Ntokozo.</span></h1><p id="summary">You have no events today.</p></div>
+        <div class="hero-actions"><button id="newEvent">＋ New event</button><button id="askNous">Ask Nous</button></div>
+        </section>
+        <section class="toolbar">
+        <div><button id="prev">←</button><button id="today">Today</button><button id="next">→</button></div>
+        <h2 id="periodLabel"></h2>
+        <div class="views"><button class="view active" data-view="today">Today</button><button class="view" data-view="week">Week</button><button class="view" data-view="month">Month</button><button class="view" data-view="timeline">Timeline</button></div>
+    </section>
+
+    <section class="filters"><button class="filter active" data-category="all">All</button><button class="filter" data-category="personal">Personal</button><button class="filter" data-category="business">Business</button><button class="filter" data-category="education">Education</button></section>
+    <section id="todayView" class="calendar-view"><div class="section-head"><div><p>TODAY</p><h2 id="selectedDate"></h2></div><span id="eventCount"></span></div><div id="agenda" class="agenda"></div></section>
+    <section id="weekView" class="calendar-view" hidden><div id="weekStrip" class="week-strip"></div><div id="weekAgenda" class="agenda"></div></section>
+    <section id="monthView" class="calendar-view" hidden><div class="weekdays"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div id="monthGrid" class="month-grid"></div></section>
+    <section id="timelineView" class="calendar-view" hidden><div id="timeline" class="timeline"></div></section>
+    <section class="upcoming"><div class="section-head"><div><p>UPCOMING</p><h2>What comes next</h2></div></div><div id="upcomingList" class="upcoming-list"></div></section>
+    <section id="nousPlanner" class="nous-card"><div><p class="eyebrow">NOUS PLANNER</p><h2>Plan time with intelligence.</h2><span>Ask Nous to find free time or prepare a better schedule. It will only propose changes.</span></div><form id="nousForm"><textarea id="nousInput" placeholder="Plan my study week around my classes..."></textarea><div><span id="nousStatus">Ready</span><button>Ask Nous →</button></div></form><div id="nousResponse" class="nous-response" hidden></div></section>
+</main>
+
+    <button id="fab" class="fab" aria-label="Create event">＋</button>
+    <div id="modal" class="modal" hidden>
+    <section class="sheet" role="dialog" aria-modal="true"><header><div><p class="eyebrow">CALENDAR</p><h2 id="sheetTitle">New event</h2></div><button id="closeModal">×</button></header>
+    <form id="eventForm"><input type="hidden" id="eventId"><label>Title<input id="title" required></label><fieldset><legend>Category</legend><div class="category-options"><label><input type="radio" name="category" value="personal" checked><span>Personal</span></label><label><input type="radio" name="category" value="business"><span>Business</span></label><label><input type="radio" name="category" value="education"><span>Education</span></label></div></fieldset><div class="form-grid"><label>Date<input type="date" id="date" required></label><label>Starts<input type="time" id="start" required></label><label>Ends<input type="time" id="end" required></label></div><label>Location<input id="location"></label><label>Notes<textarea id="notes"></textarea></label><div class="sheet-actions"><button type="button" id="deleteEvent" hidden>Delete</button><button type="submit">Save event</button></div></form>
+</section></div>
+
+<footer class="footer"><div></div><p>Protected by <strong>NEURORDER (Pty) Ltd.</strong></p><p>Powered by <span>Nous</span></p><small>App • Calendar · Release Alpha · Version 0.1.0</small></footer>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/access.js"></script>
+<script src="js/nous-core.js"></script>
+<script src="js/calendar-supabase.js"></script>
+<script src="js/calendar.js"></script>
+
+</body>
+</html>

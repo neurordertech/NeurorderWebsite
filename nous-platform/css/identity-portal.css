@@ -1,0 +1,519 @@
+/* =========================================================
+   NAVBAR IDENTITY BUTTON
+========================================================= */
+
+.identity-portal {
+    position: relative;
+
+    min-width: 100px;
+    height: 36px;
+    padding: 0 1rem;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(143, 223, 255, 0.12);
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.025);
+    color: rgba(255, 255, 255, 0.8);
+
+    text-decoration: none;
+
+    transition:
+        color 220ms ease,
+        border-color 220ms ease,
+        background 220ms ease,
+        box-shadow 220ms ease;
+}
+
+.identity-portal strong {
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.identity-portal:hover,
+.identity-portal:focus-visible {
+    color: #ffffff;
+
+    border-color:
+        rgba(143, 223, 255, 0.35);
+
+    background:
+        rgba(143, 223, 255, 0.055);
+
+    box-shadow:
+        0 0 22px
+        rgba(143, 223, 255, 0.09);
+}
+
+/* =========================================================
+   NOUS DYNAMIC ISLAND
+========================================================= */
+
+.nous-connection-island {
+    position: fixed;
+    z-index: 10000;
+
+    top: 18px;
+    left: 50%;
+
+    width: 48px;
+    height: 14px;
+
+    transform:
+        translateX(-50%)
+        translateY(-20px)
+        scale(0.7);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #090c11,
+            #010204
+        );
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.65),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    pointer-events: none;
+
+    transition:
+        width 650ms cubic-bezier(0.16, 1, 0.3, 1),
+        height 650ms cubic-bezier(0.16, 1, 0.3, 1),
+        border-radius 650ms cubic-bezier(0.16, 1, 0.3, 1),
+        transform 650ms cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 220ms ease,
+        visibility 220ms ease;
+}
+
+.nous-connection-island.active {
+    width: min(90vw, 350px);
+    height: 86px;
+
+    transform:
+        translateX(-50%)
+        translateY(0)
+        scale(1);
+
+    opacity: 1;
+    visibility: visible;
+}
+
+.nous-connection-island.expanded {
+    width: min(92vw, 520px);
+    height: 210px;
+
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+
+    border-radius: 34px;
+
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.72),
+        0 0 70px rgba(143, 223, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.055);
+}
+
+/* =========================================================
+   ISLAND CONTENT
+========================================================= */
+
+.nous-island-content {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+    padding: 16px 20px;
+
+    opacity: 0;
+
+    transition:
+        opacity 350ms ease 240ms,
+        padding 650ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nous-connection-island.active
+.nous-island-content {
+    opacity: 1;
+}
+
+.nous-connection-island.expanded
+.nous-island-content {
+    justify-content: center;
+    padding: 28px;
+}
+
+/* =========================================================
+   GLOBE GRAPHIC
+========================================================= */
+
+.nous-globe {
+    position: relative;
+    flex: 0 0 auto;
+
+    width: 48px;
+    height: 48px;
+
+    border:
+        1px solid rgba(143, 223, 255, 0.55);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 36% 32%,
+            rgba(255, 255, 255, 0.55),
+            rgba(143, 223, 255, 0.15) 18%,
+            rgba(5, 14, 23, 0.9) 58%,
+            #010307 100%
+        );
+
+    box-shadow:
+        0 0 14px rgba(143, 223, 255, 0.22),
+        inset 0 0 16px rgba(143, 223, 255, 0.1);
+
+    overflow: hidden;
+
+    animation:
+        nousGlobePulse 2.2s ease-in-out infinite;
+}
+
+.nous-globe::before,
+.nous-globe::after {
+    content: "";
+
+    position: absolute;
+    inset: 4px;
+
+    border:
+        1px solid rgba(143, 223, 255, 0.2);
+
+    border-radius: 50%;
+}
+
+.nous-globe::before {
+    transform: scaleX(0.48);
+}
+
+.nous-globe::after {
+    transform: scaleY(0.48);
+}
+
+.nous-globe-line {
+    position: absolute;
+    left: 5px;
+    right: 5px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(143, 223, 255, 0.45),
+            transparent
+        );
+}
+
+.globe-line-one {
+    top: 14px;
+}
+
+.globe-line-two {
+    top: 23px;
+}
+
+.globe-line-three {
+    top: 32px;
+}
+
+.nous-globe-orbit {
+    position: absolute;
+
+    inset: -7px;
+
+    border-top:
+        1px solid rgba(143, 223, 255, 0.9);
+
+    border-right:
+        1px solid transparent;
+
+    border-bottom:
+        1px solid rgba(143, 223, 255, 0.2);
+
+    border-left:
+        1px solid transparent;
+
+    border-radius: 50%;
+
+    animation:
+        nousGlobeRotate 1.8s linear infinite;
+}
+
+.nous-globe-core {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 5px;
+    height: 5px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 8px #ffffff,
+        0 0 18px rgba(143, 223, 255, 0.9);
+}
+
+.nous-connection-island.expanded
+.nous-globe {
+    width: 88px;
+    height: 88px;
+}
+
+/* =========================================================
+   CONNECTION TEXT
+========================================================= */
+
+.nous-connection-copy {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    opacity: 1;
+
+    transition:
+        transform 500ms ease,
+        text-align 500ms ease;
+}
+
+.nous-connection-label {
+    color: #8fdfff;
+
+    font-size: 0.59rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+}
+
+.nous-connection-copy strong {
+    margin-top: 3px;
+
+    color: #ffffff;
+
+    font-size: 0.93rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.nous-connection-copy small {
+    margin-top: 3px;
+
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.68rem;
+}
+
+.nous-connection-island.expanded
+.nous-connection-copy strong {
+    font-size: 1.5rem;
+}
+
+.nous-connection-island.expanded
+.nous-connection-copy small {
+    margin-top: 7px;
+    font-size: 0.78rem;
+}
+
+/* =========================================================
+   LOADING DOTS
+========================================================= */
+
+.nous-loading-dots span {
+    display: inline-block;
+
+    animation:
+        nousDotBlink 1.2s infinite;
+}
+
+.nous-loading-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.nous-loading-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Status light */
+
+.nous-connection-status {
+    width: 7px;
+    height: 7px;
+
+    margin-left: auto;
+
+    border-radius: 50%;
+
+    background: #8fdfff;
+
+    box-shadow:
+        0 0 8px rgba(143, 223, 255, 0.85);
+
+    animation:
+        nousStatusBlink 1.4s ease-in-out infinite;
+}
+
+.nous-connection-island.expanded
+.nous-connection-status {
+    display: none;
+}
+
+/* =========================================================
+   PAGE DIMMING
+========================================================= */
+
+body.nous-connecting::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(143, 223, 255, 0.045),
+            rgba(2, 5, 10, 0.82)
+        );
+
+    backdrop-filter: blur(4px);
+
+    opacity: 1;
+    pointer-events: none;
+
+    animation:
+        nousBackdropIn 450ms ease forwards;
+}
+
+body.nous-connecting {
+    overflow: hidden;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes nousGlobeRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes nousGlobePulse {
+    0%,
+    100% {
+        box-shadow:
+            0 0 14px rgba(143, 223, 255, 0.2),
+            inset 0 0 16px rgba(143, 223, 255, 0.1);
+    }
+
+    50% {
+        box-shadow:
+            0 0 28px rgba(143, 223, 255, 0.38),
+            inset 0 0 24px rgba(143, 223, 255, 0.16);
+    }
+}
+
+@keyframes nousDotBlink {
+    0%,
+    70%,
+    100% {
+        opacity: 0.25;
+        transform: translateY(0);
+    }
+
+    35% {
+        opacity: 1;
+        transform: translateY(-2px);
+    }
+}
+
+@keyframes nousStatusBlink {
+    0%,
+    100% {
+        opacity: 0.35;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes nousBackdropIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+    .nous-connection-island.active {
+        width: calc(100vw - 24px);
+    }
+
+    .nous-connection-island.expanded {
+        width: calc(100vw - 28px);
+        height: 190px;
+    }
+
+    .nous-island-content {
+        gap: 0.8rem;
+        padding-inline: 15px;
+    }
+
+    .nous-connection-copy small {
+        max-width: 180px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nous-connection-island,
+    .nous-connection-island *,
+    body.nous-connecting::before {
+        animation: none !important;
+        transition-duration: 1ms !important;
+    }
+}

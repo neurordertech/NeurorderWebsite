@@ -1,0 +1,708 @@
+:root {
+    --edu-bg: #03070d;
+    --edu-surface: rgba(255,255,255,.055);
+    --edu-border: rgba(255,255,255,.10);
+    --edu-text: #f5f7fa;
+    --edu-muted: #9ca8b5;
+    --edu-blue: #9adfff;
+    --edu-max: 1180px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    color: var(--edu-text);
+    background:
+        radial-gradient(circle at 50% 0%, rgba(70,140,220,.16), transparent 34%),
+        var(--edu-bg);
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button, input, textarea { font: inherit; }
+
+[hidden] { display: none !important; }
+
+.education-app { min-height: 100vh; }
+
+.education-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    min-height: 72px;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    background: rgba(3,7,13,.78);
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    backdrop-filter: blur(20px);
+}
+
+.education-brand {
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--edu-text);
+    text-decoration: none;
+    letter-spacing: .18em;
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+.education-brand-symbol,
+.education-profile img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+.education-space-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--edu-muted);
+    font-size: .74rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.education-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--edu-blue);
+    box-shadow: 0 0 14px rgba(154,223,255,.7);
+}
+
+.education-profile {
+    justify-self: end;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid var(--edu-border);
+    background: var(--edu-surface);
+}
+
+.education-workspace {
+    width: min(var(--edu-max), 90vw);
+    margin: 0 auto;
+    padding: 70px 0 100px;
+}
+
+.education-role-gate {
+    position: relative;
+    min-height: 620px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.role-gate-symbol {
+    width: 92px;
+    height: 92px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 30px rgba(154,223,255,.22));
+}
+
+.education-role-gate > p,
+.education-eyebrow,
+.education-section-heading p,
+.education-ai-copy p {
+    margin: 18px 0 10px;
+    color: var(--edu-blue);
+    font-size: .7rem;
+    letter-spacing: .18em;
+}
+
+.education-role-gate h1,
+.education-hero h1 {
+    margin: 0;
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 450;
+    letter-spacing: -.055em;
+}
+
+.education-role-gate > span {
+    margin-top: 18px;
+    color: var(--edu-muted);
+}
+
+.role-options {
+    width: min(760px, 100%);
+    margin-top: 42px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 16px;
+}
+
+.role-option {
+    min-height: 210px;
+    padding: 28px;
+    text-align: left;
+    color: var(--edu-text);
+    background: linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    border: 1px solid var(--edu-border);
+    border-radius: 26px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform .25s ease, border-color .25s ease;
+}
+
+.role-option:hover {
+    transform: translateY(-5px);
+    border-color: rgba(154,223,255,.35);
+}
+
+.role-option small { color: var(--edu-blue); }
+.role-option strong { margin-top: 22px; font-size: 1.7rem; }
+.role-option span { margin-top: 10px; color: var(--edu-muted); line-height: 1.6; }
+.role-option b { margin-top: auto; align-self: flex-end; }
+
+.education-role-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 42px;
+    color: var(--edu-muted);
+}
+
+.education-role-strip button {
+    border: 0;
+    background: transparent;
+    color: var(--edu-text);
+    cursor: pointer;
+}
+
+.education-back {
+    display: inline-flex;
+    gap: 10px;
+    color: var(--edu-muted);
+    text-decoration: none;
+    margin-bottom: 36px;
+}
+
+.education-hero-layout {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: end;
+}
+
+.education-identity {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    color: var(--edu-muted);
+}
+
+.education-description {
+    max-width: 680px;
+    color: var(--edu-muted);
+    line-height: 1.7;
+}
+
+.education-presence {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    color: var(--edu-muted);
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+.education-companion-symbol {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+}
+
+.education-command {
+    margin-top: 44px;
+    padding: 9px;
+    display: flex;
+    gap: 10px;
+    border: 1px solid var(--edu-border);
+    border-radius: 999px;
+    background: var(--edu-surface);
+}
+
+.education-command input {
+    flex: 1;
+    min-width: 0;
+    min-height: 56px;
+    padding: 0 20px;
+    border: 0;
+    outline: 0;
+    color: var(--edu-text);
+    background: transparent;
+}
+
+.education-command button,
+.education-brief-actions button,
+.education-ai-actions button {
+    min-height: 50px;
+    padding: 0 22px;
+    border-radius: 999px;
+    border: 1px solid rgba(154,223,255,.3);
+    color: var(--edu-text);
+    background: rgba(154,223,255,.10);
+    cursor: pointer;
+}
+
+.education-overview,
+.education-platform,
+.education-ai-lab {
+    margin-top: 110px;
+}
+
+.education-section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.education-section-heading h2,
+.education-ai-copy h2 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.3rem);
+    font-weight: 470;
+    letter-spacing: -.04em;
+}
+
+.education-overview-grid {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    gap: 14px;
+}
+
+.education-brief-card,
+.education-stat,
+.education-module,
+.education-ai-panel {
+    border: 1px solid var(--edu-border);
+    border-radius: 24px;
+    background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+}
+
+.education-brief-card {
+    padding: 28px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+}
+
+.education-brief-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.education-brief-header > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--edu-muted);
+    font-size: .7rem;
+    letter-spacing: .12em;
+}
+
+.education-brief-header img { width: 26px; height: 26px; }
+
+.education-brief-card h3 {
+    margin: 42px 0 0;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.education-brief-card p {
+    color: var(--edu-muted);
+    line-height: 1.65;
+}
+
+.education-brief-actions {
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.education-stat {
+    padding: 24px;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+}
+
+.education-stat span,
+.education-stat small { color: var(--edu-muted); }
+.education-stat strong { margin-top: 24px; font-size: 3rem; }
+.education-stat small { margin-top: auto; }
+
+.education-module-grid {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 14px;
+}
+
+.education-module {
+    min-height: 210px;
+    padding: 24px;
+}
+
+.education-module h3 { margin: 18px 0 8px; font-size: 1.3rem; }
+.education-module p { color: var(--edu-muted); line-height: 1.6; }
+.education-module span { color: var(--edu-blue); font-size: .75rem; letter-spacing: .1em; }
+
+.education-ai-lab {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.education-ai-copy span {
+    display: block;
+    margin-top: 18px;
+    color: var(--edu-muted);
+    line-height: 1.7;
+}
+
+.education-ai-panel {
+    padding: 24px;
+}
+
+.education-ai-panel label {
+    display: block;
+    margin-bottom: 12px;
+}
+
+.education-ai-panel textarea {
+    width: 100%;
+    resize: vertical;
+    padding: 16px;
+    color: var(--edu-text);
+    background: rgba(255,255,255,.035);
+    border: 1px solid var(--edu-border);
+    border-radius: 16px;
+    outline: 0;
+}
+
+.education-ai-actions {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.system-footer {
+    width: min(var(--edu-max), 90vw);
+    margin: 0 auto;
+    padding: 64px 0 36px;
+    text-align: center;
+    color: var(--edu-muted);
+}
+
+.system-footer-line {
+    height: 1px;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+}
+
+.system-protection strong { display: block; color: var(--edu-text); }
+.system-release { margin-top: 20px; display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 18px; font-size: .7rem; }
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+    .education-overview-grid { grid-template-columns: 1fr 1fr; }
+    .education-brief-card { grid-column: 1 / -1; }
+    .education-module-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+
+@media (max-width: 700px) {
+    .education-topbar {
+        grid-template-columns: 1fr auto;
+        padding: 0 20px;
+    }
+
+    .education-space-label { display: none; }
+    .education-workspace { width: min(100% - 34px, var(--edu-max)); }
+    .role-options,
+    .education-hero-layout,
+    .education-overview-grid,
+    .education-module-grid,
+    .education-ai-lab {
+        grid-template-columns: 1fr;
+    }
+
+    .education-presence { display: none; }
+    .education-command { flex-direction: column; border-radius: 22px; }
+    .education-command button { width: 100%; }
+    .education-section-heading { align-items: flex-start; flex-direction: column; }
+}
+
+/* ==================================================
+   EDUCATION LOGO MOTION
+   Matches Personal and Business
+================================================== */
+
+.education-brand-symbol,
+.role-gate-symbol,
+.education-companion-symbol,
+.education-brief-header img {
+    animation:
+        educationLogoRotate
+        70s linear infinite;
+
+    transform-origin: center;
+}
+
+.education-brand-symbol,
+.education-companion-symbol,
+.role-gate-symbol {
+    filter:
+        drop-shadow(
+            0 0 28px rgba(154, 223, 255, 0.2)
+        );
+}
+
+@keyframes educationLogoRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ==================================================
+   EDUCATION FOOTER
+   Matches Personal workspace
+================================================== */
+
+.system-footer {
+    width:
+        min(
+            var(--edu-max),
+            90vw
+        );
+
+    margin: 0 auto;
+
+    padding:
+        72px
+        max(
+            24px,
+            env(safe-area-inset-right)
+        )
+        calc(
+            36px +
+            env(safe-area-inset-bottom)
+        )
+        max(
+            24px,
+            env(safe-area-inset-left)
+        );
+
+    color: inherit;
+
+    text-align: center;
+}
+
+.system-footer-line {
+    width: 100%;
+    height: 1px;
+
+    margin-bottom: 36px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.12),
+            transparent
+        );
+}
+
+.system-footer p {
+    margin: 0;
+}
+
+.system-protection {
+    color:
+        rgba(245, 248, 251, 0.55);
+
+    font-size: 0.78rem;
+    line-height: 1.6;
+}
+
+.system-protection strong {
+    display: block;
+
+    color:
+        rgba(245, 248, 251, 0.82);
+
+    font-weight: 600;
+}
+
+.system-powered {
+    margin-top: 12px !important;
+
+    color:
+        rgba(245, 248, 251, 0.48);
+
+    font-size: 0.76rem;
+}
+
+.system-powered span {
+    color: var(--edu-blue);
+}
+
+.system-release {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 8px 18px;
+
+    margin-top: 24px;
+
+    color:
+        rgba(245, 248, 251, 0.35);
+
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.system-copyright {
+    margin-top: 24px !important;
+
+    color:
+        rgba(245, 248, 251, 0.3);
+
+    font-size: 0.66rem;
+}
+
+
+/* ==================================================
+   EDUCATION FOOTER MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+
+    .system-footer {
+        width:
+            min(
+                100% - 36px,
+                var(--edu-max)
+            );
+    }
+
+}
+
+
+/* ==================================================
+   ACCESSIBILITY
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .education-brand-symbol,
+    .role-gate-symbol,
+    .education-companion-symbol,
+    .education-brief-header img {
+        animation: none;
+    }
+
+}
+
+/* ==================================================
+   NOUS LIVE RESPONSE
+================================================== */
+
+.education-ai-actions button:disabled {
+    opacity: 0.55;
+    cursor: wait;
+}
+
+.education-ai-response {
+    margin-top: 20px;
+    padding: 22px;
+    border: 1px solid rgba(154, 223, 255, 0.22);
+    border-radius: 20px;
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(154, 223, 255, 0.09),
+            transparent 42%
+        ),
+        rgba(255, 255, 255, 0.035);
+}
+
+.education-ai-response.has-error {
+    border-color: rgba(255, 150, 150, 0.24);
+}
+
+.education-ai-response-header {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: var(--edu-blue);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+}
+
+.education-ai-response-header img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    animation: educationLogoRotate 70s linear infinite;
+}
+
+.education-ai-response p {
+    margin: 20px 0 0;
+    color: var(--edu-text);
+    line-height: 1.75;
+    white-space: pre-wrap;
+}
+
+
+/* PAGE SAFETY: prevent white gutters and preserve vertical scrolling */
+html, body {
+    background: #02050a !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+}
+
+.education-app {
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+    overflow-x: clip;
+}

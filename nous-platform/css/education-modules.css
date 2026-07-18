@@ -1,0 +1,229 @@
+/* ==================================================
+   EDUCATION MODULE WORKSPACE
+================================================== */
+
+.education-module-workspace {
+    margin-top: 28px;
+    padding:
+        clamp(26px, 5vw, 52px);
+
+    border:
+        1px solid rgba(143, 223, 255, 0.2);
+
+    border-radius: 28px;
+
+    background:
+        radial-gradient(
+            circle at 90% 0%,
+            rgba(143, 223, 255, 0.1),
+            transparent 34%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.018)
+        );
+
+    box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.22);
+}
+
+.education-module-workspace[hidden] {
+    display: none;
+}
+
+.education-module-workspace-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.education-module-workspace-header p {
+    margin: 0 0 12px;
+
+    color: #8fdfff;
+
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+}
+
+.education-module-workspace-header h2 {
+    margin: 0;
+
+    color: #f5f8fb;
+
+    font-size:
+        clamp(2.1rem, 5vw, 4rem);
+
+    font-weight: 480;
+    letter-spacing: -0.05em;
+}
+
+.education-module-workspace-header span {
+    display: block;
+
+    max-width: 680px;
+    margin-top: 16px;
+
+    color: rgba(245, 248, 251, 0.55);
+
+    line-height: 1.7;
+}
+
+.education-module-workspace-header button {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 50%;
+
+    color: #f5f8fb;
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    font-size: 1.35rem;
+
+    cursor: pointer;
+}
+
+.education-module-content {
+    margin-top: 36px;
+}
+
+.education-module-card-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+.education-tool-card {
+    min-height: 190px;
+    padding: 24px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 22px;
+
+    background:
+        rgba(255, 255, 255, 0.03);
+}
+
+.education-tool-card span {
+    color:
+        rgba(245, 248, 251, 0.45);
+
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.education-tool-card h3 {
+    margin: 22px 0 0;
+
+    color: #f5f8fb;
+
+    font-size: 1.45rem;
+    font-weight: 550;
+}
+
+.education-tool-card p {
+    margin: 12px 0 0;
+
+    color:
+        rgba(245, 248, 251, 0.55);
+
+    line-height: 1.6;
+}
+
+.education-tool-button,
+.education-tool-link {
+    min-height: 46px;
+    margin-top: 22px;
+    padding: 0 18px;
+
+    border:
+        1px solid rgba(143, 223, 255, 0.28);
+
+    border-radius: 999px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    color: #f5f8fb;
+
+    background:
+        rgba(143, 223, 255, 0.09);
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.education-tool-button:hover,
+.education-tool-link:hover {
+    border-color:
+        rgba(143, 223, 255, 0.5);
+
+    background:
+        rgba(143, 223, 255, 0.14);
+}
+
+@media (max-width: 760px) {
+
+    .education-module-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .education-module-workspace-header {
+        flex-direction: column;
+    }
+
+    .education-module-workspace-header button {
+        order: -1;
+        align-self: flex-end;
+    }
+
+}
+
+.education-tool-card-branded {
+    position: relative;
+    overflow: hidden;
+}
+
+.education-tool-corner-logo {
+    position: absolute;
+
+    top: 16px;
+    right: 16px;
+
+    width: 90px;
+    height: 90px;
+
+    object-fit: contain;
+
+    border-radius: 18px;
+
+    filter:
+        drop-shadow(
+            0 10px 24px rgba(0, 0, 0, 0.35)
+        );
+
+    transition:
+        transform .3s ease;
+}
+
+.education-tool-card:hover
+.education-tool-corner-logo {
+    transform: scale(1.08);
+}

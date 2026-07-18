@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#02050a">
+
+    <title>Business | Nous</title>
+
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/business.css">
+<link rel="stylesheet" href="css/business-trends.css">
+<link rel="stylesheet" href="css/business-nous.css">
+<link rel="stylesheet" href="css/access.css">
+</head>
+
+<body>
+    <section
+    class="business-nous-response"
+    id="businessNousResponse"
+    aria-live="polite"
+    hidden
+>
+    <div class="business-nous-response-header">
+        <span>NOUS BUSINESS</span>
+
+        <button
+            type="button"
+            id="closeBusinessNousResponse"
+            aria-label="Close Nous response"
+        >
+            ×
+        </button>
+    </div>
+
+    <p id="businessNousStatus">
+        Connecting to Nous...
+    </p>
+
+    <div id="businessNousAnswer"></div>
+</section>
+
+    <div class="business-app">
+
+        <header class="business-topbar">
+
+            <a
+                href="app.html"
+                class="business-brand"
+                aria-label="Return to Nous"
+            >
+                <img
+                    src="assets/logo/nouslogo.png"
+                    alt=""
+                    class="business-brand-symbol"
+                >
+
+                <span>NOUS</span>
+            </a>
+
+            <div class="business-space-label">
+
+                <span
+                    class="business-status-dot"
+                    aria-hidden="true"
+                ></span>
+
+                <span>Business</span>
+
+            </div>
+
+            <button
+                type="button"
+                class="business-profile"
+                id="businessProfileButton"
+                aria-label="Open your profile"
+            >
+                <img
+                id="businessProfileImage"
+                src="assets/logo/nouslogo.png"
+                alt="User profile"
+            >
+            </button>
+
+        </header>
+
+        <main class="business-workspace">
+
+            <section class="business-hero">
+
+                <a href="app.html" class="business-back">
+                    <span aria-hidden="true">←</span>
+                    <span>Nous</span>
+                </a>
+
+                <div class="business-hero-layout">
+
+                    <div class="business-hero-copy">
+
+                        <p class="business-eyebrow">
+                            BUSINESS
+                        </p>
+
+                        <h1>
+                            Good afternoon,
+                            <span id="businessUserName">Ntokozo.</span>
+                        </h1>
+
+                        <div class="business-identity">
+
+                            <strong id="organisationName">
+                                NEURORDER (Pty) Ltd.
+                            </strong>
+
+                            <span id="userBusinessRole">
+                                Founder &amp; CEO
+                            </span>
+
+                        </div>
+
+                        <p class="business-hero-description">
+                            Your organisation, brought together through Nous.
+                        </p>
+
+                    </div>
+
+                    <div class="business-presence">
+
+                        <img
+                            src="assets/logo/nouslogo.png"
+                            alt="Nous Companion"
+                            class="business-companion-symbol"
+                        >
+
+                        <span>
+                            Companion is present
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <form
+                    class="business-command"
+                    id="businessCommandForm"
+                >
+
+                    <label
+                        for="businessCommandInput"
+                        class="visually-hidden"
+                    >
+                        Work, am I right? Chat with me.
+                    </label>
+
+                    <input
+                        type="text"
+                        id="businessCommandInput"
+                        name="businessCommand"
+                        placeholder="I'm here for you buddy..."
+                        autocomplete="off"
+                        enterkeyhint="send"
+                    >
+
+                    <button type="submit">
+
+                        <span>Let us work</span>
+
+                        <span aria-hidden="true">
+                            →
+                        </span>
+
+                    </button>
+
+                </form>
+
+            </section>
+
+            <section
+                class="business-today"
+                aria-labelledby="todayHeading"
+            >
+
+            <section
+    class="business-trends"
+    id="businessTrends"
+    aria-labelledby="businessTrendsHeading"
+>
+
+    <div class="business-section-heading">
+
+        <div>
+            <p>BUSINESS INTELLIGENCE</p>
+
+            <h2 id="businessTrendsHeading">
+                Trends shaping your work
+            </h2>
+        </div>
+
+        <label class="business-career-selector">
+
+            <span>Tailor intelligence</span>
+
+            <select id="businessCareerSelect">
+
+                <option value="technology">
+                    Technology
+                </option>
+
+                <option value="finance">
+                    Finance
+                </option>
+
+                <option value="education">
+                    Education
+                </option>
+
+                <option value="entrepreneurship">
+                    Entrepreneurship
+                </option>
+
+                <option value="marketing">
+                    Marketing and Media
+                </option>
+
+                <option value="engineering">
+                    Engineering
+                </option>
+
+                <option value="healthcare">
+                    Healthcare
+                </option>
+
+                <option value="public-sector">
+                    Public Sector
+                </option>
+
+            </select>
+
+        </label>
+
+    </div>
+
+    <div
+        class="business-cinematic-carousel"
+        id="businessTrendCarousel"
+        aria-roledescription="carousel"
+    >
+
+        <div
+            class="business-cinematic-viewport"
+            id="businessTrendViewport"
+        >
+
+            <div
+                class="business-cinematic-track"
+                id="businessTrendTrack"
+            ></div>
+
+        </div>
+
+        <button
+            type="button"
+            class="business-carousel-arrow business-carousel-arrow-left"
+            id="businessTrendPrevious"
+            aria-label="Previous business intelligence slide"
+        >
+            ←
+        </button>
+
+        <button
+            type="button"
+            class="business-carousel-arrow business-carousel-arrow-right"
+            id="businessTrendNext"
+            aria-label="Next business intelligence slide"
+        >
+            →
+        </button>
+
+        <div
+            class="business-carousel-dots"
+            id="businessTrendDots"
+            aria-label="Business intelligence slides"
+        ></div>
+
+    </div>
+
+    <p class="business-trend-note">
+        These insights currently use your selected industry.
+        LinkedIn-based personalisation will only be enabled after
+        secure authorisation is implemented.
+    </p>
+
+</section>
+
+        </label>
+
+    </div>
+
+    <div
+        class="business-trend-carousel"
+        id="businessTrendCarousel"
+    >
+
+        <div
+            class="business-trend-track"
+            id="businessTrendTrack"
+        ></div>
+
+    
+
+</section>
+
+                <div class="business-section-heading">
+
+                    <div>
+                    
+
+                        <h2 id="todayHeading">
+                            Your business briefing
+                        </h2>
+                    </div>
+
+                    <time id="businessDate">
+                        Today
+                    </time>
+
+                </div>
+
+                <div class="business-brief-grid">
+
+                    <article class="companion-brief">
+
+                        <div class="brief-header">
+
+                            <div class="brief-companion">
+
+                                <img
+                                    src="assets/logo/nouslogo.png"
+                                    alt=""
+                                >
+
+                                <span>COMPANION BRIEF</span>
+
+                            </div>
+
+                            <span class="brief-state">
+                                Ready
+                            </span>
+
+                        </div>
+
+                        <h3 id="briefTitle">
+                            Your organisation is ready.
+                        </h3>
+
+                        <p id="briefMessage">
+                            There are no urgent items requiring attention.
+                            Add a priority or connect a service to begin
+                            building your daily business view.
+                        </p>
+
+                        <div class="brief-actions">
+
+                            <button
+                                type="button"
+                                id="reviewPrioritiesButton"
+                            >
+                                Review priorities
+                            </button>
+
+                            <button
+                                type="button"
+                                class="secondary-action"
+                                id="connectServicesButton"
+                            >
+                                Connect services
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <article class="business-stat">
+
+                        <span class="stat-label">
+                            Meetings
+                        </span>
+
+                        <strong id="meetingCount">
+                            0
+                        </strong>
+
+                        <small>
+                            Scheduled today
+                        </small>
+
+                    </article>
+
+                    <article class="business-stat">
+
+                        <span class="stat-label">
+                            Priorities
+                        </span>
+
+                        <strong id="priorityCount">
+                            0
+                        </strong>
+
+                        <small>
+                            Require attention
+                        </small>
+
+                    </article>
+
+                    <article class="business-stat">
+
+                        <span class="stat-label">
+                            Decisions
+                        </span>
+
+                        <strong id="decisionCount">
+                            0
+                        </strong>
+
+                        <small>
+                            Awaiting review
+                        </small>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section
+                class="business-modules"
+                aria-labelledby="modulesHeading"
+            >
+
+                <div class="business-section-heading">
+
+                    <div>
+                        <p>BUSINESS</p>
+
+                        <h2 id="modulesHeading">
+                            Operate your organisation
+                        </h2>
+                    </div>
+
+                    <span>
+                        Select a module
+                    </span>
+
+                </div>
+
+                <div class="business-module-grid">
+
+                    <button
+                        type="button"
+                        class="business-module"
+                        data-module="projects"
+                    >
+
+                        <span class="module-number">
+                            01
+                        </span>
+
+                        <span class="module-content">
+
+                            <strong>
+                                Projects
+                            </strong>
+
+                            <small>
+                                Organise active work, teams and milestones.
+                            </small>
+
+                        </span>
+
+                        <span
+                            class="module-arrow"
+                            aria-hidden="true"
+                        >
+                            ↗
+                        </span>
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="business-module"
+                        data-module="communication"
+                    >
+
+                        <span class="module-number">
+                            02
+                        </span>
+
+                        <span class="module-content">
+
+                            <strong>
+                                Communication
+                            </strong>
+
+                            <small>
+                                Bring messages, email and meetings together.
+                            </small>
+
+                        </span>
+
+                        <span
+                            class="module-arrow"
+                            aria-hidden="true"
+                        >
+                            ↗
+                        </span>
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="business-module"
+                        data-module="documents"
+                    >
+
+                        <span class="module-number">
+                            03
+                        </span>
+
+                        <span class="module-content">
+
+                            <strong>
+                                Documents
+                            </strong>
+
+                            <small>
+                                Access files regardless of where they are stored.
+                            </small>
+
+                        </span>
+
+                        <span
+                            class="module-arrow"
+                            aria-hidden="true"
+                        >
+                            ↗
+                        </span>
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="business-module"
+                        data-module="analytics"
+                    >
+
+                        <span class="module-number">
+                            04
+                        </span>
+
+                        <span class="module-content">
+
+                            <strong>
+                                Analytics
+                            </strong>
+
+                            <small>
+                                Understand activity, performance and progress.
+                            </small>
+
+                        </span>
+
+                        <span
+                            class="module-arrow"
+                            aria-hidden="true"
+                        >
+                            ↗
+                        </span>
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="business-module"
+                        data-module="organisation"
+                    >
+
+                        <span class="module-number">
+                            05
+                        </span>
+
+                        <span class="module-content">
+
+                            <strong>
+                                Organisation
+                            </strong>
+
+                            <small>
+                                Manage people, roles, governance and approvals.
+                            </small>
+
+                        </span>
+
+                        <span
+                            class="module-arrow"
+                            aria-hidden="true"
+                        >
+                            ↗
+                        </span>
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="business-module"
+                        data-module="services"
+                    >
+
+                        <span class="module-number">
+                            06
+                        </span>
+
+                        <span class="module-content">
+
+                            <strong>
+                                Connected Services
+                            </strong>
+
+                            <small>
+                                Connect the tools your organisation already uses.
+                            </small>
+
+                        </span>
+
+                        <span
+                            class="module-arrow"
+                            aria-hidden="true"
+                        >
+                            ↗
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+            <section
+                class="business-module-view"
+                id="businessModuleView"
+                aria-live="polite"
+                hidden
+            >
+
+                <div class="module-view-header">
+
+                    <div>
+                        <p id="moduleViewLabel">
+                            BUSINESS MODULE
+                        </p>
+
+                        <h2 id="moduleViewTitle">
+                            Projects
+                        </h2>
+                    </div>
+
+                    <button
+                        type="button"
+                        id="closeModuleView"
+                        aria-label="Close module"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+                <p id="moduleViewDescription">
+                    Organise active work, teams and milestones.
+                </p>
+
+                <div
+                    class="module-empty-state"
+                    id="moduleEmptyState"
+                >
+
+                    <span>
+                        Nothing has been added yet.
+                    </span>
+
+                    <button
+                        type="button"
+                        id="modulePrimaryAction"
+                    >
+                        Add your first item
+                    </button>
+
+                </div>
+
+            </section>
+
+            <section
+                class="business-services"
+                id="connectedServicesSection"
+                aria-labelledby="servicesHeading"
+            >
+
+                <div class="business-section-heading">
+
+                    <div>
+                        <p>CONNECTED SERVICES</p>
+
+                        <h2 id="servicesHeading">
+                            The tools behind your organisation
+                        </h2>
+                    </div>
+
+                    <span>
+                        Controlled by you
+                    </span>
+
+                </div>
+
+                <div class="service-list">
+
+                    <article class="service-row">
+
+                        <div class="service-identity">
+
+                            <span class="service-mark">
+                                M
+                            </span>
+
+                            <div>
+                                <strong>Microsoft 365</strong>
+                                <small>
+                                    Outlook, Teams, Word, Excel and OneDrive
+                                </small>
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="service-button"
+                            data-service="Microsoft 365"
+                        >
+                            Connect
+                        </button>
+
+                    </article>
+
+                    <article class="service-row">
+
+                        <div class="service-identity">
+
+                            <span class="service-mark">
+                                G
+                            </span>
+
+                            <div>
+                                <strong>Google Workspace</strong>
+                                <small>
+                                    Gmail, Calendar, Drive, Meet and Docs
+                                </small>
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="service-button"
+                            data-service="Google Workspace"
+                        >
+                            Connect
+                        </button>
+
+                    </article>
+
+                    <article class="service-row">
+
+                        <div class="service-identity">
+
+                            <span class="service-mark service-mark-wide">
+                                MAT
+                            </span>
+
+                            <div>
+                                <strong>MATLAB</strong>
+                                <small>
+                                    Engineering, modelling and technical work
+                                </small>
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="service-button"
+                            data-service="MATLAB"
+                        >
+                            Connect
+                        </button>
+
+                    </article>
+
+                    <article class="service-row">
+
+                        <div class="service-identity">
+
+                            <span class="service-mark">
+                                +
+                            </span>
+
+                            <div>
+                                <strong>Add another service</strong>
+                                <small>
+                                    Connect another approved business platform
+                                </small>
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="service-button service-button-secondary"
+                            data-service="another service"
+                        >
+                            Browse
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <section class="business-companion-end">
+
+                <div class="companion-end-copy">
+
+                    <p>COMPANION</p>
+
+                    <h2>
+                        Need something?
+                    </h2>
+
+                    <span>
+                        Ask Nous to help organise your next business action.
+                    </span>
+
+                </div>
+
+                <form
+                    class="companion-end-command"
+                    id="companionEndForm"
+                >
+
+                    <label
+                        for="companionEndInput"
+                        class="visually-hidden"
+                    >
+                        Speak with Nous Companion
+                    </label>
+
+                    <input
+                        type="text"
+                        id="companionEndInput"
+                        placeholder="Impress your seniors..."
+                        autocomplete="off"
+                    >
+
+                    <button type="submit">
+
+                        <span>Let us</span>
+
+                        <span aria-hidden="true">
+                            →
+                        </span>
+
+                    </button>
+
+                </form>
+<section
+    id="businessNousPanel"
+    class="business-nous-panel"
+    aria-labelledby="businessConversationTitle"
+    hidden
+>
+
+    <header class="business-nous-header">
+
+        <div class="business-nous-identity">
+
+            <img
+                src="assets/logo/nouslogo.png"
+                alt=""
+            >
+
+            <div>
+                <strong id="businessConversationTitle">
+                    Nous Companion
+                </strong>
+
+                <span>
+                    Business workspace
+                </span>
+            </div>
+
+        </div>
+
+        <div class="business-nous-controls">
+
+            <span class="business-nous-online">
+                <span aria-hidden="true"></span>
+                Connected
+            </span>
+
+            <button
+                type="button"
+                id="clearBusinessConversation"
+            >
+                Clear
+            </button>
+
+            <button
+                type="button"
+                id="closeBusinessNousPanel"
+                aria-label="Close conversation"
+            >
+                ×
+            </button>
+
+        </div>
+
+    </header>
+
+    <div
+        id="businessConversation"
+        class="business-conversation"
+        role="log"
+        aria-live="polite"
+        aria-relevant="additions"
+    >
+
+        <article class="business-message business-message-nous">
+
+            <div class="business-message-avatar">
+
+                <img
+                    src="assets/logo/nouslogo.png"
+                    alt=""
+                >
+
+            </div>
+
+            <div class="business-message-content">
+
+                <span class="business-message-name">
+                    Nous
+                </span>
+
+                <p>
+                    I am ready to help you organise, plan and operate
+                    your business workspace.
+                </p>
+
+            </div>
+
+        </article>
+
+    </div>
+
+    <div
+        id="businessNousTyping"
+        class="business-nous-typing"
+        hidden
+    >
+        <img
+            src="assets/logo/nouslogo.png"
+            alt=""
+        >
+
+        <span>Nous is thinking</span>
+
+        <span class="typing-dots" aria-hidden="true">
+            <i></i>
+            <i></i>
+            <i></i>
+        </span>
+    </div>
+
+</section>
+
+            </section>
+
+        </main>
+
+        <footer class="system-footer">
+
+            <div
+                class="system-footer-line"
+                aria-hidden="true"
+            ></div>
+
+            <p class="system-protection">
+                Protected by
+                <strong>NEURORDER (Pty) Ltd.</strong>
+            </p>
+
+            <p class="system-powered">
+                Powered by <span>Nous</span>
+            </p>
+
+            <div class="system-release">
+                <span>Workspace • Business</span>
+                <span>Release Alpha</span>
+                <span>Version 0.1.0</span>
+                <span>Build N-0001</span>
+            </div>
+
+            <p class="system-copyright">
+                Copyright ©
+                <span id="currentYear"></span>
+                NEURORDER (Pty) Ltd.
+                All rights reserved.
+            </p>
+
+        </footer>
+
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/access.js"></script>
+<script src="js/nous-core.js"></script>
+<script src="js/business.js"></script>
+<script src="js/business-dashboard.js"></script>
+<script src="js/business-trends.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#05080d">
+
+    <title>Personal | Nous</title>
+
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/personal.css">
+<link rel="stylesheet" href="css/app-orbit.css">
+</head>
+
+<body>
+
+    <div class="personal-app">
+
+        <!-- ==================================================
+             TOP BAR
+        ================================================== -->
+
+        <header class="personal-topbar">
+
+            <a
+                href="app.html"
+                class="personal-brand"
+                aria-label="Return to Nous"
+            >
+                <img
+                    src="assets/logo/nouslogo.png"
+                    alt=""
+                    class="personal-brand-symbol"
+                >
+
+                <span>NOUS</span>
+            </a>
+
+            <div class="personal-space-label">
+
+                <span
+                    class="personal-status-dot"
+                    aria-hidden="true"
+                ></span>
+
+                <span>Personal</span>
+
+            </div>
+
+            <button
+                type="button"
+                class="personal-profile"
+                id="personalProfileButton"
+                aria-label="Open your profile"
+            >
+                <img
+                    id="personalProfileImage"
+                    src="assets/logo/nouslogo.png"
+                    alt=""
+                >
+            </button>
+
+        </header>
+
+        <main class="personal-workspace">
+
+            <!-- ==================================================
+                 PERSONAL HERO
+            ================================================== -->
+
+            <section class="personal-hero">
+
+                <a
+                    href="app.html"
+                    class="personal-back"
+                >
+                    <span aria-hidden="true">←</span>
+                    <span>Nous</span>
+                </a>
+
+                <div class="personal-hero-layout">
+
+                    <div class="personal-copy">
+
+                        <p class="personal-eyebrow">
+                            PERSONAL
+                        </p>
+
+                        <h1 id="personalGreeting">
+                            Welcome home,
+                            <span id="personalUserName">
+                                Ntokozo.
+                            </span>
+                        </h1>
+
+                        <p class="personal-introduction">
+                            This space belongs to you.
+                        </p>
+
+                        <p class="personal-description">
+                            Move slowly. Reflect, connect and return to
+                            what matters in your life.
+                        </p>
+
+                    </div>
+
+                    <div class="personal-companion-presence">
+
+                        <div class="personal-companion-orbit">
+
+                            <img
+                                src="assets/logo/nouslogo.png"
+                                alt="Nous Companion"
+                                class="personal-companion-symbol"
+                            >
+
+                            <span
+                                class="orbit-ring orbit-ring-one"
+                                aria-hidden="true"
+                            ></span>
+
+                            <span
+                                class="orbit-ring orbit-ring-two"
+                                aria-hidden="true"
+                            ></span>
+
+                        </div>
+
+                        <span>
+                            Companion is home
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <form
+                    class="personal-command"
+                    id="personalCommandForm"
+                >
+
+                    <label
+                        for="personalCommandInput"
+                        class="visually-hidden"
+                    >
+                        Speak with Nous Companion
+                    </label>
+
+                    <input
+                        type="text"
+                        id="personalCommandInput"
+                        placeholder="Speak with Nous Companion..."
+                        autocomplete="off"
+                        enterkeyhint="send"
+                    >
+
+                    <button type="submit">
+
+                        <span>Let us talk</span>
+
+                        <span aria-hidden="true">
+                            →
+                        </span>
+
+                    </button>
+
+                </form>
+
+            </section>
+
+            <!-- ==================================================
+                 TODAY
+            ================================================== -->
+
+            <section
+                class="personal-today"
+                aria-labelledby="todayHeading"
+            >
+
+                <div class="personal-section-heading">
+
+                    <div>
+
+                        <p>TODAY</p>
+
+                        <h2 id="todayHeading">
+                            Your life, gently organised
+                        </h2>
+
+                    </div>
+
+                    <time id="personalDate">
+                        Today
+                    </time>
+
+                </div>
+
+                <div class="personal-today-grid">
+
+                    <article class="personal-welcome-card">
+
+                        <div class="welcome-card-header">
+
+                            <div class="welcome-companion">
+
+                                <img
+                                    src="assets/logo/nouslogo.png"
+                                    alt=""
+                                >
+
+                                <span>
+                                    COMPANION
+                                </span>
+
+                            </div>
+
+                            <span class="welcome-state">
+                                Present
+                            </span>
+
+                        </div>
+
+                        <h3 id="personalBriefTitle">
+                            There is nothing urgent here.
+                        </h3>
+
+                        <p id="personalBriefMessage">
+                            Take a breath. You can begin with your timeline,
+                            open an application or simply speak with me.
+                        </p>
+
+                        <div class="welcome-actions">
+
+                            <button
+                                type="button"
+                                id="openTimelineButton"
+                            >
+                                View today
+                            </button>
+
+                            <button
+                                type="button"
+                                class="welcome-secondary"
+                                id="openConstellationsButton"
+                            >
+                                Open your apps
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <article class="personal-mood-card">
+
+                        <span>
+                            How are you feeling?
+                        </span>
+
+                        <div
+                            class="mood-options"
+                            aria-label="Choose your mood"
+                        >
+
+                            <button
+                                type="button"
+                                data-mood="Calm"
+                            >
+                                Calm
+                            </button>
+
+                            <button
+                                type="button"
+                                data-mood="Okay"
+                            >
+                                Okay
+                            </button>
+
+                            <button
+                                type="button"
+                                data-mood="Heavy"
+                            >
+                                Heavy
+                            </button>
+
+                        </div>
+
+                        <small id="selectedMood">
+                            No mood selected
+                        </small>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ==================================================
+                 LIFE TIMELINE
+            ================================================== -->
+
+            <section
+                class="life-timeline"
+                id="lifeTimeline"
+                aria-labelledby="timelineHeading"
+            >
+
+                <div class="personal-section-heading">
+
+                    <div>
+
+                        <p>LIFE TIMELINE</p>
+
+                        <h2 id="timelineHeading">
+                            Today, as it unfolds
+                        </h2>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="timeline-add-button"
+                        id="addTimelineItemButton"
+                    >
+                        Add moment
+                    </button>
+
+                </div>
+
+                <div
+                    class="timeline-list"
+                    id="timelineList"
+                >
+
+                    <article class="timeline-entry">
+
+                        <span class="timeline-time">
+                            Morning
+                        </span>
+
+                        <div class="timeline-marker">
+                            <span></span>
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <strong>
+                                Begin slowly
+                            </strong>
+
+                            <p>
+                                No plans have been added for this morning.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                    <article class="timeline-entry">
+
+                        <span class="timeline-time">
+                            Afternoon
+                        </span>
+
+                        <div class="timeline-marker">
+                            <span></span>
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <strong>
+                                Your afternoon is open
+                            </strong>
+
+                            <p>
+                                Add classes, errands, meetings or time for
+                                yourself.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                    <article class="timeline-entry">
+
+                        <span class="timeline-time">
+                            Evening
+                        </span>
+
+                        <div class="timeline-marker">
+                            <span></span>
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <strong>
+                                Return home
+                            </strong>
+
+                            <p>
+                                Reflect, rest or speak with Nous Companion.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ==================================================
+                 360-DEGREE APPLICATION ORBIT
+            ================================================== -->
+
+            <section
+                class="personal-constellations"
+                id="personalConstellations"
+                aria-labelledby="constellationsHeading"
+            >
+
+                <div class="personal-section-heading">
+
+                    <div>
+
+                        <p>APPLICATIONS</p>
+
+                        <h2 id="constellationsHeading">
+                            Your connected world
+                        </h2>
+
+                    </div>
+
+                    <span>
+                        Hover or tap Companion
+                    </span>
+
+                </div>
+
+                <div
+                    class="app-orbit"
+                    id="appOrbit"
+                >
+
+                    <!-- Instagram -->
+
+                    <button
+                        type="button"
+                        class="app-node"
+                        data-app="instagram"
+                        aria-label="Open Instagram"
+                    >
+                        <img
+                            src="assets/apps/instagram.png"
+                            alt="Instagram"
+                            onerror="this.onerror=null; this.src='assets/logo/nouslogo.png';"
+                        >
+                    </button>
+
+                    <!-- Facebook -->
+
+                    <button
+                        type="button"
+                        class="app-node"
+                        data-app="facebook"
+                        aria-label="Open Facebook"
+                    >
+                        <img
+                            src="assets/apps/facebook.png"
+                            alt="Facebook"
+                            onerror="this.onerror=null; this.src='assets/logo/nouslogo.png';"
+                        >
+                    </button>
+
+                    <!-- TikTok -->
+
+                    <button
+                        type="button"
+                        class="app-node"
+                        data-app="tiktok"
+                        aria-label="Open TikTok"
+                    >
+                        <img
+                            src="assets/apps/tiktok.png"
+                            alt="TikTok"
+                            onerror="this.onerror=null; this.src='assets/logo/nouslogo.png';"
+                        >
+                    </button>
+
+                    <!-- WhatsApp -->
+
+                    <button
+                        type="button"
+                        class="app-node"
+                        data-app="whatsapp"
+                        aria-label="Open WhatsApp"
+                    >
+                        <img
+                            src="assets/apps/whatsapp.png"
+                            alt="WhatsApp"
+                            onerror="this.onerror=null; this.src='assets/logo/nouslogo.png';"
+                        >
+                    </button>
+
+                    <!-- YouTube -->
+
+                    <button
+                        type="button"
+                        class="app-node"
+                        data-app="youtube"
+                        aria-label="Open YouTube"
+                    >
+                        <img
+                            src="assets/apps/youtube.png"
+                            alt="YouTube"
+                            onerror="this.onerror=null; this.src='assets/logo/nouslogo.png';"
+                        >
+                    </button>
+
+                    <!-- Bolt -->
+
+                    <button
+                        type="button"
+                        class="app-node"
+                        data-app="bolt"
+                        aria-label="Open Bolt"
+                    >
+                        <img
+                            src="assets/apps/bolt.png"
+                            alt="Bolt"
+                            onerror="this.onerror=null; this.src='assets/logo/nouslogo.png';"
+                        >
+                    </button>
+
+                    <!-- Mr D -->
+
+                    <button
+                        type="button"
+                        class="app-node"
+                        data-app="mrd"
+                        aria-label="Open Mr D"
+                    >
+                        <img
+                            src="assets/apps/mrd.png"
+                            alt="Mr D"
+                            onerror="this.onerror=null; this.src='assets/logo/nouslogo.png';"
+                        >
+                    </button>
+
+                    <!-- Checkers Sixty60 -->
+
+                    <button
+                        type="button"
+                        class="app-node"
+                        data-app="sixty60"
+                        aria-label="Open Checkers Sixty60"
+                    >
+                        <img
+                            src="assets/apps/sixty60.png"
+                            alt="Checkers Sixty60"
+                            onerror="this.onerror=null; this.src='assets/logo/nouslogo.png';"
+                        >
+                    </button>
+
+                    <!-- EskomSePush -->
+
+                    <button
+                        type="button"
+                        class="app-node"
+                        data-app="eskomsepush"
+                        aria-label="Open EskomSePush"
+                    >
+                        <img
+                            src="assets/apps/eskomsepush.png"
+                            alt="EskomSePush"
+                            onerror="this.onerror=null; this.src='assets/logo/nouslogo.png';"
+                        >
+                    </button>
+
+                    <!-- Neurorder Calendar -->
+
+                    <button
+                        type="button"
+                        class="app-node"
+                        data-app="calendar"
+                        aria-label="Open Neurorder Calendar"
+                        title="Neurorder Calendar"
+                    >
+                        <img
+                            src="assets/apps/calendar.png"
+                            alt="Neurorder Calendar"
+                            onerror="this.onerror=null; this.src='assets/logo/nouslogo.png';"
+                        >
+                    </button>
+
+                    <!-- Add another application -->
+
+                    <button
+                        type="button"
+                        class="app-node app-node-add"
+                        data-app="add"
+                        aria-label="Add another application"
+                    >
+                        <span aria-hidden="true">
+                            +
+                        </span>
+                    </button>
+
+                    <!-- Decorative orbit rings -->
+
+                    <span
+                        class="app-orbit-ring app-orbit-ring-one"
+                        aria-hidden="true"
+                    ></span>
+
+                    <span
+                        class="app-orbit-ring app-orbit-ring-two"
+                        aria-hidden="true"
+                    ></span>
+
+                    <!-- Central Nous Companion -->
+
+                    <button
+                        type="button"
+                        class="app-orbit-centre"
+                        id="appOrbitCentre"
+                        aria-label="Open your applications"
+                        aria-expanded="false"
+                        aria-controls="appOrbit"
+                    >
+
+                        <img
+                            src="assets/logo/nouslogo.png"
+                            alt=""
+                        >
+
+                        <strong>
+                            Companion
+                        </strong>
+
+                        <small>
+                            Touch your world
+                        </small>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- ==================================================
+                 COMPANION END
+            ================================================== -->
+
+            <section class="personal-companion-end">
+
+                <div class="personal-companion-end-copy">
+
+                    <p>COMPANION</p>
+
+                    <h2>
+                        You can speak freely here.
+                    </h2>
+
+                    <span>
+                        Talk about your day, organise your thoughts or
+                        simply let something out.
+                    </span>
+
+                </div>
+
+                <form
+                    class="personal-end-command"
+                    id="personalEndForm"
+                >
+
+                    <label
+                        for="personalEndInput"
+                        class="visually-hidden"
+                    >
+                        Whisper to Nous Companion
+                    </label>
+
+                    <input
+                        type="text"
+                        id="personalEndInput"
+                        placeholder="Whisper to Nous Companion..."
+                        autocomplete="off"
+                    >
+
+                    <button type="submit">
+
+                        <span>
+                            Speak freely
+                        </span>
+
+                        <span aria-hidden="true">
+                            →
+                        </span>
+
+                    </button>
+
+                </form>
+
+            </section>
+
+        </main>
+
+        <!-- ==================================================
+             FOOTER
+        ================================================== -->
+
+        <footer class="system-footer">
+
+            <div
+                class="system-footer-line"
+                aria-hidden="true"
+            ></div>
+
+            <p class="system-protection">
+                Protected by
+                <strong>NEURORDER (Pty) Ltd.</strong>
+            </p>
+
+            <p class="system-powered">
+                Powered by <span>Nous</span>
+            </p>
+
+            <div class="system-release">
+
+                <span>
+                    Workspace • Personal
+                </span>
+
+                <span>
+                    Release Alpha
+                </span>
+
+                <span>
+                    Version 0.1.0
+                </span>
+
+                <span>
+                    Build N-0001
+                </span>
+
+            </div>
+
+            <p class="system-copyright">
+                Copyright ©
+                <span id="currentYear"></span>
+                NEURORDER (Pty) Ltd.
+                All rights reserved.
+            </p>
+
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/supabase.js"></script>
+    <script src="js/access.js"></script>
+    <script src="js/nous-core.js"></script>
+    <script src="js/personal.js"></script>
+    <script src="js/app-orbit.js"></script>
+
+</body>
+
+</html>

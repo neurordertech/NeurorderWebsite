@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#03070d">
+
+    <title>Student | Nous</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/student.css">
+    <link rel="stylesheet" href="css/access.css">
+</head>
+
+<body>
+
+    <div class="student-app">
+
+        <header class="student-topbar">
+
+            <a
+                href="education.html"
+                class="student-brand"
+                aria-label="Return to Education"
+            >
+                <img
+                    src="assets/logo/nouslogo.png"
+                    alt=""
+                    class="student-brand-symbol"
+                >
+
+                <span>NOUS</span>
+            </a>
+
+            <div class="student-space-label">
+
+                <span
+                    class="student-status-dot"
+                    aria-hidden="true"
+                ></span>
+
+                <span>Student</span>
+
+            </div>
+
+            <button
+                type="button"
+                class="student-profile"
+                id="studentProfileButton"
+                aria-label="Open your profile"
+            >
+                <img
+                    src="assets/logo/nouslogo.png"
+                    alt="User profile"
+                    id="studentProfileImage"
+                >
+            </button>
+
+        </header>
+
+        <main class="student-workspace">
+
+            <section
+                class="student-entry"
+                aria-labelledby="studentEntryTitle"
+            >
+
+                <div
+                    class="student-entry-glow"
+                    aria-hidden="true"
+                ></div>
+
+                <a
+                    href="education.html"
+                    class="student-back"
+                >
+                    <span aria-hidden="true">←</span>
+                    <span>Education</span>
+                </a>
+
+                <div class="student-entry-symbol">
+
+                    <img
+                        src="assets/logo/nouslogo.png"
+                        alt=""
+                    >
+
+                </div>
+
+                <div class="student-entry-copy">
+
+                    <p>STUDENT SPACE</p>
+
+                    <h1 id="studentEntryTitle">
+                        Nous accepts you.
+                    </h1>
+
+                    <span>
+                        How are you currently learning?
+                    </span>
+
+                </div>
+
+                <div
+                    class="student-level-options"
+                    aria-label="Choose your student level"
+                >
+
+                    <button
+                        type="button"
+                        class="student-level-option"
+                        data-student-level="high-school"
+                    >
+
+                        <small>01</small>
+
+                        <div>
+
+                            <strong>
+                                High Schooler
+                            </strong>
+
+                            <span>
+                                Learning support for Grades 8 to 11.
+                            </span>
+
+                        </div>
+
+                        <b aria-hidden="true">
+                            →
+                        </b>
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="student-level-option"
+                        data-student-level="matric"
+                    >
+
+                        <small>02</small>
+
+                        <div>
+
+                            <strong>
+                                Senior / Matric
+                            </strong>
+
+                            <span>
+                                Grade 12 preparation, subjects and
+                                examination support.
+                            </span>
+
+                        </div>
+
+                        <b aria-hidden="true">
+                            →
+                        </b>
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="student-level-option"
+                        data-student-level="freshman"
+                    >
+
+                        <small>03</small>
+
+                        <div>
+
+                            <strong>
+                                Freshman
+                            </strong>
+
+                            <span>
+                                First-year college and university support.
+                            </span>
+
+                        </div>
+
+                        <b aria-hidden="true">
+                            →
+                        </b>
+
+                    </button>
+
+                </div>
+
+                <p class="student-entry-note">
+                    Your selection will personalise your learning
+                    dashboard. You can change it later.
+                </p>
+
+            </section>
+
+        </main>
+
+        <footer class="system-footer">
+
+            <div
+                class="system-footer-line"
+                aria-hidden="true"
+            ></div>
+
+            <p class="system-protection">
+                Protected by
+                <strong>NEURORDER (Pty) Ltd.</strong>
+            </p>
+
+            <p class="system-powered">
+                Powered by <span>Nous</span>
+            </p>
+
+            <div class="system-release">
+
+                <span>Workspace • Student</span>
+                <span>Release Alpha</span>
+                <span>Version 0.1.0</span>
+                <span>Build N-0001</span>
+
+            </div>
+
+            <p class="system-copyright">
+                Copyright ©
+                <span id="currentYear"></span>
+                NEURORDER (Pty) Ltd.
+                All rights reserved.
+            </p>
+
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/access.js"></script>
+    <script src="js/student.js"></script>
+
+</body>
+
+</html>

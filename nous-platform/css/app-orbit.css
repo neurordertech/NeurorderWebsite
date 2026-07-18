@@ -1,0 +1,171 @@
+/* NOUS APP ORBIT — CLEAN WORKING VERSION */
+
+.personal-constellations { overflow: visible; }
+
+.app-orbit {
+    --orbit-radius: 285px;
+    --app-size: 108px;
+    --centre-size: 176px;
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 700px;
+    margin: 42px auto 0;
+    overflow: visible;
+    isolation: isolate;
+}
+
+.app-orbit-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 350ms ease;
+}
+
+.app-orbit-ring-one {
+    width: calc(var(--orbit-radius) * 2);
+    height: calc(var(--orbit-radius) * 2);
+    border: 1px solid rgba(110,185,255,.18);
+}
+
+.app-orbit-ring-two {
+    width: calc(var(--orbit-radius) * 1.52);
+    height: calc(var(--orbit-radius) * 1.52);
+    border: 1px solid rgba(110,185,255,.09);
+}
+
+.app-orbit-centre {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 30;
+    width: var(--centre-size);
+    height: var(--centre-size);
+    padding: 18px;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(125,205,255,.38);
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 40%, rgba(73,149,255,.18), rgba(4,9,17,.98) 70%);
+    color: #f5f7fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    box-shadow: 0 0 66px rgba(72,151,255,.22), inset 0 0 38px rgba(109,195,255,.08);
+    cursor: pointer;
+}
+
+.app-orbit-centre img {
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+}
+
+.app-orbit-centre strong { font-size: .95rem; font-weight: 600; }
+.app-orbit-centre small { color: rgba(245,247,250,.58); font-size: .72rem; }
+
+.app-node {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    width: var(--app-size);
+    height: var(--app-size);
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(.08);
+    box-shadow: 0 14px 38px rgba(0,0,0,.56);
+    cursor: pointer;
+    transition: transform 650ms cubic-bezier(.16,.9,.24,1), opacity 260ms ease;
+}
+
+.app-node img {
+    position: absolute;
+    inset: -2px;
+    display: block;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    transform: scale(1.04);
+}
+
+.app-node:nth-of-type(1)  { --angle: 0deg; }
+.app-node:nth-of-type(2)  { --angle: 32.727deg; }
+.app-node:nth-of-type(3)  { --angle: 65.454deg; }
+.app-node:nth-of-type(4)  { --angle: 98.181deg; }
+.app-node:nth-of-type(5)  { --angle: 130.908deg; }
+.app-node:nth-of-type(6)  { --angle: 163.635deg; }
+.app-node:nth-of-type(7)  { --angle: 196.362deg; }
+.app-node:nth-of-type(8)  { --angle: 229.089deg; }
+.app-node:nth-of-type(9)  { --angle: 261.816deg; }
+.app-node:nth-of-type(10) { --angle: 294.543deg; }
+.app-node:nth-of-type(11) { --angle: 327.270deg; }
+
+.app-orbit.is-open .app-node {
+    opacity: 1;
+    pointer-events: auto;
+    transform:
+        translate(-50%, -50%)
+        rotate(var(--angle))
+        translateY(calc(var(--orbit-radius) * -1))
+        rotate(calc(var(--angle) * -1))
+        scale(1);
+}
+
+.app-orbit.is-open .app-orbit-ring { opacity: 1; }
+
+.app-node:hover { filter: brightness(1.08); }
+
+.app-node-add {
+    color: #a9e4ff;
+    border: 1px solid rgba(139,218,255,.3);
+    background: radial-gradient(circle at 50% 38%, rgba(115,208,255,.18), rgba(5,13,24,.98) 74%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-node-add span { font-size: 2.55rem; font-weight: 200; }
+
+@media (max-width: 900px) {
+    .app-orbit {
+        --orbit-radius: 220px;
+        --app-size: 88px;
+        --centre-size: 150px;
+        height: 580px;
+    }
+}
+
+@media (max-width: 620px) {
+    .app-orbit {
+        --orbit-radius: min(38vw, 148px);
+        --app-size: clamp(52px, 15vw, 68px);
+        --centre-size: clamp(110px, 32vw, 132px);
+        height: 420px;
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 390px) {
+    .app-orbit {
+        --orbit-radius: 120px;
+        --app-size: 50px;
+        --centre-size: 104px;
+        height: 370px;
+    }
+}
