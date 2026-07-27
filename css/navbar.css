@@ -1,0 +1,13 @@
+/* Shared Neurorder header isolated from page layouts */
+.site-header{position:fixed;inset:0 0 auto 0;height:78px;z-index:5000;display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:18px;padding:0 clamp(18px,5vw,72px);background:rgba(2,5,10,.9);border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.site-header>a:first-child{display:flex;align-items:center}.site-header .nav-logo{width:42px!important;height:42px!important;max-width:42px!important;object-fit:contain!important}
+.desktop-nav{display:flex!important;align-items:center;justify-content:center;gap:clamp(16px,2.2vw,30px)}
+.desktop-nav>a,.nav-drop-trigger{color:#aab4c0;font-size:.78rem;font-weight:700;text-decoration:none;white-space:nowrap}.desktop-nav a:hover,.desktop-nav a.active{color:#8fdfff}
+.nav-account-link{width:42px;height:42px;display:grid;place-items:center;border:1px solid rgba(143,223,255,.18);border-radius:50%;background:rgba(255,255,255,.035);overflow:hidden}.nav-account-link img{width:27px;height:27px;object-fit:contain}
+.mobile-menu-btn,.nav-menu-button{width:46px;height:46px;padding:0;display:grid!important;grid-template-columns:repeat(2,8px);grid-template-rows:repeat(2,8px);gap:7px;place-content:center;background:rgba(255,255,255,.025);border:1px solid rgba(143,223,255,.16);border-radius:15px;cursor:pointer}
+.mobile-menu-btn .dot,.nav-menu-button .dot{width:8px;height:8px;display:block;border-radius:50%;background:#8fdfff;box-shadow:0 0 10px rgba(143,223,255,.7)}
+.mobile-menu-panel{position:fixed;top:78px;right:18px;z-index:4999;width:min(330px,calc(100% - 36px));max-height:calc(100vh - 96px);padding:14px;display:none;overflow:auto;background:rgba(5,10,17,.98);border:1px solid rgba(143,223,255,.16);border-radius:20px;box-shadow:0 28px 80px rgba(0,0,0,.6)}
+.mobile-menu-panel.open,.mobile-menu-panel.is-open{display:grid}.mobile-menu-panel a{padding:14px 15px;border-radius:12px;color:#b4bec8;font-size:.9rem;font-weight:700;text-decoration:none}.mobile-menu-panel a:hover,.mobile-menu-panel a.active{color:#fff;background:rgba(143,223,255,.08)}
+@media(min-width:1101px){.mobile-menu-btn,.nav-menu-button{display:none!important}}
+@media(max-width:1100px){.desktop-nav{display:none!important}.site-header{grid-template-columns:auto 1fr auto auto}.mobile-menu-btn,.nav-menu-button{display:grid!important}}
+@media(max-width:560px){.site-header{height:70px;padding:0 14px;gap:10px}.site-header .nav-logo{width:36px!important;height:36px!important}.nav-account-link{width:40px;height:40px}.mobile-menu-panel{top:70px}}

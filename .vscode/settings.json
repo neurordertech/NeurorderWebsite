@@ -1,9 +1,14 @@
 {
   "liveServer.settings.port": 5501,
+
+  "deno.enable": true,
+
   "deno.enablePaths": [
     "supabase/functions"
   ],
+
   "deno.lint": true,
+
   "deno.unstable": [
     "bare-node-builtins",
     "byonm",
@@ -19,6 +24,7 @@
     "http",
     "net"
   ],
+
   "[typescript]": {
     "editor.defaultFormatter": "denoland.vscode-deno"
   }

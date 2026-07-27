@@ -691,3 +691,4 @@ document.addEventListener("DOMContentLoaded", function () {
     30 * 60 * 1000
   );
 });
+

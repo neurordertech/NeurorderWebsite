@@ -1,267 +1,1210 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>News | Neurorder</title>
-
-<link rel="icon" href="images/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="512x512" href="images/favicon.png">
-<link rel="apple-touch-icon" href="images/favicon.png">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/news.css">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
- 
-  <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2116967709675155"
-crossorigin="anonymous"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Preview Nous Intelligence by Neurorder. Explore organised signals across African technology, education, finance, research and digital public infrastructure." name="description"/>
+<title>Nous Intelligence | Neurorder</title>
+<link href="images/favicon.ico" rel="icon" sizes="any"/>
+<link href="images/favicon.png" rel="icon" sizes="512x512" type="image/png"/>
+<link href="images/favicon.png" rel="apple-touch-icon"/>
+<link href="css/style.css" rel="stylesheet"/><link href="css/navbar.css" rel="stylesheet"/>
+<link href="css/news.css?v=3" rel="stylesheet"/>
+<link rel="stylesheet" href="css/news-luminous-slider.css?v=4">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+<!-- Google AdSense -->
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2116967709675155"></script>
 </head>
-
 <body>
 
+<!-- =========================================
+       SITE HEADER
+  ========================================== -->
 <header class="site-header">
-  <a href="index.html">
-    <img src="images/NeurorderBody.png" alt="Neurorder Logo" class="nav-logo">
-  </a>
+<a aria-label="Neurorder home" href="index.html">
+<img alt="Neurorder Logo" class="nav-logo" src="images/NeurorderBody.png"/>
+</a>
+<nav aria-label="Primary navigation" class="desktop-nav">
+<a href="index.html">
+        Home
+      </a>
+<a href="about.html">
+        About
+      </a>
+<a href="research.html">
+        Research
+      </a>
+<a href="credit-scoring.html">
+        Credit Scoring
+      </a>
+<a href="foundation.html">
+        Foundation
+      </a>
+<div class="nav-dropdown" id="newsDropdown">
+<a aria-current="page" class="nav-drop-trigger active" href="news.html">
+          News
 
-  <nav class="desktop-nav">
-
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="research.html">Research</a>
-    <a href="credit-scoring.html">Credit Scoring</a>
-    <a href="foundation.html">Foundation</a>
-
-    <div class="nav-dropdown" id="newsDropdown">
-
-        <a href="news.html" class="nav-drop-trigger active">
+          <i aria-hidden="true" class="fas fa-chevron-down"></i>
+</a>
+<div class="nav-drop-menu">
+<a href="news.html">
             News
-            <i class="fas fa-chevron-down"></i>
+          </a>
+<a href="access.html?destination=nous-news">
+            My Nous
+          </a>
+<a href="access.html?destination=nous">
+            Nous ORULE
+          </a>
+</div>
+</div>
+<a href="contact.html">
+        Contact
+      </a>
+</nav>
+<a aria-label="Sign in or create a profile" class="nav-account-link" data-account-link="" href="login.html?returnTo=nous-platform%2Fidentity.html" title="Account"><img alt="" data-user-avatar="" src="nous-platform/assets/logo/nouslogo.png"/></a><button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation menu" class="mobile-menu-btn" onclick="toggleMobileMenu()" type="button">
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+</button>
+</header>
+<!-- =========================================
+       MOBILE NAVIGATION
+  ========================================== -->
+<div class="mobile-menu-panel" id="mobileMenu">
+<a href="index.html">
+      Home
+    </a>
+<a href="about.html">
+      About
+    </a>
+<a href="research.html">
+      Research
+    </a>
+<a href="credit-scoring.html">
+      Credit Scoring
+    </a>
+<a href="foundation.html">
+      Foundation
+    </a>
+<a class="active" href="news.html">
+      News
+    </a>
+<a href="access.html?destination=nous-news">
+      My Nous
+    </a>
+<a href="access.html?destination=nous">
+      Nous ORULE
+    </a>
+<a href="contact.html">
+      Contact
+    </a>
+</div>
+<main class="news-preview-main">
+<!-- =========================================
+         HERO
+    ========================================== -->
+<section class="news-lander-hero">
+<div class="news-lander-copy">
+<p class="eyebrow">
+          NOUS INTELLIGENCE
+        </p>
+<h1>
+          Signals shaping Africa’s future.
+        </h1>
+<p class="news-hero-description">
+          Understand technology, education, business,
+          finance, research and global developments through
+          one organised intelligence environment.
+        </p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#nousPreview">
+            Preview Nous
+
+            <i aria-hidden="true" class="fas fa-arrow-down"></i>
+</a>
+<a class="btn btn-outline" href="signup.html">
+            Create Free Account
+          </a>
+</div>
+<p class="hero-note">
+          Public news shows what Neurorder is watching.
+          Members enter a personalised intelligence dashboard
+          where signals become organised understanding.
+        </p>
+<div class="news-public-status">
+<span class="news-status-dot"></span>
+<span>
+            Public intelligence preview
+          </span>
+</div>
+</div>
+<div class="news-lander-orb">
+<div class="news-orb-glow"></div>
+<img alt="Nous Intelligence symbol" src="images/newsintelligence.png"/>
+<span class="news-orbit-ring orbit-ring-one"></span>
+<span class="news-orbit-ring orbit-ring-two"></span>
+<span class="news-orbit-ring orbit-ring-three"></span>
+</div>
+</section>
+<!-- =========================================
+         WHAT NOUS WATCHES
+    ========================================== -->
+<section class="section news-category-section">
+<div class="news-section-heading">
+<p class="eyebrow">
+          WHAT NOUS WATCHES
+        </p>
+<h2 class="section-title">
+          News with purpose.
+        </h2>
+<p class="news-section-description">
+          Nous Intelligence follows developments that influence
+          how Africa learns, works, builds and participates in
+          the digital economy.
+        </p>
+</div>
+<div class="news-category-grid">
+<article class="news-category-card">
+<span class="news-category-number">
+            01
+          </span>
+<i aria-hidden="true" class="fas fa-brain"></i>
+<h3>
+            AI &amp; Technology
+          </h3>
+<p>
+            Artificial intelligence, reasoning systems,
+            machine learning and digital transformation.
+          </p>
+</article>
+<article class="news-category-card">
+<span class="news-category-number">
+            02
+          </span>
+<i aria-hidden="true" class="fas fa-globe-africa"></i>
+<h3>
+            DPI &amp; SDG 2030
+          </h3>
+<p>
+            Digital public infrastructure, development
+            intelligence and inclusive public systems.
+          </p>
+</article>
+<article class="news-category-card">
+<span class="news-category-number">
+            03
+          </span>
+<i aria-hidden="true" class="fas fa-credit-card"></i>
+<h3>
+            Fintech &amp; Credit
+          </h3>
+<p>
+            Payments, financial access, banking behaviour
+            and alternative credit-scoring systems.
+          </p>
+</article>
+<article class="news-category-card">
+<span class="news-category-number">
+            04
+          </span>
+<i aria-hidden="true" class="fas fa-flask"></i>
+<h3>
+            Research Updates
+          </h3>
+<p>
+            Neurorder research, field observations,
+            economic signals and community learning.
+          </p>
+</article>
+</div>
+</section>
+<!-- =========================================
+     NOUS NEWS PREVIEW
+========================================== -->
+<section class="section news-dashboard-preview" id="nousPreview">
+<div class="news-section-heading">
+<p class="eyebrow">
+      INSIDE NOUS NEWS
+    </p>
+<h2 class="section-title">
+      Your intelligence newsroom.
+    </h2>
+<p class="news-section-description">
+      Nous News organises important developments across
+      technology, finance, education, research and Africa’s
+      digital future.
+    </p>
+</div>
+<div class="nous-preview-window">
+<div class="nous-preview-window-bar">
+<div class="nous-window-controls">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<span class="nous-window-title">
+        Nous News
+      </span>
+<i aria-hidden="true" class="fas fa-lock"></i>
+</div>
+<div class="nous-preview-interface">
+<aside class="nous-preview-sidebar">
+<div class="nous-preview-sidebar-brand">
+<img alt="" src="images/NeurorderBody.png"/>
+
+</div>
+
+</aside>
+<div class="nous-preview-content">
+<div class="nous-preview-greeting">
+<div>
+<p class="eyebrow">
+              NOUS NEWS
+            </p>
+<h3>
+              Good afternoon.
+            </h3>
+
+</div>
+<span class="nous-preview-live">
+<span></span>
+
+            LIVE
+
+          </span>
+</div>
+<div class="nous-preview-search">
+<i aria-hidden="true" class="fas fa-search"></i>
+<span>
+            Search news, signals and research...
+          </span>
+<strong>
+            Search
+          </strong>
+</div>
+<div class="nous-preview-ticker">
+<span>
+            LIVE
+          </span>
+<p>
+            Digital public infrastructure continues shaping
+            access to identity, finance and public services.
+          </p>
+</div>
+<div class="nous-preview-spaces">
+<article>
+<i aria-hidden="true" class="fas fa-microchip"></i>
+<small>
+              TECHNOLOGY
+            </small>
+<strong>
+              Understand
+            </strong>
+</article>
+<article>
+<i aria-hidden="true" class="fas fa-chart-line"></i>
+<small>
+              FINANCE
+            </small>
+<strong>
+              Follow
+            </strong>
+</article>
+<article>
+<i aria-hidden="true" class="fas fa-flask"></i>
+<small>
+              RESEARCH
+            </small>
+<strong>
+              Explore
+            </strong>
+</article>
+</div>
+<div class="nous-preview-signals">
+<article>
+<span>
+              TECHNOLOGY
+            </span>
+<h4>
+              African digital systems are entering
+              a new stage of development.
+            </h4>
+</article>
+<article>
+<span>
+              FINANCE
+            </span>
+<h4>
+              Alternative data may expand access
+              to responsible credit.
+            </h4>
+</article>
+</div>
+</div>
+</div>
+<div class="nous-preview-gate">
+<div class="nous-preview-lock">
+<i aria-hidden="true" class="fas fa-lock"></i>
+</div>
+<p class="eyebrow">
+        MEMBER NEWS ACCESS
+      </p>
+<h3>
+        Unlock your personalised Nous News.
+      </h3>
+<p>
+        Create an account to access organised signals,
+        member news, research updates and a personalised
+        intelligence feed.
+      </p>
+<div class="hero-actions gate-actions">
+<a class="btn btn-primary" href="signup.html?returnTo=/nous-news.html">
+          Create Free Account
         </a>
+<a class="btn btn-outline" href="login.html?returnTo=/nous-news.html">
+          Log In
+        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================
+         INTELLIGENCE SPACES
+    ========================================== -->
+<section class="section news-spaces-section">
+<div class="news-section-heading">
+<p class="eyebrow">
+          NOUS SPACES
+        </p>
+<h2 class="section-title">
+          Intelligence for work, learning and life.
+        </h2>
+<p class="news-section-description">
+          Nous organises information around the spaces where
+          people make decisions, develop skills and manage
+          their daily lives.
+        </p>
+</div>
+<div class="news-spaces-grid">
+<!-- BUSINESS -->
+<!-- BUSINESS -->
+<article class="news-space-card news-space-featured">
 
-        <div class="nav-drop-menu">
+    <div class="news-space-image">
+        <img
+            src="images/futuristicstudysession.png"
+            alt="Business Intelligence">
+    </div>
 
-            <a href="news.html">
-                Public News
-            </a>
+    <div class="news-space-body">
 
-            <a href="access.html?destination=nous-news">
-                My Nous
-            </a>
-
-            <a href="access.html?destination=nous">
-                Nous ORULE
-            </a>
-
+        <div class="news-space-icon">
+            <i class="fas fa-briefcase"></i>
         </div>
 
+        <span class="news-space-index">
+            01
+        </span>
+
+        <p class="eyebrow">
+            BUSINESS INTELLIGENCE
+        </p>
+
+        <h3>
+            Operate with greater clarity.
+        </h3>
+
+        <p>
+            Connect business systems, research,
+            documents and operational intelligence
+            through one organised workspace.
+        </p>
+
+        <ul>
+            <li>Business signals</li>
+            <li>Workspace connections</li>
+            <li>Document intelligence</li>
+            <li>Nous Companion</li>
+        </ul>
+
+        <a href="signup.html">
+            Access Business
+            <span aria-hidden="true">→</span>
+        </a>
+
     </div>
 
-    <a href="contact.html">Contact</a>
-
-</nav>
-  
-
-  <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </button>
-</header>
-
-<div class="mobile-menu-panel" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="research.html">Research</a>
-  <a href="credit-scoring.html">Credit Scoring</a>
-  <a href="foundation.html">Foundation</a>
-  <a href="news.html">Public News</a>
-  <a href="access.html?destination=nous-news">My Nous</a>
-  <a href="access.html?destination=nous">Nous ORULE</a>
-  <a href="contact.html">Contact</a>
+</article>
+<!-- EDUCATION -->
+<article class="news-space-card news-space-featured">
+<div class="news-space-image">
+<img alt="Future Education Signal" src="nous-platform/assets/images/futuresignaledu.png"/>
 </div>
-
-<main>
-
-<section class="news-lander-hero">
-  <div class="news-lander-copy">
-    <p class="eyebrow">NEURORDER NEWS</p>
-
-    <h1>Signals shaping Africa's digital future.</h1>
-
-    <p>
-  Neurorder News tracks the signals shaping intelligence, finance,
-  research, digital public infrastructure and the future of understanding.
-  </p>
-
-    <div class="hero-actions">
-
-    <a href="signup.html" class="btn btn-primary">
-        Create Free Account
-    </a>
-
-    <a href="login.html" class="btn btn-outline">
-        Log In
-    </a>
-    
-    <br>
-   <p class="hero-note">
-  Create a free account to unlock personalised intelligence, save research,
-  and access the full Nous ORULE experience — where news becomes understanding,
-  and understanding becomes action.
-  </p>
-
+<div class="news-space-body">
+<div class="news-space-icon">
+<i aria-hidden="true" class="fas fa-graduation-cap"></i>
 </div>
-  </div>
+<span class="news-space-index">
+              02
+            </span>
+<p class="eyebrow">
+              EDUCATION INTELLIGENCE
+            </p>
+<h3>
+              Learn from the world as it changes.
+            </h3>
+<p>
+              Access educational signals, organised learning
+              resources, research and adaptive support for
+              students and educators.
+            </p>
+<ul>
+<li>
+                Student resources
+              </li>
+<li>
+                Research intelligence
+              </li>
+<li>
+                Study organisation
+              </li>
+<li>
+                Adaptive explanations
+              </li>
+</ul>
+<a href="signup.html">
+              Access Education
 
-<div class="news-lander-orb">
-  <img src="images/newsintelligence.png" alt="Neurorder News Intelligence Symbol">
+              <span aria-hidden="true">
+                →
+              </span>
+</a>
+</div>
+</article>
+<!-- PERSONAL -->
+<article class="news-space-card news-space-featured">
+<div class="news-space-image">
+<img alt="Personal Intelligence" src="images/nouspersonal.png"/>
+</div>
+<div class="news-space-body">
+<div class="news-space-icon">
+<i aria-hidden="true" class="fas fa-calendar-days"></i>
+</div>
+<span class="news-space-index">
+      03
+    </span>
+<p class="eyebrow">
+      PERSONAL INTELLIGENCE
+    </p>
+<h3>
+      Keep your world in order.
+    </h3>
+<p>
+      Organise schedules, applications, communication,
+      personal development and the digital services you
+      use every day.
+    </p>
+<ul>
+<li>
+        Nous Calendar
+      </li>
+<li>
+        Personal planning
+      </li>
+<li>
+        Application access
+      </li>
+<li>
+        Learning and balance
+      </li>
+</ul>
+<a href="signup.html">
+      Access Personal
+
+      <span aria-hidden="true">
+        →
+      </span>
+</a>
+</div>
+</article>
 </div>
 </section>
 
-<section class="section news-category-section">
-  <p class="eyebrow">WHAT WE WATCH</p>
-  <h2 class="section-title">News with purpose.</h2>
+<!-- =========================================
+     FEATURED SIGNALS
+========================================== -->
 
-  <div class="news-category-grid">
-    <article class="news-category-card">
-      <i class="fas fa-brain"></i>
-      <h3>AI & Technology</h3>
-      <p>Artificial intelligence, reasoning systems, machine learning and digital transformation.</p>
-    </article>
+<section class="section public-signals-section">
 
-    <article class="news-category-card">
-      <i class="fas fa-globe-africa"></i>
-      <h3>DPI & SDG 2030</h3>
-      <p>Digital public infrastructure, development intelligence and inclusive public systems.</p>
-    </article>
+  <div class="public-signals-heading">
 
-    <article class="news-category-card">
-      <i class="fas fa-credit-card"></i>
-      <h3>Fintech & Credit</h3>
-      <p>Payments, financial access, banking behaviour and alternative credit scoring.</p>
-    </article>
+  <div class="public-signals-heading-copy">
 
-    <article class="news-category-card">
-      <i class="fas fa-flask"></i>
-      <h3>Research Updates</h3>
-      <p>Neurorder research, field insights, community learning and economic observations.</p>
-    </article>
-  </div>
-</section>
-
-<section class="section news-nous-gate">
-
-    <p class="eyebrow">NEURORDER NOUS</p>
-
-    <h2>Intelligence becomes interactive inside Nous.</h2>
-
-    <p class="nous-gate-copy">
-        Public news shows what Neurorder is watching.
-        <br>
-        Nous helps people understand, connect and act on that intelligence.
+    <p class="eyebrow">
+      FEATURED SIGNALS
     </p>
 
-    <div class="hero-actions gate-actions">
+    <h2 class="section-title">
+      Understand what is changing.
+    </h2>
 
-        <a href="signup.html" class="btn btn-primary">
-            Create Account
-        </a>
-
-        <a href="login.html" class="btn btn-outline">
-            Log In
-        </a>
-
-    </div>
-
-</section>
-
-<br><br><br><br>
-
-</main>
-
-<footer class="site-footer">
-  <div class="footer-top">
-
-    <div class="footer-brand">
-      <img src="images/logo.png" alt="Neurorder Logo" class="footer-logo">
-      <h2>NEURORDER</h2>
-      <p>New Order.<br>Smarter Future.</p>
-    </div>
-
-    <div class="footer-column">
-      <h3>Research</h3>
-      <a href="research.html">Digital Public Infrastructure</a>
-      <a href="credit-scoring.html">Credit Scoring</a>
-      <a href="news.html">Latest Research</a>
-    </div>
-
-    <div class="footer-column">
-      <h3>Company</h3>
-      <a href="about.html">About</a>
-      <a href="foundation.html">Foundation</a>
-      <a href="contact.html">Contact</a>
-    </div>
-
-    <div class="footer-column">
-      <h3>Legal</h3>
-      <a href="documents/NEURORDER_Legal_Documents.pdf#page=1" target="_blank">Privacy Policy</a>
-      <a href="documents/NEURORDER_Legal_Documents.pdf#page=7" target="_blank">Terms & Conditions</a>
-    </div>
+    <br>
+    <p class="public-signals-intro">
+      A considered preview of the technology, financial and
+      educational developments organised inside Nous Intelligence.
+    </p>
 
   </div>
-
-  <div class="footer-divider"></div>
-
-<div class="footer-socials">
-
-    <!-- LinkedIn -->
-    <a href="#"
-       aria-label="LinkedIn">
-        <img
-            src="images/linkedin.png"
-            alt="LinkedIn"
-            class="footer-social-icon">
-    </a>
-
-    <!-- Substack -->
-    <a href="https://substack.com/@nmzekandaba"
-       target="_blank"
-       aria-label="Substack">
-        <img
-            src="images/substack.png"
-            alt="Substack"
-            class="footer-social-icon">
-    </a>
-
-    <!-- Gmail -->
-    <a href="mailto:info@neurorder.com"
-       aria-label="Email">
-        <img
-            src="images/gmail.png"
-            alt="Email"
-            class="footer-social-icon">
-    </a>
-
-    <!-- Neurorder News -->
-    <a href="news.html"
-       aria-label="Neurorder News">
-        <img
-            src="images/newsintelligence.png"
-            alt="Neurorder News"
-            class="footer-social-icon">
-    </a>
 
 </div>
 
-    <p class="footer-copy">© 2026 Neurorder Research. All Rights Reserved.</p>
-  </div>
-</footer>
+  <div class="public-signals-grid">
 
+    <!-- TECHNOLOGY -->
+
+    <article class="public-signal-card">
+
+      <div class="public-signal-visual">
+
+        <img
+          src="images/newsintelligencersa.png"
+          alt="African digital technology signal"
+        >
+
+        <div class="public-signal-visual-overlay"></div>
+
+        <span class="public-signal-category">
+          TECHNOLOGY
+        </span>
+
+      </div>
+
+      <div class="public-signal-content">
+
+        <small>
+          CURRENT INTELLIGENCE
+        </small>
+
+        <h3>
+          Africa’s digital systems are entering a new phase.
+        </h3>
+
+        <p>
+          Follow developments in artificial intelligence,
+          public technology and digital infrastructure.
+        </p>
+
+        <a class="public-signal-button" href="signup.html">
+
+          <span>
+            Continue inside Nous
+          </span>
+
+          <span class="public-signal-button-icon" aria-hidden="true">
+            <i class="fas fa-arrow-right"></i>
+          </span>
+
+        </a>
+
+      </div>
+
+    </article>
+
+    <!-- FINANCE -->
+
+    <article class="public-signal-card">
+
+      <div class="public-signal-visual signal-finance">
+
+        <img
+          src="images/nciimage.png"
+          alt="Neurorder Credit Intelligence"
+          class="public-signal-image"
+        >
+
+        <div class="public-signal-visual-overlay"></div>
+
+        <span class="public-signal-category">
+          FINANCE
+        </span>
+
+      </div>
+
+      <div class="public-signal-content">
+
+        <small>
+          RESEARCH SIGNAL
+        </small>
+
+        <h3>
+          New financial models can expand economic participation.
+        </h3>
+
+        <p>
+          Explore financial inclusion, alternative credit scoring
+          and emerging economic systems.
+        </p>
+
+        <a class="public-signal-button" href="signup.html">
+
+          <span>
+            Continue inside Nous
+          </span>
+
+          <span class="public-signal-button-icon" aria-hidden="true">
+            <i class="fas fa-arrow-right"></i>
+          </span>
+
+        </a>
+
+      </div>
+
+    </article>
+
+    <!-- EDUCATION -->
+
+    <article class="public-signal-card">
+
+      <div class="public-signal-visual signal-education">
+
+        <img
+          src="images/nousclassroom.png"
+          alt="Nous Classroom"
+          class="public-signal-image"
+        >
+
+        <div class="public-signal-visual-overlay"></div>
+
+        <span class="public-signal-category">
+          EDUCATION
+        </span>
+
+      </div>
+
+      <div class="public-signal-content">
+
+        <small>
+          LEARNING SIGNAL
+        </small>
+
+        <h3>
+          Adaptive support can make learning more accessible.
+        </h3>
+
+        <p>
+          Follow educational technology, research and learning
+          resources relevant to students.
+        </p>
+
+        <a class="public-signal-button" href="signup.html">
+
+          <span>
+            Continue inside Nous
+          </span>
+
+          <span class="public-signal-button-icon" aria-hidden="true">
+            <i class="fas fa-arrow-right"></i>
+          </span>
+
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+<!-- =========================================
+         NOUS COMPANION
+    ========================================== -->
+<section class="section news-companion-section">
+<div class="news-companion-visual">
+<div aria-hidden="true" class="news-companion-orb">
+<span class="companion-core"></span>
+<span class="companion-ring ring-one"></span>
+<span class="companion-ring ring-two"></span>
+<span class="companion-ring ring-three"></span>
+</div>
+<div class="news-companion-chat">
+<div class="companion-message companion-user">
+<span>
+              You
+            </span>
+<p>
+              How could digital public infrastructure
+              improve access to finance?
+            </p>
+</div>
+<div class="companion-message companion-nous">
+<span>
+              Nous
+            </span>
+<p>
+              Digital public infrastructure can connect
+              trusted identity, payments and financial records
+              to help people participate in formal systems…
+            </p>
+<div class="companion-answer-fade"></div>
+</div>
+</div>
+</div>
+<div class="news-companion-copy">
+<p class="eyebrow">
+          NOUS COMPANION
+        </p>
+<h2>
+          Ask. Understand. Continue.
+        </h2>
+<p>
+          Nous Companion is being developed to help users
+          reason through information, organise questions and
+          understand topics across Business, Education,
+          Research and everyday life.
+        </p>
+<div class="news-companion-features">
+<span>
+<i aria-hidden="true" class="fas fa-check"></i>
+
+            Natural conversation
+
+          </span>
+<span>
+<i aria-hidden="true" class="fas fa-check"></i>
+
+            Connected intelligence spaces
+
+          </span>
+<span>
+<i aria-hidden="true" class="fas fa-check"></i>
+
+            Organised understanding
+
+          </span>
+</div>
+<a class="btn btn-primary" href="signup.html">
+          Meet Nous Companion
+        </a>
+</div>
+</section>
+<!-- =========================================
+         MEMBERSHIP PREVIEW
+    ========================================== -->
+<!-- =========================================
+     PREMIUM MEMBERSHIP
+========================================== -->
+
+<section class="section news-membership-section" id="membership">
+
+  <div class="membership-ambient membership-ambient-one"></div>
+  <div class="membership-ambient membership-ambient-two"></div>
+
+  <div class="news-section-heading membership-heading">
+
+    <p class="eyebrow">
+      BEGIN WITH NOUS
+    </p>
+
+    <h2 class="section-title">
+      Start free.<br>
+      Grow when you are ready.
+    </h2>
+
+    <p class="news-section-description">
+      Create your Nous identity, enter the intelligence
+      environment and choose the level of access that
+      supports your needs.
+    </p>
+
+  </div>
+
+  <div class="news-membership-grid">
+
+    <!-- FREE -->
+
+    <article class="news-membership-card membership-free">
+
+      <div class="membership-card-top">
+
+        <span class="membership-plan-label">
+          FREE
+        </span>
+
+        <span class="membership-plan-number">
+          01
+        </span>
+
+      </div>
+
+      <div class="membership-price">
+
+        <strong>
+          R0
+        </strong>
+
+        <small>
+          forever
+        </small>
+
+      </div>
+
+      <p class="membership-description">
+        Essential access for discovering Nous,
+        reading public intelligence and creating
+        your identity.
+      </p>
+
+      <ul class="membership-features">
+
+        <li>
+          Nous identity
+        </li>
+
+        <li>
+          Public intelligence
+        </li>
+
+        <li>
+          Essential Companion access
+        </li>
+
+      </ul>
+
+      <a
+        class="membership-button membership-button-outline"
+        href="signup.html"
+      >
+        Create Free Account
+
+        <i class="fas fa-arrow-right"></i>
+      </a>
+
+    </article>
+
+    <!-- STUDENT -->
+
+    <article class="news-membership-card membership-student">
+
+      <div class="membership-card-top">
+
+        <span class="membership-plan-label">
+          STUDENT &amp; BEGINNER
+        </span>
+
+        <span class="membership-plan-number">
+          02
+        </span>
+
+      </div>
+
+      <div class="membership-price">
+
+        <strong>
+          R39
+        </strong>
+
+        <small>
+          per month
+        </small>
+
+      </div>
+
+      <p class="membership-description">
+        Accessible intelligence, learning support
+        and practical tools for students and people
+        beginning with Nous.
+      </p>
+
+      <ul class="membership-features">
+
+        <li>
+          Student intelligence space
+        </li>
+
+        <li>
+          Learning resources
+        </li>
+
+        <li>
+          Nous Companion access
+        </li>
+
+      </ul>
+
+      <button
+        class="membership-button yoco-checkout-button"
+        type="button"
+        data-plan-id="nous_student_monthly"
+      >
+        Choose Student
+
+        <i class="fas fa-arrow-right"></i>
+      </button>
+
+    </article>
+
+    <!-- BUSINESS -->
+
+    <article class="news-membership-card membership-business">
+
+      <div class="membership-card-top">
+
+        <span class="membership-plan-label">
+          BUSINESS &amp; EDUCATION
+        </span>
+
+        <span class="membership-plan-number">
+          03
+        </span>
+
+      </div>
+
+      <div class="membership-price">
+
+        <strong>
+          R89
+        </strong>
+
+        <small>
+          per month
+        </small>
+
+      </div>
+
+      <p class="membership-description">
+        A structured intelligence environment
+        for organisations, educators and developing
+        professional teams.
+      </p>
+
+      <ul class="membership-features">
+
+        <li>
+          Business and education spaces
+        </li>
+
+        <li>
+          Document intelligence
+        </li>
+
+        <li>
+          Connected workspaces
+        </li>
+
+      </ul>
+
+      <button
+        class="membership-button yoco-checkout-button"
+        type="button"
+        data-plan-id="nous_professional_monthly"
+      >
+        Choose Business
+
+        <i class="fas fa-arrow-right"></i>
+      </button>
+
+    </article>
+
+    <!-- UNLIMITED -->
+
+    <article class="news-membership-card membership-unlimited">
+
+      <div class="membership-popular">
+        EVERYTHING
+      </div>
+
+      <div class="membership-card-top">
+
+        <span class="membership-plan-label">
+          NOUS UNLIMITED
+        </span>
+
+        <span class="membership-plan-number">
+          04
+        </span>
+
+      </div>
+
+      <div class="membership-price">
+
+        <strong>
+          R169
+        </strong>
+
+        <small>
+          per month
+        </small>
+
+      </div>
+
+      <p class="membership-description">
+        Complete access across Nous Intelligence,
+        Business, Education, Personal and advanced
+        Companion experiences.
+      </p>
+
+      <ul class="membership-features">
+
+        <li>
+          Every Nous space
+        </li>
+
+        <li>
+          Full Companion access
+        </li>
+
+        <li>
+          Premium intelligence tools
+        </li>
+
+      </ul>
+
+      <button
+        class="membership-button membership-button-premium yoco-checkout-button"
+        type="button"
+        data-plan-id="nous_unlimited_monthly"
+      >
+        Choose Unlimited
+
+        <i class="fas fa-arrow-right"></i>
+      </button>
+
+    </article>
+
+  </div>
+
+  <div class="news-membership-actions">
+
+    <a
+      class="news-membership-link"
+      href="nous-platform/membership.html"
+    >
+      Compare all membership benefits
+
+      <i class="fas fa-arrow-right"></i>
+    </a>
+
+    <p id="membershipStatus" aria-live="polite"></p>
+
+  </div>
+
+</section>
+<!-- =========================================
+         FINAL ACCESS GATE
+    ========================================== -->
+<section class="section news-nous-gate">
+<div class="news-gate-glow"></div>
+<div class="news-gate-content">
+<img alt="Nous Intelligence" class="news-gate-symbol" src="images/newsintelligence.png"/>
+<p class="eyebrow">
+          NEURORDER NOUS
+        </p>
+<h2>
+          Ready to understand the world differently?
+        </h2>
+<p class="nous-gate-copy">
+          Public intelligence shows what Neurorder is watching.
+          Nous helps members understand, connect and act on
+          that intelligence.
+        </p>
+<div class="hero-actions gate-actions">
+<a class="btn btn-primary" href="signup.html">
+            Create Account
+          </a>
+<a class="btn btn-outline" href="login.html">
+            Log In
+          </a>
+</div>
+</div>
+</section>
+</main>
+<!-- =========================================
+       FOOTER
+  ========================================== -->
+<footer class="site-footer">
+<div class="footer-top">
+<div class="footer-brand">
+<img alt="Neurorder Logo" class="footer-logo" src="images/logo.png"/>
+<h2>
+          NEURORDER
+        </h2>
+<p>
+          New Order.<br/>
+          Smarter Future.
+        </p>
+</div>
+<div class="footer-column">
+<h3>
+          Research
+        </h3>
+<a href="research.html">
+          Digital Public Infrastructure
+        </a>
+<a href="credit-scoring.html">
+          Credit Scoring
+        </a>
+<a href="news.html">
+          Nous Intelligence
+        </a>
+</div>
+<div class="footer-column">
+<h3>
+          Company
+        </h3>
+<a href="about.html">
+          About
+        </a>
+<a href="foundation.html">
+          Foundation
+        </a>
+<a href="contact.html">
+          Contact
+        </a>
+</div>
+<div class="footer-column">
+<h3>
+          Legal
+        </h3>
+<a href="documents/NEURORDER_Legal_Documents.pdf#page=1" rel="noopener noreferrer" target="_blank">
+          Privacy Policy
+        </a>
+<a href="documents/NEURORDER_Legal_Documents.pdf#page=7" rel="noopener noreferrer" target="_blank">
+          Terms &amp; Conditions
+        </a>
+</div>
+</div>
+<div class="footer-divider"></div>
+<div class="footer-bottom">
+<div class="footer-socials">
+<a aria-label="Neurorder on LinkedIn" class="footer-social-link" href="https://www.linkedin.com/company/neurorder-pty-ltd/?viewAsMember=true" rel="noopener noreferrer" target="_blank">
+<img alt="" class="footer-social-icon" src="images/linkedin.png"/>
+</a>
+<a aria-label="Neurorder on Substack" class="footer-social-link" href="https://substack.com/@nmzekandaba" rel="noopener noreferrer" target="_blank">
+<img alt="" class="footer-social-icon" src="images/substack.png"/>
+</a>
+<a aria-label="Email Neurorder" class="footer-social-link" href="mailto:info@neurorder.com">
+<img alt="" class="footer-social-icon" src="images/gmail.png"/>
+</a>
+<a aria-label="Nous Intelligence" class="footer-social-link" href="news.html">
+<img alt="" class="footer-social-icon" src="images/newsintelligence.png"/>
+</a>
+</div>
+<p class="footer-copy">
+        © 2026 Neurorder Research. All Rights Reserved.
+      </p>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/profile-sync.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/profile-nav.js"></script>
+<script src="js/news.js"></script>
+<script src="js/news-sliders.js?v=3"></script>
 <script src="js/script.js"></script>
 
 </body>
