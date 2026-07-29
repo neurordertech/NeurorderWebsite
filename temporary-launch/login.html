@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Sign in to your Neurorder Nous account."
+  >
+
+
+  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="512x512"
+    href="images/favicon.png"
+  >
+  <link rel="apple-touch-icon" href="images/favicon.png">
+
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body class="auth-page">
+
+  <main class="auth-card">
+
+    <div class="auth-logo-wrap">
+      <img
+        src="images/NeurorderBody.png"
+        alt="Neurorder"
+        class="auth-logo login-logo"
+      >
+    </div>
+
+    <p class="auth-kicker">NEURORDER NOUS</p>
+
+    <h1>Welcome back.</h1>
+
+    <p class="auth-description">
+      Sign in to continue to your dashboard, saved research,
+      AI tools, and Nous Companion.
+    </p>
+<form id="loginForm" novalidate>
+
+  <div class="auth-field">
+    <label for="loginEmail">Email address</label>
+
+    <input
+      type="email"
+      id="loginEmail"
+      name="email"
+      placeholder="Email address"
+      autocomplete="email"
+      required
+    >
+  </div>
+
+  <div class="auth-field">
+    <label for="loginPassword">Password</label>
+
+    <input
+      type="password"
+      id="loginPassword"
+      name="password"
+      placeholder="Password"
+      autocomplete="current-password"
+      required
+    >
+  </div>
+
+  <p
+    id="authMessage"
+    class="auth-message"
+    role="status"
+    aria-live="polite"
+    hidden
+  ></p>
+
+  <button type="submit" class="primary-auth-btn">
+    Sign In
+  </button>
+
+</form>
+
+    <a
+      href="forgot-password.html"
+      class="auth-forgot-link"
+    >
+      Forgot your password?
+    </a>
+
+    <p class="auth-switch">
+      Don’t have an account?
+      <a href="signup.html">Create one</a>
+    </p>
+
+  </main>
+
+  <!-- Load Supabase before your project scripts -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js?v=20260724-2"></script>
+<script src="js/auth.js?v=20260724-2"></script>
+
+</body>
+</html>
