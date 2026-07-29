@@ -1,71 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-  <title>Create Account | Neurorder Intelligence</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<link rel="icon" href="images/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="512x512" href="images/favicon.png">
-<link rel="apple-touch-icon" href="images/favicon.png">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/auth.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <meta
+        name="description"
+        content="Subscribe to receive an email when Version 2 of the NEURORDER website and the NOUS Platform go live."
+    >
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="js/supabase.js"></script>
-  <script src="js/auth.js" defer></script>
+    <meta name="theme-color" content="#02050a">
+
+    <title>Notify Me | NEURORDER</title>
+
+    <link
+        rel="icon"
+        href="images/favicon.png"
+        type="image/png"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/subscribe.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
 </head>
 
 <body>
 
-<section class="auth-page">
+    <div class="subscribe-page">
 
-  <div class="auth-glow"></div>
+        <header class="subscribe-header">
 
-  <div class="auth-card">
+            <a
+                href="index.html"
+                class="subscribe-brand"
+                aria-label="Return to the NEURORDER homepage"
+            >
+                <img
+                    src="images/NeurorderBody.png"
+                    alt="NEURORDER"
+                >
+            </a>
 
-   <div class="auth-logo-wrap">
-  <img src="images/NeurorderBody.png" alt="Neurorder Logo" class="auth-logo">
-</div>
+            <nav aria-label="Temporary website navigation">
+                <a href="index.html">
+                    Home
+                </a>
 
-    <p class="auth-eyebrow">JOIN NEURORDER NOUS</p>
+                <a href="about.html">
+                    About
+                </a>
 
-    <h1>Create your account.</h1>
+                <a href="news.html">
+                    News
+                </a>
+            </nav>
 
-    <p class="auth-subtitle">
-      Join the platform built for AI, fintech, research, and South Africa’s digital future.
-    </p>
+        </header>
 
-    <div class="auth-divider">
-      <span></span>
-      <p> Sign up with email</p>
-      <span></span>
+        <main class="subscribe-main">
+
+            <section class="subscribe-card">
+
+                <div
+                    class="subscribe-symbol"
+                    aria-hidden="true"
+                >
+                    <span class="orbit orbit-one"></span>
+                    <span class="orbit orbit-two"></span>
+                    <span class="orbit orbit-three"></span>
+
+                    <div class="symbol-core">
+                        <img
+                            src="images/logo.png"
+                            alt=""
+                        >
+                    </div>
+                </div>
+
+                <div class="subscribe-content">
+
+                    <p class="subscribe-eyebrow">
+                        NEURORDER VERSION 2
+                    </p>
+
+                    <h1>
+                        Let us notify you when we go live.
+                    </h1>
+
+                    <p class="subscribe-description">
+                        We are preparing the next version of the
+                        NEURORDER website and the public preview of
+                        the NOUS Platform.
+                    </p>
+
+                    <p class="subscribe-description">
+                        Leave your email address and we will notify
+                        you when the new experience becomes available.
+                    </p>
+
+                    <form
+                        class="subscribe-form"
+                        id="launchSubscribeForm"
+                    >
+
+                        <label for="subscriberEmail">
+                            Email address
+                        </label>
+
+                        <div class="subscribe-input-row">
+
+                            <div class="subscribe-input-wrap">
+
+                                <i
+                                    class="fa-regular fa-envelope"
+                                    aria-hidden="true"
+                                ></i>
+
+                                <input
+                                    id="subscriberEmail"
+                                    name="email"
+                                    type="email"
+                                    placeholder="name@example.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+                            <button type="submit">
+                                Notify Me
+
+                                <i
+                                    class="fa-solid fa-arrow-right"
+                                    aria-hidden="true"
+                                ></i>
+                            </button>
+
+                        </div>
+
+                        <label class="consent-row">
+
+                            <input
+                                id="subscriberConsent"
+                                name="consent"
+                                type="checkbox"
+                                required
+                            >
+
+                            <span>
+                                I agree to receive a launch notification
+                                from NEURORDER. My email will only be used
+                                for this purpose.
+                            </span>
+
+                        </label>
+
+                        <p
+                            class="form-status"
+                            id="subscribeStatus"
+                            aria-live="polite"
+                        ></p>
+
+                    </form>
+
+                    <div class="subscribe-divider"></div>
+
+                    <div class="subscribe-actions">
+
+                        <a href="index.html">
+                            <i
+                                class="fa-solid fa-arrow-left"
+                                aria-hidden="true"
+                            ></i>
+
+                            Return Home
+                        </a>
+
+                        <a href="news.html">
+                            Explore Nous News
+
+                            <i
+                                class="fa-solid fa-arrow-right"
+                                aria-hidden="true"
+                            ></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer class="subscribe-footer">
+
+            <p>
+                Powered by NEURORDER Intelligence.
+            </p>
+
+            <p>
+                © 2026 NEURORDER (Pty) Ltd.
+            </p>
+
+        </footer>
+
     </div>
 
-    <input id="signupName" type="text" placeholder="Full name">
-    <input id="signupEmail" type="email" placeholder="Email address">
-    <input id="signupPassword" type="password" placeholder="Create password">
-
-    <button class="auth-primary-btn" onclick="signUpWithEmail()">
-      Create Account
-    </button>
-
-    <p class="auth-switch">
-      Already have an account?
-      <a href="login.html">Sign in</a>
-    </p>
-
-    <p id="authMessage" class="auth-message"></p>
-
-  </div>
-
-</section>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/supabase.js"></script>
-<script src="js/auth.js"></script>
+<script src="../js/supabase.js"></script>
+
+<script>
+    const subscribeForm =
+        document.getElementById("launchSubscribeForm");
+
+    const subscriberEmail =
+        document.getElementById("subscriberEmail");
+
+    const subscriberConsent =
+        document.getElementById("subscriberConsent");
+
+    const subscribeStatus =
+        document.getElementById("subscribeStatus");
+
+    const submitButton =
+        subscribeForm.querySelector('button[type="submit"]');
+
+    subscribeForm.addEventListener(
+        "submit",
+        async (event) => {
+            event.preventDefault();
+
+            const email =
+                subscriberEmail.value
+                    .trim()
+                    .toLowerCase();
+
+            subscribeStatus.textContent = "";
+            subscribeStatus.className = "form-status";
+
+            if (!email) {
+                showStatus(
+                    "Please enter your email address.",
+                    "error"
+                );
+                return;
+            }
+
+            if (!subscriberConsent.checked) {
+                showStatus(
+                    "Please agree to receive the launch notification.",
+                    "error"
+                );
+                return;
+            }
+
+            if (
+                typeof window.supabaseClient === "undefined"
+            ) {
+                console.error(
+                    "window.supabaseClient was not found. Check the supabase.js path."
+                );
+
+                showStatus(
+                    "The subscription service is unavailable. Please try again shortly.",
+                    "error"
+                );
+
+                return;
+            }
+
+            setSubmitting(true);
+
+            try {
+                const { data, error } =
+                    await window.supabaseClient.rpc(
+                        "subscribe_to_launch",
+                        {
+                            subscriber_email: email,
+                            subscriber_consent: true
+                        }
+                    );
+
+                if (error) {
+                    throw error;
+                }
+
+                console.log(
+                    "Launch subscription saved:",
+                    data
+                );
+
+                showStatus(
+                    "You’re on the list. We’ll notify you when NEURORDER Version 2 and the NOUS Platform go live.",
+                    "success"
+                );
+
+                subscribeForm.reset();
+
+            } catch (error) {
+                console.error(
+                    "Launch subscription failed:",
+                    error
+                );
+
+                showStatus(
+                    error?.message ||
+                    "We could not save your email. Please try again.",
+                    "error"
+                );
+
+            } finally {
+                setSubmitting(false);
+            }
+        }
+    );
+
+    function setSubmitting(isSubmitting) {
+        submitButton.disabled = isSubmitting;
+
+        submitButton.innerHTML = isSubmitting
+            ? `
+                Saving…
+                <i
+                    class="fa-solid fa-spinner fa-spin"
+                    aria-hidden="true"
+                ></i>
+            `
+            : `
+                Notify Me
+                <i
+                    class="fa-solid fa-arrow-right"
+                    aria-hidden="true"
+                ></i>
+            `;
+    }
+
+    function showStatus(message, type) {
+        subscribeStatus.textContent = message;
+        subscribeStatus.className =
+            `form-status ${type}`;
+    }
+</script>
+
 
 </body>
 </html>
+

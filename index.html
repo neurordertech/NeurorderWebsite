@@ -8,31 +8,656 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>NEURORDER</title>
-
     <meta
-        http-equiv="refresh"
-        content="0; url=/temporary-launch/index.html"
+        name="description"
+        content="NEURORDER presents the NOUS Platform. Public preview launching August 2026."
     >
+
+    <meta name="theme-color" content="#020409">
+
+    <title>NOUS Platform | NEURORDER</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        rel="canonical"
-        href="https://neurorder.com/temporary-launch/index.html"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
     >
 
-    <script>
-        window.location.replace(
-            "/temporary-launch/index.html"
-        );
-    </script>
+    <style>
+        :root {
+            --background: #020409;
+            --text: #f7f9fc;
+            --muted: rgba(220, 230, 244, 0.72);
+            --border: rgba(255, 255, 255, 0.16);
+            --blue: #55aaff;
+            --blue-soft: rgba(65, 155, 255, 0.22);
+            --glass: rgba(7, 13, 23, 0.58);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+            margin: 0;
+        }
+
+        body {
+            overflow-x: hidden;
+            background: var(--background);
+            color: var(--text);
+            font-family: "Inter", sans-serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .launch-page {
+            position: relative;
+            display: grid;
+            min-height: 100svh;
+            overflow: hidden;
+            isolation: isolate;
+            background:
+                radial-gradient(
+                    circle at 50% 30%,
+                    rgba(25, 95, 185, 0.13),
+                    transparent 37%
+                ),
+                #020409;
+        }
+
+        .launch-background {
+            position: absolute;
+            inset: 0;
+            z-index: -4;
+        }
+
+        .launch-background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0;
+            transform: scale(1.025);
+            animation: revealImage 2.2s ease forwards;
+        }
+
+        .launch-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: -3;
+            pointer-events: none;
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(0, 0, 0, 0.08) 0%,
+                    rgba(0, 0, 0, 0.05) 40%,
+                    rgba(0, 0, 0, 0.44) 73%,
+                    rgba(0, 0, 0, 0.94) 100%
+                );
+        }
+
+        .launch-vignette {
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            pointer-events: none;
+            box-shadow:
+                inset 0 0 160px rgba(0, 0, 0, 0.74),
+                inset 0 -160px 220px rgba(0, 0, 0, 0.88);
+        }
+
+        .launch-glow {
+            position: absolute;
+            left: 50%;
+            bottom: 12%;
+            z-index: -1;
+            width: min(460px, 70vw);
+            height: 2px;
+            transform: translateX(-50%);
+            background: rgba(106, 183, 255, 0.7);
+            box-shadow:
+                0 0 12px rgba(74, 164, 255, 0.85),
+                0 0 34px rgba(35, 132, 255, 0.7),
+                0 0 90px rgba(30, 112, 255, 0.5);
+            opacity: 0.55;
+            animation: breatheGlow 7s ease-in-out infinite;
+        }
+
+        .topbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 24px clamp(20px, 4vw, 64px);
+            opacity: 0;
+            animation: fadeUp 1.2s ease 1.5s forwards;
+        }
+
+        .company-name {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+        }
+
+        .top-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .top-links a {
+            position: relative;
+            color: rgba(255, 255, 255, 0.74);
+            font-size: 0.76rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            transition:
+                color 220ms ease,
+                transform 220ms ease;
+        }
+
+        .top-links a::after {
+            position: absolute;
+            right: 0;
+            bottom: -7px;
+            left: 0;
+            height: 1px;
+            content: "";
+            background: var(--blue);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 240ms ease;
+        }
+
+        .top-links a:hover,
+        .top-links a:focus-visible {
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        .top-links a:hover::after,
+        .top-links a:focus-visible::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .launch-content {
+            align-self: end;
+            width: min(720px, calc(100% - 40px));
+            margin-inline: auto;
+            padding: 56px 0 44px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(24px);
+            animation: fadeUp 1.25s ease 1.85s forwards;
+        }
+
+        .eyebrow {
+            margin: 0 0 13px;
+            color: rgba(149, 205, 255, 0.92);
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+        }
+
+        .launch-content h1 {
+            margin: 0;
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(1.8rem, 5vw, 3.7rem);
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            line-height: 1.1;
+            text-indent: 0.2em;
+        }
+
+        .launch-date {
+            margin: 17px 0 0;
+            color: rgba(196, 224, 255, 0.94);
+            font-size: clamp(0.78rem, 1.5vw, 0.92rem);
+            font-weight: 500;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+        }
+
+        .launch-description {
+            max-width: 530px;
+            margin: 18px auto 0;
+            color: var(--muted);
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(0.9rem, 1.6vw, 1.04rem);
+            font-weight: 300;
+            line-height: 1.75;
+        }
+
+        .launch-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 13px;
+            margin-top: 27px;
+        }
+
+        .launch-button {
+            display: inline-flex;
+            min-height: 50px;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 0 25px;
+            border: 1px solid rgba(116, 190, 255, 0.5);
+            border-radius: 999px;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(61, 145, 255, 0.28),
+                    rgba(32, 89, 175, 0.13)
+                );
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.18),
+                0 8px 30px rgba(0, 83, 190, 0.17),
+                0 0 34px rgba(49, 136, 255, 0.11);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            color: #f7fbff;
+            font-size: 0.79rem;
+            font-weight: 500;
+            letter-spacing: 0.09em;
+            transition:
+                transform 260ms ease,
+                border-color 260ms ease,
+                box-shadow 260ms ease,
+                background 260ms ease;
+        }
+
+        .launch-button:hover,
+        .launch-button:focus-visible {
+            border-color: rgba(163, 215, 255, 0.9);
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(72, 160, 255, 0.4),
+                    rgba(34, 98, 198, 0.23)
+                );
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.26),
+                0 10px 38px rgba(0, 103, 235, 0.29),
+                0 0 48px rgba(57, 154, 255, 0.22);
+            transform: translateY(-2px);
+        }
+
+        .launch-button.secondary {
+            border-color: var(--border);
+            background: rgba(8, 12, 20, 0.48);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.08),
+                0 8px 24px rgba(0, 0, 0, 0.14);
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        .launch-button.secondary:hover,
+        .launch-button.secondary:focus-visible {
+            border-color: rgba(255, 255, 255, 0.36);
+            background: rgba(16, 23, 35, 0.72);
+            color: #ffffff;
+        }
+
+        .arrow {
+            font-size: 1rem;
+            transition: transform 240ms ease;
+        }
+
+        .launch-button:hover .arrow,
+        .launch-button:focus-visible .arrow {
+            transform: translateX(4px);
+        }
+
+        .launch-notice {
+            max-width: 630px;
+            margin: 26px auto 0;
+            color: rgba(205, 215, 230, 0.52);
+            font-size: 0.69rem;
+            line-height: 1.65;
+        }
+
+        .launch-footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 9px 18px;
+            margin-top: 24px;
+            color: rgba(203, 215, 233, 0.43);
+            font-size: 0.64rem;
+            letter-spacing: 0.05em;
+        }
+
+        .launch-footer a {
+            transition: color 220ms ease;
+        }
+
+        .launch-footer a:hover,
+        .launch-footer a:focus-visible {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .sound-control {
+            position: absolute;
+            right: clamp(20px, 4vw, 64px);
+            bottom: 28px;
+            z-index: 5;
+            display: none;
+            width: 42px;
+            height: 42px;
+            place-items: center;
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            background: rgba(4, 9, 16, 0.55);
+            color: rgba(255, 255, 255, 0.72);
+            cursor: pointer;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        @keyframes revealImage {
+            from {
+                opacity: 0;
+                transform: scale(1.025);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes breatheGlow {
+            0%,
+            100% {
+                opacity: 0.34;
+                transform: translateX(-50%) scaleX(0.82);
+            }
+
+            50% {
+                opacity: 0.82;
+                transform: translateX(-50%) scaleX(1.06);
+            }
+        }
+
+        @media (max-width: 720px) {
+            .topbar {
+                padding: 20px;
+            }
+
+            .top-links {
+                gap: 15px;
+            }
+
+            .top-links a {
+                font-size: 0.68rem;
+            }
+
+            .top-links .hide-mobile {
+                display: none;
+            }
+
+            .company-name {
+                font-size: 0.62rem;
+                letter-spacing: 0.16em;
+            }
+
+            .launch-background img {
+                object-position: center top;
+            }
+
+            .launch-content {
+                width: min(100% - 32px, 650px);
+                padding-bottom: 28px;
+            }
+
+            .launch-content h1 {
+                letter-spacing: 0.13em;
+                text-indent: 0.13em;
+            }
+
+            .launch-description {
+                max-width: 390px;
+                line-height: 1.6;
+            }
+
+            .launch-actions {
+                flex-direction: column;
+                width: min(100%, 330px);
+                margin-inline: auto;
+                margin-top: 23px;
+            }
+
+            .launch-button {
+                width: 100%;
+            }
+
+            .launch-notice {
+                max-width: 390px;
+                margin-top: 22px;
+            }
+        }
+
+        @media (max-height: 740px) and (min-width: 721px) {
+            .launch-content {
+                padding-top: 30px;
+                padding-bottom: 24px;
+            }
+
+            .launch-description {
+                margin-top: 12px;
+            }
+
+            .launch-actions {
+                margin-top: 18px;
+            }
+
+            .launch-notice,
+            .launch-footer {
+                margin-top: 16px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <p>
-        Redirecting to
-        <a href="/temporary-launch/index.html">
-            NEURORDER
-        </a>…
-    </p>
+    <main class="launch-page">
+        <div
+            class="launch-background"
+            aria-hidden="true"
+        >
+            <img
+                src="images/nous-launch-cover.png"
+                alt=""
+            >
+        </div>
+
+        <div
+            class="launch-overlay"
+            aria-hidden="true"
+        ></div>
+
+        <div
+            class="launch-vignette"
+            aria-hidden="true"
+        ></div>
+
+        <div
+            class="launch-glow"
+            aria-hidden="true"
+        ></div>
+
+        <header class="topbar">
+            <p class="company-name">
+                NEURORDER
+            </p>
+
+            <nav
+                class="top-links"
+                aria-label="Temporary website navigation"
+            >
+                <a href="about.html">About</a>
+
+                <a
+                    class="hide-mobile"
+                    href="research.html"
+                >
+                    Research
+                </a>
+
+                <a
+                    class="hide-mobile"
+                    href="credit-scoring.html"
+                >
+                    Credit Scoring
+                </a>
+
+                <a href="news.html">News</a>
+
+                <a
+                    class="hide-mobile"
+                    href="companion.html"
+                >
+                    Nous Companion
+                </a>
+            </nav>
+        </header>
+
+        <section
+            class="launch-content"
+            aria-labelledby="launch-heading"
+        >
+            <p class="eyebrow">
+                NEURORDER PRESENTS
+            </p>
+
+            <h1 id="launch-heading">
+                NOUS PLATFORM
+            </h1>
+
+            <p class="launch-date">
+                Public Preview · August 2026
+            </p>
+
+            <p class="launch-description">
+                A new era of intelligent companionship is taking shape.
+            </p>
+
+            <div class="launch-actions">
+                <a
+                    class="launch-button"
+                    href="news.html"
+                >
+                    Explore the News
+
+                    <span
+                        class="arrow"
+                        aria-hidden="true"
+                    >
+                        →
+                    </span>
+                </a>
+
+                <a
+                    class="launch-button secondary"
+                    href="companion.html"
+                >
+                    Enter Nous Companion
+                </a>
+            </div>
+
+            <p class="launch-notice">
+                The NEURORDER website remains active while we prepare the
+                public preview of the NOUS Platform. Company news, research,
+                partnerships and public information remain available.
+            </p>
+
+            <footer class="launch-footer">
+                <a href="about.html">About</a>
+                <a href="research.html">Research</a>
+                <a href="credit-scoring.html">Credit Scoring</a>
+                <a href="news.html">News</a>
+                <a href="companion.html">Nous Companion</a>
+                <a href="nous.html">Nous</a>
+                <a href="nous-news.html">Nous News</a>
+                <a href="login.html">Log In</a>
+                <a href="signup.html">Sign Up</a>
+
+                <span>
+                    © 2026 NEURORDER (Pty) Ltd.
+                </span>
+            </footer>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const backgroundImage = document.querySelector(
+                ".launch-background img"
+            );
+
+            if (!backgroundImage) {
+                return;
+            }
+
+            backgroundImage.addEventListener("error", () => {
+                console.error(
+                    "NOUS launch image could not be loaded. " +
+                    "Confirm that images/nous-launch-cover.png exists."
+                );
+            });
+        });
+    </script>
 </body>
 </html>
