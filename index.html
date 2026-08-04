@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Nous | NEURORDER</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/nous.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+<div class="auth-entry-links" style="position:fixed;right:24px;top:22px;z-index:100;display:flex;gap:10px"><a href="./login.html" style="color:white;text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:9px 14px;border-radius:999px">Sign in</a><a href="./signup.html" style="color:#07101b;text-decoration:none;background:white;padding:9px 14px;border-radius:999px;font-weight:700">Create account</a></div>
+
+    <div class="nous-app">
+
+        <section class="nous-intro" id="nousIntro">
+
+            <img
+                src="assets/logo/nouslogo.png"
+                alt="Nous symbol"
+                class="nous-symbol"
+            >
+
+            <h1>NOUS</h1>
+
+            <p>Understanding begins here.</p>
+
+        </section>
+
+        <main class="nous-workspace" id="nousWorkspace">
+
+            <header class="workspace-header">
+
+                <img
+                    src="assets/logo/nouslogo.png"
+                    alt="Nous"
+                    class="workspace-symbol"
+                >
+
+                <span>NOUS</span>
+
+            </header>
+
+            <section class="workspace-content">
+
+                <p class="eyebrow">
+                    GOOD EVENING
+                </p>
+
+                <h2>
+                    What would you like to understand?
+                </h2>
+
+                <form class="nous-command" id="nousCommand">
+
+                    <input
+                        type="text"
+                        id="nousInput"
+                        placeholder="Ask Nous anything..."
+                        autocomplete="off"
+                    >
+
+                    <button type="submit">
+                        Continue
+                    </button>
+
+                </form>
+
+                <nav class="ros-navigation">
+
+                    <button
+                        type="button"
+                        data-space="business"
+                    >
+                        <span>Business</span>
+                        <small>Operate</small>
+                    </button>
+
+                    <button
+                        type="button"
+                        data-space="education"
+                    >
+                        <span>Education</span>
+                        <small>Develop</small>
+                    </button>
+
+                    <button
+                        type="button"
+                        data-space="personal"
+                    >
+                        <span>Personal</span>
+                        <small>Connect</small>
+                    </button>
+
+                </nav>
+
+                <section class="ros-view" id="rosView">
+
+                    <p>
+                        ROS — Rest Of the System
+                    </p>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+        <section class="membership-section" id="membership">
+            <div class="membership-heading">
+                <p class="eyebrow">BEGIN WITH NOUS</p>
+                <h2>Choose the environment that fits you.</h2>
+                <p>Start free, then expand your access when you are ready. Prices are billed in South African rand.</p>
+            </div>
+
+            <div class="pricing-grid" id="pricingGrid">
+                <article class="pricing-card">
+                    <p class="plan-kicker">Explore</p>
+                    <h3>Free</h3>
+                    <p class="plan-price"><span>R0</span><small>/ month</small></p>
+                    <ul><li>NOUS Companion essentials</li><li>Personal environment access</li><li>Limited monthly usage</li></ul>
+                    <a class="plan-action secondary" href="signup.html">Create free account</a>
+                </article>
+
+                <article class="pricing-card">
+                    <p class="plan-kicker">Learn</p>
+                    <h3>Student &amp; Beginner</h3>
+                    <p class="plan-price"><span>R39</span><small>/ month</small></p>
+                    <ul><li>Companion with higher limits</li><li>Education and Personal spaces</li><li>Learning and project support</li></ul>
+                    <button class="plan-action checkout-button" data-plan="student_beginner">Choose Student</button>
+                </article>
+
+                <article class="pricing-card featured">
+                    <span class="recommended">Most practical</span>
+                    <p class="plan-kicker">Build</p>
+                    <h3>Business &amp; Education</h3>
+                    <p class="plan-price"><span>R89</span><small>/ month</small></p>
+                    <ul><li>Business and Education workspaces</li><li>Expanded Companion usage</li><li>Organisation-ready tools</li></ul>
+                    <button class="plan-action checkout-button" data-plan="business_education">Choose Business</button>
+                </article>
+
+                <article class="pricing-card">
+                    <p class="plan-kicker">Everything</p>
+                    <h3>NOUS Unlimited</h3>
+                    <p class="plan-price"><span>R169</span><small>/ month</small></p>
+                    <ul><li>All NOUS environments</li><li>Highest included usage</li><li>Priority access to new features</li></ul>
+                    <button class="plan-action checkout-button" data-plan="nous_unlimited">Choose Unlimited</button>
+                </article>
+            </div>
+            <p class="checkout-message" id="checkoutMessage" role="status"></p>
+        </section>
+
+    <script src="js/supabase-config.js"></script>
+    <script src="js/pricing.js"></script>
+    <script src="js/nous.js"></script>
+    <script src="js/ros.js"></script>
+
+</body>
+
+</html></html>

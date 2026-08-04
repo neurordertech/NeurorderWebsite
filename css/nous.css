@@ -1,0 +1,55 @@
+.nous-opening {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+}
+
+.nous-symbol {
+    width: 180px;
+    max-width: 55vw;
+    margin-bottom: 24px;
+    filter: drop-shadow(0 0 28px rgba(93, 185, 255, 0.22));
+}
+
+.nous-opening h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    padding-left: 0.24em;
+}
+
+.nous-opening p {
+    margin: 18px 0 0;
+    color: var(--muted);
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+}
+
+
+/* Membership and pricing */
+.membership-section { padding: 96px 6vw 110px; background: linear-gradient(180deg, #02050a 0%, #07101b 100%); border-top: 1px solid rgba(255,255,255,.08); }
+.membership-heading { max-width: 720px; margin: 0 auto 44px; text-align: center; }
+.membership-heading .eyebrow, .plan-kicker { color: #73c7ff; font-size: .76rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+.membership-heading h2 { margin: 10px 0 14px; font-size: clamp(2rem, 4vw, 3.4rem); letter-spacing: -.04em; }
+.membership-heading > p:last-child { color: var(--muted); line-height: 1.7; }
+.pricing-grid { width: min(1180px, 100%); margin: 0 auto; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 18px; align-items: stretch; }
+.pricing-card { position: relative; display: flex; flex-direction: column; padding: 28px; border: 1px solid rgba(255,255,255,.12); border-radius: 24px; background: rgba(255,255,255,.035); box-shadow: 0 24px 70px rgba(0,0,0,.22); }
+.pricing-card.featured { border-color: rgba(115,199,255,.65); background: linear-gradient(180deg, rgba(115,199,255,.12), rgba(255,255,255,.035)); transform: translateY(-8px); }
+.recommended { position: absolute; top: -13px; right: 22px; padding: 7px 11px; border-radius: 99px; background: #f7f8fa; color: #07101b; font-size: .72rem; font-weight: 800; }
+.pricing-card h3 { min-height: 54px; margin: 8px 0 12px; font-size: 1.25rem; }
+.plan-price { display: flex; align-items: baseline; gap: 8px; margin: 0 0 20px; }
+.plan-price span { font-size: 2.55rem; font-weight: 800; letter-spacing: -.05em; }
+.plan-price small { color: var(--muted); }
+.pricing-card ul { flex: 1; margin: 0 0 26px; padding-left: 18px; color: #c9d2da; line-height: 1.65; }
+.plan-action { width: 100%; min-height: 48px; display: grid; place-items: center; border: 0; border-radius: 14px; background: #f7f8fa; color: #07101b; font: inherit; font-weight: 800; text-decoration: none; cursor: pointer; }
+.plan-action.secondary { background: transparent; color: #f7f8fa; border: 1px solid rgba(255,255,255,.22); }
+.plan-action:disabled { opacity: .55; cursor: wait; }
+.checkout-message { min-height: 24px; margin: 24px auto 0; text-align: center; color: #ffb7b7; }
+.checkout-message.success { color: #9de7bd; }
+@media (max-width: 980px) { .pricing-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } .pricing-card.featured { transform:none; } }
+@media (max-width: 620px) { .membership-section { padding: 72px 20px 84px; } .pricing-grid { grid-template-columns: 1fr; } }

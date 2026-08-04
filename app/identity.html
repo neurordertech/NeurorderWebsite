@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="NOUS identity workspace.">
+  <title>Identity — NOUS</title>
+  <link rel="stylesheet" href="./css/tokens.css">
+  <link rel="stylesheet" href="./css/spaces.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="./js/auth-guard.js" defer></script>
+</head>
+<body>
+  <main class="space-page">
+    <header class="space-header">
+      <div>
+        <p class="eyebrow">NOUS IDENTITY</p>
+        <h1>Your profile</h1>
+        <p>Your authenticated NOUS identity is shared across the environments you are allowed to access.</p>
+      </div>
+      <a class="space-back" href="./index.html">Back to NOUS</a>
+    </header>
+    <section class="education-grid" aria-label="Identity details">
+      <article class="education-card">
+        <span>PROFILE</span>
+        <h2 class="profile-copy"><strong>NOUS User</strong></h2>
+        <p class="profile-copy"><small>Personal workspace</small></p>
+      </article>
+      <article class="education-card">
+        <span>MEMBERSHIP</span>
+        <h2>Manage your plan</h2>
+        <p><a class="space-back" href="./membership.html">Open membership</a></p>
+      </article>
+      <article class="education-card">
+        <span>SECURITY</span>
+        <h2>Protected session</h2>
+        <p>Authentication and permissions are handled through your configured Supabase project.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

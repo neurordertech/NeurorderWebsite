@@ -1,0 +1,22 @@
+:root {
+    --bg: #02050a;
+    --text: #f7f8fa;
+    --muted: #9aa6b2;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}

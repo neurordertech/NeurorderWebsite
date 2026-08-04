@@ -1,0 +1,20 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.DS_Store
+supabase/.branches/
+supabase/.temp/
+.vscode/
+
+app/js/supabase-config.js
+
+# Local and sensitive files
+.DS_Store
+.env
+.env.*
+!.env.example
+node_modules/
+supabase/.temp/
+*.backup
+*.zip

@@ -1,0 +1,13 @@
+@media (max-width: 600px) {
+    .nous-symbol {
+        width: 140px;
+    }
+
+    .nous-opening h1 {
+        font-size: 2.4rem;
+    }
+
+    .nous-opening p {
+        font-size: 0.9rem;
+    }
+}
