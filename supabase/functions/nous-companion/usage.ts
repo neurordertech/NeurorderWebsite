@@ -1,6 +1,6 @@
 import type {
   SupabaseClient,
-} from "supabase";
+} from "npm:@supabase/supabase-js@2";
 
 import type {
   MembershipAccess,
