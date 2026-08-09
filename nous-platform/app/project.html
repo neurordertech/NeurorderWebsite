@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="NOUS Projects — organise active work, research, products and organisational initiatives."
+  >
+
+  <title>Projects — NOUS</title>
+
+  <link rel="stylesheet" href="./css/tokens.css">
+  <link
+  rel="stylesheet"
+  href="./css/shell.css?v=20260809-1"
+  >
+  <link
+  rel="stylesheet"
+  href="./css/projects.css?v=20260809-1"
+  >
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="./js/auth-guard.js" defer></script>
+</head>
+
+<body>
+
+  <div class="ambient-background" aria-hidden="true">
+    <div class="ambient-orb ambient-orb-one"></div>
+    <div class="ambient-orb ambient-orb-two"></div>
+    <div class="ambient-grid"></div>
+  </div>
+
+  <div class="app-shell projects-shell">
+
+    <!-- =====================================================
+         TOP BAR
+    ====================================================== -->
+
+<header class="topbar">
+
+  <a
+    class="brand"
+    href="./business.html"
+    aria-label="Return to NOUS Business"
+  >
+    <img
+      class="projects-brand-logo"
+      src="../assets/logo/nouslogo.png"
+      alt=""
+    >
+
+    <span class="brand-name">
+      NOUS
+    </span>
+  </a>
+
+
+  <div class="topbar-context">
+
+    <span class="context-label">
+      Current workspace
+    </span>
+
+    <strong class="context-value">
+      Projects
+    </strong>
+
+  </div>
+
+
+  <div class="topbar-actions">
+
+    <button
+      class="projects-search-button"
+      id="projects-search-button"
+      type="button"
+      aria-label="Search projects"
+      title="Search projects"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"
+        />
+      </svg>
+    </button>
+
+
+    <a
+      class="projects-back-button"
+      href="./business.html"
+    >
+      Business
+
+      <span aria-hidden="true">
+        →
+      </span>
+    </a>
+
+  </div>
+
+</header>
+
+
+    <!-- =====================================================
+         PROJECTS MAIN
+    ====================================================== -->
+
+    <main class="projects-experience">
+
+      <!-- HERO -->
+
+      <section class="projects-hero">
+
+        <div class="projects-hero-copy">
+
+          <p class="eyebrow">
+            NOUS PROJECTS
+          </p>
+
+          <h1>
+            Organise the work
+            <span>that moves forward.</span>
+          </h1>
+
+          <p class="projects-hero-description">
+            Create, structure and continue projects across your
+            organisation without losing their relationship to time,
+            tasks, research and NOUS intelligence.
+          </p>
+
+        </div>
+
+
+        <div class="projects-hero-status">
+
+          <p class="projects-limit-label">
+            PROJECT CAPACITY
+          </p>
+
+          <div class="projects-limit-value">
+            <strong id="projects-current-count">
+              0
+            </strong>
+
+            <span>/</span>
+
+            <strong id="projects-limit-count">
+              —
+            </strong>
+          </div>
+
+          <p
+            class="projects-membership-label"
+            id="projects-membership-label"
+          >
+            Loading membership…
+          </p>
+
+
+          <button
+            class="projects-create-primary"
+            id="projects-create-primary"
+            type="button"
+          >
+            New project
+            <span aria-hidden="true">+</span>
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           PROJECT FILTERS
+      ==================================================== -->
+
+      <section class="projects-toolbar">
+
+        <div
+          class="projects-filter-group"
+          role="group"
+          aria-label="Project status filters"
+        >
+
+          <button
+            class="projects-filter is-active"
+            type="button"
+            data-project-filter="active"
+          >
+            Active
+          </button>
+
+          <button
+            class="projects-filter"
+            type="button"
+            data-project-filter="all"
+          >
+            All
+          </button>
+
+          <button
+            class="projects-filter"
+            type="button"
+            data-project-filter="archived"
+          >
+            Archived
+          </button>
+
+        </div>
+
+
+        <div class="projects-toolbar-meta">
+
+          <span id="projects-visible-count">
+            0 projects
+          </span>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           PROJECT GRID
+      ==================================================== -->
+
+      <section
+        class="projects-list-section"
+        aria-labelledby="projects-list-title"
+      >
+
+        <div class="projects-section-heading">
+
+          <div>
+            <p class="eyebrow">
+              WORKSPACE
+            </p>
+
+            <h2 id="projects-list-title">
+              Your projects
+            </h2>
+          </div>
+
+        </div>
+
+
+        <div
+          class="projects-grid"
+          id="projects-grid"
+          aria-live="polite"
+        >
+          <!-- projects.js renders projects here -->
+        </div>
+
+
+        <div
+          class="projects-empty-state"
+          id="projects-empty-state"
+          hidden
+        >
+
+          <div
+            class="projects-empty-mark"
+            aria-hidden="true"
+          >
+            <span></span>
+          </div>
+
+          <p class="eyebrow">
+            NO PROJECTS YET
+          </p>
+
+          <h3>
+            Start with one clear piece of work.
+          </h3>
+
+          <p>
+            Projects can later connect to tasks, calendar time,
+            milestones, research and NOUS observations.
+          </p>
+
+          <button
+            class="projects-create-secondary"
+            id="projects-create-secondary"
+            type="button"
+          >
+            Create first project
+          </button>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         CREATE PROJECT MODAL
+    ====================================================== -->
+
+    <div
+      class="project-create-modal"
+      id="project-create-modal"
+      aria-hidden="true"
+    >
+
+      <button
+        class="project-create-backdrop"
+        id="project-create-backdrop"
+        type="button"
+        aria-label="Close project creator"
+      ></button>
+
+
+      <section
+        class="project-create-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="project-create-title"
+      >
+
+        <div class="project-create-header">
+
+          <div>
+            <p class="eyebrow">
+              NEW PROJECT
+            </p>
+
+            <h2 id="project-create-title">
+              Create a project
+            </h2>
+          </div>
+
+
+          <button
+            class="project-create-close"
+            id="project-create-close"
+            type="button"
+            aria-label="Close project creator"
+          >
+            ×
+          </button>
+
+        </div>
+
+
+        <form
+          class="project-create-form"
+          id="project-create-form"
+        >
+
+          <label>
+            <span>Project name</span>
+
+            <input
+              id="project-title"
+              name="title"
+              type="text"
+              maxlength="100"
+              placeholder="e.g. NOUS Platform"
+              required
+            >
+          </label>
+
+
+          <label>
+            <span>Category</span>
+
+            <select
+              id="project-category"
+              name="category"
+              required
+            >
+              <option value="">
+                Select category
+              </option>
+
+              <option value="product">
+                Product
+              </option>
+
+              <option value="research">
+                Research
+              </option>
+
+              <option value="company">
+                Company
+              </option>
+
+              <option value="education">
+                Education
+              </option>
+
+              <option value="foundation">
+                Foundation
+              </option>
+
+              <option value="operations">
+                Operations
+              </option>
+
+              <option value="other">
+                Other
+              </option>
+            </select>
+          </label>
+
+
+          <label>
+            <span>Description</span>
+
+            <textarea
+              id="project-description"
+              name="description"
+              rows="4"
+              maxlength="500"
+              placeholder="What is this project responsible for?"
+            ></textarea>
+          </label>
+
+
+          <label>
+            <span>Status</span>
+
+            <select
+              id="project-status"
+              name="status"
+            >
+              <option value="active">
+                Active
+              </option>
+
+              <option value="planning">
+                Planning
+              </option>
+            </select>
+          </label>
+
+
+          <div class="project-create-actions">
+
+            <button
+              class="project-create-cancel"
+              id="project-create-cancel"
+              type="button"
+            >
+              Cancel
+            </button>
+
+            <button
+              class="project-create-submit"
+              type="submit"
+            >
+              Create project
+              <span aria-hidden="true">→</span>
+            </button>
+
+          </div>
+
+
+          <p
+            class="project-create-notice"
+            id="project-create-notice"
+            role="status"
+            aria-live="polite"
+          ></p>
+
+        </form>
+
+      </section>
+
+    </div>
+
+  </div>
+
+
+  <script src="./js/projects.js" defer></script>
+  <script src="./js/shell.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,417 @@
+.business-calendar-section {
+  transition:
+    filter 300ms ease,
+    transform 300ms ease;
+}
+
+.business-calendar-section.is-calendar-focused {
+  filter:
+    drop-shadow(
+      0 0 28px
+      rgba(118, 169, 255, 0.18)
+    );
+  transform: translateY(-3px);
+}
+
+.business-slider-progress {
+  pointer-events: auto;
+}
+
+.slider-progress-item {
+  position: relative;
+}
+
+.slider-progress-item.is-active::after {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.18),
+      transparent
+    );
+  content: "";
+  animation:
+    businessSignalCountdown
+    3s
+    linear
+    forwards;
+}
+
+@keyframes businessSignalCountdown {
+  from {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  to {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/* =========================================================
+   LIVE ANALYTICS + APPLICATION STATES
+   ========================================================= */
+
+.analytics-card-actionable {
+  cursor: pointer;
+}
+
+.analytics-card-actionable:focus-visible {
+  border-color: rgba(118, 169, 255, 0.58);
+  outline: 2px solid rgba(118, 169, 255, 0.45);
+  outline-offset: 4px;
+}
+
+.analytics-card-link {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--nous-text-soft);
+  font-size: 0.7rem;
+  font-weight: 680;
+}
+
+.analytics-card-link span {
+  transition: transform 180ms ease;
+}
+
+.analytics-card-actionable:hover
+.analytics-card-link span {
+  transform: translate(4px, -4px);
+}
+
+.analytics-empty-visual {
+  height: 90px;
+  margin-top: auto;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.analytics-empty-visual span {
+  flex: 1;
+  height: 8%;
+  min-height: 5px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.business-analytics-notice {
+  min-height: 20px;
+  margin: 18px 0 0;
+  color: var(--nous-text-muted);
+  font-size: 0.72rem;
+}
+
+.available-app.is-selected {
+  border-color: rgba(117, 221, 181, 0.42);
+  background: rgba(117, 221, 181, 0.08);
+}
+
+.available-app.is-selected::after {
+  margin-top: 8px;
+  color: var(--nous-green);
+  content: "ADDED";
+  font-size: 0.57rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.app-microsoft-live,
+.app-email-live,
+.app-onedrive,
+.app-sharepoint,
+.app-powerbi,
+.app-slack,
+.app-zoom,
+.app-custom {
+  font-weight: 760;
+}
+
+.app-onedrive {
+  background: linear-gradient(145deg, #3b98ed, #1765ac);
+}
+
+.app-sharepoint {
+  background: linear-gradient(145deg, #22a49a, #08736c);
+}
+
+.app-powerbi {
+  background: linear-gradient(145deg, #f2ca22, #cb9610);
+  color: #17130a;
+}
+
+.app-slack {
+  background: linear-gradient(145deg, #7d4b9e, #3f1d57);
+}
+
+.app-zoom {
+  background: linear-gradient(145deg, #4c92ff, #2865cc);
+}
+
+.app-custom {
+  border-style: dashed;
+}
+
+/* =========================================================
+   NOUS TIME MODAL
+   ========================================================= */
+
+.time-modal[hidden],
+.time-modal-backdrop[hidden] {
+  display: none !important;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.time-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  border: 0;
+  background: rgba(0, 0, 0, 0.74);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  opacity: 0;
+  cursor: default;
+  transition: opacity 180ms ease;
+}
+
+.time-modal-backdrop.is-open {
+  opacity: 1;
+}
+
+.time-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 901;
+  width: min(1080px, calc(100vw - 40px));
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding: clamp(28px, 4vw, 64px);
+  border: 1px solid rgba(170, 189, 220, 0.24);
+  border-radius: 42px;
+  background:
+    radial-gradient(
+      circle at 90% 8%,
+      rgba(73, 114, 184, 0.20),
+      transparent 34%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(7, 12, 19, 0.99),
+      rgba(10, 18, 29, 0.99)
+    );
+  box-shadow:
+    0 34px 100px rgba(0, 0, 0, 0.62);
+  opacity: 0;
+  transform: translate(-50%, -48%) scale(0.98);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.time-modal.is-open {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.time-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.time-modal-header h2 {
+  margin: 24px 0 0;
+  color: var(--nous-text);
+  font-size: clamp(2.7rem, 6vw, 5.3rem);
+  font-weight: 590;
+  letter-spacing: -0.065em;
+  line-height: 0.96;
+}
+
+.time-modal-close {
+  width: 68px;
+  height: 68px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(170, 189, 220, 0.22);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--nous-text-muted);
+  cursor: pointer;
+  font-size: 2.3rem;
+  font-weight: 300;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.time-modal-close:hover {
+  border-color: rgba(118, 169, 255, 0.48);
+  background: rgba(118, 169, 255, 0.09);
+  color: var(--nous-text);
+  transform: rotate(4deg);
+}
+
+.time-modal-close:focus-visible,
+.time-view-today:focus-visible,
+.time-open-schedule:focus-visible {
+  outline: 2px solid rgba(118, 169, 255, 0.72);
+  outline-offset: 4px;
+}
+
+.time-modal-divider {
+  height: 1px;
+  margin: clamp(32px, 5vw, 54px) 0;
+  background: rgba(170, 189, 220, 0.16);
+}
+
+.time-modal-clock-card {
+  padding: clamp(32px, 5vw, 70px);
+  border: 1px solid rgba(170, 189, 220, 0.18);
+  border-radius: 38px;
+  background:
+    radial-gradient(
+      circle at 82% 20%,
+      rgba(70, 112, 183, 0.20),
+      transparent 36%
+    ),
+    rgba(255, 255, 255, 0.018);
+}
+
+.time-modal-clock-label {
+  margin: 0 0 26px;
+  color: var(--nous-blue);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+
+.time-modal-clock {
+  display: flex;
+  align-items: baseline;
+  color: var(--nous-text);
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(4rem, 12vw, 9rem);
+  font-weight: 320;
+  letter-spacing: -0.075em;
+  line-height: 0.9;
+  white-space: nowrap;
+}
+
+.time-modal-date {
+  margin: 32px 0 0;
+  color: var(--nous-text-muted);
+  font-size: clamp(1rem, 2.2vw, 1.45rem);
+}
+
+.time-modal-actions {
+  margin-top: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.time-view-today,
+.time-open-schedule {
+  min-height: 62px;
+  padding: 0 30px;
+  border-radius: 999px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 720;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.time-view-today {
+  border: 1px solid rgba(170, 189, 220, 0.20);
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--nous-text-soft);
+}
+
+.time-open-schedule {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border: 0;
+  background: #f5f7fb;
+  color: #070b11;
+}
+
+.time-view-today:hover,
+.time-open-schedule:hover {
+  transform: translateY(-2px);
+}
+
+.time-view-today:hover {
+  border-color: rgba(118, 169, 255, 0.44);
+  background: rgba(118, 169, 255, 0.07);
+}
+
+.time-modal-note {
+  margin: 28px 0 0;
+  color: var(--nous-text-muted);
+  font-size: 0.78rem;
+}
+
+.profile-button {
+  color: inherit;
+  text-decoration: none;
+}
+
+.profile-button:focus-visible {
+  outline: 2px solid rgba(118, 169, 255, 0.72);
+  outline-offset: 4px;
+}
+
+@media (max-width: 700px) {
+  .time-modal {
+    width: calc(100vw - 24px);
+    max-height: calc(100vh - 24px);
+    padding: 24px;
+    border-radius: 28px;
+  }
+
+  .time-modal-close {
+    width: 52px;
+    height: 52px;
+    font-size: 1.8rem;
+  }
+
+  .time-modal-clock-card {
+    padding: 28px 22px;
+    border-radius: 26px;
+  }
+
+  .time-modal-clock {
+    font-size: clamp(3.2rem, 17vw, 5.6rem);
+  }
+
+  .time-modal-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .time-view-today,
+  .time-open-schedule {
+    width: 100%;
+  }
+}

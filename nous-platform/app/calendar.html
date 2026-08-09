@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="NOUS Calendar — a real-time temporal workspace for days, weeks, months and years."
+  >
+
+  <title>Calendar — NOUS</title>
+
+  <!-- NOUS shared styles -->
+  <link rel="stylesheet" href="./css/tokens.css">
+  <link rel="stylesheet" href="./css/spaces.css">
+
+  <!-- Calendar styles -->
+  <link rel="stylesheet" href="./css/calendar.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script src="../js/supabase-config.js"></script>
+
+  <script src="./js/auth-guard.js" defer></script>
+
+</head>
+
+<body>
+
+  <main class="nous-calendar-page">
+
+    <!-- ======================================================
+         TOP BAR
+    ======================================================= -->
+
+    <header class="calendar-topbar">
+
+      <div class="calendar-brand-block">
+
+        <div class="calendar-icon-wrap">
+        <img
+            id="nous-calendar-icon"
+            class="nous-calendar-icon"
+            src=""
+            alt="NOUS Calendar"
+            draggable="false"
+        >
+        </div>
+
+        <div class="calendar-brand-copy">
+          <p class="calendar-eyebrow">
+            NOUS · CALENDAR
+          </p>
+
+          <h1>
+            Calendar
+          </h1>
+
+          <p id="calendar-period-summary" class="calendar-period-summary">
+            —
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="calendar-live-block">
+
+        <p id="calendar-live-date" class="calendar-live-date">
+          —
+        </p>
+
+        <p id="calendar-live-time" class="calendar-live-time">
+          --:--:--
+        </p>
+
+        <p class="calendar-timezone">
+          Africa/Johannesburg
+        </p>
+
+      </div>
+
+    </header>
+
+
+    <!-- ======================================================
+         VIEW CONTROLS
+    ======================================================= -->
+
+    <section class="calendar-control-bar">
+
+      <div
+        class="calendar-view-switcher"
+        role="group"
+        aria-label="Calendar view"
+      >
+
+        <button
+          class="calendar-view-button"
+          type="button"
+          data-calendar-view="day"
+        >
+          Day
+        </button>
+
+        <button
+          class="calendar-view-button"
+          type="button"
+          data-calendar-view="week"
+        >
+          Week
+        </button>
+
+        <button
+          class="calendar-view-button is-active"
+          type="button"
+          data-calendar-view="month"
+        >
+          Month
+        </button>
+
+        <button
+          class="calendar-view-button"
+          type="button"
+          data-calendar-view="year"
+        >
+          Year
+        </button>
+
+      </div>
+
+
+      <div class="calendar-navigation">
+
+        <button
+          id="calendar-previous"
+          class="calendar-nav-button"
+          type="button"
+          aria-label="Previous period"
+        >
+          ←
+        </button>
+
+        <button
+          id="calendar-today"
+          class="calendar-today-button"
+          type="button"
+        >
+          Today
+        </button>
+
+        <button
+          id="calendar-next"
+          class="calendar-nav-button"
+          type="button"
+          aria-label="Next period"
+        >
+          →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         CURRENT SCALE HEADER
+    ======================================================= -->
+
+    <section class="calendar-scale-header">
+
+      <div>
+        <p class="calendar-scale-label">
+          CURRENT VIEW
+        </p>
+
+        <h2 id="calendar-view-title">
+          —
+        </h2>
+      </div>
+
+      <div class="calendar-scale-meta">
+        <span id="calendar-selected-date">
+          —
+        </span>
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         MAIN TEMPORAL WORKSPACE
+    ======================================================= -->
+
+    <section class="calendar-shell">
+
+      <div
+        id="calendar-viewport"
+        class="calendar-viewport"
+        aria-live="polite"
+      >
+        <!-- calendar.js renders Day / Week / Month / Year here -->
+      </div>
+
+
+      <aside
+        id="calendar-context-panel"
+        class="calendar-context-panel"
+        aria-label="Selected time details"
+      >
+
+        <div class="calendar-context-empty">
+
+          <p class="calendar-context-label">
+            SELECTED TIME
+          </p>
+
+          <h3 id="calendar-context-title">
+            No date selected
+          </h3>
+
+          <p id="calendar-context-copy">
+            Select a day, hour or event to inspect it here.
+          </p>
+          <button
+          id="calendar-delete-event"
+          class="calendar-delete-event"
+          type="button"
+          hidden
+        >
+          Delete event
+        </button>
+
+        </div>
+
+      </aside>
+
+    </section>
+
+
+    <!-- ======================================================
+         QUICK CREATE
+    ======================================================= -->
+
+    <button
+      id="calendar-create"
+      class="calendar-create-button"
+      type="button"
+      aria-label="Create calendar item"
+      title="Create calendar item"
+    >
+      +
+    </button>
+
+    <!-- ======================================================
+     CREATE EVENT MODAL
+======================================================= -->
+
+<div
+  id="calendar-create-modal"
+  class="calendar-event-modal"
+  hidden
+  aria-hidden="true"
+>
+  <button
+    id="calendar-create-backdrop"
+    class="calendar-event-backdrop"
+    type="button"
+    aria-label="Close event creator"
+  ></button>
+
+  <section
+    class="calendar-event-dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="calendar-create-title"
+  >
+    <header class="calendar-event-header">
+      <div>
+        <p>NOUS CALENDAR</p>
+
+        <h2 id="calendar-create-title">
+          Add event
+        </h2>
+      </div>
+
+      <button
+        id="calendar-create-close"
+        class="calendar-event-close"
+        type="button"
+        aria-label="Close"
+      >
+        ×
+      </button>
+    </header>
+
+    <form id="calendar-event-form">
+
+      <label class="calendar-field">
+        <span>Title</span>
+
+        <input
+          id="calendar-event-title"
+          name="title"
+          type="text"
+          placeholder="Event name"
+          maxlength="160"
+          required
+        >
+      </label>
+
+      <div class="calendar-field-row">
+
+        <label class="calendar-field">
+          <span>Date</span>
+
+          <input
+            id="calendar-event-date"
+            name="date"
+            type="date"
+            required
+          >
+        </label>
+
+        <label class="calendar-field">
+          <span>Type</span>
+
+          <select
+            id="calendar-event-type"
+            name="event_type"
+          >
+            <option value="event">
+              Event
+            </option>
+
+            <option value="meeting">
+              Meeting
+            </option>
+
+            <option value="task">
+              Task
+            </option>
+
+            <option value="class">
+              Class
+            </option>
+
+            <option value="deadline">
+              Deadline
+            </option>
+
+            <option value="community">
+              Community
+            </option>
+          </select>
+        </label>
+
+      </div>
+
+      <div class="calendar-field-row">
+
+        <label class="calendar-field">
+          <span>Starts</span>
+
+          <input
+            id="calendar-event-start"
+            name="start"
+            type="time"
+            value="09:00"
+          >
+        </label>
+
+        <label class="calendar-field">
+          <span>Ends</span>
+
+          <input
+            id="calendar-event-end"
+            name="end"
+            type="time"
+            value="10:00"
+          >
+        </label>
+
+      </div>
+
+      <label class="calendar-check-field">
+        <input
+          id="calendar-event-all-day"
+          type="checkbox"
+        >
+
+        <span>
+          All-day event
+        </span>
+      </label>
+
+      <label class="calendar-field">
+        <span>Location</span>
+
+        <input
+          id="calendar-event-location"
+          name="location"
+          type="text"
+          placeholder="Optional"
+        >
+      </label>
+
+      <label class="calendar-field">
+        <span>Description</span>
+
+        <textarea
+          id="calendar-event-description"
+          name="description"
+          rows="4"
+          placeholder="Add details..."
+        ></textarea>
+      </label>
+
+      <label class="calendar-field">
+        <span>NOUS Space</span>
+
+        <select
+          id="calendar-event-source"
+          name="source_space"
+        >
+          <option value="calendar">
+            Calendar
+          </option>
+
+          <option value="personal">
+            Personal
+          </option>
+
+          <option value="business">
+            Business
+          </option>
+
+          <option value="education">
+            Education
+          </option>
+
+          <option value="community">
+            Community
+          </option>
+
+          <option value="companion">
+            Companion
+          </option>
+        </select>
+      </label>
+
+      <p
+        id="calendar-event-notice"
+        class="calendar-event-notice"
+        aria-live="polite"
+      ></p>
+
+      <footer class="calendar-event-actions">
+
+        <button
+          id="calendar-event-cancel"
+          class="calendar-event-secondary"
+          type="button"
+        >
+          Cancel
+        </button>
+
+        <button
+          id="calendar-event-save"
+          class="calendar-event-primary"
+          type="submit"
+        >
+          Add event
+        </button>
+
+      </footer>
+
+    </form>
+  </section>
+</div>
+
+  </main>
+
+
+  <!-- ========================================================
+       NOUS CALENDAR ENGINE
+  ========================================================= -->
+
+  <script src="./js/zodiac-periods.js"></script>
+  <script src="./js/calendar.js"></script>
+
+</body>
+</html>

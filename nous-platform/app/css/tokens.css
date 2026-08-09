@@ -1,0 +1,84 @@
+:root {
+  /* Core surfaces */
+  --nous-bg: #030508;
+  --nous-bg-soft: #070a10;
+  --nous-surface: rgba(12, 17, 25, 0.78);
+  --nous-surface-strong: rgba(15, 21, 31, 0.94);
+  --nous-surface-hover: rgba(24, 32, 45, 0.88);
+
+  /* Borders */
+  --nous-border: rgba(255, 255, 255, 0.1);
+  --nous-border-strong: rgba(255, 255, 255, 0.18);
+
+  /* Typography */
+  --nous-text: #f7f9fc;
+  --nous-text-soft: #c5ccd8;
+  --nous-text-muted: #8993a3;
+
+  /* NOUS accents */
+  --nous-blue: #76a9ff;
+  --nous-blue-strong: #4e8cff;
+  --nous-blue-soft: rgba(91, 145, 255, 0.18);
+
+  --nous-purple: #a88cff;
+  --nous-purple-soft: rgba(168, 140, 255, 0.16);
+
+  --nous-green: #75ddb5;
+  --nous-green-soft: rgba(117, 221, 181, 0.14);
+
+  --nous-warm: #f0b98a;
+  --nous-warm-soft: rgba(240, 185, 138, 0.15);
+
+  /* Status */
+  --nous-success: #79dfb7;
+  --nous-warning: #f4c875;
+  --nous-danger: #ff8989;
+
+  /* Shadows */
+  --nous-shadow-small:
+    0 12px 36px rgba(0, 0, 0, 0.28);
+
+  --nous-shadow-large:
+    0 30px 90px rgba(0, 0, 0, 0.48);
+
+  --nous-glow:
+    0 0 60px rgba(77, 132, 255, 0.16);
+
+  /* Dimensions */
+  --nous-max-width: 1440px;
+  --nous-header-height: 78px;
+  --nous-bottom-nav-height: 78px;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Corners */
+  --radius-small: 12px;
+  --radius-medium: 20px;
+  --radius-large: 30px;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 180ms;
+  --duration-medium: 360ms;
+  --duration-slow: 700ms;
+
+  /* Typography stack */
+  --font-body:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "Segoe UI",
+    sans-serif;
+}

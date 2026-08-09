@@ -1,0 +1,598 @@
+/* =========================================================
+   KARDACH TOPBAR / NOUS BRAND
+   ========================================================= */
+
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbar-logo {
+  width: 36px;
+  height: 36px;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+
+  filter:
+    drop-shadow(
+      0 0 14px
+      rgba(118,169,255,.28)
+    );
+}
+
+.topbar-brand span {
+  color: var(--nous-text, #fff);
+  font-size: .88rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+}
+
+.topbar-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.space-label {
+  color: var(--nous-text-muted);
+  font-size: .56rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+}
+
+.topbar-nav strong {
+  color: var(--nous-text, #fff);
+  font-size: .82rem;
+  font-weight: 700;
+}
+/* =========================================================
+   NOUS KARDACH
+   ========================================================= */
+
+.kardach-page{
+  width:min(1380px,92vw);
+  margin:48px auto 80px;
+  display:flex;
+  flex-direction:column;
+  gap:32px;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero-card{
+  padding:52px;
+  border-radius:34px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(16,21,32,.94),
+      rgba(9,12,20,.96)
+    );
+
+  border:
+    1px solid
+    rgba(255,255,255,.07);
+
+  box-shadow:
+    0 30px 70px
+    rgba(0,0,0,.45);
+}
+
+.hero-card h1{
+  margin:12px 0 18px;
+  font-size:3.4rem;
+  line-height:1;
+  font-weight:720;
+}
+
+.hero-card p{
+  max-width:760px;
+  color:var(--nous-text-muted);
+  line-height:1.7;
+}
+
+.eyebrow{
+  color:var(--nous-blue);
+  font-size:.72rem;
+  letter-spacing:.28em;
+  font-weight:800;
+  text-transform:uppercase;
+}
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.status-grid{
+  display:grid;
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(250px,1fr)
+    );
+
+  gap:22px;
+}
+
+.status-card{
+
+  padding:34px;
+
+  border-radius:26px;
+
+  background:
+    rgba(15,18,28,.82);
+
+  border:
+    1px solid
+    rgba(255,255,255,.06);
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease;
+}
+
+.status-card:hover{
+
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(118,169,255,.45);
+
+}
+
+.status-card small{
+
+  display:block;
+
+  color:
+    var(--nous-text-muted);
+
+  font-size:.72rem;
+
+  margin-bottom:18px;
+
+  text-transform:uppercase;
+
+  letter-spacing:.16em;
+
+}
+
+.status-card h3{
+
+  margin:0;
+
+  font-size:2rem;
+
+  font-weight:720;
+
+}
+
+/* =========================================================
+   CONNECTIONS
+   ========================================================= */
+
+.connection-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(420px,1fr)
+    );
+
+  gap:26px;
+
+}
+
+.panel{
+
+  padding:38px;
+
+  border-radius:30px;
+
+  background:
+    rgba(15,18,28,.82);
+
+  border:
+    1px solid
+    rgba(255,255,255,.06);
+
+}
+
+.panel h2{
+
+  margin:0 0 12px;
+
+  font-size:1.7rem;
+
+}
+
+.panel p{
+
+  margin:0 0 28px;
+
+  color:
+    var(--nous-text-muted);
+
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.primary-button,
+.secondary-button{
+
+  height:54px;
+
+  padding:0 32px;
+
+  border:0;
+
+  border-radius:999px;
+
+  cursor:pointer;
+
+  font-size:.95rem;
+
+  font-weight:700;
+
+  transition:
+    transform .18s ease,
+    opacity .18s ease;
+
+}
+
+.primary-button{
+
+  color:#071018;
+
+  background:
+    linear-gradient(
+      135deg,
+      #83b6ff,
+      #6d9cff
+    );
+
+}
+
+.secondary-button{
+
+  color:white;
+
+  background:
+    rgba(255,255,255,.08);
+
+}
+
+.primary-button:hover,
+.secondary-button:hover{
+
+  transform:
+    translateY(-2px);
+
+}
+
+/* =========================================================
+   TRUSTED DEVICES
+   ========================================================= */
+
+.trusted-device-list{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:14px;
+
+}
+
+.trusted-device{
+
+  min-height:82px;
+
+  padding:22px;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  border-radius:22px;
+
+  background:
+    rgba(255,255,255,.03);
+
+  border:
+    1px solid
+    rgba(255,255,255,.05);
+
+}
+
+.trusted-device div{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:6px;
+
+}
+
+.trusted-device small{
+
+  color:
+    var(--nous-blue);
+
+  font-size:.66rem;
+
+  letter-spacing:.18em;
+
+  text-transform:uppercase;
+
+}
+
+.trusted-device strong{
+
+  font-size:1rem;
+
+}
+
+.trusted-device span{
+
+  color:
+    var(--nous-text-muted);
+
+}
+
+.trusted-device-status{
+
+  width:12px;
+
+  height:12px;
+
+  border-radius:50%;
+
+  background:
+    rgba(255,255,255,.16);
+
+}
+
+.trusted-device-status.is-connected{
+
+  background:
+    var(--nous-green);
+
+  box-shadow:
+    0 0 14px
+    rgba(117,221,181,.7);
+
+}
+
+/* =========================================================
+   AUTOMATIONS
+   ========================================================= */
+
+.automation-list{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:18px;
+
+}
+
+.automation-item{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+}
+
+/* =========================================================
+   SWITCH
+   ========================================================= */
+
+.switch{
+
+  position:relative;
+
+  width:54px;
+
+  height:30px;
+
+}
+
+.switch input{
+
+  display:none;
+
+}
+
+.switch span{
+
+  position:absolute;
+
+  inset:0;
+
+  border-radius:999px;
+
+  background:
+    rgba(255,255,255,.12);
+
+  transition:.2s;
+
+}
+
+.switch span::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:24px;
+
+  height:24px;
+
+  left:3px;
+
+  top:3px;
+
+  border-radius:50%;
+
+  background:white;
+
+  transition:.2s;
+
+}
+
+.switch input:checked + span{
+
+  background:
+    var(--nous-blue);
+
+}
+
+.switch input:checked + span::before{
+
+  transform:
+    translateX(24px);
+
+}
+
+/* =========================================================
+   FUTURE
+   ========================================================= */
+
+.future-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(180px,1fr)
+    );
+
+  gap:16px;
+
+}
+
+.future-item{
+
+  padding:18px;
+
+  border-radius:18px;
+
+  text-align:center;
+
+  background:
+    rgba(255,255,255,.03);
+
+  border:
+    1px solid
+    rgba(255,255,255,.05);
+
+  color:
+    var(--nous-text-muted);
+
+  transition:
+    border-color .25s ease,
+    transform .25s ease;
+
+}
+
+.future-item:hover{
+
+  transform:
+    translateY(-4px);
+
+  border-color:
+    rgba(118,169,255,.35);
+
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width:900px){
+
+.hero-card{
+
+padding:34px;
+
+}
+
+.hero-card h1{
+
+font-size:2.6rem;
+
+}
+
+.connection-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.status-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+/* =========================================================
+   CENTER MEMBERSHIP DROPDOWN
+   ========================================================= */
+
+.membership-toggle {
+  width: 100%;
+  margin: 40px auto 0;
+
+  display: grid;
+  justify-items: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.membership-toggle-copy {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.membership-toggle-visual {
+  margin-left: auto;
+  margin-right: auto;
+
+  display: grid;
+  place-items: center;
+}
+
+.membership-toggle-visual img {
+  margin: 0 auto;
+}
+
+.membership-toggle-action {
+  width: 100%;
+  text-align: center;
+}

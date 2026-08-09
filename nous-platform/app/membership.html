@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Manage your NOUS membership plan."
+  >
+
+  <title>Membership — NOUS</title>
+
+  <link
+    rel="stylesheet"
+    href="./css/tokens.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/shell.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/membership.css"
+  >
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script src="../js/supabase-config.js"></script>
+
+  <script
+    src="./js/auth-guard.js"
+    defer
+  ></script>
+
+  <script
+    src="./js/membership.js"
+    defer
+  ></script>
+</head>
+
+<body>
+  <div
+    class="ambient-background"
+    aria-hidden="true"
+  >
+    <div class="ambient-orb ambient-orb-one"></div>
+    <div class="ambient-orb ambient-orb-two"></div>
+    <div class="ambient-grid"></div>
+  </div>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <a
+        class="brand"
+        href="./index.html"
+        aria-label="Return to NOUS home"
+      >
+        <span class="brand-mark">N</span>
+
+        <span class="brand-copy">
+          <strong>NOUS</strong>
+          <small>Membership</small>
+        </span>
+      </a>
+
+      <nav
+        class="topbar-actions"
+        aria-label="Membership navigation"
+      >
+        <a
+          class="topbar-link"
+          href="./index.html"
+        >
+          Home
+        </a>
+
+        <a
+          class="topbar-link"
+          href="./business.html"
+        >
+          Business
+        </a>
+
+        <a
+          class="topbar-link is-active"
+          href="./membership.html"
+          aria-current="page"
+        >
+          Membership
+        </a>
+      </nav>
+    </header>
+
+    <main class="membership-page">
+      <section class="membership-hero">
+        <p class="eyebrow">
+          NOUS MEMBERSHIP
+        </p>
+
+        <h1>
+          Choose the intelligence level that fits your life.
+        </h1>
+
+        <p class="membership-intro">
+          Start with NOUS Free and upgrade when you need
+          more access across education, business and personal
+          environments.
+        </p>
+
+        <div class="current-membership-panel">
+          <span class="current-membership-label">
+            Current membership
+          </span>
+
+          <strong id="current-membership-name">
+            Loading membership...
+          </strong>
+
+          <p
+            id="membership-message"
+            class="membership-message"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </div>
+      </section>
+
+      <section
+        class="membership-grid"
+        aria-label="NOUS membership plans"
+      >
+        <article
+          class="membership-card"
+          data-plan-code="free"
+        >
+          <div class="membership-card-header">
+            <p class="plan-label">
+              Starter
+            </p>
+
+            <h2>NOUS Free</h2>
+
+            <p class="plan-price">
+              <span>R0</span>
+              <small>/ month</small>
+            </p>
+          </div>
+
+          <p class="plan-description">
+            Explore the NOUS environment with essential
+            access and a safe introduction to the platform.
+          </p>
+
+          <ul class="plan-features">
+            <li>Basic NOUS Companion access</li>
+            <li>Personal profile and identity</li>
+            <li>Limited workspace access</li>
+            <li>Core account security</li>
+          </ul>
+
+          <div class="membership-card-footer">
+            <span
+              class="plan-status"
+              data-plan-status
+            >
+              Available
+            </span>
+
+            <button
+              type="button"
+              class="plan-button"
+              data-plan-action="free"
+              disabled
+            >
+              Included with your account
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="membership-card"
+          data-plan-code="student_beginner"
+        >
+          <div class="membership-card-header">
+            <p class="plan-label">
+              Learning
+            </p>
+
+            <h2>NOUS Student &amp; Beginner</h2>
+
+            <p class="plan-price">
+              <span>R39</span>
+              <small>/ month</small>
+            </p>
+          </div>
+
+          <p class="plan-description">
+            For students, first-time users and people building
+            confidence with digital intelligence tools.
+          </p>
+
+          <ul class="plan-features">
+            <li>Expanded Companion usage</li>
+            <li>Education workspace access</li>
+            <li>Learning and study support</li>
+            <li>Beginner-friendly guidance</li>
+          </ul>
+
+          <div class="membership-card-footer">
+            <span
+              class="plan-status"
+              data-plan-status
+            >
+              Available
+            </span>
+
+            <button
+              type="button"
+              class="plan-button"
+              data-plan-action="student_beginner"
+            >
+              Choose NOUS Student &amp; Beginner
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="membership-card"
+          data-plan-code="business_education"
+        >
+          <div class="membership-card-header">
+            <p class="plan-label">
+              Professional
+            </p>
+
+            <h2>NOUS Business &amp; Education</h2>
+
+            <p class="plan-price">
+              <span>R89</span>
+              <small>/ month</small>
+            </p>
+          </div>
+
+          <p class="plan-description">
+            For people operating projects, organisations,
+            classrooms and structured professional work.
+          </p>
+
+          <ul class="plan-features">
+            <li>Business and education workspaces</li>
+            <li>Higher Companion usage</li>
+            <li>Organisation-focused tools</li>
+            <li>Priority workflow support</li>
+          </ul>
+
+          <div class="membership-card-footer">
+            <span
+              class="plan-status"
+              data-plan-status
+            >
+              Available
+            </span>
+
+            <button
+              type="button"
+              class="plan-button"
+              data-plan-action="business_education"
+            >
+              Choose NOUS Business &amp; Education
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="membership-card membership-card-featured"
+          data-plan-code="nous_unlimited"
+        >
+          <div class="featured-badge">
+            Full NOUS
+          </div>
+
+          <div class="membership-card-header">
+            <p class="plan-label">
+              Advanced
+            </p>
+
+            <h2>NOUS Unlimited</h2>
+
+            <p class="plan-price">
+              <span>R169</span>
+              <small>/ month</small>
+            </p>
+          </div>
+
+          <p class="plan-description">
+            The complete NOUS experience across personal,
+            education and business environments.
+          </p>
+
+          <ul class="plan-features">
+            <li>All NOUS environments</li>
+            <li>Maximum Companion access</li>
+            <li>Advanced workflow support</li>
+            <li>Early access to new capabilities</li>
+          </ul>
+
+          <div class="membership-card-footer">
+            <span
+              class="plan-status"
+              data-plan-status
+            >
+              Available
+            </span>
+
+            <button
+              type="button"
+              class="plan-button"
+              data-plan-action="nous_unlimited"
+            >
+              Choose NOUS Unlimited
+            </button>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
