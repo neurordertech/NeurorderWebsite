@@ -1866,113 +1866,57 @@
   text-decoration: none;
 }
 
-.business-clock-open {
-  position: absolute;
-  right: clamp(1.4rem, 3vw, 2.5rem);
-  bottom: clamp(1.3rem, 3vw, 2.2rem);
-  z-index: 3;
-  min-height: 44px;
+.business-clock-footer {
+  position: relative;
+  z-index: 2;
+
   display: flex;
+  justify-content: flex-end;
+
+  margin-top: var(--space-7);
+}
+
+.business-clock-open {
+  min-height: 46px;
+
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+
   gap: var(--space-3);
+
   padding: 0 var(--space-5);
+
   border: 1px solid rgba(118, 169, 255, 0.28);
   border-radius: var(--radius-pill);
+
   background: rgba(7, 12, 20, 0.74);
+
   color: var(--nous-text-soft);
+
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 650;
+
   cursor: pointer;
+
   backdrop-filter: blur(16px);
+
   transition:
     transform var(--duration-fast),
     color var(--duration-fast),
-    border-color var(--duration-fast);
+    border-color var(--duration-fast),
+    background var(--duration-fast);
 }
 
 .business-clock-open:hover {
   transform: translateY(-2px);
+
   border-color: rgba(118, 169, 255, 0.55);
+
+  background: rgba(18, 28, 43, 0.88);
+
   color: var(--nous-text);
-}
-
-/* Collapsible desktop navigation */
-
-.business-navigation-toggle {
-  display: none;
-}
-
-@media (min-width: 1100px) {
-  .business-navigation-shell {
-    position: fixed;
-    top: 50%;
-    left: 0;
-    z-index: 40;
-    transform: translateY(-50%);
-  }
-
-  .business-primary-navigation {
-    position: relative;
-    top: auto;
-    bottom: auto;
-    left: auto;
-    width: 72px;
-    transform: translateX(-100%);
-    opacity: 0;
-    pointer-events: none;
-    transition:
-      transform var(--duration-medium) var(--ease-standard),
-      opacity var(--duration-medium);
-  }
-
-  .business-navigation-shell.is-open
-  .business-primary-navigation {
-    transform: translateX(20px);
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .business-navigation-toggle {
-    position: absolute;
-    top: 50%;
-    left: 8px;
-    z-index: 2;
-    width: 34px;
-    height: 66px;
-    display: grid;
-    place-items: center;
-    border: 1px solid var(--nous-border-strong);
-    border-radius: 0 18px 18px 0;
-    background: rgba(8, 12, 18, 0.9);
-    color: var(--nous-text-soft);
-    font-size: 1.45rem;
-    cursor: pointer;
-    box-shadow: var(--nous-shadow-small);
-    backdrop-filter: blur(18px);
-    transform: translateY(-50%);
-    transition:
-      left var(--duration-medium) var(--ease-standard),
-      color var(--duration-fast),
-      background var(--duration-fast);
-  }
-
-  .business-navigation-shell.is-open
-  .business-navigation-toggle {
-    left: 101px;
-  }
-
-  .business-navigation-shell.is-open
-  .business-navigation-toggle span {
-    transform: rotate(180deg);
-  }
-
-  .business-navigation-toggle span {
-    transition:
-      transform var(--duration-medium) var(--ease-standard);
-  }
-
-  .business-navigation-toggle:hover {
-    color: var(--nous-text);
-    background: rgba(17, 24, 35, 0.96);
-  }
 }
 
 /* Shared overlay behaviour */
@@ -2298,5 +2242,747 @@
   .software-node,
   .analytics-chart span {
     animation: none;
+  }
+}
+
+/* =========================================================
+   BUSINESS WORKSPACE LABEL CLEANUP
+========================================================= */
+
+.business-projects-section .eyebrow,
+.business-workspace-state .project-copy small {
+  background: transparent !important;
+  box-shadow: none !important;
+  text-shadow: none;
+}
+
+.business-workspace-state .project-copy small::before,
+.business-workspace-state .project-copy small::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* =========================================================
+   NOUS BUSINESS — PROJECT CREATOR
+========================================================= */
+
+.business-project-modal[hidden] {
+  display: none !important;
+}
+
+.business-project-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 180;
+
+  display: grid;
+  place-items: center;
+
+  padding: 24px;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 180ms ease,
+    visibility 180ms ease;
+}
+
+.business-project-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   BACKDROP
+========================================================= */
+
+.business-project-modal-backdrop {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
+  border: 0;
+
+  background:
+    rgba(0, 2, 7, 0.78);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  cursor: default;
+}
+
+
+/* =========================================================
+   PROJECT DIALOG
+========================================================= */
+
+.business-project-modal-panel {
+  position: relative;
+  z-index: 1;
+
+  width: min(660px, 100%);
+  max-height: calc(100vh - 48px);
+
+  overflow-y: auto;
+
+  padding:
+    clamp(
+      1.7rem,
+      4vw,
+      3rem
+    );
+
+  border:
+    1px solid
+    rgba(
+      118,
+      169,
+      255,
+      0.18
+    );
+
+  border-radius:
+    30px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgba(
+        78,
+        140,
+        255,
+        0.16
+      ),
+      transparent 37%
+    ),
+    linear-gradient(
+      150deg,
+      rgba(
+        15,
+        22,
+        34,
+        0.99
+      ),
+      rgba(
+        5,
+        9,
+        15,
+        0.99
+      )
+    );
+
+  box-shadow:
+    0 45px 120px
+    rgba(
+      0,
+      0,
+      0,
+      0.7
+    ),
+    0 0 60px
+    rgba(
+      78,
+      140,
+      255,
+      0.07
+    ),
+    inset 0 1px 0
+    rgba(
+      255,
+      255,
+      255,
+      0.05
+    );
+
+  opacity: 0;
+
+  transform:
+    translateY(22px)
+    scale(0.975);
+
+  transition:
+    opacity 220ms ease,
+    transform 240ms
+      var(--ease-standard);
+}
+
+.business-project-modal.is-open
+.business-project-modal-panel {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.business-project-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: var(--space-6);
+
+  padding-bottom:
+    var(--space-6);
+
+  border-bottom:
+    1px solid
+    var(--nous-border);
+}
+
+.business-project-modal-header .eyebrow {
+  margin-bottom:
+    var(--space-3);
+}
+
+.business-project-modal-header h2 {
+  margin: 0;
+
+  font-size:
+    clamp(
+      2rem,
+      5vw,
+      3.6rem
+    );
+
+  font-weight: 510;
+
+  letter-spacing:
+    -0.055em;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.business-project-modal-close {
+  flex:
+    0 0 auto;
+
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border:
+    1px solid
+    var(--nous-border);
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.03
+    );
+
+  color:
+    var(--nous-text-muted);
+
+  font: inherit;
+  font-size: 1.45rem;
+
+  cursor: pointer;
+
+  transition:
+    transform var(--duration-fast),
+    border-color var(--duration-fast),
+    color var(--duration-fast),
+    background var(--duration-fast);
+}
+
+.business-project-modal-close:hover {
+  transform: rotate(5deg);
+
+  border-color:
+    var(--nous-border-strong);
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.065
+    );
+
+  color:
+    var(--nous-text);
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+#business-project-form {
+  margin-top:
+    var(--space-7);
+
+  display: grid;
+
+  gap:
+    var(--space-5);
+}
+
+
+/* =========================================================
+   FORM FIELDS
+========================================================= */
+
+.business-project-field {
+  display: grid;
+
+  gap:
+    10px;
+}
+
+.business-project-field > span {
+  color:
+    var(--nous-text-muted);
+
+  font-size:
+    0.68rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.12em;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* =========================================================
+   INPUT + TEXTAREA
+========================================================= */
+
+.business-project-field input,
+.business-project-field textarea {
+  width: 100%;
+
+  box-sizing:
+    border-box;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.09
+    );
+
+  border-radius:
+    16px;
+
+  outline: none;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.035
+    );
+
+  color:
+    var(--nous-text);
+
+  font:
+    inherit;
+
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.business-project-field input {
+  min-height:
+    54px;
+
+  padding:
+    0 16px;
+}
+
+.business-project-field textarea {
+  min-height:
+    130px;
+
+  padding:
+    15px 16px;
+
+  resize:
+    vertical;
+
+  line-height:
+    1.55;
+}
+
+.business-project-field input::placeholder,
+.business-project-field textarea::placeholder {
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.28
+    );
+}
+
+
+/* =========================================================
+   INPUT FOCUS
+========================================================= */
+
+.business-project-field input:focus,
+.business-project-field textarea:focus {
+  border-color:
+    rgba(
+      118,
+      169,
+      255,
+      0.58
+    );
+
+  background:
+    rgba(
+      78,
+      140,
+      255,
+      0.045
+    );
+
+  box-shadow:
+    0 0 0 3px
+    rgba(
+      78,
+      140,
+      255,
+      0.08
+    );
+}
+
+
+/* =========================================================
+   MEMBERSHIP NOTICE
+========================================================= */
+
+.business-project-form-notice {
+  min-height: 20px;
+
+  margin: 0;
+
+  padding:
+    12px 14px;
+
+  border:
+    1px solid
+    rgba(
+      118,
+      169,
+      255,
+      0.12
+    );
+
+  border-radius:
+    12px;
+
+  background:
+    rgba(
+      78,
+      140,
+      255,
+      0.045
+    );
+
+  color:
+    var(--nous-text-muted);
+
+  font-size:
+    0.74rem;
+
+  line-height:
+    1.5;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.business-project-modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap:
+    var(--space-3);
+
+  padding-top:
+    var(--space-3);
+}
+
+.business-project-cancel,
+.business-project-save {
+  min-height:
+    48px;
+
+  padding:
+    0 22px;
+
+  border-radius:
+    var(--radius-pill);
+
+  font:
+    inherit;
+
+  font-size:
+    0.82rem;
+
+  font-weight:
+    680;
+
+  cursor: pointer;
+
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    opacity 180ms ease,
+    box-shadow 180ms ease;
+}
+
+
+/* CANCEL */
+
+.business-project-cancel {
+  border:
+    1px solid
+    var(--nous-border);
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.025
+    );
+
+  color:
+    var(--nous-text-muted);
+}
+
+.business-project-cancel:hover {
+  transform:
+    translateY(-2px);
+
+  border-color:
+    var(--nous-border-strong);
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.06
+    );
+
+  color:
+    var(--nous-text);
+}
+
+
+/* CREATE */
+
+.business-project-save {
+  border: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #78adff,
+      #527fd0
+    );
+
+  color:
+    #06101e;
+
+  box-shadow:
+    0 12px 30px
+    rgba(
+      78,
+      140,
+      255,
+      0.19
+    );
+}
+
+.business-project-save:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 16px 38px
+    rgba(
+      78,
+      140,
+      255,
+      0.28
+    );
+}
+
+.business-project-save:disabled {
+  opacity: 0.45;
+
+  cursor: wait;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   CREATE PROJECT CARD
+========================================================= */
+
+.business-project-create {
+  border-style:
+    solid;
+}
+
+.business-project-create
+.project-folder-body {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(
+        118,
+        169,
+        255,
+        0.23
+      ),
+      rgba(
+        78,
+        140,
+        255,
+        0.08
+      )
+    );
+}
+
+.business-project-create:hover {
+  border-color:
+    rgba(
+      118,
+      169,
+      255,
+      0.42
+    );
+}
+
+
+/* =========================================================
+   PROJECT LIMIT CARD
+========================================================= */
+
+.business-project-limit {
+  cursor:
+    default;
+
+  opacity:
+    0.72;
+}
+
+.business-project-limit:hover {
+  transform:
+    none;
+
+  box-shadow:
+    none;
+}
+
+
+/* =========================================================
+   WORKSPACE NOTICE
+========================================================= */
+
+.business-workspace-notice {
+  margin:
+    var(--space-5)
+    0
+    0;
+
+  color:
+    var(--nous-text-muted);
+
+  font-size:
+    0.76rem;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 620px) {
+
+  .business-project-modal {
+    padding:
+      12px;
+  }
+
+  .business-project-modal-panel {
+    width:
+      100%;
+
+    max-height:
+      calc(
+        100vh -
+        24px
+      );
+
+    padding:
+      22px;
+
+    border-radius:
+      24px;
+  }
+
+  .business-project-modal-actions {
+    flex-direction:
+      column-reverse;
+
+    align-items:
+      stretch;
+  }
+
+  .business-project-cancel,
+  .business-project-save {
+    width:
+      100%;
   }
 }

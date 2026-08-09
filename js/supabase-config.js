@@ -1,12 +1,11 @@
 (() => {
   "use strict";
 
-  const configured = window.NOUS_SUPABASE_CONFIG || {};
-  const url = configured.url || "YOUR_SUPABASE_PROJECT_URL";
+  const url =
+    "https://ixnncxwrztxluiltmsol.supabase.co";
+
   const publishableKey =
-    configured.publishableKey ||
-    configured.anonKey ||
-    "YOUR_SUPABASE_ANON_KEY";
+    "sb_publishable_yQAdi3Qw64oPQoz6nNGr9Q_sTLA9U_o";
 
   window.NOUS_SUPABASE_CONFIG = Object.freeze({
     url,
@@ -15,30 +14,42 @@
 
   const hasRealConfiguration =
     /^https:\/\/.+\.supabase\.co$/i.test(url) &&
-    publishableKey &&
-    !publishableKey.startsWith("YOUR_");
+    typeof publishableKey === "string" &&
+    publishableKey.length > 20 &&
+    !publishableKey.startsWith("PASTE_");
 
   window.NOUS_CONFIG_READY = hasRealConfiguration;
 
   if (!hasRealConfiguration) {
     console.error(
-      "[NOUS] Add the project URL and public anon/publishable key in js/supabase-config.js."
+      "[NOUS] Supabase project URL or publishable key is missing."
     );
     return;
   }
 
   if (!window.supabase?.createClient) {
-    console.error("[NOUS] Supabase JS must load before supabase-config.js.");
+    console.error(
+      "[NOUS] Supabase JS must load before supabase-config.js."
+    );
     return;
   }
 
   if (!window.NOUS_SUPABASE) {
-    window.NOUS_SUPABASE = window.supabase.createClient(url, publishableKey, {
-      auth: {
-        persistSession: true,
-        autoRefreshToken: true,
-        detectSessionInUrl: true
-      }
-    });
+    window.NOUS_SUPABASE =
+      window.supabase.createClient(
+        url,
+        publishableKey,
+        {
+          auth: {
+            persistSession: true,
+            autoRefreshToken: true,
+            detectSessionInUrl: true
+          }
+        }
+      );
   }
+
+  console.info(
+    "[NOUS] Supabase client initialised."
+  );
 })();

@@ -1,70 +1,529 @@
-import { createClient } from "supabase";
-import { runBoyRos } from "../_shared/boyros/index.ts";
-import type { BoyRosSignal } from "../_shared/boyros/index.ts";
+import {
+  createNousClients,
+  getAuthenticatedUser,
+} from "./auth.ts";
 
-const cors = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
-  "Access-Control-Allow-Methods": "POST, OPTIONS",
+
+import {
+  buildModelInput,
+  routeNousRequest,
+} from "./orule.ts";
+
+
+import {
+  generateNousResponse,
+} from "./openai.ts";
+
+
+import {
+  checkNousAccess,
+  getPreviousResponseId,
+  saveConversation,
+  saveUsage,
+} from "./usage.ts";
+
+
+import type {
+  NousRequestBody,
+} from "./types.ts";
+
+
+const corsHeaders = {
+
+  "Access-Control-Allow-Origin":
+    "*",
+
+  "Access-Control-Allow-Headers":
+    "authorization, x-client-info, apikey, content-type",
+
+  "Access-Control-Allow-Methods":
+    "POST, OPTIONS",
+
 };
 
-function json(body: unknown, status = 200) {
-  return new Response(JSON.stringify(body), { status, headers: { ...cors, "Content-Type": "application/json" } });
+
+function jsonResponse(
+  body:
+    Record<
+      string,
+      unknown
+    >,
+
+  status = 200,
+): Response {
+
+  return new Response(
+    JSON.stringify(
+      body
+    ),
+    {
+
+      status,
+
+      headers: {
+        ...corsHeaders,
+
+        "Content-Type":
+          "application/json",
+      },
+
+    },
+  );
 }
 
-Deno.serve(async (request) => {
-  if (request.method === "OPTIONS") return new Response("ok", { headers: cors });
-  if (request.method !== "POST") return json({ error: "method_not_allowed", message: "POST requests only." }, 405);
 
-  try {
-    const url = Deno.env.get("SUPABASE_URL");
-    const anon = Deno.env.get("SUPABASE_ANON_KEY");
-    const auth = request.headers.get("Authorization");
-    if (!url || !anon) return json({ error: "runtime_configuration_error", message: "NOUS runtime is not configured." }, 500);
-    if (!auth?.startsWith("Bearer ")) return json({ error: "authentication_required", message: "Sign in to use NOUS Companion." }, 401);
+Deno.serve(
+  async (
+    request:
+      Request,
+  ): Promise<Response> => {
 
-    const client = createClient(url, anon, { global: { headers: { Authorization: auth } }, auth: { persistSession: false, autoRefreshToken: false } });
-    const { data: { user }, error: userError } = await client.auth.getUser();
-    if (userError || !user) return json({ error: "invalid_identity", message: "Your NOUS identity could not be verified." }, 401);
+    /* =====================================================
+       CORS
+    ====================================================== */
 
-    const body = await request.json().catch(() => null) as { message?: string; space?: string; signals?: BoyRosSignal[] } | null;
-    const message = body?.message?.trim();
-    if (!message) return json({ error: "message_required", message: "Enter a message for NOUS." }, 400);
-    if (message.length > 8000) return json({ error: "message_too_long", message: "Keep the message below 8,000 characters." }, 400);
+    if (
+      request.method ===
+      "OPTIONS"
+    ) {
 
-    const result = runBoyRos({
-      identity: { userId: user.id, email: user.email ?? null, organisationId: null },
-      consent: { grantedPermissions: ["profile.read", "activity.read"], revokedPermissions: [] },
-      signals: Array.isArray(body?.signals) ? body!.signals : [],
-    });
-
-    const context = result.contextForOrule;
-    const apiKey = Deno.env.get("OPENAI_API_KEY");
-    if (!apiKey) {
-      return json({
-        response: `O.R.U.L.E. received your request in ${body?.space || "NOUS"}. The reasoning route is working, but the language-model secret has not been configured yet.`,
-        orule: { priority: result.priority, context, acceptedSignals: result.acceptedSignalCount },
-      });
+      return new Response(
+        "ok",
+        {
+          headers:
+            corsHeaders,
+        },
+      );
     }
 
-    const model = Deno.env.get("OPENAI_MODEL") || "gpt-5-mini";
-    const ai = await fetch("https://api.openai.com/v1/responses", {
-      method: "POST",
-      headers: { "Authorization": `Bearer ${apiKey}`, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        model,
-        instructions: "You are NOUS Companion. Be practical, calm and direct. Use only the supplied permitted context. Never claim access to data not supplied.",
-        input: [{ role: "user", content: [{ type: "input_text", text: `Space: ${body?.space || "home"}\nPermitted O.R.U.L.E. context: ${JSON.stringify(context)}\n\nUser request: ${message}` }] }],
-      }),
-    });
-    const payload = await ai.json();
-    if (!ai.ok) throw new Error(payload?.error?.message || "The language model request failed.");
-    const response = payload?.output_text || payload?.output?.flatMap((item: any) => item?.content || []).find((item: any) => item?.type === "output_text")?.text;
-    if (!response) throw new Error("The language model returned no readable response.");
 
-    return json({ response, orule: { priority: result.priority, context, acceptedSignals: result.acceptedSignalCount } });
-  } catch (error) {
-    console.error("NOUS Companion error", error);
-    return json({ error: "unexpected_error", message: error instanceof Error ? error.message : "NOUS Companion failed." }, 500);
-  }
-});
+    if (
+      request.method !==
+      "POST"
+    ) {
+
+      return jsonResponse(
+        {
+          error:
+            "Method not allowed.",
+        },
+        405,
+      );
+    }
+
+
+    try {
+
+      /* ===================================================
+         OPENAI KEY
+      ==================================================== */
+
+      const openAIKey =
+        Deno.env.get(
+          "OPENAI_API_KEY",
+        );
+
+
+      if (
+        !openAIKey
+      ) {
+
+        throw new Error(
+          "OPENAI_API_KEY has not been configured.",
+        );
+      }
+
+
+      /* ===================================================
+         AUTH
+      ==================================================== */
+
+      const authorization =
+        request.headers.get(
+          "Authorization",
+        ) || "";
+
+
+      const {
+        userClient,
+        adminClient,
+      } =
+        createNousClients(
+          authorization,
+        );
+
+
+      const user =
+        await getAuthenticatedUser(
+          userClient,
+        );
+
+
+      if (
+        !user
+      ) {
+
+        return jsonResponse(
+          {
+
+            error:
+              "Please sign in to use Nous Companion.",
+
+            code:
+              "AUTH_REQUIRED",
+
+          },
+          401,
+        );
+      }
+
+
+      /* ===================================================
+         REQUEST BODY
+      ==================================================== */
+
+      let body:
+        NousRequestBody;
+
+
+      try {
+
+        body =
+          await request
+            .json() as
+            NousRequestBody;
+
+
+      } catch {
+
+        return jsonResponse(
+          {
+            error:
+              "The request body is not valid JSON.",
+          },
+          400,
+        );
+      }
+
+
+      const message =
+        body.message
+          ?.trim() ||
+        "";
+
+
+      if (
+        !message
+      ) {
+
+        return jsonResponse(
+          {
+            error:
+              "Please enter a message for Nous.",
+          },
+          400,
+        );
+      }
+
+
+      if (
+        message.length >
+        2000
+      ) {
+
+        return jsonResponse(
+          {
+            error:
+              "Your message is too long. Please shorten it.",
+          },
+          400,
+        );
+      }
+
+
+      /* ===================================================
+         ROUTING
+      ==================================================== */
+
+      const route =
+        routeNousRequest(
+          body.mode,
+          body.context ||
+            null,
+        );
+
+
+      /* ===================================================
+         MEMBERSHIP ACCESS
+      ==================================================== */
+
+      const access =
+        await checkNousAccess(
+          adminClient,
+          user.id,
+        );
+
+
+      if (
+        !access.allowed
+      ) {
+
+        return jsonResponse(
+          {
+
+            error:
+              "You have reached today’s Nous usage allowance.",
+
+            code:
+              "USAGE_LIMIT_REACHED",
+
+            upgradeRequired:
+              true,
+
+            access,
+
+          },
+          429,
+        );
+      }
+
+
+      /* ===================================================
+         CONVERSATION OWNERSHIP + MEMORY
+      ==================================================== */
+
+      let previousResponseId:
+        string | null =
+          null;
+
+
+      if (
+        body.conversationId
+      ) {
+
+        try {
+
+          previousResponseId =
+            await getPreviousResponseId(
+              adminClient,
+              user.id,
+              body.conversationId,
+            );
+
+
+        } catch (error) {
+
+          console.warn(
+            "Conversation ownership check failed:",
+            error,
+          );
+
+
+          return jsonResponse(
+            {
+
+              error:
+                error instanceof Error
+                  ? error.message
+                  : "NOUS could not verify this conversation.",
+
+              code:
+                "INVALID_CONVERSATION",
+
+            },
+            403,
+          );
+        }
+      }
+
+
+      /* ===================================================
+         MODEL INPUT
+      ==================================================== */
+
+      const modelInput =
+        buildModelInput(
+          message,
+          route,
+        );
+
+
+      /* ===================================================
+         OPENAI
+      ==================================================== */
+
+      const modelResult =
+        await generateNousResponse({
+
+          apiKey:
+            openAIKey,
+
+          /*
+           * Keep sending instructions every turn.
+           */
+
+          instructions:
+            route.instructions,
+
+          input:
+            modelInput,
+
+          /*
+           * This is the actual multi-turn memory link.
+           */
+
+          previousResponseId,
+
+        });
+
+
+      /* ===================================================
+         SAVE CONVERSATION TURN
+      ==================================================== */
+
+      const conversationId =
+        await saveConversation({
+
+          adminClient,
+
+          userId:
+            user.id,
+
+          mode:
+            route.mode,
+
+          /*
+           * Previous database turn.
+           */
+
+          conversationId:
+            body
+              .conversationId,
+
+          title:
+            body.context
+              ?.title ||
+            null,
+
+          sourceUrl:
+            body.context
+              ?.url ||
+            null,
+
+          message,
+
+          answer:
+            modelResult
+              .answer,
+
+          /*
+           * Store the NEW OpenAI response.
+           *
+           * The next request will retrieve this.
+           */
+
+          openAIResponseId:
+            modelResult
+              .responseId,
+
+        });
+
+
+      /* ===================================================
+         USAGE
+      ==================================================== */
+
+      await saveUsage({
+
+        adminClient,
+
+        userId:
+          user.id,
+
+        mode:
+          route.mode,
+
+        model:
+          modelResult
+            .model,
+
+        usage:
+          modelResult
+            .usage,
+
+      });
+
+
+      /* ===================================================
+         RESPONSE
+      ==================================================== */
+
+      return jsonResponse({
+
+        answer:
+          modelResult
+            .answer,
+
+        mode:
+          route.mode,
+
+        conversationId,
+
+        previousResponseId:
+          modelResult
+            .responseId,
+
+        signedIn:
+          true,
+
+        access: {
+
+          planCode:
+            access.planCode,
+
+          dailyLimit:
+            access.dailyLimit,
+
+          usedToday:
+            access.usedToday +
+            1,
+
+          remainingToday:
+            Math.max(
+              access
+                .remainingToday -
+                1,
+              0,
+            ),
+
+        },
+
+        usage:
+          modelResult
+            .usage,
+
+      });
+
+
+    } catch (error) {
+
+      console.error(
+        "Nous Companion error:",
+        error,
+      );
+
+
+      return jsonResponse(
+        {
+
+          error:
+            error instanceof Error
+              ? error.message
+              : "An unexpected Nous error occurred.",
+
+        },
+        500,
+      );
+    }
+  },
+);

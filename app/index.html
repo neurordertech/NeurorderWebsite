@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="NOUS — one intelligence across business, education and personal life."
+    content="NOUS — one intelligence across business, education, community and personal life."
   >
 
   <title>NOUS</title>
@@ -22,21 +22,27 @@
 
   <link
     rel="stylesheet"
-    href="./css/shell.css"
+    href="./css/shell.css?v=20260804-2"
   >
 
   <link
-  rel="stylesheet"
-  href="./css/home.css"
+    rel="stylesheet"
+    href="./css/home.css"
   >
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+  ></script>
+
   <script src="../js/supabase-config.js"></script>
   <script src="./js/auth-guard.js" defer></script>
 </head>
 
 <body>
-  <div class="ambient-background" aria-hidden="true">
+  <div
+    class="ambient-background"
+    aria-hidden="true"
+  >
     <div class="ambient-orb ambient-orb-one"></div>
     <div class="ambient-orb ambient-orb-two"></div>
     <div class="ambient-grid"></div>
@@ -44,21 +50,32 @@
 
   <div class="app-shell">
     <header class="topbar">
-      <a
-        class="brand"
-        href="./index.html"
-        aria-label="NOUS home"
-      >
-        <span class="brand-symbol" aria-hidden="true">
-          <span class="brand-core"></span>
-          <span class="brand-ring"></span>
-        </span>
+<a
+  class="brand"
+  href="./index.html"
+  aria-label="NOUS home"
+>
+  <span
+    class="brand-logo-shell"
+    aria-hidden="true"
+  >
+    <img
+      class="brand-logo-image"
+      src="../assets/logo/nouslogo.png"
+      alt=""
+      width="32"
+      height="32"
+    >
+  </span>
 
-        <span class="brand-name">NOUS</span>
-      </a>
-
+  <span class="brand-name">
+    NOUS
+  </span>
+</a>
       <div class="topbar-context">
-        <span class="context-label">Current space</span>
+        <span class="context-label">
+          Current space
+        </span>
 
         <strong
           class="context-value"
@@ -90,7 +107,9 @@
           type="button"
           aria-label="Open profile"
         >
-          <span class="profile-avatar">NM</span>
+          <span class="profile-avatar">
+            NM
+          </span>
 
           <span class="profile-copy">
             <strong>Ntokozo</strong>
@@ -101,13 +120,22 @@
     </header>
 
     <main class="main-experience">
+
+      <!-- =====================================================
+           WELCOME / ASK NOUS
+           ===================================================== -->
+
       <section class="welcome-panel">
         <div class="welcome-copy">
-          <p class="eyebrow">NOUS COMPANION</p>
+          <p class="eyebrow">
+            NOUS COMPANION
+          </p>
 
           <h1>
             Good evening.
-            <span>What would you like to understand today?</span>
+            <span>
+              What would you like to understand today?
+            </span>
           </h1>
 
           <p class="welcome-description">
@@ -120,396 +148,577 @@
           class="companion-input"
           id="companion-input"
           type="button"
+          aria-label="Ask NOUS"
         >
-          <span class="companion-input-icon" aria-hidden="true">
+          <span
+            class="companion-input-icon"
+            aria-hidden="true"
+          >
             <span></span>
           </span>
 
           <span class="companion-input-copy">
-            <strong>Ask NOUS</strong>
-            <small>Understand, organise or begin something</small>
+            <strong>
+              Ask NOUS
+            </strong>
+
+            <small>
+              Understand, organise or begin something
+            </small>
           </span>
 
-          <span class="companion-input-arrow" aria-hidden="true">
+          <span
+            class="companion-input-arrow"
+            aria-hidden="true"
+          >
             →
           </span>
         </button>
       </section>
 
-      <section
-  class="nous-command-section"
-  aria-labelledby="nous-command-title"
->
-  <div class="nous-command-heading">
-    <p class="eyebrow">NOUS INTELLIGENCE</p>
-
-    <h2 id="nous-command-title">
-      What would you like to work on?
-    </h2>
-
-    <p>
-      Begin with a question, organise a thought or continue work
-      across your available NOUS spaces.
-    </p>
-  </div>
-
-  <form
-    class="nous-command-form"
-    id="nous-command-form"
-  >
-    <label
-      class="sr-only"
-      for="nous-command-input"
-    >
-      Message NOUS
-    </label>
-
-    <textarea
-      id="nous-command-input"
-      name="message"
-      rows="1"
-      maxlength="4000"
-      placeholder="Message NOUS..."
-      autocomplete="off"
-      required
-    ></textarea>
-
-    <button
-      id="nous-command-submit"
-      type="submit"
-      aria-label="Send message to NOUS"
-    >
-      <span id="nous-command-button-label">
-        Send
-      </span>
-
-      <span aria-hidden="true">→</span>
-    </button>
-  </form>
-
-  <div
-    class="nous-companion-output"
-    id="nous-companion-output"
-    aria-live="polite"
-    hidden
-  >
-    <div class="nous-companion-output-header">
-      <span
-        class="nous-companion-indicator"
-        aria-hidden="true"
-      ></span>
-
-      <strong>NOUS Companion</strong>
-    </div>
-
-    <div
-      class="nous-companion-response"
-      id="nous-companion-response"
-    ></div>
-  </div>
-
-  <p
-    class="nous-command-status"
-    id="nous-command-status"
-    role="status"
-    aria-live="polite"
-  ></p>
-</section>
+      <!-- =====================================================
+           MEMBERSHIP DROPDOWN
+           ===================================================== -->
 
       <section
-  class="membership-section"
-  id="membership"
-  aria-labelledby="membership-title"
->
-  <div class="section-heading membership-heading">
-    <div>
-      <p class="eyebrow">NOUS MEMBERSHIP</p>
-
-      <h2 id="membership-title">
-        Choose the level that fits your world.
-      </h2>
-
-      <p class="membership-introduction">
-        Your membership controls the environments and NOUS capabilities
-        available to your account. New accounts begin on NOUS Free.
-      </p>
-    </div>
-
-    <div
-      class="current-membership-summary"
-      id="current-membership-summary"
-      aria-live="polite"
-    >
-      <span>Current membership</span>
-      <strong id="current-membership-name">Checking...</strong>
-    </div>
-  </div>
-
-  <div class="membership-grid">
-
-    <!-- NOUS FREE -->
-    <article
-      class="membership-card"
-      data-plan-code="free"
-      data-plan-name="NOUS Free"
-    >
-      <div class="membership-card-header">
-        <div>
-          <p class="membership-tier">START</p>
-          <h3>NOUS Free</h3>
-        </div>
-
-        <span class="membership-status" data-plan-status>
-          Available
-        </span>
-      </div>
-
-      <div class="membership-price">
-        <span class="membership-currency">R</span>
-        <strong>0</strong>
-        <span class="membership-period">forever</span>
-      </div>
-
-      <p class="membership-description">
-        A simple starting point for exploring NOUS and organising
-        everyday thoughts.
-      </p>
-
-      <ul class="membership-features">
-        <li>Core NOUS account and identity</li>
-        <li>Personal workspace access</li>
-        <li>Basic NOUS Companion access</li>
-        <li>Limited conversation history</li>
-        <li>Access to public Community programmes</li>
-      </ul>
-
-      <button
-        class="membership-button"
-        type="button"
-        data-plan-action="free"
-        disabled
+        class="membership-section membership-collapsible"
+        id="membership"
+        aria-labelledby="membership-title"
       >
-        Included with your account
-      </button>
-    </article>
+        <div class="membership-summary-panel">
+          <div class="membership-summary-copy">
+            <p class="eyebrow">
+              NOUS MEMBERSHIP
+            </p>
 
-    <!-- STUDENT & BEGINNER -->
-    <article
-      class="membership-card"
-      data-plan-code="student_beginner"
-      data-plan-name="NOUS Student & Beginner"
-    >
-      <div class="membership-card-header">
-        <div>
-          <p class="membership-tier">LEARN</p>
-          <h3>Student &amp; Beginner</h3>
-        </div>
+            <h2 id="membership-title">
+              Choose the level that fits your world.
+            </h2>
 
-        <span class="membership-status" data-plan-status>
-          Available
-        </span>
-      </div>
-
-      <div class="membership-price">
-        <span class="membership-currency">R</span>
-        <strong>39</strong>
-        <span class="membership-period">per month</span>
-      </div>
-
-      <p class="membership-description">
-        Affordable access for students, first-time users and people
-        building confidence with AI tools.
-      </p>
-
-      <ul class="membership-features">
-        <li>Everything included in NOUS Free</li>
-        <li>Education workspace access</li>
-        <li>Personal workspace access</li>
-        <li>Higher Companion message allowance</li>
-        <li>Study planning and learning assistance</li>
-        <li>Basic document and note support</li>
-      </ul>
-
-      <button
-        class="membership-button"
-        type="button"
-        data-plan-action="student_beginner"
-      >
-        Choose Student &amp; Beginner
-      </button>
-    </article>
-
-    <!-- BUSINESS & EDUCATION -->
-    <article
-      class="membership-card membership-card-featured"
-      data-plan-code="business_education"
-      data-plan-name="NOUS Business & Education"
-    >
-      <span class="membership-recommended">
-        Recommended
-      </span>
-
-      <div class="membership-card-header">
-        <div>
-          <p class="membership-tier">BUILD</p>
-          <h3>Business &amp; Education</h3>
-        </div>
-
-        <span class="membership-status" data-plan-status>
-          Available
-        </span>
-      </div>
-
-      <div class="membership-price">
-        <span class="membership-currency">R</span>
-        <strong>89</strong>
-        <span class="membership-period">per month</span>
-      </div>
-
-      <p class="membership-description">
-        For people using NOUS for structured study, teaching,
-        professional work or small-business operations.
-      </p>
-
-      <ul class="membership-features">
-        <li>Everything in Student &amp; Beginner</li>
-        <li>Business workspace access</li>
-        <li>Education workspace access</li>
-        <li>Project and document assistance</li>
-        <li>Higher monthly usage allocation</li>
-        <li>Organisation and workflow support</li>
-        <li>Priority access to productivity features</li>
-      </ul>
-
-      <button
-        class="membership-button"
-        type="button"
-        data-plan-action="business_education"
-      >
-        Choose Business &amp; Education
-      </button>
-    </article>
-
-    <!-- NOUS UNLIMITED -->
-    <article
-      class="membership-card"
-      data-plan-code="nous_unlimited"
-      data-plan-name="NOUS Unlimited"
-    >
-      <div class="membership-card-header">
-        <div>
-          <p class="membership-tier">EXPAND</p>
-          <h3>NOUS Unlimited</h3>
-        </div>
-
-        <span class="membership-status" data-plan-status>
-          Available
-        </span>
-      </div>
-
-      <div class="membership-price">
-        <span class="membership-currency">R</span>
-        <strong>169</strong>
-        <span class="membership-period">per month</span>
-      </div>
-
-      <p class="membership-description">
-        The complete NOUS environment for users who work across
-        personal, education and business contexts.
-      </p>
-
-      <ul class="membership-features">
-        <li>All three NOUS workspaces</li>
-        <li>Highest Companion usage allocation</li>
-        <li>Image generation access</li>
-        <li>Advanced context and memory features</li>
-        <li>Priority access during high demand</li>
-        <li>Early access to selected NOUS capabilities</li>
-        <li>Expanded project and document support</li>
-      </ul>
-
-      <button
-        class="membership-button"
-        type="button"
-        data-plan-action="nous_unlimited"
-      >
-        Choose NOUS Unlimited
-      </button>
-    </article>
-
-  </div>
-
-  <p
-    class="membership-message"
-    id="membership-message"
-    role="status"
-    aria-live="polite"
-  ></p>
-</section>
-
-      <section
-        class="continuation-section"
-        aria-labelledby="continuation-title"
-      >
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">CONTINUE</p>
-            <h2 id="continuation-title">Return to your world</h2>
+            <p class="membership-introduction">
+              Your membership controls the environments and NOUS
+              capabilities available to your account. New accounts
+              begin on NOUS Free.
+            </p>
           </div>
 
-          <button class="text-button" type="button">
-            View activity
-          </button>
+          <div
+            class="current-membership-summary"
+            id="current-membership-summary"
+            aria-live="polite"
+          >
+            <span>
+              Current membership
+            </span>
+
+            <strong id="current-membership-name">
+              NOUS Free
+            </strong>
+          </div>
+
+        <button
+          class="membership-toggle"
+          id="membership-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="membership-options"
+          aria-label="Explore NOUS membership options"
+        >
+          <span class="membership-toggle-copy">
+            <small>Hello member</small>
+
+            <strong>
+              Are you active yet?
+            </strong>
+          </span>
+
+          <span
+            class="membership-toggle-visual"
+            aria-hidden="true"
+          >
+            <img
+              src="../assets/logo/dropdown.png"
+              alt=""
+            >
+          </span>
+
+          <span class="membership-toggle-action">
+            Explore memberships
+          </span>
+        </button>
         </div>
 
-        <div class="continuation-grid">
-          <article class="continuation-card featured-card">
-            <div class="card-topline">
-              <span class="status-dot"></span>
-              <span>Active work</span>
-            </div>
+        <div
+          class="membership-options"
+          id="membership-options"
+          hidden
+        >
+          <div class="membership-grid">
 
-            <div class="card-content">
-              <p class="card-label">Research</p>
+            <!-- NOUS FREE -->
 
-              <h3>External moderation preparation</h3>
+            <article
+              class="membership-card"
+              data-plan-code="free"
+              data-plan-name="NOUS Free"
+            >
+              <div class="membership-card-header">
+                <div>
+                  <p class="membership-tier">
+                    START
+                  </p>
 
-              <p>
-                Continue organising the research documentation and
-                the O.R.U.L.E. architecture.
+                  <h3>
+                    NOUS Free
+                  </h3>
+                </div>
+
+                <span
+                  class="membership-status"
+                  data-plan-status
+                >
+                  Available
+                </span>
+              </div>
+
+              <div class="membership-price">
+                <span class="membership-currency">
+                  R
+                </span>
+
+                <strong>
+                  0
+                </strong>
+
+                <span class="membership-period">
+                  forever
+                </span>
+              </div>
+
+              <p class="membership-description">
+                A simple starting point for exploring NOUS and
+                organising everyday thoughts.
               </p>
-            </div>
 
-            <button class="card-action" type="button">
-              Continue
-              <span aria-hidden="true">↗</span>
-            </button>
-          </article>
+              <ul class="membership-features">
+                <li>
+                  Core NOUS account and identity
+                </li>
 
-          <article class="continuation-card">
-            <div class="card-topline">
-              <span class="status-dot status-dot-soft"></span>
-              <span>Recent</span>
-            </div>
+                <li>
+                  Personal workspace access
+                </li>
 
-            <div class="card-content">
-              <p class="card-label">Platform</p>
+                <li>
+                  Basic NOUS Companion access
+                </li>
 
-              <h3>O.R.U.L.E. Runtime</h3>
+                <li>
+                  Limited conversation history
+                </li>
 
-              <p>
-                The local reasoning endpoint is active and ready for
-                authenticated application testing.
+                <li>
+                  Access to public Community programmes
+                </li>
+              </ul>
+
+              <button
+                class="membership-button"
+                type="button"
+                data-plan-action="free"
+                disabled
+              >
+                Included with your account
+              </button>
+            </article>
+
+            <!-- STUDENT & BEGINNER -->
+
+            <article
+              class="membership-card"
+              data-plan-code="student_beginner"
+              data-plan-name="NOUS Student & Beginner"
+            >
+              <div class="membership-card-header">
+                <div>
+                  <p class="membership-tier">
+                    LEARN
+                  </p>
+
+                  <h3>
+                    Student &amp; Beginner
+                  </h3>
+                </div>
+
+                <span
+                  class="membership-status"
+                  data-plan-status
+                >
+                  Available
+                </span>
+              </div>
+
+              <div class="membership-price">
+                <span class="membership-currency">
+                  R
+                </span>
+
+                <strong>
+                  39
+                </strong>
+
+                <span class="membership-period">
+                  per month
+                </span>
+              </div>
+
+              <p class="membership-description">
+                Affordable access for students, first-time users
+                and people building confidence with AI tools.
               </p>
-            </div>
 
-            <button class="card-action" type="button">
-              Open
-              <span aria-hidden="true">↗</span>
-            </button>
-          </article>
+              <ul class="membership-features">
+                <li>
+                  Everything included in NOUS Free
+                </li>
+
+                <li>
+                  Education workspace access
+                </li>
+
+                <li>
+                  Personal workspace access
+                </li>
+
+                <li>
+                  Higher Companion message allowance
+                </li>
+
+                <li>
+                  Study planning and learning assistance
+                </li>
+
+                <li>
+                  Basic document and note support
+                </li>
+              </ul>
+
+              <button
+                class="membership-button"
+                type="button"
+                data-plan-action="student_beginner"
+              >
+                Choose NOUS Student &amp; Beginner
+              </button>
+            </article>
+
+            <!-- BUSINESS & EDUCATION -->
+
+            <article
+              class="membership-card membership-card-featured"
+              data-plan-code="business_education"
+              data-plan-name="NOUS Business & Education"
+            >
+              <span class="membership-recommended">
+                Recommended
+              </span>
+
+              <div class="membership-card-header">
+                <div>
+                  <p class="membership-tier">
+                    BUILD
+                  </p>
+
+                  <h3>
+                    Business &amp; Education
+                  </h3>
+                </div>
+
+                <span
+                  class="membership-status"
+                  data-plan-status
+                >
+                  Available
+                </span>
+              </div>
+
+              <div class="membership-price">
+                <span class="membership-currency">
+                  R
+                </span>
+
+                <strong>
+                  89
+                </strong>
+
+                <span class="membership-period">
+                  per month
+                </span>
+              </div>
+
+              <p class="membership-description">
+                For people using NOUS for structured study,
+                teaching, professional work or small-business
+                operations.
+              </p>
+
+              <ul class="membership-features">
+                <li>
+                  Everything in Student &amp; Beginner
+                </li>
+
+                <li>
+                  Business workspace access
+                </li>
+
+                <li>
+                  Education workspace access
+                </li>
+
+                <li>
+                  Project and document assistance
+                </li>
+
+                <li>
+                  Higher monthly usage allocation
+                </li>
+
+                <li>
+                  Organisation and workflow support
+                </li>
+
+                <li>
+                  Priority access to productivity features
+                </li>
+              </ul>
+
+              <button
+                class="membership-button"
+                type="button"
+                data-plan-action="business_education"
+              >
+                Choose NOUS Business &amp; Education
+              </button>
+            </article>
+
+            <!-- NOUS UNLIMITED -->
+
+            <article
+              class="membership-card"
+              data-plan-code="nous_unlimited"
+              data-plan-name="NOUS Unlimited"
+            >
+              <div class="membership-card-header">
+                <div>
+                  <p class="membership-tier">
+                    EXPAND
+                  </p>
+
+                  <h3>
+                    NOUS Unlimited
+                  </h3>
+                </div>
+
+                <span
+                  class="membership-status"
+                  data-plan-status
+                >
+                  Available
+                </span>
+              </div>
+
+              <div class="membership-price">
+                <span class="membership-currency">
+                  R
+                </span>
+
+                <strong>
+                  169
+                </strong>
+
+                <span class="membership-period">
+                  per month
+                </span>
+              </div>
+
+              <p class="membership-description">
+                The complete NOUS environment for users who work
+                across personal, education and business contexts.
+              </p>
+
+              <ul class="membership-features">
+                <li>
+                  All three NOUS workspaces
+                </li>
+
+                <li>
+                  Highest Companion usage allocation
+                </li>
+
+                <li>
+                  Image generation access
+                </li>
+
+                <li>
+                  Advanced context and memory features
+                </li>
+
+                <li>
+                  Priority access during high demand
+                </li>
+
+                <li>
+                  Early access to selected NOUS capabilities
+                </li>
+
+                <li>
+                  Expanded project and document support
+                </li>
+              </ul>
+
+              <button
+                class="membership-button"
+                type="button"
+                data-plan-action="nous_unlimited"
+              >
+                Choose NOUS Unlimited
+              </button>
+            </article>
+          </div>
+
+          <p
+            class="membership-message"
+            id="membership-message"
+            role="status"
+            aria-live="polite"
+          ></p>
         </div>
       </section>
+
+<!-- =====================================================
+     CONTINUE YOUR DAY
+     ===================================================== -->
+
+<section
+  class="continuation-section"
+  id="continue-your-day"
+  aria-labelledby="continuation-title"
+>
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">
+        CONTINUE
+      </p>
+
+      <h2 id="continuation-title">
+        Continue your day
+      </h2>
+    </div>
+
+    <button
+      class="text-button"
+      id="view-spaces-button"
+      type="button"
+    >
+      View spaces
+    </button>
+  </div>
+
+  <div class="continuation-grid">
+
+    <!-- LAST WORKSPACE -->
+
+    <article
+      class="continuation-card featured-card"
+      id="recent-workspace-card"
+    >
+      <div class="card-topline">
+        <span class="status-dot"></span>
+
+        <span id="recent-workspace-status">
+          Ready to continue
+        </span>
+      </div>
+
+      <div class="card-content">
+        <p
+          class="card-label"
+          id="recent-workspace-label"
+        >
+          RECENT WORKSPACE
+        </p>
+
+        <h3 id="recent-workspace-title">
+          Your NOUS world
+        </h3>
+
+        <p id="recent-workspace-description">
+          Return to the space you used most recently.
+        </p>
+      </div>
+
+      <button
+        class="card-action"
+        id="continue-workspace-button"
+        type="button"
+      >
+        <span id="continue-workspace-label">
+          Continue
+        </span>
+
+        <span aria-hidden="true">
+          ↗
+        </span>
+      </button>
+    </article>
+
+    <!-- COMPANION -->
+
+    <article
+      class="continuation-card"
+      id="continue-companion-card"
+    >
+      <div class="card-topline">
+        <span class="status-dot status-dot-soft"></span>
+
+        <span>
+          Companion
+        </span>
+      </div>
+
+      <div class="card-content">
+        <p class="card-label">
+          O.R.U.L.E.
+        </p>
+
+        <h3>
+          Continue with NOUS
+        </h3>
+
+        <p>
+          Begin a new thought, continue a conversation or ask
+          NOUS to help organise what comes next.
+        </p>
+      </div>
+
+      <button
+        class="card-action"
+        id="continue-companion-button"
+        type="button"
+      >
+        Ask NOUS
+
+        <span aria-hidden="true">
+          ↗
+        </span>
+      </button>
+    </article>
+  </div>
+</section>
+
+      <!-- =====================================================
+           SPACES
+           ===================================================== -->
 
       <section
         class="spaces-section"
@@ -517,91 +726,153 @@
       >
         <div class="section-heading">
           <div>
-            <p class="eyebrow">YOUR SPACES</p>
-            <h2 id="spaces-title">One intelligence. Different environments.</h2>
+            <p class="eyebrow">
+              YOUR SPACES
+            </p>
+
+            <h2 id="spaces-title">
+              One intelligence. Different environments.
+            </h2>
           </div>
         </div>
 
         <div class="space-grid">
-  <button
-    class="space-card business-space"
-    data-space="Business"
-    type="button"
-  >
-    <span class="space-number">01</span>
+          <button
+            class="space-card business-space"
+            data-space="Business"
+            type="button"
+          >
+            <span class="space-number">
+              01
+            </span>
 
-    <span class="space-copy">
-      <small>OPERATE</small>
-      <strong>Business</strong>
-      <span>
-        Decisions, projects, finance and organisational
-        intelligence.
-      </span>
+            <span class="space-copy">
+              <small>
+                OPERATE
+              </small>
+
+              <strong>
+                Business
+              </strong>
+
+              <span>
+                Decisions, projects, finance and organisational
+                intelligence.
+              </span>
+            </span>
+
+            <span
+              class="space-arrow"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
+          </button>
+
+            <a
+              class="space-card community-space"
+              href="./community/chki-executive-briefing-v3/index.html"
+              data-space="Community"
+              aria-label="Open Community space"
+            >
+            <span class="space-number">
+              02
+            </span>
+
+            <span class="space-copy">
+              <small>
+                CONTRIBUTE
+              </small>
+
+              <strong>
+                Community
+              </strong>
+
+              <span>
+                Public programmes, healthcare knowledge,
+                partnerships and community impact.
+              </span>
+            </span>
+
+            <span
+              class="space-arrow"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
+          </a>
+
+          <button
+            class="space-card education-space"
+            data-space="Education"
+            type="button"
+          >
+            <span class="space-number">
+              03
+            </span>
+
+            <span class="space-copy">
+              <small>
+                DEVELOP
+              </small>
+
+              <strong>
+                Education
+              </strong>
+
+              <span>
+                Study pathways, resources, progress and thoughtful
+                learning support.
+              </span>
+            </span>
+
+            <span
+              class="space-arrow"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
+          </button>
+
+<a
+  class="space-card personal-space"
+  href="./personal.html"
+  data-space="Personal"
+  aria-label="Open Personal space"
+>
+  <span class="space-number">
+    04
+  </span>
+
+  <span class="space-copy">
+    <small>
+      CONNECT
+    </small>
+
+    <strong>
+      Personal
+    </strong>
+
+    <span>
+      Your routines, relationships, interests and
+      everyday life.
     </span>
+  </span>
 
-    <span class="space-arrow" aria-hidden="true">↗</span>
-  </button>
-
-  <a
-    class="space-card community-space"
-    href="./community/chki-executive-briefing-v3/index.html"
-    aria-label="Open Community space"
+  <span
+    class="space-arrow"
+    aria-hidden="true"
   >
-    <span class="space-number">02</span>
-
-    <span class="space-copy">
-      <small>CONTRIBUTE</small>
-      <strong>Community</strong>
-      <span>
-        Public programmes, healthcare knowledge, partnerships
-        and community impact.
-      </span>
-    </span>
-
-    <span class="space-arrow" aria-hidden="true">↗</span>
-  </a>
-
-  <button
-    class="space-card education-space"
-    data-space="Education"
-    type="button"
-  >
-    <span class="space-number">03</span>
-
-    <span class="space-copy">
-      <small>DEVELOP</small>
-      <strong>Education</strong>
-      <span>
-        Study pathways, resources, progress and thoughtful
-        learning support.
-      </span>
-    </span>
-
-    <span class="space-arrow" aria-hidden="true">↗</span>
-  </button>
-
-  <button
-    class="space-card personal-space"
-    data-space="Personal"
-    type="button"
-  >
-    <span class="space-number">04</span>
-
-    <span class="space-copy">
-      <small>CONNECT</small>
-      <strong>Personal</strong>
-      <span>
-        Your routines, relationships, interests and everyday
-        life.
-      </span>
-    </span>
-
-    <span class="space-arrow" aria-hidden="true">↗</span>
-  </button>
-</div>
+    ↗
+  </span>
+</a>
+        </div>
       </section>
     </main>
 
+    <!-- =======================================================
+         FLOATING ASK NOUS BUTTON
+         ======================================================= -->
 
     <button
       class="floating-companion"
@@ -609,9 +880,19 @@
       type="button"
       aria-label="Open NOUS Companion"
     >
-      <span class="floating-symbol" aria-hidden="true"></span>
-      <span>Ask NOUS</span>
+      <span
+        class="floating-symbol"
+        aria-hidden="true"
+      ></span>
+
+      <span>
+        Ask NOUS
+      </span>
     </button>
+
+    <!-- =======================================================
+         COMPANION DRAWER
+         ======================================================= -->
 
     <div
       class="companion-drawer"
@@ -627,12 +908,17 @@
 
       <aside
         class="drawer-panel"
-        aria-label="NOUS Companion preview"
+        aria-label="NOUS Companion"
       >
         <div class="drawer-header">
           <div>
-            <p class="eyebrow">COMPANION</p>
-            <h2>Begin with NOUS</h2>
+            <p class="eyebrow">
+              COMPANION
+            </p>
+
+            <h2>
+              Begin with NOUS
+            </h2>
           </div>
 
           <button
@@ -647,15 +933,21 @@
 
         <div class="drawer-body">
           <div class="companion-welcome">
-            <span class="companion-mark" aria-hidden="true"></span>
+            <span
+              class="companion-mark"
+              aria-hidden="true"
+            ></span>
 
             <p>
-              I am ready to help you understand, organise or continue
-              your work.
+              I am ready to help you understand, organise or
+              continue your work.
             </p>
           </div>
 
-          <form class="drawer-form" id="drawer-form">
+          <form
+            class="drawer-form"
+            id="drawer-form"
+          >
             <label for="drawer-message">
               What is on your mind?
             </label>
@@ -664,30 +956,36 @@
               id="drawer-message"
               name="message"
               rows="4"
+              maxlength="4000"
               placeholder="Ask NOUS something..."
+              autocomplete="off"
+              required
             ></textarea>
 
             <button type="submit">
               Send to O.R.U.L.E.
-              <span aria-hidden="true">→</span>
+
+              <span aria-hidden="true">
+                →
+              </span>
             </button>
           </form>
 
-          <p class="drawer-notice" id="drawer-notice">
-            Backend connection will be added in the next phase.
+          <p
+            class="drawer-notice"
+            id="drawer-notice"
+            role="status"
+            aria-live="polite"
+          >
+            Connected requests are routed through O.R.U.L.E.
           </p>
         </div>
       </aside>
     </div>
   </div>
 
-
-
-
-
-
-<script src="./js/companion-home.js" defer></script>
-
+<script src="./js/membership.js" defer></script>
+<script src="./js/continue.js" defer></script>
 <script src="./js/shell.js" defer></script>
 </body>
 </html>

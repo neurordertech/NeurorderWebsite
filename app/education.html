@@ -1,1 +1,213 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../js/supabase-config.js"></script><script src="./js/auth-guard.js" defer></script><meta name="description" content="NOUS Education workspace."><title>Education — NOUS</title><link rel="stylesheet" href="./css/tokens.css"><link rel="stylesheet" href="./css/spaces.css"></head><body><main class="space-page"><header class="space-header"><div><p class="eyebrow">03 · DEVELOP</p><h1>Education</h1><p>A focused environment for students, educators and structured learning. The workspace is ready for your dashboards and integrations.</p></div><a class="space-back" href="./index.html">Back to NOUS</a></header><section class="education-grid" aria-label="Education entry points"><article class="education-card"><span>LEARN</span><h2>Student workspace</h2><p>Study plans, assignments, research and progress will live here.</p></article><article class="education-card"><span>TEACH</span><h2>Educator workspace</h2><p>Class support, learning resources and learner guidance will live here.</p></article><article class="education-card"><span>REASON</span><h2>O.R.U.L.E.</h2><p>Use the Companion from Home to reason across permitted learning context.</p></article></section></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="NOUS Education — dedicated environments for educators and registered South African matric candidates."
+  >
+
+  <title>Education — NOUS</title>
+
+  <link
+    rel="stylesheet"
+    href="./css/tokens.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/education.css"
+  >
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+  ></script>
+
+  <script src="../js/supabase-config.js"></script>
+  <script src="./js/auth-guard.js" defer></script>
+</head>
+
+<body>
+  <main
+    class="education-space"
+    id="education-space"
+  >
+    <div
+      class="education-background"
+      aria-hidden="true"
+    >
+      <div class="education-glow education-glow-one"></div>
+      <div class="education-glow education-glow-two"></div>
+      <div class="education-grid-background"></div>
+    </div>
+
+    <header class="education-topbar">
+      <a
+        class="education-brand"
+        href="./index.html"
+        aria-label="Return to NOUS home"
+      >
+        <span class="education-brand-logo">
+          <img
+            src="../assets/logo/nouslogo.png"
+            alt=""
+          >
+        </span>
+
+        <span>
+          NOUS
+        </span>
+      </a>
+
+      <div class="education-topbar-context">
+        <span>
+          Current space
+        </span>
+
+        <strong>
+          Education
+        </strong>
+      </div>
+
+      <a
+        class="education-back"
+        href="./index.html"
+      >
+        Back to NOUS
+      </a>
+    </header>
+
+    <section
+      class="education-hero"
+      aria-labelledby="education-title"
+    >
+      <div class="education-hero-copy">
+        <p class="education-eyebrow">
+          03 · DEVELOP
+        </p>
+
+        <h1 id="education-title">
+          Education,
+          <span>with purpose.</span>
+        </h1>
+
+        <p>
+          Choose the environment that reflects your role.
+          NOUS will use the selected workspace to organise
+          the right learning tools, guidance and context.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="education-entry-section"
+      aria-label="Education entry points"
+    >
+      <button
+        class="education-entry-card educator-card"
+        id="open-educator-workspace"
+        type="button"
+        data-education-route="./educator.html"
+      >
+        <span class="education-card-number">
+          01
+        </span>
+
+        <div class="education-card-visual educator-visual">
+          <span class="educator-board"></span>
+          <span class="educator-line educator-line-one"></span>
+          <span class="educator-line educator-line-two"></span>
+          <span class="educator-line educator-line-three"></span>
+        </div>
+
+        <div class="education-card-content">
+          <p>
+            TEACH
+          </p>
+
+          <h2>
+            Educators
+          </h2>
+
+          <span class="education-card-description">
+            Prepare lessons, organise resources, support learners and
+            manage structured teaching work.
+          </span>
+        </div>
+
+        <span
+          class="education-card-action"
+          aria-hidden="true"
+        >
+          Enter
+          <strong>↗</strong>
+        </span>
+      </button>
+
+      <button
+        class="education-entry-card senior-card"
+        id="open-senior-workspace"
+        type="button"
+        data-education-route="./senior.html"
+      >
+        <span class="education-card-number">
+          02
+        </span>
+
+        <div class="education-card-visual senior-visual">
+          <span class="senior-emblem">
+            ZA
+          </span>
+
+          <span class="senior-orbit senior-orbit-one"></span>
+          <span class="senior-orbit senior-orbit-two"></span>
+        </div>
+
+        <div class="education-card-content">
+          <p>
+            LEARN
+          </p>
+
+          <h2>
+            Republic of South Africa Seniors
+          </h2>
+
+          <span class="education-card-description">
+            A focused workspace for registered matric candidates
+            preparing for their final school year and examinations.
+          </span>
+        </div>
+
+        <span
+          class="education-card-action"
+          aria-hidden="true"
+        >
+          Enter
+          <strong>↗</strong>
+        </span>
+      </button>
+    </section>
+
+    <footer class="education-footer">
+      <span>
+        NOUS Education
+      </span>
+
+      <strong>
+        Structured learning. Human progress.
+      </strong>
+    </footer>
+  </main>
+
+  <script
+    src="./js/education.js"
+    defer
+  ></script>
+</body>
+</html>

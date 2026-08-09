@@ -1,1 +1,562 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../js/supabase-config.js"></script><script src="./js/auth-guard.js" defer></script><meta name="description" content="NOUS Personal space."><title>Personal — NOUS</title><link rel="stylesheet" href="./css/spaces.css"></head><body><main class="personal-void" aria-label="NOUS Personal three-dimensional space"><div class="personal-stars" aria-hidden="true"></div><nav class="personal-nav"><a href="./index.html">NOUS</a><a href="./membership.html">Membership</a></nav></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="NOUS Personal — connected devices, everyday applications and your private NOUS Companion."
+  >
+
+  <title>Personal — NOUS</title>
+
+  <link
+    rel="stylesheet"
+    href="./css/tokens.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/personal.css"
+  >
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+  ></script>
+
+  <script
+    src="../js/supabase-config.js"
+  ></script>
+
+  <script
+    src="./js/auth-guard.js"
+    defer
+  ></script>
+</head>
+
+
+<body>
+
+  <main class="personal-void">
+
+
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
+    <div
+      class="personal-stars"
+      aria-hidden="true"
+    ></div>
+
+    <div
+      class="personal-nebula personal-nebula-one"
+      aria-hidden="true"
+    ></div>
+
+    <div
+      class="personal-nebula personal-nebula-two"
+      aria-hidden="true"
+    ></div>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <nav class="personal-nav">
+
+      <a
+        class="personal-brand"
+        href="./index.html"
+        aria-label="Return to NOUS home"
+      >
+        <img
+          src="../assets/logo/nouslogo.png"
+          alt=""
+        >
+
+        <span>
+          NOUS
+        </span>
+      </a>
+
+
+      <div class="personal-nav-actions">
+
+        <span class="personal-nav-context">
+          PERSONAL
+        </span>
+
+        <a
+          class="personal-membership-link"
+          href="./membership.html"
+        >
+          Membership
+        </a>
+
+      </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         LEFT — IoT
+    ====================================================== -->
+
+    <button
+      class="personal-side-control personal-side-control-left"
+      id="open-iot-panel"
+      type="button"
+      aria-controls="iot-panel"
+      aria-expanded="false"
+    >
+
+      <span class="side-control-number">
+        01
+      </span>
+
+      <span class="side-control-line"></span>
+
+      <span class="side-control-copy">
+
+        <small>
+          CONNECT
+        </small>
+
+        <strong>
+          IoT
+        </strong>
+
+      </span>
+
+      <span
+        class="side-control-arrow"
+        aria-hidden="true"
+      >
+        →
+      </span>
+
+    </button>
+
+
+    <!-- =====================================================
+         CENTRE
+    ====================================================== -->
+
+    <section
+      class="personal-centre"
+      aria-labelledby="personal-title"
+    >
+
+      <header class="personal-heading">
+
+        <p>
+          NOUS PERSONAL
+        </p>
+
+        <h1 id="personal-title">
+          Your world,
+          <span>
+            within reach.
+          </span>
+        </h1>
+
+      </header>
+
+
+      <!-- =================================================
+           PERSONAL COMPANION
+      ================================================== -->
+
+      <a
+        class="personal-core"
+        id="personal-core"
+        href="./personal-nous.html"
+        aria-label="Talk with NOUS"
+      >
+
+        <span
+          class="personal-core-glow"
+          aria-hidden="true"
+        ></span>
+
+        <span
+          class="personal-orbit orbit-one"
+          aria-hidden="true"
+        ></span>
+
+        <span
+          class="personal-orbit orbit-two"
+          aria-hidden="true"
+        ></span>
+
+        <span
+          class="personal-orbit orbit-three"
+          aria-hidden="true"
+        ></span>
+
+
+        <span class="personal-core-logo">
+
+          <img
+            src="../assets/logo/nouslogo.png"
+            alt=""
+          >
+
+        </span>
+
+
+        <span class="personal-core-copy">
+
+          <small>
+            PERSONAL COMPANION
+          </small>
+
+          <strong>
+            Talk with NOUS
+          </strong>
+
+        </span>
+
+      </a>
+
+
+      <p class="personal-centre-note">
+        Your private environment for devices, everyday
+        applications and conversations with NOUS.
+      </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         RIGHT — APPLIC’ALPHA
+    ====================================================== -->
+
+    <button
+      class="personal-side-control personal-side-control-right"
+      id="open-apps-panel"
+      type="button"
+      aria-controls="apps-panel"
+      aria-expanded="false"
+    >
+
+      <span
+        class="side-control-arrow"
+        aria-hidden="true"
+      >
+        ←
+      </span>
+
+      <span class="side-control-copy">
+
+        <small>
+          EVERYDAY SIX
+        </small>
+
+        <strong>
+          Applic’alpha
+        </strong>
+
+      </span>
+
+      <span class="side-control-line"></span>
+
+      <span class="side-control-number">
+        02
+      </span>
+
+    </button>
+
+
+    <!-- =====================================================
+         IoT PANEL
+    ====================================================== -->
+
+    <div
+      class="personal-panel"
+      id="iot-panel"
+      aria-hidden="true"
+    >
+
+      <button
+        class="personal-panel-backdrop"
+        type="button"
+        data-close-panel="iot-panel"
+        aria-label="Close IoT"
+      ></button>
+
+
+      <section
+        class="personal-panel-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="iot-panel-title"
+      >
+
+        <header class="personal-panel-header">
+
+          <div>
+
+            <p>
+              CONNECT
+            </p>
+
+            <h2 id="iot-panel-title">
+              IoT
+            </h2>
+
+          </div>
+
+
+          <button
+            class="personal-panel-close"
+            type="button"
+            data-close-panel="iot-panel"
+            aria-label="Close IoT"
+          >
+            ×
+          </button>
+
+        </header>
+
+
+        <p class="personal-panel-description">
+          Connect approved devices through explicit permissions.
+          NOUS will never assume access to a device.
+        </p>
+
+
+        <div class="iot-grid">
+
+          <button
+            type="button"
+            data-device="Smart home"
+          >
+
+            <small>
+              ENVIRONMENT
+            </small>
+
+            <strong>
+              Smart home
+            </strong>
+
+            <span>
+              Lights, climate and household devices
+            </span>
+
+          </button>
+
+
+          <button
+            type="button"
+            data-device="Wearable"
+          >
+
+            <small>
+              PERSONAL
+            </small>
+
+            <strong>
+              Wearable
+            </strong>
+
+            <span>
+              Watch, activity and permitted wellbeing data
+            </span>
+
+          </button>
+
+
+          <button
+            type="button"
+            data-device="Vehicle"
+          >
+
+            <small>
+              MOBILITY
+            </small>
+
+            <strong>
+              Vehicle
+            </strong>
+
+            <span>
+              Connected travel and transport information
+            </span>
+
+          </button>
+
+
+          <button
+            type="button"
+            data-device="Custom device"
+          >
+
+            <small>
+              OTHER
+            </small>
+
+            <strong>
+              Custom device
+            </strong>
+
+            <span>
+              Prepare another supported connection
+            </span>
+
+          </button>
+
+        </div>
+
+
+        <p
+          class="personal-panel-notice"
+          id="iot-notice"
+          aria-live="polite"
+        >
+          Select a device category to prepare its connection.
+        </p>
+
+      </section>
+
+    </div>
+
+
+    <!-- =====================================================
+         APPLIC’ALPHA PANEL
+    ====================================================== -->
+
+    <div
+      class="personal-panel"
+      id="apps-panel"
+      aria-hidden="true"
+    >
+
+      <button
+        class="personal-panel-backdrop"
+        type="button"
+        data-close-panel="apps-panel"
+        aria-label="Close Applic’alpha"
+      ></button>
+
+
+      <section
+        class="personal-panel-dialog apps-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="apps-panel-title"
+      >
+
+        <header class="personal-panel-header">
+
+          <div>
+
+            <p>
+              EVERYDAY SIX
+            </p>
+
+            <h2 id="apps-panel-title">
+              Applic’alpha
+            </h2>
+
+          </div>
+
+
+          <button
+            class="personal-panel-close"
+            type="button"
+            data-close-panel="apps-panel"
+            aria-label="Close Applic’alpha"
+          >
+            ×
+          </button>
+
+        </header>
+
+
+        <p class="personal-panel-description">
+          Keep up to six everyday applications close.
+          Selecting a seventh replaces the oldest application
+          in your collection.
+        </p>
+
+
+        <section class="selected-app-section">
+
+          <div class="available-app-heading">
+
+            <span>
+              Your everyday six
+            </span>
+
+            <small>
+              Open an application
+            </small>
+
+          </div>
+
+
+          <div
+            class="selected-app-grid"
+            id="selected-app-grid"
+            aria-label="Selected everyday applications"
+          ></div>
+
+        </section>
+
+
+        <section class="available-app-section">
+
+          <div class="available-app-heading">
+
+            <span>
+              Available applications
+            </span>
+
+            <small>
+              Select to add or remove
+            </small>
+
+          </div>
+
+
+          <div
+            class="available-app-grid"
+            id="available-app-grid"
+          ></div>
+
+        </section>
+
+
+        <p
+          class="personal-panel-notice"
+          id="apps-notice"
+          aria-live="polite"
+        >
+          Your current selection is stored on this device.
+        </p>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <script
+    src="./js/personal.js"
+    defer
+  ></script>
+
+</body>
+
+</html>
