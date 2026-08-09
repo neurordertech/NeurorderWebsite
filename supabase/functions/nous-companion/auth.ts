@@ -1,7 +1,7 @@
 import {
   createClient,
   type SupabaseClient,
-} from "npm:@supabase/supabase-js@2";
+} from "@supabase/supabase-js";
 
 import type {
   AuthenticatedUser,

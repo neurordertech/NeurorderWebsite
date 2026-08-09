@@ -1,6 +1,6 @@
 import type {
   SupabaseClient,
-} from "npm:@supabase/supabase-js@2";
+} from "@supabase/supabase-js";
 
 import type {
   MembershipAccess,
@@ -41,7 +41,7 @@ const dailyLimits:
 ========================================================= */
 
 function getTesterUserIds():
-  Set<string> {
+Set<string> {
 
   const rawValue =
     Deno.env.get(
