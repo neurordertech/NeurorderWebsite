@@ -11,701 +11,2109 @@
 
     <meta
         name="description"
-        content="NOUS by NEURORDER — one intelligence across business, education and personal life."
+        content="NOUS Companion — a new South African digital experience for education, inclusion, development and human potential."
     >
 
-    <title>NOUS | NEURORDER</title>
-
-    <link
-        rel="stylesheet"
-        href="./css/global.css"
+    <meta
+        name="theme-color"
+        content="#02050a"
     >
 
-    <link
-        rel="stylesheet"
-        href="./css/nous.css?v=20260810-1"
-    >
+    <title>NOUS Companion — 28 August 2026</title>
 
-    <link
-        rel="stylesheet"
-        href="./css/responsive.css?v=20260810-1"
-    >
+    <!-- NOUS favicon -->
+    <link rel="icon" type="image/png" href="/assets/logo/nous-favicon.png">
+    <link rel="shortcut icon" href="/assets/logo/nous-favicon.png">
+    <link rel="apple-touch-icon" href="/assets/logo/nous-favicon.png">
 
-    <script
-        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
-    ></script>
+
+    <style>
+
+        :root {
+            --bg: #02050a;
+            --text: #f7f8fa;
+            --muted: #8f99a5;
+            --faint: #56616d;
+            --line: rgba(255,255,255,.1);
+            --blue: #7ec8ff;
+
+            /* NOUS spectrum */
+            --sky: #67d8ff;
+            --pink: #ff9dce;
+            --violet: #9b72ff;
+            --deep-blue: #4f78ff;
+            --green: #56e2b2;
+            --yellow: #ffe66a;
+            --orange: #ff9f57;
+            --red: #ff667d;
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            margin: 0;
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            color: var(--text);
+
+            background:
+                #02050a;
+
+            -webkit-font-smoothing:
+                antialiased;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =====================================================
+           INTERACTIVE WORLD
+        ====================================================== */
+
+        #nousWorld {
+            position: fixed;
+
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            z-index: 0;
+
+            pointer-events: none;
+        }
+
+
+        .world-vignette {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 1;
+
+            pointer-events: none;
+
+            background:
+
+                radial-gradient(
+                    circle at center,
+                    transparent 0%,
+                    rgba(2,5,10,.06) 45%,
+                    rgba(2,5,10,.72) 100%
+                ),
+
+                linear-gradient(
+                    to bottom,
+                    rgba(2,5,10,.18),
+                    transparent 18%,
+                    transparent 82%,
+                    rgba(2,5,10,.52)
+                );
+        }
+
+
+        /* =====================================================
+           PAGE
+        ====================================================== */
+
+        .page {
+            position: relative;
+
+            z-index: 5;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ====================================================== */
+
+        .topbar {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+            right: 0;
+
+            z-index: 20;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            height: 82px;
+
+            padding:
+                0
+                clamp(
+                    22px,
+                    5vw,
+                    78px
+                );
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.055);
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(2,5,10,.78),
+                    rgba(2,5,10,.18)
+                );
+
+            backdrop-filter:
+                blur(8px);
+        }
+
+
+        .brand {
+            font-size: 17px;
+
+            font-weight: 700;
+
+            letter-spacing: -.035em;
+        }
+
+
+        .brand span {
+            margin-left: 6px;
+
+            color: #727d88;
+
+            font-weight: 400;
+        }
+
+
+        .top-status {
+            color: #697581;
+
+            font-size: 9px;
+
+            font-weight: 650;
+
+            letter-spacing: .22em;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =====================================================
+           GENERAL SECTION
+        ====================================================== */
+
+        .scene {
+            position: relative;
+
+            width: 100%;
+
+            min-height: 100svh;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding:
+                130px
+                clamp(
+                    24px,
+                    6vw,
+                    90px
+                )
+                80px;
+        }
+
+
+        .scene-inner {
+            width: min(
+                1100px,
+                100%
+            );
+
+            margin-inline: auto;
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+            text-align: center;
+        }
+
+
+        .signal {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            margin-bottom: 30px;
+
+            padding:
+                8px
+                13px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.11);
+
+            border-radius:
+                999px;
+
+            background:
+                rgba(255,255,255,.024);
+
+            color:
+                #8d98a4;
+
+            font-size:
+                9px;
+
+            font-weight:
+                650;
+
+            letter-spacing:
+                .21em;
+
+            text-transform:
+                uppercase;
+
+            backdrop-filter:
+                blur(12px);
+        }
+
+
+        .signal-dot {
+            width: 5px;
+            height: 5px;
+
+            border-radius: 50%;
+
+            background:
+                #cfeaff;
+
+            box-shadow:
+                0 0 14px
+                rgba(126,200,255,.95);
+        }
+
+
+        .hero h1 {
+            max-width: 1020px;
+
+            margin:
+                0 auto;
+
+            font-size:
+                clamp(
+                    4.2rem,
+                    9vw,
+                    9rem
+                );
+
+            font-weight: 650;
+
+            line-height: .88;
+
+            letter-spacing: -.075em;
+        }
+
+
+        .hero h1 span {
+            color:
+                rgba(229,237,245,.37);
+        }
+
+
+        .hero-description {
+            max-width: 670px;
+
+            margin:
+                37px auto 0;
+
+            color:
+                var(--muted);
+
+            font-size:
+                clamp(
+                    .98rem,
+                    1.5vw,
+                    1.12rem
+                );
+
+            line-height:
+                1.75;
+
+            font-weight:
+                350;
+        }
+
+
+        .scroll-hint {
+            position: absolute;
+
+            bottom: 33px;
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color:
+                #525e69;
+
+            font-size:
+                8px;
+
+            letter-spacing: .21em;
+
+            text-transform: uppercase;
+        }
+
+
+        .scroll-line {
+            width: 1px;
+            height: 43px;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    #75828e,
+                    transparent
+                );
+        }
+
+
+        /* =====================================================
+           CENTRE / GRID MOMENT
+        ====================================================== */
+
+        .manifesto {
+            text-align: center;
+        }
+
+
+        .manifesto-card {
+            width:
+                min(
+                    840px,
+                    100%
+                );
+
+            margin:
+                0 auto;
+
+            padding:
+                clamp(
+                    35px,
+                    6vw,
+                    70px
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,.105);
+
+            background:
+                rgba(4,10,18,.39);
+
+            backdrop-filter:
+                blur(15px);
+
+            box-shadow:
+                0 40px 100px
+                rgba(0,0,0,.24);
+        }
+
+
+        .manifesto-label {
+            margin-bottom: 21px;
+
+            color:
+                #65717d;
+
+            font-size:
+                9px;
+
+            font-weight: 700;
+
+            letter-spacing:
+                .28em;
+
+            text-transform:
+                uppercase;
+        }
+
+
+        .manifesto h2 {
+            margin:
+                0;
+
+            font-size:
+                clamp(
+                    2.6rem,
+                    5.5vw,
+                    5.8rem
+                );
+
+            font-weight:
+                550;
+
+            line-height:
+                .98;
+
+            letter-spacing:
+                -.06em;
+        }
+
+
+        .manifesto h2 span {
+            color:
+                var(--blue);
+        }
+
+
+        .manifesto-text {
+            max-width:
+                620px;
+
+            margin:
+                29px auto 0;
+
+            color:
+                #8a95a0;
+
+            font-size:
+                1rem;
+
+            line-height:
+                1.8;
+        }
+
+
+        /* =====================================================
+           RELEASE
+        ====================================================== */
+
+        .release {
+            text-align: center;
+        }
+
+
+        .release-kicker {
+            color:
+                #626e7a;
+
+            font-size:
+                9px;
+
+            font-weight:
+                700;
+
+            letter-spacing:
+                .28em;
+
+            text-transform:
+                uppercase;
+        }
+
+
+        .release-date {
+            margin-top:
+                18px;
+
+            font-size:
+                clamp(
+                    3.2rem,
+                    7vw,
+                    7rem
+                );
+
+            line-height:
+                .95;
+
+            font-weight:
+                600;
+
+            letter-spacing:
+                -.06em;
+        }
+
+
+        .release-date span {
+            display: block;
+
+            margin-top: 10px;
+
+            color:
+                #65717c;
+
+            font-size:
+                .22em;
+
+            font-weight:
+                600;
+
+            letter-spacing:
+                .16em;
+
+            text-transform:
+                uppercase;
+        }
+
+
+        .big-bang {
+            width:
+                min(
+                    720px,
+                    100%
+                );
+
+            margin:
+                60px auto 0;
+
+            padding:
+                32px 10px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,.11);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.11);
+        }
+
+
+        .big-bang small {
+            display: block;
+
+            margin-bottom:
+                11px;
+
+            color:
+                #65717d;
+
+            font-size:
+                8px;
+
+            font-weight:
+                700;
+
+            letter-spacing:
+                .27em;
+
+            text-transform:
+                uppercase;
+        }
+
+
+        .big-bang strong {
+            display:
+                block;
+
+            font-size:
+                clamp(
+                    1.35rem,
+                    3vw,
+                    2.5rem
+                );
+
+            font-weight:
+                550;
+
+            letter-spacing:
+                -.035em;
+        }
+
+
+        .big-bang p {
+            max-width:
+                580px;
+
+            margin:
+                13px auto 0;
+
+            color:
+                #727e89;
+
+            line-height:
+                1.65;
+
+            font-size:
+                .9rem;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+            position: relative;
+
+            z-index: 6;
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
+            min-height:
+                90px;
+
+            padding:
+                0
+                clamp(
+                    22px,
+                    5vw,
+                    78px
+                );
+
+            border-top:
+                1px solid
+                rgba(255,255,255,.06);
+
+            color:
+                #4f5b66;
+
+            font-size:
+                8px;
+
+            letter-spacing:
+                .17em;
+
+            text-transform:
+                uppercase;
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (
+            max-width: 650px
+        ) {
+
+            .topbar {
+                height:
+                    70px;
+            }
+
+
+            .top-status {
+                display:
+                    none;
+            }
+
+
+            .scene {
+                padding:
+                    110px
+                    20px
+                    65px;
+            }
+
+
+            .hero h1 {
+                font-size:
+                    clamp(
+                        4rem,
+                        19vw,
+                        6rem
+                    );
+            }
+
+
+            .manifesto-card {
+                padding:
+                    38px
+                    20px;
+            }
+
+
+            footer {
+                flex-direction:
+                    column;
+
+                justify-content:
+                    center;
+
+                gap:
+                    10px;
+
+                text-align:
+                    center;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-    <div class="nous-app">
 
-        <!-- =========================================
-             PUBLIC HEADER
-             ========================================= -->
+<canvas
+    id="nousWorld"
+    aria-hidden="true"
+></canvas>
 
-        <header class="public-header">
-
-            <a
-                class="public-brand"
-                href="./index.html"
-                aria-label="NOUS home"
-            >
-                <img
-                    src="./assets/logo/nouslogo.png"
-                    alt=""
-                >
-
-                <span>NOUS</span>
-            </a>
-
-            <nav
-                class="public-account-actions"
-                aria-label="Account"
-            >
-                <a
-                    class="public-signin"
-                    href="./login.html"
-                >
-                    Sign in
-                </a>
-
-                <a
-                    class="public-signup"
-                    href="./signup.html"
-                >
-                    Create account
-                </a>
-            </nav>
-
-        </header>
+<div
+    class="world-vignette"
+    aria-hidden="true"
+></div>
 
 
-        <!-- =========================================
-             INTRO
-             ========================================= -->
+<div class="page">
 
-        <section
-            class="nous-intro"
-            id="nousIntro"
-            aria-labelledby="nous-intro-title"
-        >
 
-            <div class="nous-intro-visual">
-                <img
-                    src="./assets/logo/nouslogo.png"
-                    alt=""
-                    class="nous-symbol"
-                >
-            </div>
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
-            <div class="nous-intro-copy">
+    <header class="topbar">
 
-                <p class="intro-kicker">
-                    NEURORDER INTELLIGENCE
-                </p>
+        <div class="brand">
+            NOUS
+            <span>
+                Companion
+            </span>
+        </div>
 
-                <h1 id="nous-intro-title">
-                    NOUS
-                </h1>
 
-                <p>
-                    Understanding begins here.
-                </p>
+        <div class="top-status">
+            South Africa · 2026
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="scene hero">
+
+        <div class="scene-inner">
+
+            <div class="signal">
+
+                <span
+                    class="signal-dot"
+                ></span>
+
+                A new intelligence experience
 
             </div>
 
-        </section>
 
+            <h1>
 
-        <!-- =========================================
-             NOUS WORKSPACE PREVIEW
-             ========================================= -->
+                Built for
 
-        <main
-            class="nous-workspace"
-            id="nousWorkspace"
-        >
+                <br>
 
-            <header class="workspace-header">
-
-                <div class="workspace-brand">
-                    <img
-                        src="./assets/logo/nouslogo.png"
-                        alt=""
-                        class="workspace-symbol"
-                    >
-
-                    <span>NOUS</span>
-                </div>
-
-                <span class="workspace-state">
-                    PUBLIC PREVIEW
+                <span>
+                    possibility.
                 </span>
 
-            </header>
+            </h1>
 
 
-            <section class="workspace-content">
+            <p class="hero-description">
 
-                <p class="eyebrow">
-                    GOOD EVENING
-                </p>
+                A new South African digital experience
+                shaped around education, inclusion,
+                development and human potential.
 
-                <h2>
-                    What would you like
-                    <span>to understand?</span>
-                </h2>
+                Technology should not leave people behind.
 
-                <p class="workspace-description">
-                    Begin with a question or enter one of the
-                    environments that make up your NOUS world.
-                </p>
+                It should help more of us move forward.
+
+            </p>
+
+        </div>
 
 
-                <!-- COMMAND -->
+        <div class="scroll-hint">
 
-                <form
-                    class="nous-command"
-                    id="nousCommand"
-                >
+            Scroll to organise
 
-                    <label
-                        class="visually-hidden"
-                        for="nousInput"
-                    >
-                        Ask NOUS
-                    </label>
+            <span class="scroll-line"></span>
 
-                    <input
-                        type="text"
-                        id="nousInput"
-                        placeholder="Ask NOUS anything..."
-                        autocomplete="off"
-                    >
+        </div>
 
-                    <button type="submit">
-
-                        <span>
-                            Continue
-                        </span>
-
-                        <span
-                            class="command-arrow"
-                            aria-hidden="true"
-                        >
-                            →
-                        </span>
-
-                    </button>
-
-                </form>
+    </section>
 
 
-                <!-- ROS ENVIRONMENTS -->
+    <!-- =====================================================
+         GRID / MANIFESTO
+    ====================================================== -->
 
-                <div class="ros-heading">
+    <section class="scene manifesto">
 
-                    <span>
-                        ENVIRONMENTS
-                    </span>
+        <div class="scene-inner">
 
-                    <small>
-                        Rest Of the System
-                    </small>
 
+            <div class="manifesto-card">
+
+                <div class="manifesto-label">
+                    South Africa · Connected
                 </div>
 
-                <nav
-                    class="ros-navigation"
-                    aria-label="NOUS environments"
-                >
-
-                    <button
-                        type="button"
-                        data-space="business"
-                    >
-                        <span class="ros-number">
-                            01
-                        </span>
-
-                        <span class="ros-copy">
-                            <small>
-                                OPERATE
-                            </small>
-
-                            <strong>
-                                Business
-                            </strong>
-                        </span>
-
-                        <span
-                            class="ros-arrow"
-                            aria-hidden="true"
-                        >
-                            ↗
-                        </span>
-                    </button>
-
-
-                    <button
-                        type="button"
-                        data-space="education"
-                    >
-                        <span class="ros-number">
-                            02
-                        </span>
-
-                        <span class="ros-copy">
-                            <small>
-                                DEVELOP
-                            </small>
-
-                            <strong>
-                                Education
-                            </strong>
-                        </span>
-
-                        <span
-                            class="ros-arrow"
-                            aria-hidden="true"
-                        >
-                            ↗
-                        </span>
-                    </button>
-
-
-                    <button
-                        type="button"
-                        data-space="personal"
-                    >
-                        <span class="ros-number">
-                            03
-                        </span>
-
-                        <span class="ros-copy">
-                            <small>
-                                CONNECT
-                            </small>
-
-                            <strong>
-                                Personal
-                            </strong>
-                        </span>
-
-                        <span
-                            class="ros-arrow"
-                            aria-hidden="true"
-                        >
-                            ↗
-                        </span>
-                    </button>
-
-                </nav>
-
-
-                <section
-                    class="ros-view"
-                    id="rosView"
-                    aria-live="polite"
-                >
-
-                    <div>
-                        <span class="ros-status-dot"></span>
-
-                        <p>
-                            ROS — Rest Of the System
-                        </p>
-                    </div>
-
-                </section>
-
-            </section>
-
-        </main>
-
-
-        <!-- =========================================
-             MEMBERSHIP
-             ========================================= -->
-
-        <section
-            class="membership-section"
-            id="membership"
-        >
-
-            <div class="membership-heading">
-
-                <p class="eyebrow">
-                    BEGIN WITH NOUS
-                </p>
 
                 <h2>
-                    Choose the environment
-                    that fits you.
+
+                    Intelligence should
+
+                    <span>
+                        include.
+                    </span>
+
                 </h2>
 
-                <p>
-                    Start free, then expand your access when you are
-                    ready. Prices are billed in South African rand.
+
+                <p class="manifesto-text">
+
+                    NOUS imagines technology as infrastructure
+                    for participation — a place where learning,
+                    work, information and everyday intelligence
+                    can exist in one connected environment.
+
+                    Built here.
+
+                    Designed with the belief that South Africans
+                    should participate in shaping the next digital era. 
+                    
+                    Azishe phela Generation Z
+
                 </p>
 
             </div>
 
+        </div>
 
-            <div
-                class="pricing-grid"
-                id="pricingGrid"
-            >
-
-                <!-- FREE -->
-
-                <article class="pricing-card">
-
-                    <p class="plan-kicker">
-                        Explore
-                    </p>
-
-                    <h3>
-                        Free
-                    </h3>
-
-                    <p class="plan-price">
-                        <span>R0</span>
-                        <small>/ month</small>
-                    </p>
-
-                    <ul>
-                        <li>
-                            NOUS Companion essentials
-                        </li>
-
-                        <li>
-                            Personal environment access
-                        </li>
-
-                        <li>
-                            Limited monthly usage
-                        </li>
-                    </ul>
-
-                    <a
-                        class="plan-action secondary"
-                        href="./signup.html"
-                    >
-                        Create free account
-                    </a>
-
-                </article>
+    </section>
 
 
-                <!-- STUDENT -->
+    <!-- =====================================================
+         RELEASE
+    ====================================================== -->
 
-                <article class="pricing-card">
+    <section class="scene release">
 
-                    <p class="plan-kicker">
-                        Learn
-                    </p>
-
-                    <h3>
-                        Student &amp; Beginner
-                    </h3>
-
-                    <p class="plan-price">
-                        <span>R39</span>
-                        <small>/ month</small>
-                    </p>
-
-                    <ul>
-                        <li>
-                            Companion with higher limits
-                        </li>
-
-                        <li>
-                            Education and Personal spaces
-                        </li>
-
-                        <li>
-                            Learning and project support
-                        </li>
-                    </ul>
-
-                    <button
-                        class="plan-action checkout-button"
-                        data-plan="student_beginner"
-                        type="button"
-                    >
-                        Choose Student
-                    </button>
-
-                </article>
+        <div class="scene-inner">
 
 
-                <!-- BUSINESS -->
-
-                <article class="pricing-card featured">
-
-                    <span class="recommended">
-                        Most practical
-                    </span>
-
-                    <p class="plan-kicker">
-                        Build
-                    </p>
-
-                    <h3>
-                        Business &amp; Education
-                    </h3>
-
-                    <p class="plan-price">
-                        <span>R89</span>
-                        <small>/ month</small>
-                    </p>
-
-                    <ul>
-                        <li>
-                            Business and Education workspaces
-                        </li>
-
-                        <li>
-                            Expanded Companion usage
-                        </li>
-
-                        <li>
-                            Organisation-ready tools
-                        </li>
-                    </ul>
-
-                    <button
-                        class="plan-action checkout-button"
-                        data-plan="business_education"
-                        type="button"
-                    >
-                        Choose Business
-                    </button>
-
-                </article>
+            <div class="release-kicker">
+                Public Release
+            </div>
 
 
-                <!-- UNLIMITED -->
+            <div class="release-date">
 
-                <article class="pricing-card">
+                28 August 2026
 
-                    <p class="plan-kicker">
-                        Everything
-                    </p>
-
-                    <h3>
-                        NOUS Unlimited
-                    </h3>
-
-                    <p class="plan-price">
-                        <span>R169</span>
-                        <small>/ month</small>
-                    </p>
-
-                    <ul>
-                        <li>
-                            All NOUS environments
-                        </li>
-
-                        <li>
-                            Highest included usage
-                        </li>
-
-                        <li>
-                            Priority access to new features
-                        </li>
-                    </ul>
-
-                    <button
-                        class="plan-action checkout-button"
-                        data-plan="nous_unlimited"
-                        type="button"
-                    >
-                        Choose Unlimited
-                    </button>
-
-                </article>
+                <span>
+                    NOUS Companion · South Africa
+                </span>
 
             </div>
 
-            <p
-                class="checkout-message"
-                id="checkoutMessage"
-                role="status"
-                aria-live="polite"
-            ></p>
 
-        </section>
+            <div class="big-bang">
 
-    </div>
+                <small>
+                    An invitation
+                </small>
 
 
-    <script src="./js/supabase-config.js"></script>
-    <script src="./js/pricing.js"></script>
-    <script src="./js/nous.js"></script>
-    <script src="./js/ros.js"></script>
+                <strong>
+                    Be part of Man's Big Bang.
+                </strong>
+
+
+                <p>
+
+                    A moment where ideas, education,
+                    technology and human imagination collide —
+                    and something new begins.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <span>
+            NOUS · Intelligence for everyday life
+        </span>
+
+        <span>
+            A NEURORDER Technology
+        </span>
+
+    </footer>
+
+
+</div>
+
+
+<script>
+
+(() => {
+
+    "use strict";
+
+
+    /* =====================================================
+       CANVAS
+    ====================================================== */
+
+    const canvas =
+        document.getElementById(
+            "nousWorld"
+        );
+
+    const ctx =
+        canvas.getContext(
+            "2d"
+        );
+
+
+    let width = 0;
+    let height = 0;
+    let dpr = 1;
+
+
+    /* =====================================================
+       WORLD
+    ====================================================== */
+
+    const PARTICLE_COUNT =
+        window.innerWidth < 700
+            ? 80
+            : 145;
+
+
+    /*
+       NOUS colour nodes
+
+       Sky blue + piggy pink dominate.
+       The remaining visible-spectrum colours appear
+       as smaller accents across the network.
+    */
+
+    const NODE_PALETTE = [
+        { rgb: [103, 216, 255], weight: 35 }, // sky blue
+        { rgb: [255, 157, 206], weight: 30 }, // piggy pink
+        { rgb: [155, 114, 255], weight: 12 }, // violet
+        { rgb: [79, 120, 255],  weight: 8  }, // blue
+        { rgb: [86, 226, 178],  weight: 6  }, // green
+        { rgb: [255, 230, 106], weight: 5  }, // yellow
+        { rgb: [255, 159, 87],  weight: 2  }, // orange
+        { rgb: [255, 102, 125], weight: 2  }  // red
+    ];
+
+
+    function pickNodeColour() {
+
+        const total =
+            NODE_PALETTE.reduce(
+                (sum, item) =>
+                    sum + item.weight,
+                0
+            );
+
+
+        let roll =
+            Math.random() * total;
+
+
+        for (
+            const item
+            of NODE_PALETTE
+        ) {
+
+            roll -=
+                item.weight;
+
+
+            if (
+                roll <= 0
+            ) {
+                return item.rgb;
+            }
+
+        }
+
+
+        return NODE_PALETTE[0].rgb;
+
+    }
+
+
+    const particles = [];
+
+
+    const pointer = {
+        x: 0,
+        y: 0,
+        targetX: 0,
+        targetY: 0
+    };
+
+
+    let scrollProgress = 0;
+
+
+    /* =====================================================
+       UTILITIES
+    ====================================================== */
+
+    function lerp(
+        a,
+        b,
+        t
+    ) {
+
+        return (
+            a +
+            (
+                b - a
+            ) * t
+        );
+
+    }
+
+
+    function clamp(
+        value,
+        min,
+        max
+    ) {
+
+        return Math.max(
+            min,
+            Math.min(
+                max,
+                value
+            )
+        );
+
+    }
+
+
+    function easeInOut(
+        value
+    ) {
+
+        return (
+            value < 0.5
+
+                ? 2 *
+                  value *
+                  value
+
+                : 1 -
+                  Math.pow(
+                      -2 * value + 2,
+                      2
+                  ) / 2
+        );
+
+    }
+
+
+    /* =====================================================
+       RESIZE
+    ====================================================== */
+
+    function resize() {
+
+        dpr =
+            Math.min(
+                window.devicePixelRatio || 1,
+                2
+            );
+
+
+        width =
+            window.innerWidth;
+
+        height =
+            window.innerHeight;
+
+
+        canvas.width =
+            width * dpr;
+
+        canvas.height =
+            height * dpr;
+
+
+        canvas.style.width =
+            `${width}px`;
+
+        canvas.style.height =
+            `${height}px`;
+
+
+        ctx.setTransform(
+            dpr,
+            0,
+            0,
+            dpr,
+            0,
+            0
+        );
+
+
+        createParticles();
+
+    }
+
+
+    /* =====================================================
+       PARTICLES
+    ====================================================== */
+
+    function createParticles() {
+
+        particles.length = 0;
+
+
+        const columns =
+            Math.ceil(
+                Math.sqrt(
+                    PARTICLE_COUNT *
+                    1.65
+                )
+            );
+
+
+        const rows =
+            Math.ceil(
+                PARTICLE_COUNT /
+                columns
+            );
+
+
+        for (
+            let i = 0;
+            i < PARTICLE_COUNT;
+            i++
+        ) {
+
+            const column =
+                i % columns;
+
+            const row =
+                Math.floor(
+                    i / columns
+                );
+
+
+            const gridX =
+                (
+                    column /
+                    Math.max(
+                        columns - 1,
+                        1
+                    )
+                ) *
+                width *
+                0.82 +
+                width *
+                0.09;
+
+
+            const gridY =
+                (
+                    row /
+                    Math.max(
+                        rows - 1,
+                        1
+                    )
+                ) *
+                height *
+                0.72 +
+                height *
+                0.14;
+
+
+            particles.push({
+
+                randomX:
+                    Math.random() *
+                    width,
+
+                randomY:
+                    Math.random() *
+                    height,
+
+                randomZ:
+                    Math.random() *
+                    900 +
+                    120,
+
+                gridX,
+                gridY,
+
+                phase:
+                    Math.random() *
+                    Math.PI *
+                    2,
+
+                velocity:
+                    0.15 +
+                    Math.random() *
+                    0.35,
+
+                size:
+                    0.6 +
+                    Math.random() *
+                    1.7,
+
+                colour:
+                    pickNodeColour()
+
+            });
+
+        }
+
+    }
+
+
+    /* =====================================================
+       SCROLL MORPH
+    ====================================================== */
+
+    function updateScroll() {
+
+        const maxScroll =
+            document.documentElement.scrollHeight -
+            window.innerHeight;
+
+
+        scrollProgress =
+            maxScroll > 0
+                ? window.scrollY /
+                  maxScroll
+                : 0;
+
+    }
+
+
+    /*
+       gridMorph:
+
+       top       = 0
+       centre    = 1
+       bottom    = 0
+    */
+
+    function getGridMorph() {
+
+        const distance =
+            Math.abs(
+                scrollProgress -
+                0.5
+            );
+
+
+        const raw =
+            1 -
+            clamp(
+                distance /
+                0.35,
+                0,
+                1
+            );
+
+
+        return easeInOut(
+            raw
+        );
+
+    }
+
+
+    /* =====================================================
+       POINTER
+    ====================================================== */
+
+    window.addEventListener(
+        "pointermove",
+        event => {
+
+            pointer.targetX =
+                (
+                    event.clientX /
+                    width -
+                    0.5
+                );
+
+            pointer.targetY =
+                (
+                    event.clientY /
+                    height -
+                    0.5
+                );
+
+        }
+    );
+
+
+    /* =====================================================
+       DRAW GRID
+    ====================================================== */
+
+    function drawGrid(
+        morph
+    ) {
+
+        if (
+            morph <
+            0.05
+        ) {
+            return;
+        }
+
+
+        ctx.save();
+
+
+        ctx.globalAlpha =
+            morph *
+            0.13;
+
+
+        const gridGradient =
+            ctx.createLinearGradient(
+                width * 0.08,
+                height * 0.12,
+                width * 0.92,
+                height * 0.88
+            );
+
+
+        gridGradient.addColorStop(
+            0,
+            "rgba(103,216,255,0.72)"
+        );
+
+        gridGradient.addColorStop(
+            0.38,
+            "rgba(255,157,206,0.66)"
+        );
+
+        gridGradient.addColorStop(
+            0.68,
+            "rgba(155,114,255,0.58)"
+        );
+
+        gridGradient.addColorStop(
+            1,
+            "rgba(103,216,255,0.66)"
+        );
+
+
+        ctx.strokeStyle =
+            gridGradient;
+
+
+        ctx.lineWidth =
+            0.55;
+
+
+        const gap =
+            Math.max(
+                55,
+                width /
+                18
+            );
+
+
+        const offsetX =
+            pointer.x *
+            18;
+
+
+        const offsetY =
+            pointer.y *
+            18;
+
+
+        /* vertical */
+
+        for (
+            let x =
+                width * 0.08;
+            x <
+                width * 0.92;
+            x += gap
+        ) {
+
+            ctx.beginPath();
+
+            ctx.moveTo(
+                x + offsetX,
+                height *
+                0.12
+            );
+
+            ctx.lineTo(
+                x - offsetX,
+                height *
+                0.88
+            );
+
+            ctx.stroke();
+
+        }
+
+
+        /* horizontal */
+
+        for (
+            let y =
+                height * 0.13;
+            y <
+                height * 0.9;
+            y += gap
+        ) {
+
+            ctx.beginPath();
+
+            ctx.moveTo(
+                width *
+                0.07,
+                y + offsetY
+            );
+
+            ctx.lineTo(
+                width *
+                0.93,
+                y - offsetY
+            );
+
+            ctx.stroke();
+
+        }
+
+
+        ctx.restore();
+
+    }
+
+
+    /* =====================================================
+       DRAW PARTICLES
+    ====================================================== */
+
+    function drawParticles(
+        time,
+        morph
+    ) {
+
+        const positions = [];
+
+
+        for (
+            let i = 0;
+            i <
+            particles.length;
+            i++
+        ) {
+
+            const p =
+                particles[i];
+
+
+            /*
+               pseudo depth / fourth dimension
+            */
+
+            const timeWave =
+                Math.sin(
+                    time *
+                    0.00035 *
+                    p.velocity +
+                    p.phase
+                );
+
+
+            const z =
+                p.randomZ +
+                timeWave *
+                110;
+
+
+            const depthScale =
+                650 /
+                (
+                    650 +
+                    z
+                );
+
+
+            const perspectiveX =
+                (
+                    p.randomX -
+                    width / 2
+                ) *
+                depthScale +
+                width / 2;
+
+
+            const perspectiveY =
+                (
+                    p.randomY -
+                    height / 2
+                ) *
+                depthScale +
+                height / 2;
+
+
+            const parallaxX =
+                pointer.x *
+                50 *
+                (
+                    1 -
+                    depthScale
+                );
+
+
+            const parallaxY =
+                pointer.y *
+                50 *
+                (
+                    1 -
+                    depthScale
+                );
+
+
+            const freeX =
+                perspectiveX +
+                parallaxX +
+                Math.sin(
+                    time *
+                    0.00023 +
+                    p.phase
+                ) *
+                18;
+
+
+            const freeY =
+                perspectiveY +
+                parallaxY +
+                Math.cos(
+                    time *
+                    0.00019 +
+                    p.phase
+                ) *
+                15;
+
+
+            const x =
+                lerp(
+                    freeX,
+                    p.gridX,
+                    morph
+                );
+
+
+            const y =
+                lerp(
+                    freeY,
+                    p.gridY,
+                    morph
+                );
+
+
+            positions.push({
+                x,
+                y,
+                colour:
+                    p.colour
+            });
+
+
+            const alpha =
+                lerp(
+                    0.34 +
+                    depthScale *
+                    0.46,
+                    0.86,
+                    morph
+                );
+
+
+            const radius =
+                lerp(
+                    p.size *
+                    (
+                        0.65 +
+                        depthScale
+                    ),
+                    1.75,
+                    morph
+                );
+
+
+            const [
+                r,
+                g,
+                b
+            ] =
+                p.colour;
+
+
+            /*
+               outer colour aura
+            */
+
+            const glow =
+                ctx.createRadialGradient(
+                    x,
+                    y,
+                    0,
+                    x,
+                    y,
+                    radius * 7.5
+                );
+
+
+            glow.addColorStop(
+                0,
+                `rgba(${r},${g},${b},${alpha * 0.34})`
+            );
+
+            glow.addColorStop(
+                0.25,
+                `rgba(${r},${g},${b},${alpha * 0.18})`
+            );
+
+            glow.addColorStop(
+                1,
+                `rgba(${r},${g},${b},0)`
+            );
+
+
+            ctx.beginPath();
+
+            ctx.arc(
+                x,
+                y,
+                radius * 7.5,
+                0,
+                Math.PI * 2
+            );
+
+            ctx.fillStyle =
+                glow;
+
+            ctx.fill();
+
+
+            /*
+               bright node core
+            */
+
+            ctx.beginPath();
+
+            ctx.arc(
+                x,
+                y,
+                radius,
+                0,
+                Math.PI * 2
+            );
+
+
+            ctx.fillStyle =
+                `rgba(
+                    ${r},
+                    ${g},
+                    ${b},
+                    ${alpha}
+                )`;
+
+
+            ctx.shadowColor =
+                `rgba(
+                    ${r},
+                    ${g},
+                    ${b},
+                    ${Math.min(alpha, 0.95)}
+                )`;
+
+            ctx.shadowBlur =
+                morph > 0.55
+                    ? 12
+                    : 8;
+
+
+            ctx.fill();
+
+
+            /*
+               small white-hot centre
+               makes colour nodes feel luminous,
+               not flat circles
+            */
+
+            ctx.beginPath();
+
+            ctx.arc(
+                x,
+                y,
+                Math.max(
+                    0.45,
+                    radius * 0.34
+                ),
+                0,
+                Math.PI * 2
+            );
+
+            ctx.fillStyle =
+                `rgba(
+                    255,
+                    255,
+                    255,
+                    ${alpha * 0.70}
+                )`;
+
+            ctx.shadowBlur =
+                0;
+
+            ctx.fill();
+
+        }
+
+
+        ctx.shadowBlur =
+            0;
+
+
+        drawConnections(
+            positions,
+            morph
+        );
+
+    }
+
+
+    /* =====================================================
+       CONNECTIONS
+    ====================================================== */
+
+    function drawConnections(
+        positions,
+        morph
+    ) {
+
+        const threshold =
+            lerp(
+                105,
+                78,
+                morph
+            );
+
+
+        for (
+            let i = 0;
+            i <
+            positions.length;
+            i++
+        ) {
+
+            for (
+                let j =
+                    i + 1;
+                j <
+                positions.length;
+                j++
+            ) {
+
+                const a =
+                    positions[i];
+
+                const b =
+                    positions[j];
+
+
+                const dx =
+                    a.x - b.x;
+
+                const dy =
+                    a.y - b.y;
+
+
+                const distance =
+                    Math.sqrt(
+                        dx * dx +
+                        dy * dy
+                    );
+
+
+                if (
+                    distance <
+                    threshold
+                ) {
+
+                    const opacity =
+                        (
+                            1 -
+                            distance /
+                            threshold
+                        ) *
+                        lerp(
+                            0.12,
+                            0.27,
+                            morph
+                        );
+
+
+                    const blendedColour = [
+                        Math.round(
+                            (
+                                a.colour[0] +
+                                b.colour[0]
+                            ) / 2
+                        ),
+
+                        Math.round(
+                            (
+                                a.colour[1] +
+                                b.colour[1]
+                            ) / 2
+                        ),
+
+                        Math.round(
+                            (
+                                a.colour[2] +
+                                b.colour[2]
+                            ) / 2
+                        )
+                    ];
+
+
+                    const lineGradient =
+                        ctx.createLinearGradient(
+                            a.x,
+                            a.y,
+                            b.x,
+                            b.y
+                        );
+
+
+                    lineGradient.addColorStop(
+                        0,
+                        `rgba(
+                            ${a.colour[0]},
+                            ${a.colour[1]},
+                            ${a.colour[2]},
+                            ${opacity}
+                        )`
+                    );
+
+
+                    lineGradient.addColorStop(
+                        0.5,
+                        `rgba(
+                            ${blendedColour[0]},
+                            ${blendedColour[1]},
+                            ${blendedColour[2]},
+                            ${opacity * 0.92}
+                        )`
+                    );
+
+
+                    lineGradient.addColorStop(
+                        1,
+                        `rgba(
+                            ${b.colour[0]},
+                            ${b.colour[1]},
+                            ${b.colour[2]},
+                            ${opacity}
+                        )`
+                    );
+
+
+                    ctx.beginPath();
+
+
+                    ctx.moveTo(
+                        a.x,
+                        a.y
+                    );
+
+
+                    ctx.lineTo(
+                        b.x,
+                        b.y
+                    );
+
+
+                    ctx.strokeStyle =
+                        lineGradient;
+
+
+                    ctx.lineWidth =
+                        morph > 0.55
+                            ? 0.65
+                            : 0.5;
+
+
+                    ctx.stroke();
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+    /* =====================================================
+       ANIMATION
+    ====================================================== */
+
+    function animate(
+        time
+    ) {
+
+        ctx.clearRect(
+            0,
+            0,
+            width,
+            height
+        );
+
+
+        pointer.x =
+            lerp(
+                pointer.x,
+                pointer.targetX,
+                .045
+            );
+
+
+        pointer.y =
+            lerp(
+                pointer.y,
+                pointer.targetY,
+                .045
+            );
+
+
+        const morph =
+            getGridMorph();
+
+
+        drawGrid(
+            morph
+        );
+
+
+        drawParticles(
+            time,
+            morph
+        );
+
+
+        requestAnimationFrame(
+            animate
+        );
+
+    }
+
+
+    /* =====================================================
+       EVENTS
+    ====================================================== */
+
+    window.addEventListener(
+        "resize",
+        resize
+    );
+
+
+    window.addEventListener(
+        "scroll",
+        updateScroll,
+        {
+            passive: true
+        }
+    );
+
+
+    resize();
+
+    updateScroll();
+
+    requestAnimationFrame(
+        animate
+    );
+
+})();
+
+</script>
+
 
 </body>
 
 </html>
-
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/nous.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-</head>
-
-<body>
-<div class="auth-entry-links" style="position:fixed;right:24px;top:22px;z-index:100;display:flex;gap:10px"><a href="./login.html" style="color:white;text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:9px 14px;border-radius:999px">Sign in</a><a href="./signup.html" style="color:#07101b;text-decoration:none;background:white;padding:9px 14px;border-radius:999px;font-weight:700">Create account</a></div>
-
-    <div class="nous-app">
-
-        <section class="nous-intro" id="nousIntro">
-
-            <img
-                src="assets/logo/nouslogo.png"
-                alt="Nous symbol"
-                class="nous-symbol"
-            >
-
-            <h1>NOUS</h1>
-
-            <p>Understanding begins here.</p>
-
-        </section>
-
-        <main class="nous-workspace" id="nousWorkspace">
-
-            <header class="workspace-header">
-
-                <img
-                    src="assets/logo/nouslogo.png"
-                    alt="Nous"
-                    class="workspace-symbol"
-                >
-
-                <span>NOUS</span>
-
-            </header>
-
-            <section class="workspace-content">
-
-                <p class="eyebrow">
-                    GOOD EVENING
-                </p>
-
-                <h2>
-                    What would you like to understand?
-                </h2>
-
-                <form class="nous-command" id="nousCommand">
-
-                    <input
-                        type="text"
-                        id="nousInput"
-                        placeholder="Ask Nous anything..."
-                        autocomplete="off"
-                    >
-
-                    <button type="submit">
-                        Continue
-                    </button>
-
-                </form>
-
-                <nav class="ros-navigation">
-
-                    <button
-                        type="button"
-                        data-space="business"
-                    >
-                        <span>Business</span>
-                        <small>Operate</small>
-                    </button>
-
-                    <button
-                        type="button"
-                        data-space="education"
-                    >
-                        <span>Education</span>
-                        <small>Develop</small>
-                    </button>
-
-                    <button
-                        type="button"
-                        data-space="personal"
-                    >
-                        <span>Personal</span>
-                        <small>Connect</small>
-                    </button>
-
-                </nav>
-
-                <section class="ros-view" id="rosView">
-
-                    <p>
-                        ROS — Rest Of the System
-                    </p>
-
-                </section>
-
-            </section>
-
-        </main>
-
-    </div>
-
-        <section class="membership-section" id="membership">
-            <div class="membership-heading">
-                <p class="eyebrow">BEGIN WITH NOUS</p>
-                <h2>Choose the environment that fits you.</h2>
-                <p>Start free, then expand your access when you are ready. Prices are billed in South African rand.</p>
-            </div>
-
-            <div class="pricing-grid" id="pricingGrid">
-                <article class="pricing-card">
-                    <p class="plan-kicker">Explore</p>
-                    <h3>Free</h3>
-                    <p class="plan-price"><span>R0</span><small>/ month</small></p>
-                    <ul><li>NOUS Companion essentials</li><li>Personal environment access</li><li>Limited monthly usage</li></ul>
-                    <a class="plan-action secondary" href="signup.html">Create free account</a>
-                </article>
-
-                <article class="pricing-card">
-                    <p class="plan-kicker">Learn</p>
-                    <h3>Student &amp; Beginner</h3>
-                    <p class="plan-price"><span>R39</span><small>/ month</small></p>
-                    <ul><li>Companion with higher limits</li><li>Education and Personal spaces</li><li>Learning and project support</li></ul>
-                    <button class="plan-action checkout-button" data-plan="student_beginner">Choose Student</button>
-                </article>
-
-                <article class="pricing-card featured">
-                    <span class="recommended">Most practical</span>
-                    <p class="plan-kicker">Build</p>
-                    <h3>Business &amp; Education</h3>
-                    <p class="plan-price"><span>R89</span><small>/ month</small></p>
-                    <ul><li>Business and Education workspaces</li><li>Expanded Companion usage</li><li>Organisation-ready tools</li></ul>
-                    <button class="plan-action checkout-button" data-plan="business_education">Choose Business</button>
-                </article>
-
-                <article class="pricing-card">
-                    <p class="plan-kicker">Everything</p>
-                    <h3>NOUS Unlimited</h3>
-                    <p class="plan-price"><span>R169</span><small>/ month</small></p>
-                    <ul><li>All NOUS environments</li><li>Highest included usage</li><li>Priority access to new features</li></ul>
-                    <button class="plan-action checkout-button" data-plan="nous_unlimited">Choose Unlimited</button>
-                </article>
-            </div>
-            <p class="checkout-message" id="checkoutMessage" role="status"></p>
-        </section>
-
-    <script src="js/supabase-config.js"></script>
-    <script src="js/pricing.js"></script>
-    <script src="js/nous.js"></script>
-    <script src="js/ros.js"></script>
-
-</body>
-
-</html></html>
