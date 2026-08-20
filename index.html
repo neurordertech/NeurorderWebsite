@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
@@ -10,654 +11,1551 @@
 
     <meta
         name="description"
-        content="NEURORDER presents the NOUS Platform. Public preview launching August 2026."
+        content="NEURORDER is building research, intelligent systems and digital infrastructure for Africa's evolving economy."
     >
 
-    <meta name="theme-color" content="#020409">
+    <meta
+        name="theme-color"
+        content="#020409"
+    >
 
-    <title>NOUS Platform | NEURORDER</title>
+    <title>
+        NEURORDER | New Order. Smarter Future.
+    </title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- =====================================================
+         FAVICONS
+    ====================================================== -->
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap"
-        rel="stylesheet"
+        rel="icon"
+        type="image/x-icon"
+        href="images/favicon.ico"
     >
 
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="images/favicon.png"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="images/logo.png"
+    >
+
+
+    <!-- =====================================================
+         STYLES
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/nous.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/home.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         HOMEPAGE RELAUNCH ADDITIONS
+    ====================================================== -->
+
     <style>
-        :root {
-            --background: #020409;
-            --text: #f7f9fc;
-            --muted: rgba(220, 230, 244, 0.72);
-            --border: rgba(255, 255, 255, 0.16);
-            --blue: #55aaff;
-            --blue-soft: rgba(65, 155, 255, 0.22);
-            --glass: rgba(7, 13, 23, 0.58);
+
+        /* =================================================
+           HEADER NOUS LINK
+        ================================================== */
+
+        .desktop-nav .nous-nav-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            color: #7ec8ff;
         }
 
-        * {
-            box-sizing: border-box;
+        .desktop-nav .nous-nav-link::after {
+            background: #7ec8ff;
         }
 
-        html {
-            scroll-behavior: smooth;
+
+        /* =================================================
+           HOMEPAGE STATUS
+        ================================================== */
+
+        .homepage-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            margin-top: 20px;
+
+            color: rgba(255, 255, 255, 0.56);
+
+            font-size: 0.76rem;
+            letter-spacing: 0.045em;
         }
 
-        html,
-        body {
-            width: 100%;
-            min-height: 100%;
-            margin: 0;
+        .homepage-status-dot {
+            width: 6px;
+            height: 6px;
+
+            flex: 0 0 auto;
+
+            border-radius: 50%;
+
+            background: #69bfff;
+
+            box-shadow:
+                0 0 10px rgba(105, 191, 255, 0.65);
         }
 
-        body {
-            overflow-x: hidden;
-            background: var(--background);
-            color: var(--text);
-            font-family: "Inter", sans-serif;
+
+        /* =================================================
+           CIAS LABEL
+        ================================================== */
+
+        .pillar-kicker {
+            display: block;
+
+            margin-bottom: 10px;
+
+            color: #73c7ff;
+
+            font-size: 0.66rem;
+            font-weight: 700;
+
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
 
-        button,
-        a {
-            -webkit-tap-highlight-color: transparent;
-        }
+        /* =================================================
+           NOUS PREVIEW
+        ================================================== */
 
-        .launch-page {
+        .nous-preview-section {
             position: relative;
-            display: grid;
-            min-height: 100svh;
+
+            width: min(
+                calc(100% - 40px),
+                1180px
+            );
+
+            margin:
+                clamp(70px, 9vw, 120px)
+                auto;
+
             overflow: hidden;
-            isolation: isolate;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.11);
+
+            border-radius: 30px;
+
             background:
                 radial-gradient(
-                    circle at 50% 30%,
-                    rgba(25, 95, 185, 0.13),
-                    transparent 37%
+                    circle at 80% 30%,
+                    rgba(63, 119, 255, 0.16),
+                    transparent 35%
                 ),
-                #020409;
-        }
-
-        .launch-background {
-            position: absolute;
-            inset: 0;
-            z-index: -4;
-        }
-
-        .launch-background img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            opacity: 0;
-            transform: scale(1.025);
-            animation: revealImage 2.2s ease forwards;
-        }
-
-        .launch-overlay {
-            position: absolute;
-            inset: 0;
-            z-index: -3;
-            pointer-events: none;
-            background:
                 linear-gradient(
-                    180deg,
-                    rgba(0, 0, 0, 0.08) 0%,
-                    rgba(0, 0, 0, 0.05) 40%,
-                    rgba(0, 0, 0, 0.44) 73%,
-                    rgba(0, 0, 0, 0.94) 100%
+                    135deg,
+                    rgba(7, 12, 21, 0.96),
+                    rgba(5, 13, 27, 0.96)
                 );
-        }
 
-        .launch-vignette {
-            position: absolute;
-            inset: 0;
-            z-index: -2;
-            pointer-events: none;
             box-shadow:
-                inset 0 0 160px rgba(0, 0, 0, 0.74),
-                inset 0 -160px 220px rgba(0, 0, 0, 0.88);
+                0 35px 90px
+                rgba(0, 0, 0, 0.28);
         }
 
-        .launch-glow {
-            position: absolute;
-            left: 50%;
-            bottom: 12%;
-            z-index: -1;
-            width: min(460px, 70vw);
-            height: 2px;
-            transform: translateX(-50%);
-            background: rgba(106, 183, 255, 0.7);
-            box-shadow:
-                0 0 12px rgba(74, 164, 255, 0.85),
-                0 0 34px rgba(35, 132, 255, 0.7),
-                0 0 90px rgba(30, 112, 255, 0.5);
-            opacity: 0.55;
-            animation: breatheGlow 7s ease-in-out infinite;
-        }
 
-        .topbar {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 5;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            padding: 24px clamp(20px, 4vw, 64px);
-            opacity: 0;
-            animation: fadeUp 1.2s ease 1.5s forwards;
-        }
-
-        .company-name {
-            margin: 0;
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-        }
-
-        .top-links {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .top-links a {
+        .nous-preview-inner {
             position: relative;
-            color: rgba(255, 255, 255, 0.74);
-            font-size: 0.76rem;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            transition:
-                color 220ms ease,
-                transform 220ms ease;
-        }
+            z-index: 2;
 
-        .top-links a::after {
-            position: absolute;
-            right: 0;
-            bottom: -7px;
-            left: 0;
-            height: 1px;
-            content: "";
-            background: var(--blue);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 240ms ease;
-        }
+            display: grid;
 
-        .top-links a:hover,
-        .top-links a:focus-visible {
-            color: #ffffff;
-            transform: translateY(-1px);
-        }
+            grid-template-columns:
+                minmax(0, 1fr)
+                minmax(270px, 0.7fr);
 
-        .top-links a:hover::after,
-        .top-links a:focus-visible::after {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-
-        .launch-content {
-            align-self: end;
-            width: min(720px, calc(100% - 40px));
-            margin-inline: auto;
-            padding: 56px 0 44px;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(24px);
-            animation: fadeUp 1.25s ease 1.85s forwards;
-        }
-
-        .eyebrow {
-            margin: 0 0 13px;
-            color: rgba(149, 205, 255, 0.92);
-            font-size: 0.68rem;
-            font-weight: 600;
-            letter-spacing: 0.28em;
-            text-transform: uppercase;
-        }
-
-        .launch-content h1 {
-            margin: 0;
-            font-family: "Manrope", sans-serif;
-            font-size: clamp(1.8rem, 5vw, 3.7rem);
-            font-weight: 300;
-            letter-spacing: 0.2em;
-            line-height: 1.1;
-            text-indent: 0.2em;
-        }
-
-        .launch-date {
-            margin: 17px 0 0;
-            color: rgba(196, 224, 255, 0.94);
-            font-size: clamp(0.78rem, 1.5vw, 0.92rem);
-            font-weight: 500;
-            letter-spacing: 0.24em;
-            text-transform: uppercase;
-        }
-
-        .launch-description {
-            max-width: 530px;
-            margin: 18px auto 0;
-            color: var(--muted);
-            font-family: "Manrope", sans-serif;
-            font-size: clamp(0.9rem, 1.6vw, 1.04rem);
-            font-weight: 300;
-            line-height: 1.75;
-        }
-
-        .launch-actions {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 13px;
-            margin-top: 27px;
-        }
-
-        .launch-button {
-            display: inline-flex;
-            min-height: 50px;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 0 25px;
-            border: 1px solid rgba(116, 190, 255, 0.5);
-            border-radius: 999px;
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(61, 145, 255, 0.28),
-                    rgba(32, 89, 175, 0.13)
-                );
-            box-shadow:
-                inset 0 1px 0 rgba(255, 255, 255, 0.18),
-                0 8px 30px rgba(0, 83, 190, 0.17),
-                0 0 34px rgba(49, 136, 255, 0.11);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            color: #f7fbff;
-            font-size: 0.79rem;
-            font-weight: 500;
-            letter-spacing: 0.09em;
-            transition:
-                transform 260ms ease,
-                border-color 260ms ease,
-                box-shadow 260ms ease,
-                background 260ms ease;
+
+            gap:
+                clamp(30px, 6vw, 80px);
+
+            padding:
+                clamp(42px, 7vw, 78px);
         }
 
-        .launch-button:hover,
-        .launch-button:focus-visible {
-            border-color: rgba(163, 215, 255, 0.9);
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(72, 160, 255, 0.4),
-                    rgba(34, 98, 198, 0.23)
-                );
-            box-shadow:
-                inset 0 1px 0 rgba(255, 255, 255, 0.26),
-                0 10px 38px rgba(0, 103, 235, 0.29),
-                0 0 48px rgba(57, 154, 255, 0.22);
-            transform: translateY(-2px);
+
+        .nous-preview-copy {
+            max-width: 650px;
         }
 
-        .launch-button.secondary {
-            border-color: var(--border);
-            background: rgba(8, 12, 20, 0.48);
-            box-shadow:
-                inset 0 1px 0 rgba(255, 255, 255, 0.08),
-                0 8px 24px rgba(0, 0, 0, 0.14);
-            color: rgba(255, 255, 255, 0.78);
+
+        .nous-preview-eyebrow {
+            margin:
+                0
+                0
+                16px;
+
+            color: #75c5ff;
+
+            font-size: 0.68rem;
+            font-weight: 700;
+
+            letter-spacing: 0.23em;
+
+            text-transform: uppercase;
         }
 
-        .launch-button.secondary:hover,
-        .launch-button.secondary:focus-visible {
-            border-color: rgba(255, 255, 255, 0.36);
-            background: rgba(16, 23, 35, 0.72);
+
+        .nous-preview-copy h2 {
+            margin: 0;
+
             color: #ffffff;
+
+            font-size:
+                clamp(
+                    2.2rem,
+                    5vw,
+                    4.5rem
+                );
+
+            font-weight: 500;
+
+            line-height: 0.98;
+
+            letter-spacing: -0.05em;
         }
 
-        .arrow {
-            font-size: 1rem;
-            transition: transform 240ms ease;
+
+        .nous-preview-copy h2 span {
+            display: block;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.36
+                );
         }
 
-        .launch-button:hover .arrow,
-        .launch-button:focus-visible .arrow {
-            transform: translateX(4px);
+
+        .nous-preview-copy > p {
+            max-width: 590px;
+
+            margin:
+                24px
+                0
+                0;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.59
+                );
+
+            line-height: 1.7;
         }
 
-        .launch-notice {
-            max-width: 630px;
-            margin: 26px auto 0;
-            color: rgba(205, 215, 230, 0.52);
-            font-size: 0.69rem;
-            line-height: 1.65;
-        }
 
-        .launch-footer {
+        .nous-preview-actions {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 9px 18px;
+
+            gap: 12px;
+
+            margin-top: 30px;
+        }
+
+
+        .nous-preview-meta {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap:
+                8px
+                20px;
+
             margin-top: 24px;
-            color: rgba(203, 215, 233, 0.43);
-            font-size: 0.64rem;
-            letter-spacing: 0.05em;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.38
+                );
+
+            font-size: 0.72rem;
+
+            letter-spacing: 0.04em;
         }
 
-        .launch-footer a {
-            transition: color 220ms ease;
-        }
 
-        .launch-footer a:hover,
-        .launch-footer a:focus-visible {
-            color: rgba(255, 255, 255, 0.9);
-        }
+        
+        .nous-preview-visual {
+            position: relative;
 
-        .sound-control {
-            position: absolute;
-            right: clamp(20px, 4vw, 64px);
-            bottom: 28px;
-            z-index: 5;
-            display: none;
-            width: 42px;
-            height: 42px;
+            display: grid;
             place-items: center;
-            border: 1px solid var(--border);
+
+            min-height: 320px;
+
+            isolation: isolate;
+        }
+
+        .nous-spectrum-glow {
+            position: absolute;
+
+            width: clamp(240px, 30vw, 390px);
+            aspect-ratio: 1;
+
             border-radius: 50%;
-            background: rgba(4, 9, 16, 0.55);
-            color: rgba(255, 255, 255, 0.72);
-            cursor: pointer;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+
+            background:
+                radial-gradient(
+                    circle at 34% 34%,
+                    rgba(118, 214, 255, 0.98) 0%,
+                    rgba(118, 214, 255, 0.55) 14%,
+                    transparent 34%
+                ),
+                radial-gradient(
+                    circle at 67% 60%,
+                    rgba(255, 167, 205, 0.96) 0%,
+                    rgba(255, 167, 205, 0.48) 17%,
+                    transparent 38%
+                ),
+                conic-gradient(
+                    from 205deg,
+                    rgba(163, 102, 255, 0.62),
+                    rgba(80, 153, 255, 0.62),
+                    rgba(111, 218, 255, 0.94),
+                    rgba(101, 224, 186, 0.46),
+                    rgba(246, 221, 105, 0.42),
+                    rgba(255, 165, 93, 0.48),
+                    rgba(255, 117, 152, 0.72),
+                    rgba(255, 177, 211, 0.94),
+                    rgba(163, 102, 255, 0.62)
+                );
+
+            filter: blur(44px) saturate(1.22);
+
+            opacity: 0.82;
+
+            transform: scale(0.95);
+
+            animation:
+                nousSpectrumBreath
+                6.8s
+                ease-in-out
+                infinite;
+
+            z-index: 0;
         }
 
-        @keyframes revealImage {
+        .nous-spectrum-ring {
+            position: absolute;
+
+            width: clamp(210px, 25vw, 315px);
+            aspect-ratio: 1;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.12);
+
+            background:
+                conic-gradient(
+                    from 0deg,
+                    rgba(125, 214, 255, 0.08),
+                    rgba(255, 177, 211, 0.18),
+                    rgba(162, 104, 255, 0.08),
+                    rgba(125, 214, 255, 0.08)
+                );
+
+            box-shadow:
+                0 0 70px rgba(111, 211, 255, 0.08),
+                inset 0 0 45px rgba(255, 177, 211, 0.04);
+
+            z-index: 1;
+
+            animation:
+                nousRingRotate
+                18s
+                linear
+                infinite;
+        }
+
+        .nous-preview-symbol {
+            position: relative;
+            z-index: 2;
+
+            width:
+                clamp(
+                    118px,
+                    14vw,
+                    176px
+                );
+
+            height: auto;
+
+            object-fit: contain;
+
+            filter:
+                drop-shadow(
+                    0 0 18px
+                    rgba(116, 211, 255, 0.36)
+                )
+                drop-shadow(
+                    0 0 34px
+                    rgba(255, 171, 207, 0.20)
+                );
+
+            animation:
+                nousLogoSpin
+                15s
+                linear
+                infinite;
+
+            transform-origin: 50% 50%;
+        }
+
+        @keyframes nousLogoSpin {
             from {
-                opacity: 0;
-                transform: scale(1.025);
+                transform: rotate(0deg);
             }
 
             to {
-                opacity: 1;
-                transform: scale(1);
+                transform: rotate(360deg);
             }
         }
 
-        @keyframes fadeUp {
+        @keyframes nousRingRotate {
             from {
-                opacity: 0;
-                transform: translateY(18px);
+                transform: rotate(0deg) scale(1);
             }
 
             to {
-                opacity: 1;
-                transform: translateY(0);
+                transform: rotate(-360deg) scale(1);
             }
         }
 
-        @keyframes breatheGlow {
+        @keyframes nousSpectrumBreath {
             0%,
             100% {
-                opacity: 0.34;
-                transform: translateX(-50%) scaleX(0.82);
+                opacity: 0.68;
+                transform: scale(0.92);
             }
 
             50% {
-                opacity: 0.82;
-                transform: translateX(-50%) scaleX(1.06);
-            }
-        }
-
-        @media (max-width: 720px) {
-            .topbar {
-                padding: 20px;
-            }
-
-            .top-links {
-                gap: 15px;
-            }
-
-            .top-links a {
-                font-size: 0.68rem;
-            }
-
-            .top-links .hide-mobile {
-                display: none;
-            }
-
-            .company-name {
-                font-size: 0.62rem;
-                letter-spacing: 0.16em;
-            }
-
-            .launch-background img {
-                object-position: center top;
-            }
-
-            .launch-content {
-                width: min(100% - 32px, 650px);
-                padding-bottom: 28px;
-            }
-
-            .launch-content h1 {
-                letter-spacing: 0.13em;
-                text-indent: 0.13em;
-            }
-
-            .launch-description {
-                max-width: 390px;
-                line-height: 1.6;
-            }
-
-            .launch-actions {
-                flex-direction: column;
-                width: min(100%, 330px);
-                margin-inline: auto;
-                margin-top: 23px;
-            }
-
-            .launch-button {
-                width: 100%;
-            }
-
-            .launch-notice {
-                max-width: 390px;
-                margin-top: 22px;
-            }
-        }
-
-        @media (max-height: 740px) and (min-width: 721px) {
-            .launch-content {
-                padding-top: 30px;
-                padding-bottom: 24px;
-            }
-
-            .launch-description {
-                margin-top: 12px;
-            }
-
-            .launch-actions {
-                margin-top: 18px;
-            }
-
-            .launch-notice,
-            .launch-footer {
-                margin-top: 16px;
+                opacity: 0.92;
+                transform: scale(1.05);
             }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                scroll-behavior: auto !important;
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
+            .nous-preview-symbol,
+            .nous-spectrum-ring,
+            .nous-spectrum-glow {
+                animation: none;
             }
         }
-    </style>
-</head>
+/* =================================================
+           RESEARCH PREVIEW
+        ================================================== */
 
-<body>
-    <main class="launch-page">
-        <div
-            class="launch-background"
-            aria-hidden="true"
-        >
-            <img
-                src="images/nous-launch-cover.png"
-                alt=""
-            >
-        </div>
+        .research-preview-note {
+            display: inline-flex;
+            align-items: center;
 
-        <div
-            class="launch-overlay"
-            aria-hidden="true"
-        ></div>
+            min-height: 46px;
 
-        <div
-            class="launch-vignette"
-            aria-hidden="true"
-        ></div>
+            padding:
+                0
+                21px;
 
-        <div
-            class="launch-glow"
-            aria-hidden="true"
-        ></div>
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.13
+                );
 
-        <header class="topbar">
-            <p class="company-name">
-                NEURORDER
-            </p>
+            border-radius: 999px;
 
-            <nav
-                class="top-links"
-                aria-label="Temporary website navigation"
-            >
-                <a href="about.html">About</a>
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.56
+                );
 
-                <a
-                    class="hide-mobile"
-                    href="research.html"
-                >
-                    Research
-                </a>
+            font-size: 0.78rem;
+        }
 
-                <a
-                    class="hide-mobile"
-                    href="credit-scoring.html"
-                >
-                    Credit Scoring
-                </a>
 
-                <a href="news.html">News</a>
+        /* =================================================
+           FOOTER
+        ================================================== */
 
-                <a
-                    class="hide-mobile"
-                    href="companion.html"
-                >
-                    Nous Companion
-                </a>
-            </nav>
-        </header>
+        .footer-column .footer-status {
+            display: block;
 
-        <section
-            class="launch-content"
-            aria-labelledby="launch-heading"
-        >
-            <p class="eyebrow">
-                NEURORDER PRESENTS
-            </p>
+            margin-bottom: 8px;
 
-            <h1 id="launch-heading">
-                NOUS PLATFORM
-            </h1>
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.58
+                );
 
-            <p class="launch-date">
-                Public Preview · August 2026
-            </p>
+            line-height: 1.5;
+        }
 
-            <p class="launch-description">
-                A new era of intelligent companionship is taking shape.
-            </p>
 
-            <div class="launch-actions">
-                <a
-                    class="launch-button"
-                    href="news.html"
-                >
-                    Explore the News
+        .footer-column .footer-status strong {
+            color: rgba(255, 255, 255, 0.88);
+            font-weight: 500;
+        }
 
-                    <span
-                        class="arrow"
-                        aria-hidden="true"
-                    >
-                        →
-                    </span>
-                </a>
 
-                <a
-                    class="launch-button secondary"
-                    href="companion.html"
-                >
-                    Enter Nous Companion
-                </a>
-            </div>
 
-            <p class="launch-notice">
-                The NEURORDER website remains active while we prepare the
-                public preview of the NOUS Platform. Company news, research,
-                partnerships and public information remain available.
-            </p>
+        .footer-brand-note {
+            max-width: 320px;
 
-            <footer class="launch-footer">
-                <a href="about.html">About</a>
-                <a href="research.html">Research</a>
-                <a href="credit-scoring.html">Credit Scoring</a>
-                <a href="news.html">News</a>
-                <a href="companion.html">Nous Companion</a>
-                <a href="nous.html">Nous</a>
-                <a href="nous-news.html">Nous News</a>
-                <a href="login.html">Log In</a>
-                <a href="signup.html">Sign Up</a>
+            margin-top: 18px;
 
-                <span>
-                    © 2026 NEURORDER (Pty) Ltd.
-                </span>
-            </footer>
-        </section>
-    </main>
+            color: rgba(255, 255, 255, 0.44);
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const backgroundImage = document.querySelector(
-                ".launch-background img"
-            );
+            font-size: 0.78rem;
+            line-height: 1.65;
+        }
 
-            if (!backgroundImage) {
-                return;
+        .footer-legal {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            gap: 4px;
+        }
+
+        .footer-small {
+            margin: 0;
+
+            color: rgba(255, 255, 255, 0.32);
+
+            font-size: 0.68rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 700px) {
+            .footer-legal {
+                align-items: flex-start;
+            }
+        }
+
+
+        /* =================================================
+           RESPONSIVE
+        ================================================== */
+
+        @media (max-width: 850px) {
+
+            .nous-preview-inner {
+                grid-template-columns: 1fr;
             }
 
-            backgroundImage.addEventListener("error", () => {
-                console.error(
-                    "NOUS launch image could not be loaded. " +
-                    "Confirm that images/nous-launch-cover.png exists."
+
+            .nous-preview-visual {
+                min-height: 220px;
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .nous-preview-section {
+                width:
+                    calc(
+                        100% - 24px
+                    );
+
+                border-radius: 24px;
+            }
+
+
+            .nous-preview-inner {
+                padding:
+                    38px
+                    24px;
+            }
+
+
+            .nous-preview-actions {
+                flex-direction: column;
+            }
+
+
+            .nous-preview-actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+
+            .nous-preview-meta {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+        }
+
+    
+        /* =================================================
+           NOUS PRISM — BRIGHT SPECTRUM
+           Only .nous-preview-symbol (nouslogo.png) spins.
+        ================================================== */
+
+        .nous-preview-visual {
+            position: relative;
+            display: grid;
+            place-items: center;
+            min-height: 360px;
+            isolation: isolate;
+        }
+
+        .nous-spectrum-glow {
+            position: absolute;
+            width: clamp(300px, 36vw, 480px);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            z-index: 0;
+
+            background:
+                radial-gradient(
+                    circle at 27% 30%,
+                    rgba(85, 215, 255, 1) 0%,
+                    rgba(85, 215, 255, 0.98) 13%,
+                    rgba(85, 215, 255, 0.52) 29%,
+                    transparent 50%
+                ),
+                radial-gradient(
+                    circle at 73% 62%,
+                    rgba(255, 151, 205, 1) 0%,
+                    rgba(255, 151, 205, 0.98) 14%,
+                    rgba(255, 151, 205, 0.58) 31%,
+                    transparent 52%
+                ),
+                conic-gradient(
+                    from 210deg,
+                    #7c35ff 0deg,
+                    #334cff 38deg,
+                    #35cfff 78deg,
+                    #7be7ff 112deg,
+                    #35f0bd 148deg,
+                    #d9ff55 182deg,
+                    #ffe44f 215deg,
+                    #ff9b3d 248deg,
+                    #ff526f 282deg,
+                    #ff8fc9 320deg,
+                    #ffb1dc 342deg,
+                    #7c35ff 360deg
                 );
-            });
-        });
-    </script>
+
+            filter:
+                blur(35px)
+                saturate(1.75)
+                brightness(1.55);
+
+            opacity: 1;
+
+            box-shadow:
+                0 0 75px rgba(91, 217, 255, 0.95),
+                0 0 145px rgba(91, 217, 255, 0.56),
+                0 0 95px rgba(255, 151, 205, 0.92),
+                0 0 175px rgba(255, 151, 205, 0.50);
+
+            animation:
+                nousSpectrumBreath
+                5.2s
+                ease-in-out
+                infinite;
+        }
+
+        .nous-spectrum-ring {
+            position: absolute;
+            width: clamp(245px, 29vw, 370px);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            z-index: 1;
+
+            border: 2px solid rgba(255, 255, 255, 0.34);
+
+            background:
+                conic-gradient(
+                    from 0deg,
+                    rgba(55, 207, 255, 0.92),
+                    rgba(115, 230, 255, 0.68),
+                    rgba(255, 147, 205, 0.94),
+                    rgba(255, 94, 120, 0.48),
+                    rgba(255, 225, 71, 0.42),
+                    rgba(61, 239, 188, 0.46),
+                    rgba(129, 65, 255, 0.66),
+                    rgba(55, 207, 255, 0.92)
+                );
+
+            box-shadow:
+                0 0 28px rgba(105, 222, 255, 0.90),
+                0 0 70px rgba(105, 222, 255, 0.42),
+                0 0 42px rgba(255, 151, 205, 0.72),
+                inset 0 0 42px rgba(255, 255, 255, 0.13);
+
+            filter:
+                saturate(1.6)
+                brightness(1.35);
+
+            animation:
+                nousRingRotate
+                18s
+                linear
+                infinite;
+        }
+
+        .nous-preview-symbol {
+            position: relative;
+            z-index: 3;
+
+            width: clamp(125px, 15vw, 190px);
+            height: auto;
+            object-fit: contain;
+
+            filter:
+                brightness(1.12)
+                drop-shadow(0 0 13px rgba(255, 255, 255, 0.78))
+                drop-shadow(0 0 27px rgba(76, 214, 255, 0.92))
+                drop-shadow(0 0 44px rgba(255, 147, 205, 0.68));
+
+            transform-origin: 50% 50%;
+
+            /* ONLY nouslogo.png rotates */
+            animation:
+                nousLogoSpin
+                15s
+                linear
+                infinite;
+        }
+
+        @keyframes nousLogoSpin {
+            from { transform: rotate(0deg); }
+            to   { transform: rotate(360deg); }
+        }
+
+        @keyframes nousRingRotate {
+            from { transform: rotate(0deg); }
+            to   { transform: rotate(-360deg); }
+        }
+
+        @keyframes nousSpectrumBreath {
+            0%, 100% {
+                transform: scale(0.94);
+                filter: blur(35px) saturate(1.75) brightness(1.45);
+            }
+
+            50% {
+                transform: scale(1.10);
+                filter: blur(40px) saturate(2) brightness(1.8);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .nous-preview-symbol,
+            .nous-spectrum-ring,
+            .nous-spectrum-glow {
+                animation: none;
+            }
+        }
+
+</style>
+
+
+    <!-- =====================================================
+         GOOGLE ADSENSE
+    ====================================================== -->
+
+    <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2116967709675155"
+        crossorigin="anonymous"
+    ></script>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <a
+            href="index.html"
+            aria-label="Neurorder home"
+        >
+            <img
+                src="images/NeurorderBody.png"
+                alt="Neurorder Logo"
+                class="nav-logo"
+            >
+        </a>
+
+
+        <nav
+            class="desktop-nav"
+            aria-label="Primary navigation"
+        >
+
+            <a
+                href="index.html"
+                class="active"
+            >
+                Home
+            </a>
+
+
+            <a href="about.html">
+                About
+            </a>
+
+
+            <a href="cias.html">
+                CIAS
+            </a>
+
+
+            <a href="foundation.html">
+                Foundation
+            </a>
+
+
+            <a href="news.html">
+                News
+            </a>
+
+
+            <a
+                href="nous.html"
+                class="nous-nav-link"
+            >
+                Explore NOUS
+
+                <span aria-hidden="true">
+                    ↗
+                </span>
+            </a>
+
+        </nav>
+
+
+        <button
+            class="mobile-menu-btn"
+            onclick="toggleMobileMenu()"
+            aria-label="Open navigation menu"
+            aria-controls="mobileMenu"
+            aria-expanded="false"
+        >
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </button>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MOBILE MENU
+    ====================================================== -->
+
+    <div
+        class="mobile-menu-panel"
+        id="mobileMenu"
+    >
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="cias.html">
+            CIAS
+        </a>
+
+        <a href="foundation.html">
+            Foundation
+        </a>
+
+        <a href="news.html">
+            News
+        </a>
+
+        <a href="nous.html">
+            Explore NOUS
+        </a>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section
+            class="home-hero neurorder-orbit-hero"
+        >
+
+
+            <!-- ORBIT VISUAL -->
+
+            <div class="orbit-visual">
+
+                <div
+                    class="orbit-ring orbit-ring-one"
+                ></div>
+
+                <div
+                    class="orbit-ring orbit-ring-two"
+                ></div>
+
+                <div
+                    class="orbit-ring orbit-ring-three"
+                ></div>
+
+
+                <span
+                    class="orbit-dot dot-one"
+                ></span>
+
+                <span
+                    class="orbit-dot dot-two"
+                ></span>
+
+                <span
+                    class="orbit-dot dot-three"
+                ></span>
+
+                <span
+                    class="orbit-dot dot-four"
+                ></span>
+
+
+                <div class="orbit-core">
+
+                    <img
+                        src="images/NeurorderBody.png"
+                        alt="Neurorder Symbol"
+                    >
+
+                    <span>
+                        NEURORDER
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HERO COPY -->
+
+            <div class="orbit-copy">
+
+                <p class="eyebrow">
+                    NEW ORDER. SMARTER FUTURE.
+                </p>
+
+
+                <h1>
+                    NEURORDER
+                </h1>
+
+
+                <div class="hero-line"></div>
+
+
+                <p class="orbit-statement">
+                    Artificial Intelligence is an invitation
+                    to deeper finance.
+
+                    <strong>
+                        A New Order.
+                    </strong>
+                </p>
+
+
+                <p class="hero-text">
+                    Neurorder is building intelligent systems,
+                    research tools and digital public infrastructure
+                    for Africa's invisible economies.
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <a
+                        href="news.html"
+                        class="btn btn-primary"
+                    >
+                        Latest Updates
+                    </a>
+
+
+                    <a
+                        href="about.html"
+                        class="btn btn-outline"
+                    >
+                        About Neurorder
+                    </a>
+
+                </div>
+
+
+                <div class="homepage-status">
+
+                    <span
+                        class="homepage-status-dot"
+                        aria-hidden="true"
+                    ></span>
+
+                    <span>
+                        The NEURORDER website is reopening gradually
+                        as the NOUS public experience begins.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             INTELLIGENCE
+        ================================================== -->
+
+        <section class="intelligence-section">
+
+            <div class="page-container">
+
+                <p class="eyebrow">
+                    NEURORDER INTELLIGENCE
+                </p>
+
+
+                <h2>
+                    Africa's intelligence layer for
+                    <br>
+                    research, AI and financial inclusion.
+                </h2>
+
+
+                <p>
+                    Neurorder develops research, intelligent
+                    technology and financial-inclusion systems
+                    designed around people and communities often
+                    overlooked by traditional digital infrastructure.
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <a
+                        href="news.html"
+                        class="btn btn-primary"
+                    >
+                        Enter Intelligence
+                    </a>
+
+
+                    <a
+                        href="foundation.html"
+                        class="btn btn-outline"
+                    >
+                        Visit the Foundation
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PURPOSE
+        ================================================== -->
+
+        <section
+            class="section intro-section"
+        >
+
+            <h2 class="section-title">
+                Technology for invisible economies.
+            </h2>
+
+
+            <p class="section-text">
+                We focus on people and communities often
+                excluded from traditional financial systems:
+                informal traders, youth entrepreneurs,
+                domestic workers, community initiatives and
+                small businesses.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CORE PILLARS
+        ================================================== -->
+
+        <section
+            class="section pillar-section"
+        >
+
+            <div class="pillar-grid">
+
+
+                <!-- RESEARCH -->
+
+                <article
+                    class="card pillar-card"
+                >
+
+                    <span class="pillar-kicker">
+                        01 · RESEARCH
+                    </span>
+
+
+                    <h3>
+                        Research
+                    </h3>
+
+
+                    <p>
+                        We investigate digital public infrastructure,
+                        artificial intelligence and data systems
+                        that can support inclusive economic
+                        participation.
+                    </p>
+
+                </article>
+
+
+
+                <!-- CIAS -->
+
+                <article
+                    class="card pillar-card"
+                >
+
+                    <span class="pillar-kicker">
+                        02 · FINANCIAL INTELLIGENCE
+                    </span>
+
+
+                    <h3>
+                        CIAS
+                    </h3>
+
+
+                    <p>
+                        Credit Intelligence Assistance Scoring
+                        explores rule-based and data-informed
+                        approaches to understanding financial
+                        activity beyond traditional credit records.
+                    </p>
+
+
+                    <a
+                        href="cias.html"
+                        class="btn btn-outline"
+                    >
+                        Explore CIAS
+                    </a>
+
+                </article>
+
+
+
+                <!-- FOUNDATION -->
+
+                <article
+                    class="card pillar-card"
+                >
+
+                    <span class="pillar-kicker">
+                        03 · SOCIAL IMPACT
+                    </span>
+
+
+                    <h3>
+                        iNtsikelelo Foundation
+                    </h3>
+
+
+                    <p>
+                        Through iNtsikelelo Foundation,
+                        Neurorder connects technology,
+                        education, community support and
+                        social development.
+                    </p>
+
+
+                    <a
+                        href="foundation.html"
+                        class="btn btn-outline"
+                    >
+                        Visit Foundation
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             NOUS PUBLIC EXPERIENCE
+        ================================================== -->
+
+        <section
+            class="nous-preview-section"
+            aria-labelledby="nous-preview-title"
+        >
+
+            <div class="nous-preview-inner">
+
+
+                <!-- COPY -->
+
+                <div class="nous-preview-copy">
+
+                    <p class="nous-preview-eyebrow">
+                        NEURORDER INTELLIGENCE · NOUS
+                    </p>
+
+
+                    <h2 id="nous-preview-title">
+
+                        A platform made
+                        <span>
+                            just for you.
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+                        NOUS is beginning its public experience.
+                        Start free with one identity and discover
+                        an intelligence environment designed to
+                        understand your questions, context and
+                        evolving digital world.
+                    </p>
+
+
+                    <div class="nous-preview-actions">
+
+                        <a
+                            href="nous.html"
+                            class="btn btn-primary"
+                        >
+                            Experience NOUS
+                        </a>
+
+
+                        <a
+                            href="news.html"
+                            class="btn btn-outline"
+                        >
+                            Read the latest
+                        </a>
+
+                    </div>
+
+
+                    <div class="nous-preview-meta">
+
+                        <span>
+                            Free experience
+                        </span>
+
+                        <span>
+                            No card required
+                        </span>
+
+                        <span>
+                            Public preview · August 2026
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                                <!-- VISUAL -->
+
+                <div
+                    class="nous-preview-visual"
+                    aria-hidden="true"
+                >
+
+                    <div class="nous-spectrum-glow"></div>
+                    <div class="nous-spectrum-ring"></div>
+
+                    <img
+                        src="images/nouslogo.png"
+                        alt=""
+                        class="nous-preview-symbol"
+                    >
+
+                </div>
+
+
+                    <img
+                        src="images/nouslogo.png"
+                        alt=""
+                        class="nous-preview-symbol"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+
+                <img
+                    src="images/logo.png"
+                    alt="NEURORDER"
+                    class="footer-logo"
+                >
+
+                <h2>NEURORDER</h2>
+
+                <p>
+                    New Order.<br>
+                    Smarter Future.
+                </p>
+
+                <p class="footer-brand-note">
+                    Research, intelligence and digital infrastructure
+                    for Africa's evolving economy.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Explore</h3>
+
+                <a href="about.html">About</a>
+                <a href="cias.html">CIAS</a>
+                <a href="foundation.html">Foundation</a>
+                <a href="news.html">News</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Intelligence</h3>
+
+                <a href="nous.html">NOUS</a>
+
+                <span class="footer-status">
+                    <strong>CIAS Research</strong>
+                    — provincial research layer
+                </span>
+
+                <span class="footer-status">
+                    <strong>NOUS</strong>
+                    — public experience in development
+                </span>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>NEURORDER</h3>
+
+                <p>
+                    Building carefully, researching openly
+                    and growing one capability at a time.
+                </p>
+
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-divider"></div>
+
+
+        <div class="footer-bottom">
+
+            <div class="footer-socials">
+
+                <a
+                    href="#"
+                    aria-label="LinkedIn"
+                >
+                    <img
+                        src="images/linkedin.png"
+                        alt=""
+                        class="footer-social-icon"
+                    >
+                </a>
+
+                <a
+                    href="https://substack.com/@nmzekandaba"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Substack"
+                >
+                    <img
+                        src="images/substack.png"
+                        alt=""
+                        class="footer-social-icon"
+                    >
+                </a>
+
+                <a
+                    href="mailto:info@neurorder.com"
+                    aria-label="Email"
+                >
+                    <img
+                        src="images/gmail.png"
+                        alt=""
+                        class="footer-social-icon"
+                    >
+                </a>
+
+                <a
+                    href="news.html"
+                    aria-label="NEURORDER News"
+                >
+                    <img
+                        src="images/newsintelligence.png"
+                        alt=""
+                        class="footer-social-icon"
+                    >
+                </a>
+
+            </div>
+
+
+            <div class="footer-legal">
+
+                <p class="footer-copy">
+                    © 2026 NEURORDER (Pty) Ltd. All Rights Reserved.
+                </p>
+
+                <p class="footer-small">
+                    New Order. Smarter Future.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         SCRIPTS
+    ====================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+
+    <script src="js/supabase.js"></script>
+
+    <script src="js/script.js"></script>
+
 </body>
+
 </html>
