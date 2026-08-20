@@ -23,11 +23,6 @@
         iNtsikelelo Foundation | NEURORDER
     </title>
 
-
-    <!-- =====================================================
-         ICONS
-    ====================================================== -->
-
     <link
         rel="icon"
         type="image/x-icon"
@@ -46,11 +41,6 @@
         href="images/logo.png"
     >
 
-
-    <!-- =====================================================
-         FONTS
-    ====================================================== -->
-
     <link
         rel="preconnect"
         href="https://fonts.googleapis.com"
@@ -67,70 +57,27 @@
         rel="stylesheet"
     >
 
-
     <style>
-
         :root {
             --background: #020409;
-
-            --surface:
-                rgba(
-                    8,
-                    14,
-                    24,
-                    0.74
-                );
-
-            --surface-strong:
-                rgba(
-                    10,
-                    18,
-                    30,
-                    0.92
-                );
-
+            --surface: rgba(8, 14, 24, 0.74);
+            --surface-strong: rgba(10, 18, 30, 0.92);
             --text: #f7f9fc;
-
-            --muted:
-                rgba(
-                    214,
-                    224,
-                    239,
-                    0.66
-                );
-
-            --faint:
-                rgba(
-                    214,
-                    224,
-                    239,
-                    0.42
-                );
-
-            --border:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.11
-                );
-
+            --muted: rgba(214, 224, 239, 0.66);
+            --faint: rgba(214, 224, 239, 0.42);
+            --border: rgba(255, 255, 255, 0.11);
             --blue: #50a9ff;
             --blue-bright: #83c7ff;
-
             --page-width: 1240px;
         }
-
 
         * {
             box-sizing: border-box;
         }
 
-
         html {
             scroll-behavior: smooth;
         }
-
 
         html,
         body {
@@ -139,33 +86,20 @@
             margin: 0;
         }
 
-
         body {
             overflow-x: hidden;
 
             background:
                 radial-gradient(
                     circle at 75% 8%,
-                    rgba(
-                        30,
-                        105,
-                        204,
-                        0.13
-                    ),
+                    rgba(30, 105, 204, 0.13),
                     transparent 30%
                 ),
-
                 radial-gradient(
                     circle at 15% 65%,
-                    rgba(
-                        16,
-                        83,
-                        160,
-                        0.08
-                    ),
+                    rgba(16, 83, 160, 0.08),
                     transparent 32%
                 ),
-
                 var(--background);
 
             color: var(--text);
@@ -174,30 +108,23 @@
                 "Inter",
                 sans-serif;
 
-            -webkit-font-smoothing:
-                antialiased;
+            -webkit-font-smoothing: antialiased;
         }
-
 
         a {
             color: inherit;
             text-decoration: none;
         }
 
-
         img {
             display: block;
             max-width: 100%;
         }
 
-
         button,
         a {
-            -webkit-tap-highlight-color:
-                transparent;
+            -webkit-tap-highlight-color: transparent;
         }
-
-
 
         /* =================================================
            HEADER
@@ -205,35 +132,19 @@
 
         .site-header {
             position: sticky;
-
             top: 0;
-
             z-index: 100;
 
             border-bottom:
                 1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.08
-                );
+                rgba(255, 255, 255, 0.08);
 
             background:
-                rgba(
-                    2,
-                    4,
-                    9,
-                    0.84
-                );
+                rgba(2, 4, 9, 0.84);
 
-            backdrop-filter:
-                blur(18px);
-
-            -webkit-backdrop-filter:
-                blur(18px);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
         }
-
 
         .header-inner {
             display: flex;
@@ -254,7 +165,6 @@
             margin-inline: auto;
         }
 
-
         .brand {
             display: inline-flex;
 
@@ -263,14 +173,12 @@
             gap: 13px;
         }
 
-
         .brand img {
             width: 42px;
             height: 42px;
 
             object-fit: contain;
         }
-
 
         .brand span {
             font-family:
@@ -282,7 +190,6 @@
 
             letter-spacing: 0.22em;
         }
-
 
         .desktop-nav {
             display: flex;
@@ -296,7 +203,6 @@
                     38px
                 );
         }
-
 
         .desktop-nav a {
             position: relative;
@@ -316,12 +222,10 @@
                 color 180ms ease;
         }
 
-
         .desktop-nav a:hover,
         .desktop-nav a.active {
             color: #ffffff;
         }
-
 
         .desktop-nav a::after {
             position: absolute;
@@ -334,39 +238,26 @@
 
             content: "";
 
-            background:
-                var(--blue);
+            background: var(--blue);
 
             box-shadow:
                 0 0 14px
-                rgba(
-                    63,
-                    162,
-                    255,
-                    0.8
-                );
+                rgba(63, 162, 255, 0.8);
 
-            transform:
-                scaleX(0);
+            transform: scaleX(0);
 
             transition:
                 transform 200ms ease;
         }
 
-
         .desktop-nav a:hover::after,
         .desktop-nav a.active::after {
-            transform:
-                scaleX(1);
+            transform: scaleX(1);
         }
-
 
         .desktop-nav .nous-link {
-            color:
-                var(--blue-bright);
+            color: var(--blue-bright);
         }
-
-
 
         /* =================================================
            MOBILE NAVIGATION
@@ -389,25 +280,17 @@
             cursor: pointer;
         }
 
-
         .mobile-menu-grid {
             display: grid;
 
             grid-template-columns:
-                repeat(
-                    2,
-                    7px
-                );
+                repeat(2, 7px);
 
             grid-template-rows:
-                repeat(
-                    2,
-                    7px
-                );
+                repeat(2, 7px);
 
             gap: 7px;
         }
-
 
         .mobile-menu-grid span {
             width: 7px;
@@ -415,27 +298,12 @@
 
             border-radius: 50%;
 
-            background:
-                #7dd8ff;
+            background: #7dd8ff;
 
             box-shadow:
-                0 0 7px
-                rgba(
-                    125,
-                    216,
-                    255,
-                    0.95
-                ),
-
-                0 0 18px
-                rgba(
-                    76,
-                    181,
-                    255,
-                    0.52
-                );
+                0 0 7px rgba(125, 216, 255, 0.95),
+                0 0 18px rgba(76, 181, 255, 0.52);
         }
-
 
         .mobile-menu {
             display: none;
@@ -447,58 +315,32 @@
 
             border-top:
                 1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.07
-                );
+                rgba(255, 255, 255, 0.07);
 
             background:
-                rgba(
-                    2,
-                    4,
-                    9,
-                    0.97
-                );
+                rgba(2, 4, 9, 0.97);
         }
-
 
         .mobile-menu.open {
             display: grid;
         }
-
 
         .mobile-menu a {
             padding: 15px 0;
 
             border-bottom:
                 1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.06
-                );
+                rgba(255, 255, 255, 0.06);
 
             color:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.74
-                );
+                rgba(255, 255, 255, 0.74);
 
             font-size: 0.88rem;
         }
 
-
         .mobile-menu a.active {
-            color:
-                var(--blue-bright);
+            color: var(--blue-bright);
         }
-
-
 
         /* =================================================
            GLOBAL
@@ -514,12 +356,10 @@
             margin-inline: auto;
         }
 
-
         .eyebrow {
             margin: 0;
 
-            color:
-                var(--blue-bright);
+            color: var(--blue-bright);
 
             font-size: 0.68rem;
             font-weight: 600;
@@ -528,8 +368,6 @@
 
             text-transform: uppercase;
         }
-
-
 
         /* =================================================
            HERO
@@ -554,7 +392,6 @@
                 0;
         }
 
-
         .foundation-hero::after {
             position: absolute;
 
@@ -572,12 +409,7 @@
 
             border:
                 1px solid
-                rgba(
-                    76,
-                    166,
-                    255,
-                    0.12
-                );
+                rgba(76, 166, 255, 0.12);
 
             border-radius: 50%;
 
@@ -588,23 +420,15 @@
                 0
                 0
                 100px
-                rgba(
-                    37,
-                    125,
-                    227,
-                    0.05
-                );
+                rgba(37, 125, 227, 0.05);
         }
-
 
         .hero-content {
             position: relative;
-
             z-index: 2;
 
             max-width: 930px;
         }
-
 
         .foundation-hero h1 {
             margin:
@@ -631,7 +455,6 @@
                 -0.065em;
         }
 
-
         .foundation-hero h1 span {
             display: block;
 
@@ -644,7 +467,6 @@
                 );
         }
 
-
         .hero-description {
             max-width: 670px;
 
@@ -653,8 +475,7 @@
                 0
                 0;
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
             font-family:
                 "Manrope",
@@ -672,7 +493,6 @@
             line-height: 1.8;
         }
 
-
         .hero-actions {
             display: flex;
 
@@ -682,7 +502,6 @@
 
             margin-top: 36px;
         }
-
 
         .primary-button,
         .secondary-button {
@@ -710,35 +529,18 @@
                 background 180ms ease;
         }
 
-
         .primary-button {
             border:
                 1px solid
-                rgba(
-                    100,
-                    188,
-                    255,
-                    0.55
-                );
+                rgba(100, 188, 255, 0.55);
 
             background:
                 linear-gradient(
                     135deg,
-                    rgba(
-                        54,
-                        147,
-                        255,
-                        0.30
-                    ),
-                    rgba(
-                        23,
-                        70,
-                        132,
-                        0.20
-                    )
+                    rgba(54, 147, 255, 0.30),
+                    rgba(23, 70, 132, 0.20)
                 );
         }
-
 
         .secondary-button {
             border:
@@ -746,30 +548,17 @@
                 var(--border);
 
             background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.025
-                );
+                rgba(255, 255, 255, 0.025);
 
             color:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.76
-                );
+                rgba(255, 255, 255, 0.76);
         }
-
 
         .primary-button:hover,
         .secondary-button:hover {
             transform:
                 translateY(-2px);
         }
-
-
 
         /* =================================================
            FOUNDATION INTRODUCTION
@@ -786,27 +575,15 @@
 
             border-top:
                 1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.07
-                );
+                rgba(255, 255, 255, 0.07);
         }
-
 
         .intro-layout {
             display: grid;
 
             grid-template-columns:
-                minmax(
-                    250px,
-                    0.75fr
-                )
-                minmax(
-                    0,
-                    1.25fr
-                );
+                minmax(250px, 0.75fr)
+                minmax(0, 1.25fr);
 
             gap:
                 clamp(
@@ -815,7 +592,6 @@
                     140px
                 );
         }
-
 
         .intro-title h2 {
             margin:
@@ -842,11 +618,9 @@
                 -0.055em;
         }
 
-
         .intro-copy {
             max-width: 680px;
         }
-
 
         .intro-copy p {
             margin:
@@ -854,8 +628,7 @@
                 0
                 24px;
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
             font-size:
                 clamp(
@@ -867,14 +640,11 @@
             line-height: 1.85;
         }
 
-
         .intro-copy strong {
             color: #ffffff;
 
             font-weight: 500;
         }
-
-
 
         /* =================================================
            FOCUS AREAS
@@ -891,11 +661,9 @@
                 );
         }
 
-
         .section-heading {
             max-width: 760px;
         }
-
 
         .section-heading h2 {
             margin:
@@ -922,19 +690,16 @@
                 -0.05em;
         }
 
-
         .section-heading > p:last-child {
             margin:
                 24px
                 0
                 0;
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
             line-height: 1.75;
         }
-
 
         .focus-grid {
             display: grid;
@@ -952,7 +717,6 @@
 
             margin-top: 54px;
         }
-
 
         .focus-card {
             min-height: 320px;
@@ -979,25 +743,14 @@
             background:
                 linear-gradient(
                     145deg,
-                    rgba(
-                        10,
-                        18,
-                        31,
-                        0.84
-                    ),
-                    rgba(
-                        5,
-                        10,
-                        18,
-                        0.88
-                    )
+                    rgba(10, 18, 31, 0.84),
+                    rgba(5, 10, 18, 0.88)
                 );
 
             transition:
                 transform 220ms ease,
                 border-color 220ms ease;
         }
-
 
         .focus-card:hover {
             border-color:
@@ -1012,17 +765,14 @@
                 translateY(-3px);
         }
 
-
         .focus-number {
-            color:
-                var(--blue-bright);
+            color: var(--blue-bright);
 
             font-size: 0.65rem;
             font-weight: 600;
 
             letter-spacing: 0.2em;
         }
-
 
         .focus-card h3 {
             margin:
@@ -1047,7 +797,6 @@
                 -0.035em;
         }
 
-
         .focus-card p {
             max-width: 470px;
 
@@ -1056,13 +805,10 @@
                 0
                 0;
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
             line-height: 1.75;
         }
-
-
 
         /* =================================================
            CHKI
@@ -1079,23 +825,12 @@
 
             border-top:
                 1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.07
-                );
+                rgba(255, 255, 255, 0.07);
 
             border-bottom:
                 1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.07
-                );
+                rgba(255, 255, 255, 0.07);
         }
-
 
         .chki-panel {
             position: relative;
@@ -1111,33 +846,17 @@
 
             border:
                 1px solid
-                rgba(
-                    100,
-                    184,
-                    255,
-                    0.18
-                );
+                rgba(100, 184, 255, 0.18);
 
             border-radius: 32px;
 
             background:
                 linear-gradient(
                     135deg,
-                    rgba(
-                        12,
-                        32,
-                        58,
-                        0.80
-                    ),
-                    rgba(
-                        5,
-                        10,
-                        19,
-                        0.90
-                    )
+                    rgba(12, 32, 58, 0.80),
+                    rgba(5, 10, 19, 0.90)
                 );
         }
-
 
         .chki-panel::after {
             position: absolute;
@@ -1155,18 +874,12 @@
             background:
                 radial-gradient(
                     circle,
-                    rgba(
-                        56,
-                        151,
-                        255,
-                        0.15
-                    ),
+                    rgba(56, 151, 255, 0.15),
                     transparent 68%
                 );
 
             pointer-events: none;
         }
-
 
         .chki-panel h2 {
             max-width: 850px;
@@ -1195,7 +908,6 @@
                 -0.055em;
         }
 
-
         .chki-description {
             max-width: 720px;
 
@@ -1204,12 +916,10 @@
                 0
                 0;
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
             line-height: 1.8;
         }
-
 
         .chki-principles {
             display: grid;
@@ -1228,31 +938,18 @@
             margin-top: 42px;
         }
 
-
         .chki-principle {
-            padding:
-                22px;
+            padding: 22px;
 
             border:
                 1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.09
-                );
+                rgba(255, 255, 255, 0.09);
 
             border-radius: 18px;
 
             background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.025
-                );
+                rgba(255, 255, 255, 0.025);
         }
-
 
         .chki-principle strong {
             display: block;
@@ -1267,17 +964,13 @@
             font-weight: 500;
         }
 
-
         .chki-principle span {
-            color:
-                var(--muted);
+            color: var(--muted);
 
             font-size: 0.82rem;
 
             line-height: 1.6;
         }
-
-
 
         /* =================================================
            GOVERNANCE
@@ -1293,19 +986,12 @@
                 0;
         }
 
-
         .governance-layout {
             display: grid;
 
             grid-template-columns:
-                minmax(
-                    0,
-                    1fr
-                )
-                minmax(
-                    280px,
-                    0.72fr
-                );
+                minmax(0, 1fr)
+                minmax(280px, 0.72fr);
 
             gap:
                 clamp(
@@ -1316,7 +1002,6 @@
 
             align-items: start;
         }
-
 
         .governance-copy h2 {
             margin:
@@ -1343,7 +1028,6 @@
                 -0.05em;
         }
 
-
         .governance-copy p {
             max-width: 680px;
 
@@ -1352,16 +1036,13 @@
                 0
                 0;
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
             line-height: 1.8;
         }
 
-
         .leadership-card {
-            padding:
-                32px;
+            padding: 32px;
 
             border:
                 1px solid
@@ -1369,14 +1050,11 @@
 
             border-radius: 24px;
 
-            background:
-                var(--surface);
+            background: var(--surface);
         }
 
-
         .leadership-label {
-            color:
-                var(--blue-bright);
+            color: var(--blue-bright);
 
             font-size: 0.63rem;
             font-weight: 600;
@@ -1385,7 +1063,6 @@
 
             text-transform: uppercase;
         }
-
 
         .leadership-card h3 {
             margin:
@@ -1404,18 +1081,15 @@
                 -0.035em;
         }
 
-
         .leadership-role {
             margin: 0;
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
             font-size: 0.87rem;
 
             line-height: 1.6;
         }
-
 
         .leadership-note {
             margin:
@@ -1427,12 +1101,7 @@
 
             border-top:
                 1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.08
-                );
+                rgba(255, 255, 255, 0.08);
 
             color:
                 rgba(
@@ -1446,8 +1115,6 @@
 
             line-height: 1.7;
         }
-
-
 
         /* =================================================
            CLOSING
@@ -1464,23 +1131,16 @@
 
             border-top:
                 1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.07
-                );
+                rgba(255, 255, 255, 0.07);
 
             text-align: center;
         }
-
 
         .closing-content {
             max-width: 900px;
 
             margin-inline: auto;
         }
-
 
         .closing-content h2 {
             margin:
@@ -1507,7 +1167,6 @@
                 -0.06em;
         }
 
-
         .closing-content h2 span {
             color:
                 rgba(
@@ -1518,7 +1177,6 @@
                 );
         }
 
-
         .closing-content p {
             max-width: 650px;
 
@@ -1527,13 +1185,10 @@
                 auto
                 0;
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
             line-height: 1.8;
         }
-
-
 
         /* =================================================
            FOOTER
@@ -1542,22 +1197,11 @@
         .site-footer {
             border-top:
                 1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.08
-                );
+                rgba(255, 255, 255, 0.08);
 
             background:
-                rgba(
-                    2,
-                    4,
-                    9,
-                    0.8
-                );
+                rgba(2, 4, 9, 0.8);
         }
-
 
         .footer-inner {
             display: flex;
@@ -1588,7 +1232,6 @@
             font-size: 0.68rem;
         }
 
-
         .footer-brand {
             display: inline-flex;
 
@@ -1610,7 +1253,6 @@
             letter-spacing: 0.18em;
         }
 
-
         .footer-brand img {
             width: 28px;
             height: 28px;
@@ -1618,23 +1260,54 @@
             object-fit: contain;
         }
 
+        .footer-nav {
+            display: flex;
 
+            flex-wrap: wrap;
+            justify-content: center;
+
+            gap: 10px 20px;
+        }
+
+        .footer-nav a {
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.52
+                );
+
+            font-size: 0.70rem;
+        }
+
+        .footer-nav a:hover {
+            color: var(--blue-bright);
+        }
+
+        .footer-meta {
+            display: flex;
+
+            flex-direction: column;
+            align-items: flex-end;
+
+            gap: 5px;
+
+            text-align: right;
+        }
 
         /* =================================================
            RESPONSIVE
         ================================================== */
 
         @media (max-width: 900px) {
-
             .desktop-nav {
                 display: none;
             }
 
-
             .mobile-menu-button {
                 display: grid;
             }
-
 
             .intro-layout,
             .governance-layout {
@@ -1642,27 +1315,20 @@
                     1fr;
             }
 
-
             .chki-principles {
                 grid-template-columns:
                     1fr;
             }
-
         }
 
-
         @media (max-width: 720px) {
-
             .focus-grid {
                 grid-template-columns:
                     1fr;
             }
-
         }
 
-
         @media (max-width: 640px) {
-
             .header-inner,
             .page-container,
             .footer-inner {
@@ -1673,17 +1339,14 @@
                     );
             }
 
-
             .header-inner {
                 min-height: 72px;
             }
-
 
             .brand img {
                 width: 36px;
                 height: 36px;
             }
-
 
             .brand span {
                 font-size: 0.77rem;
@@ -1691,7 +1354,6 @@
                 letter-spacing:
                     0.16em;
             }
-
 
             .foundation-hero {
                 min-height:
@@ -1704,37 +1366,42 @@
                     0;
             }
 
-
             .hero-actions {
                 flex-direction: column;
 
                 align-items: flex-start;
             }
 
-
             .primary-button,
             .secondary-button {
                 width: 100%;
             }
 
-
             .footer-inner {
                 min-height: auto;
 
                 flex-direction: column;
+                align-items: flex-start;
 
                 padding:
                     28px
                     0;
 
-                text-align: center;
+                text-align: left;
             }
 
+            .footer-nav {
+                justify-content: flex-start;
+            }
+
+            .footer-meta {
+                align-items: flex-start;
+
+                text-align: left;
+            }
         }
 
-
         @media (prefers-reduced-motion: reduce) {
-
             *,
             *::before,
             *::after {
@@ -1743,20 +1410,11 @@
                 transition-duration:
                     0.01ms !important;
             }
-
         }
-
     </style>
-
 </head>
 
-
 <body>
-
-
-    <!-- =====================================================
-         HEADER
-    ====================================================== -->
 
     <header class="site-header">
 
@@ -1767,46 +1425,31 @@
                 class="brand"
                 aria-label="NEURORDER home"
             >
-
                 <img
                     src="images/NeurorderBody.png"
-                    alt=""
+                    alt="NEURORDER"
                 >
 
                 <span>
                     NEURORDER
                 </span>
-
             </a>
-
 
             <nav
                 class="desktop-nav"
                 aria-label="Primary navigation"
             >
-
-                <a href="index.html">
-                    Home
-                </a>
-
-                <a href="about.html">
-                    About
-                </a>
-
-                <a href="cias.html">
-                    CIAS
-                </a>
-
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="cias.html">CIAS</a>
                 <a
                     href="foundation.html"
                     class="active"
                 >
                     Foundation
                 </a>
-
-                <a href="news.html">
-                    News
-                </a>
+                <a href="news.html">News</a>
+                <a href="contact.html">Contact</a>
 
                 <a
                     href="nous.html"
@@ -1814,9 +1457,7 @@
                 >
                     Explore NOUS
                 </a>
-
             </nav>
-
 
             <button
                 class="mobile-menu-button"
@@ -1826,7 +1467,6 @@
                 aria-controls="mobileMenu"
                 aria-expanded="false"
             >
-
                 <span
                     class="mobile-menu-grid"
                     aria-hidden="true"
@@ -1836,29 +1476,18 @@
                     <span></span>
                     <span></span>
                 </span>
-
             </button>
 
         </div>
-
 
         <nav
             class="mobile-menu"
             id="mobileMenu"
             aria-label="Mobile navigation"
         >
-
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="about.html">
-                About
-            </a>
-
-            <a href="cias.html">
-                CIAS
-            </a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="cias.html">CIAS</a>
 
             <a
                 href="foundation.html"
@@ -1867,30 +1496,14 @@
                 Foundation
             </a>
 
-            <a href="news.html">
-                News
-            </a>
-
-            <a href="nous.html">
-                Explore NOUS
-            </a>
-
+            <a href="news.html">News</a>
+            <a href="contact.html">Contact</a>
+            <a href="nous.html">Explore NOUS</a>
         </nav>
 
     </header>
 
-
-
-    <!-- =====================================================
-         MAIN
-    ====================================================== -->
-
     <main>
-
-
-        <!-- =================================================
-             HERO
-        ================================================== -->
 
         <section class="foundation-hero">
 
@@ -1902,7 +1515,6 @@
                         NEURORDER SOCIAL IMPACT
                     </p>
 
-
                     <h1>
                         iNtsikelelo
                         <span>
@@ -1910,13 +1522,11 @@
                         </span>
                     </h1>
 
-
                     <p class="hero-description">
                         Building meaningful connections between
                         technology, knowledge, communities and
                         opportunity.
                     </p>
-
 
                     <div class="hero-actions">
 
@@ -1925,9 +1535,10 @@
                             class="primary-button"
                         >
                             Explore our work
-                            <span aria-hidden="true">↓</span>
+                            <span aria-hidden="true">
+                                ↓
+                            </span>
                         </a>
-
 
                         <a
                             href="#chki"
@@ -1944,12 +1555,6 @@
 
         </section>
 
-
-
-        <!-- =================================================
-             ABOUT THE FOUNDATION
-        ================================================== -->
-
         <section
             class="foundation-intro"
             id="our-work"
@@ -1965,13 +1570,11 @@
                             OUR PURPOSE
                         </p>
 
-
                         <h2>
                             Progress should reach people.
                         </h2>
 
                     </div>
-
 
                     <div class="intro-copy">
 
@@ -1986,7 +1589,6 @@
                             needs.
                         </p>
 
-
                         <p>
                             Our approach is not built around
                             technology for technology's sake.
@@ -1995,7 +1597,6 @@
                             can create meaningful opportunities for
                             people.
                         </p>
-
 
                         <p>
                             The Foundation also provides a structure
@@ -2014,12 +1615,6 @@
 
         </section>
 
-
-
-        <!-- =================================================
-             FOCUS AREAS
-        ================================================== -->
-
         <section class="focus-section">
 
             <div class="page-container">
@@ -2030,11 +1625,9 @@
                         WHAT WE FOCUS ON
                     </p>
 
-
                     <h2>
                         Local needs. Practical action.
                     </h2>
-
 
                     <p>
                         The Foundation develops and supports
@@ -2045,11 +1638,7 @@
 
                 </div>
 
-
                 <div class="focus-grid">
-
-
-                    <!-- 01 -->
 
                     <article class="focus-card">
 
@@ -2057,13 +1646,11 @@
                             01 · COMMUNITY
                         </span>
 
-
                         <div>
 
                             <h3>
                                 Community Support
                             </h3>
-
 
                             <p>
                                 Supporting practical community
@@ -2076,23 +1663,17 @@
 
                     </article>
 
-
-
-                    <!-- 02 -->
-
                     <article class="focus-card">
 
                         <span class="focus-number">
                             02 · EDUCATION
                         </span>
 
-
                         <div>
 
                             <h3>
                                 Knowledge &amp; Education
                             </h3>
-
 
                             <p>
                                 Creating opportunities for young
@@ -2105,23 +1686,17 @@
 
                     </article>
 
-
-
-                    <!-- 03 -->
-
                     <article class="focus-card">
 
                         <span class="focus-number">
                             03 · HEALTH
                         </span>
 
-
                         <div>
 
                             <h3>
                                 Health Knowledge
                             </h3>
-
 
                             <p>
                                 Exploring responsible ways for
@@ -2134,23 +1709,17 @@
 
                     </article>
 
-
-
-                    <!-- 04 -->
-
                     <article class="focus-card">
 
                         <span class="focus-number">
                             04 · OPPORTUNITY
                         </span>
 
-
                         <div>
 
                             <h3>
                                 Access &amp; Opportunity
                             </h3>
-
 
                             <p>
                                 Helping connect people with
@@ -2169,12 +1738,6 @@
 
         </section>
 
-
-
-        <!-- =================================================
-             CHKI
-        ================================================== -->
-
         <section
             class="chki-section"
             id="chki"
@@ -2188,11 +1751,9 @@
                         FOUNDATION INITIATIVE
                     </p>
 
-
                     <h2>
                         Community Health Knowledge Initiative.
                     </h2>
-
 
                     <p class="chki-description">
                         CHKI is an emerging collaboration framework
@@ -2205,9 +1766,7 @@
                         be organised.
                     </p>
 
-
                     <div class="chki-principles">
-
 
                         <div class="chki-principle">
 
@@ -2223,7 +1782,6 @@
 
                         </div>
 
-
                         <div class="chki-principle">
 
                             <strong>
@@ -2237,7 +1795,6 @@
                             </span>
 
                         </div>
-
 
                         <div class="chki-principle">
 
@@ -2261,12 +1818,6 @@
 
         </section>
 
-
-
-        <!-- =================================================
-             GOVERNANCE
-        ================================================== -->
-
         <section class="governance-section">
 
             <div class="page-container">
@@ -2279,11 +1830,9 @@
                             RESPONSIBLE IMPACT
                         </p>
 
-
                         <h2>
                             Built with accountability.
                         </h2>
-
 
                         <p>
                             Community work requires more than good
@@ -2295,7 +1844,6 @@
                             initiatives.
                         </p>
 
-
                         <p>
                             As programmes develop, we aim to measure
                             what was delivered, who participated and
@@ -2306,18 +1854,15 @@
 
                     </div>
 
-
                     <aside class="leadership-card">
 
                         <span class="leadership-label">
                             FOUNDATION LEADERSHIP
                         </span>
 
-
                         <h3>
                             Isaac Kimu
                         </h3>
-
 
                         <p class="leadership-role">
                             Chief Operating Officer &amp;
@@ -2325,7 +1870,6 @@
                             <br>
                             Head of iNtsikelelo Foundation
                         </p>
-
 
                         <p class="leadership-note">
                             Responsible for operational oversight
@@ -2341,12 +1885,6 @@
 
         </section>
 
-
-
-        <!-- =================================================
-             CLOSING
-        ================================================== -->
-
         <section class="closing-section">
 
             <div class="page-container">
@@ -2357,14 +1895,12 @@
                         iNTSIKELELO FOUNDATION
                     </p>
 
-
                     <h2>
                         Technology can advance.
                         <span>
                             People should advance with it.
                         </span>
                     </h2>
-
 
                     <p>
                         Our work begins with listening, responsible
@@ -2381,52 +1917,55 @@
 
     </main>
 
-
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
-
     <footer class="site-footer">
 
         <div class="footer-inner">
 
-            <div class="footer-brand">
-
+            <a
+                class="footer-brand"
+                href="index.html"
+                aria-label="NEURORDER home"
+            >
                 <img
                     src="images/logo.png"
-                    alt=""
+                    alt="NEURORDER"
                 >
 
                 <span>
                     NEURORDER
                 </span>
+            </a>
+
+            <nav
+                class="footer-nav"
+                aria-label="Footer navigation"
+            >
+                <a href="about.html">About</a>
+                <a href="cias.html">CIAS</a>
+                <a href="foundation.html">Foundation</a>
+                <a href="news.html">News</a>
+                <a href="contact.html">Contact</a>
+                <a href="nous.html">NOUS</a>
+            </nav>
+
+            <div class="footer-meta">
+
+                <span>
+                    New Order. Smarter Future.
+                </span>
+
+                <span>
+                    © 2026 NEURORDER (Pty) Ltd.
+                    All Rights Reserved.
+                </span>
 
             </div>
-
-
-            <span>
-                New Order. Smarter Future.
-            </span>
-
-
-            <span>
-                © 2026 NEURORDER (Pty) Ltd.
-                All Rights Reserved.
-            </span>
 
         </div>
 
     </footer>
 
-
-
-    <!-- =====================================================
-         MOBILE MENU
-    ====================================================== -->
-
     <script>
-
         document.addEventListener(
             "DOMContentLoaded",
             () => {
@@ -2436,12 +1975,10 @@
                         "mobileMenuButton"
                     );
 
-
                 const mobileMenu =
                     document.getElementById(
                         "mobileMenu"
                     );
-
 
                 if (
                     !menuButton ||
@@ -2449,7 +1986,6 @@
                 ) {
                     return;
                 }
-
 
                 menuButton.addEventListener(
                     "click",
@@ -2462,12 +1998,10 @@
                                     "open"
                                 );
 
-
                         menuButton.setAttribute(
                             "aria-expanded",
                             String(isOpen)
                         );
-
 
                         menuButton.setAttribute(
                             "aria-label",
@@ -2478,7 +2012,6 @@
 
                     }
                 );
-
 
                 mobileMenu
                     .querySelectorAll("a")
@@ -2495,7 +2028,6 @@
                                             "open"
                                         );
 
-
                                     menuButton.setAttribute(
                                         "aria-expanded",
                                         "false"
@@ -2509,9 +2041,7 @@
 
             }
         );
-
     </script>
 
 </body>
-
 </html>
