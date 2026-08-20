@@ -806,7 +806,43 @@
                 animation: none;
             }
         }
+@media (max-width: 768px) {
 
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .image-frame,
+  .image-card,
+  .visual-frame,
+  .about-image,
+  .home-image,
+  .section-image {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none;
+  }
+
+  .image-frame img,
+  .image-card img,
+  .visual-frame img,
+  .about-image img,
+  .home-image img,
+  .section-image img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
 </style>
 
 
@@ -877,7 +913,9 @@
             </a>
 
 
-            <a
+            <a href="contact.html">Contact</a>
+
+                <a
                 href="nous.html"
                 class="nous-nav-link"
             >
@@ -937,7 +975,9 @@
             News
         </a>
 
-        <a href="nous.html">
+        <a href="contact.html">Contact</a>
+
+            <a href="nous.html">
             Explore NOUS
         </a>
 
@@ -1356,36 +1396,25 @@
 
 
 
-                                <!-- VISUAL -->
+<!-- VISUAL -->
 
-                <div
-                    class="nous-preview-visual"
-                    aria-hidden="true"
-                >
+<div
+    class="nous-preview-visual"
+    aria-hidden="true"
+>
+    <div class="nous-spectrum-glow"></div>
+    <div class="nous-spectrum-ring"></div>
 
-                    <div class="nous-spectrum-glow"></div>
-                    <div class="nous-spectrum-ring"></div>
+    <img
+        src="images/nouslogo.png"
+        alt="NOUS"
+        class="nous-preview-symbol"
+    >
+</div>
 
-                    <img
-                        src="images/nouslogo.png"
-                        alt=""
-                        class="nous-preview-symbol"
-                    >
+</div>
 
-                </div>
-
-
-                    <img
-                        src="images/nouslogo.png"
-                        alt=""
-                        class="nous-preview-symbol"
-                    >
-
-                </div>
-
-            </div>
-
-        </section>
+</section>
 
 
     </main>
