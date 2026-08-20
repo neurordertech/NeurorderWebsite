@@ -1,0 +1,12 @@
+/* Root public page responsive refinements. Component rules live in nous.css. */
+
+@media (max-width: 760px) {
+  .workspace-description { max-width: 34rem; }
+  .ros-heading small { font-size: 0.68rem; }
+}
+
+@media (max-width: 620px) {
+  body { overflow-x: hidden; }
+  .membership-heading { text-align: left; }
+  .membership-heading > p:last-child { margin-inline: 0; }
+}

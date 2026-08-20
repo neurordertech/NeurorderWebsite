@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>CIAS Limpopo Research Layer | NEURORDER</title>
+
+  <meta
+    name="description"
+    content="NEURORDER CIAS provincial research layer focused on Limpopo and Thohoyandou: rural economic visibility, unemployment, infrastructure, agriculture, local production, street trade, youth, remittances and financial inclusion."
+  />
+
+  <style>
+    /* =========================================================
+       CIAS LIMPOPO RESEARCH LAYER
+       NEURORDER (PTY) LTD
+       ========================================================= */
+
+    :root {
+      --bg: #05090a;
+      --bg-soft: #09110d;
+
+      --text: #f5f8f6;
+      --muted: #aab7af;
+
+      --line: rgba(255, 255, 255, 0.12);
+      --card: rgba(255, 255, 255, 0.055);
+      --card-highlight: rgba(255, 255, 255, 0.075);
+
+      --gold: #d6b45f;
+      --green: #93d6a2;
+      --violet: #b99cff;
+      --blue: #6fd3ff;
+      --red: #f2a3aa;
+
+      --content-width: 1220px;
+      --radius-lg: 28px;
+      --radius-md: 20px;
+    }
+
+
+    /* =========================================================
+       RESET
+       ========================================================= */
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+
+      background:
+        radial-gradient(
+          circle at top left,
+          #173828 0%,
+          transparent 30%
+        ),
+        linear-gradient(
+          180deg,
+          #040706 0%,
+          #09110d 64%,
+          #050806 100%
+        );
+
+      color: var(--text);
+
+      font-family:
+        Inter,
+        Manrope,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      line-height: 1.65;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    a {
+      color: #8be2bc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =========================================================
+       TYPOGRAPHY
+       ========================================================= */
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+
+      font-size: clamp(48px, 7vw, 94px);
+      line-height: 0.94;
+      letter-spacing: -0.055em;
+    }
+
+    h2 {
+      margin-bottom: 16px;
+
+      font-size: clamp(31px, 4vw, 54px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+
+      font-size: 23px;
+      line-height: 1.2;
+    }
+
+    .lead {
+      max-width: 900px;
+
+      color: #dce8df;
+
+      font-size: clamp(18px, 2vw, 24px);
+    }
+
+    .section-intro {
+      max-width: 920px;
+
+      color: var(--muted);
+
+      font-size: 18px;
+    }
+
+    .kicker {
+      color: var(--gold);
+
+      font-size: 13px;
+      font-weight: 800;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================================
+       PAGE LAYOUT
+       ========================================================= */
+
+    main {
+      padding:
+        0
+        clamp(22px, 5vw, 78px)
+        90px;
+    }
+
+    section {
+      width: 100%;
+      max-width: var(--content-width);
+
+      margin:
+        0
+        auto
+        74px;
+    }
+
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .research-hero {
+      min-height: 92vh;
+
+      display: flex;
+      align-items: flex-end;
+
+      padding:
+        48px
+        clamp(22px, 5vw, 78px);
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 1400px;
+
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+
+      align-items: end;
+    }
+
+    .hero-copy {
+      min-width: 0;
+    }
+
+    .hero-media {
+      position: relative;
+
+      min-height: 540px;
+
+      overflow: hidden;
+
+      border: 1px solid var(--line);
+      border-radius: 32px;
+
+      background: #101a14;
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: 540px;
+
+      display: block;
+
+      object-fit: cover;
+
+      filter:
+        contrast(1.04)
+        brightness(0.88);
+    }
+
+    .hero-caption {
+      position: absolute;
+
+      right: 18px;
+      bottom: 18px;
+      left: 18px;
+
+      padding: 16px 18px;
+
+      border-radius: 18px;
+
+      background: rgba(0, 0, 0, 0.66);
+
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .research-badge {
+      display: inline-flex;
+
+      margin-top: 24px;
+      padding: 10px 14px;
+
+      border: 1px solid rgba(214, 180, 95, 0.45);
+      border-radius: 999px;
+
+      background: rgba(214, 180, 95, 0.08);
+
+      color: #f0d58a;
+
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+
+    /* =========================================================
+       GRID
+       ========================================================= */
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+
+      gap: 18px;
+    }
+
+    .col-3 {
+      grid-column: span 3;
+    }
+
+    .col-4 {
+      grid-column: span 4;
+    }
+
+    .col-5 {
+      grid-column: span 5;
+    }
+
+    .col-6 {
+      grid-column: span 6;
+    }
+
+    .col-7 {
+      grid-column: span 7;
+    }
+
+    .col-8 {
+      grid-column: span 8;
+    }
+
+    .col-12 {
+      grid-column: span 12;
+    }
+
+
+    /* =========================================================
+       CARDS
+       ========================================================= */
+
+    .card {
+      padding: 24px;
+
+      border: 1px solid var(--line);
+      border-radius: 27px;
+
+      background:
+        linear-gradient(
+          180deg,
+          var(--card-highlight),
+          var(--card)
+        );
+    }
+
+    .card-evidence {
+      border-top: 3px solid var(--green);
+    }
+
+    .card-hypothesis {
+      border-top: 3px solid var(--violet);
+    }
+
+    .card-timeline {
+      border-top: 3px solid var(--gold);
+    }
+
+
+    /* =========================================================
+       LABELS
+       ========================================================= */
+
+    .label {
+      display: inline-block;
+
+      margin-bottom: 11px;
+      padding: 6px 9px;
+
+      border-radius: 999px;
+
+      font-size: 11px;
+      font-weight: 800;
+
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .label-evidence {
+      border: 1px solid rgba(147, 214, 162, 0.35);
+
+      background: rgba(147, 214, 162, 0.11);
+
+      color: #b9f2c7;
+    }
+
+    .label-hypothesis {
+      border: 1px solid rgba(185, 156, 255, 0.35);
+
+      background: rgba(185, 156, 255, 0.11);
+
+      color: #d7c9ff;
+    }
+
+    .label-timeline {
+      border: 1px solid rgba(214, 180, 95, 0.35);
+
+      background: rgba(214, 180, 95, 0.11);
+
+      color: #f0d58a;
+    }
+
+
+    /* =========================================================
+       METRICS
+       ========================================================= */
+
+    .metric {
+      margin: 3px 0 8px;
+
+      font-size: 43px;
+      font-weight: 850;
+      line-height: 1;
+
+      letter-spacing: -0.045em;
+    }
+
+    .metric-label {
+      color: var(--muted);
+
+      font-size: 12px;
+
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================================
+       CALLOUTS
+       ========================================================= */
+
+    .callout {
+      padding: 22px 24px;
+
+      border-left: 5px solid var(--gold);
+      border-radius: var(--radius-md);
+
+      background: rgba(214, 180, 95, 0.08);
+
+      color: #f8ecd2;
+    }
+
+    .callout-warning {
+      border-left-color: var(--red);
+
+      background: rgba(242, 163, 170, 0.08);
+
+      color: #ffe1e4;
+    }
+
+    .callout-spaced {
+      margin-top: 18px;
+    }
+
+    .research-question {
+      color: #ffffff;
+
+      font-size: 25px;
+      line-height: 1.35;
+
+      letter-spacing: -0.02em;
+    }
+
+
+    /* =========================================================
+       VISUAL RESEARCH CARDS
+       ========================================================= */
+
+    .visual-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      gap: 18px;
+    }
+
+    .visual-card {
+      margin: 0;
+
+      overflow: hidden;
+
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+
+      background: #080c09;
+    }
+
+    .visual-card img {
+      width: 100%;
+      height: 270px;
+
+      display: block;
+
+      object-fit: cover;
+    }
+
+    .visual-card figcaption {
+      padding: 15px 17px 18px;
+
+      color: #cbd6ce;
+
+      font-size: 14px;
+    }
+
+
+    /* =========================================================
+       CHART
+       ========================================================= */
+
+    .chart-image {
+      width: 100%;
+
+      display: block;
+
+      border-radius: 18px;
+
+      background: #ffffff;
+    }
+
+
+    /* =========================================================
+       TABLES
+       ========================================================= */
+
+    .table-wrap {
+      width: 100%;
+
+      overflow-x: auto;
+
+      border: 1px solid var(--line);
+      border-radius: 24px;
+    }
+
+    table {
+      width: 100%;
+
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 14px;
+
+      border-bottom: 1px solid var(--line);
+
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: rgba(255, 255, 255, 0.07);
+
+      color: #ffffff;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    .research-footer {
+      width: calc(100% - 44px);
+      max-width: var(--content-width);
+
+      margin: 0 auto;
+
+      padding: 24px 0 60px;
+
+      border-top: 1px solid var(--line);
+
+      color: #8f9a92;
+
+      font-size: 13px;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 900px) {
+      .hero-inner,
+      .visual-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .col-3,
+      .col-4,
+      .col-5,
+      .col-6,
+      .col-7,
+      .col-8,
+      .col-12 {
+        grid-column: span 12;
+      }
+
+      .hero-media,
+      .hero-media img {
+        min-height: 360px;
+        height: 360px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .research-hero {
+        padding-top: 30px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      th,
+      td {
+        min-width: 170px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =======================================================
+       HERO
+       ======================================================= -->
+
+  <header class="research-hero">
+
+    <div class="hero-inner">
+
+      <div class="hero-copy">
+
+        <div class="kicker">
+          NEURORDER Research / CIAS Provincial Research Layer
+        </div>
+
+        <h1>
+          Limpopo:<br />
+          Local Strength, Invisible Economy
+        </h1>
+
+        <p class="lead">
+          Limpopo is often discussed through poverty, rurality and
+          infrastructure backlogs. That description is incomplete.
+          The province also contains active agriculture, mining, trade,
+          manufacturing potential, local enterprise and communities whose
+          economic activity is not always fully visible to formal financial
+          systems.
+        </p>
+
+        <p class="lead">
+          Thohoyandou gives CIAS a specific place to ask a different
+          question: how do we understand financial reliability where
+          livelihoods can be rural, informal, agricultural,
+          remittance-supported and community-based at the same time?
+        </p>
+
+        <div class="research-badge">
+          Problem layer only · Resultant intentionally withheld
+        </div>
+
+      </div>
+
+
+      <div class="hero-media">
+
+        <img
+          src="images/limpopo_thohoyandou_roundabout.png"
+          alt="Thohoyandou cultural roundabout, Limpopo"
+        />
+
+        <div class="hero-caption">
+          Thohoyandou: a commercial and community centre in Vhembe,
+          surrounded by rural settlements, local trade and agricultural
+          activity.
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+
+    <!-- =====================================================
+         WHY LIMPOPO
+         ===================================================== -->
+
+    <section id="why-limpopo">
+
+      <h2>Why Limpopo?</h2>
+
+      <p class="section-intro">
+        Limpopo gives CIAS a provincial environment where economic activity
+        is spread across towns, villages, farms, mines, roadside trade,
+        households and remittance networks.
+        The research problem is therefore not simply “poverty”.
+        It is whether formal systems accurately see the economic behaviour
+        that already exists.
+      </p>
+
+      <div class="callout">
+
+        <strong>Province-specific CIAS role:</strong>
+
+        Limpopo =
+        <strong>
+          Rural economic visibility and local productive capacity.
+        </strong>
+
+        The research studies how infrastructure, financial literacy,
+        local production, remittances and informal trade shape the evidence
+        a financial system can observe.
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CURRENT STATISTICS
+         ===================================================== -->
+
+    <section id="statistics">
+
+      <h2>Current statistical layer</h2>
+
+      <div class="grid">
+
+
+        <article class="card card-evidence col-3">
+
+          <span class="label label-evidence">
+            Verified evidence
+          </span>
+
+          <div class="metric">
+            6.37m
+          </div>
+
+          <div class="metric-label">
+            Limpopo population · 2026
+          </div>
+
+          <p>
+            Stats SA estimates approximately 6.37 million people in
+            Limpopo in 2026.
+          </p>
+
+        </article>
+
+
+        <article class="card card-evidence col-3">
+
+          <span class="label label-evidence">
+            Verified evidence
+          </span>
+
+          <div class="metric">
+            31.0%
+          </div>
+
+          <div class="metric-label">
+            Children under 15 · 2026
+          </div>
+
+          <p>
+            Limpopo has the highest provincial proportion of children
+            younger than 15 in the 2026 mid-year estimates.
+          </p>
+
+        </article>
+
+
+        <article class="card card-evidence col-3">
+
+          <span class="label label-evidence">
+            Verified evidence
+          </span>
+
+          <div class="metric">
+            32.0%
+          </div>
+
+          <div class="metric-label">
+            Official unemployment · Q2 2026
+          </div>
+
+          <p>
+            The rate rose slightly from 31.7% in Q1 2026,
+            but remained three percentage points below Q2 2025.
+          </p>
+
+        </article>
+
+
+        <article class="card card-evidence col-3">
+
+          <span class="label label-evidence">
+            Verified evidence
+          </span>
+
+          <div class="metric">
+            46.7%
+          </div>
+
+          <div class="metric-label">
+            LU3 labour underutilisation · Q2 2026
+          </div>
+
+          <p>
+            The wider measure shows that labour-market exclusion remains
+            considerably deeper than the official rate alone.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         UNEMPLOYMENT TREND
+         ===================================================== -->
+
+    <section id="unemployment">
+
+      <h2>Recent unemployment trend</h2>
+
+      <div class="grid">
+
+
+        <div class="card card-evidence col-8">
+
+          <img
+            class="chart-image"
+            src="images/limpopo_unemployment_trend.png"
+            alt="Chart showing Limpopo official unemployment trend"
+          />
+
+        </div>
+
+
+        <article class="card card-timeline col-4">
+
+          <span class="label label-timeline">
+            Recent timeline
+          </span>
+
+          <h3>
+            Improvement, then renewed pressure
+          </h3>
+
+          <p>
+            The official rate was 35.0% in Q2 2025,
+            fell to 28.2% by Q4 2025,
+            then increased to 31.7% in Q1 2026
+            and 32.0% in Q2 2026.
+          </p>
+
+          <p>
+            This is not a simple story of permanent decline.
+            CIAS must be able to distinguish structural vulnerability
+            from temporary economic movement.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         RURALITY
+         ===================================================== -->
+
+    <section id="rurality">
+
+      <h2>
+        Rurality: useful context, but not a label
+      </h2>
+
+      <div class="grid">
+
+
+        <article class="card card-timeline col-7">
+
+          <span class="label label-timeline">
+            Historical context
+          </span>
+
+          <h3>
+            The “89% rural” figure is old
+          </h3>
+
+          <p>
+            A frequently cited provincial agriculture study stated
+            that roughly 89% of Limpopo's population could be classified
+            as rural.
+          </p>
+
+          <p>
+            That source dates to 2012 and should therefore be treated as
+            <strong>historical context only</strong>,
+            not a current 2026 statistic.
+          </p>
+
+          <p>
+            Recent official sources still describe Limpopo as one of
+            South Africa's more rural provinces, but the exact current
+            rural share should not be presented as 89% without an updated
+            measure.
+          </p>
+
+        </article>
+
+
+        <article class="card card-hypothesis col-5">
+
+          <span class="label label-hypothesis">
+            Research position
+          </span>
+
+          <h3>
+            Rural does not mean economically inactive
+          </h3>
+
+          <p>
+            Rural households can participate in farming,
+            informal retail, services, remittances, transport,
+            tourism, construction and seasonal work.
+          </p>
+
+          <p>
+            A formal system may see fragmented income even where a household
+            experiences long-term economic continuity.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INFRASTRUCTURE
+         ===================================================== -->
+
+    <section id="infrastructure">
+
+      <h2>
+        Infrastructure is part of the financial story
+      </h2>
+
+      <div class="grid">
+
+
+        <article class="card card-evidence col-4">
+
+          <span class="label label-evidence">
+            2025 provincial evidence
+          </span>
+
+          <div class="metric">
+            64.2%
+          </div>
+
+          <div class="metric-label">
+            Water access cited in Limpopo SOPA 2025
+          </div>
+
+          <p>
+            The provincial government stated that water access had
+            regressed to 64.2%, leaving 35.8% without this necessity
+            and placing additional pressure on municipal infrastructure.
+          </p>
+
+        </article>
+
+
+        <article class="card card-evidence col-4">
+
+          <span class="label label-evidence">
+            Recent household evidence
+          </span>
+
+          <h3>
+            Energy access is not the same as reliable energy use
+          </h3>
+
+          <p>
+            Stats SA's household reporting shows Limpopo households make
+            comparatively high use of open fires and candles as alternatives,
+            illustrating that headline electrification alone does not capture
+            resilience or reliability.
+          </p>
+
+        </article>
+
+
+        <article class="card card-hypothesis col-4">
+
+          <span class="label label-hypothesis">
+            CIAS implication
+          </span>
+
+          <h3>
+            Poor infrastructure can create misleading financial data
+          </h3>
+
+          <p>
+            Transport delays, water interruptions, electricity problems
+            or poor roads can disrupt trading days and expenditure patterns.
+          </p>
+
+          <p>
+            CIAS should not automatically interpret those disruptions
+            as poor financial discipline.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         THREE ENVIRONMENTS
+         ===================================================== -->
+
+    <section id="environments">
+
+      <h2>
+        Three environments we are observing
+      </h2>
+
+      <div class="visual-grid">
+
+
+        <figure class="visual-card">
+
+          <img
+            src="images/limpopo_rich_soil.png"
+            alt="Banana crop growing in Limpopo"
+            loading="lazy"
+          />
+
+          <figcaption>
+
+            <strong>
+              Rich soil and productive capacity.
+            </strong>
+
+            Agriculture is not only a background feature of Limpopo.
+            Productive land, crops and local food systems form part of the
+            economic activity CIAS needs to understand, especially where
+            income can be seasonal or informally recorded.
+
+          </figcaption>
+
+        </figure>
+
+
+        <figure class="visual-card">
+
+          <img
+            src="images/limpopo_thohoyandou_street_trade.png"
+            alt="Street trade and small businesses in Thohoyandou"
+            loading="lazy"
+          />
+
+          <figcaption>
+
+            <strong>
+              Thohoyandou street trade.
+            </strong>
+
+            Small retailers, roadside sellers, mobile-network services
+            and everyday local commerce operate within the same town economy.
+            This is the kind of visible activity that may still remain
+            financially under-documented.
+
+          </figcaption>
+
+        </figure>
+
+
+        <figure class="visual-card">
+
+          <img
+            src="images/limpopo_thohoyandou_roundabout.png"
+            alt="Cultural roundabout in Thohoyandou, Limpopo"
+            loading="lazy"
+          />
+
+          <figcaption>
+
+            <strong>
+              Place, identity and local infrastructure.
+            </strong>
+
+            Thohoyandou is not only a statistical location.
+            Its public spaces, cultural identity and surrounding commercial
+            activity help frame the community environment in which CIAS
+            research would take place.
+
+          </figcaption>
+
+        </figure>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ECONOMIC ACTIVITY
+         ===================================================== -->
+
+    <section id="economic-activity">
+
+      <h2>
+        Limpopo is not economically dormant
+      </h2>
+
+      <div class="grid">
+
+
+        <article class="card card-evidence col-6">
+
+          <span class="label label-evidence">
+            Stats SA · 2025
+          </span>
+
+          <div class="metric">
+            +0.9%
+          </div>
+
+          <div class="metric-label">
+            Real provincial GDP growth · 2024
+          </div>
+
+          <p>
+            Limpopo recorded the strongest provincial real GDP growth rate
+            in 2024, alongside gains in finance and business services,
+            personal services, utilities, transport and communication,
+            manufacturing and trade.
+          </p>
+
+        </article>
+
+
+        <article class="card card-evidence col-6">
+
+          <span class="label label-evidence">
+            Investment context
+          </span>
+
+          <h3>
+            Mining, agriculture and industrial development matter
+          </h3>
+
+          <p>
+            Limpopo's investment agencies identify mining,
+            agriculture, tourism and industrial development as major areas
+            of opportunity.
+          </p>
+
+          <p>
+            Some published sector figures on the investment site use older
+            2020 data, so those numbers should be treated as timeline context
+            rather than current GDP composition.
+          </p>
+
+        </article>
+
+
+      </div>
+
+
+      <div class="callout callout-spaced">
+
+        <strong>
+          Research correction:
+        </strong>
+
+        calling Limpopo simply an “underdeveloped province” risks hiding
+        the actual problem.
+
+        The more useful question is why productive activity,
+        natural resources and local enterprise can coexist with
+        unemployment, infrastructure constraints and weak household
+        financial visibility.
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LOCAL PRODUCTION
+         ===================================================== -->
+
+    <section id="local-production">
+
+      <h2>
+        Local production: a case worth studying
+      </h2>
+
+      <div class="grid">
+
+
+        <article class="card card-hypothesis col-6">
+
+          <span class="label label-hypothesis">
+            Working theory
+          </span>
+
+          <h3>
+            Building from what already exists
+          </h3>
+
+          <p>
+            Limpopo's agricultural, mining and local-enterprise base makes
+            it useful for studying whether economic development can strengthen
+            when local goods, suppliers and productive capabilities are
+            supported rather than treated only as consumption markets.
+          </p>
+
+        </article>
+
+
+        <article class="card card-hypothesis col-6">
+
+          <span class="label label-hypothesis">
+            Research caution
+          </span>
+
+          <h3>
+            “Local first” is not automatically efficient
+          </h3>
+
+          <p>
+            The research should test where local procurement and production
+            genuinely create resilience and jobs, and where external suppliers
+            remain necessary.
+          </p>
+
+          <p>
+            The point is not economic isolation;
+            it is understanding how much value can reasonably remain within
+            local economic systems.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         REMITTANCES
+         ===================================================== -->
+
+    <section id="remittances">
+
+      <h2>
+        Remittances reveal another kind of economy
+      </h2>
+
+      <div class="grid">
+
+
+        <article class="card card-evidence col-6">
+
+          <span class="label label-evidence">
+            Stats SA · GHS 2025
+          </span>
+
+          <div class="metric">
+            12.7%
+          </div>
+
+          <div class="metric-label">
+            Limpopo households citing remittances
+            as main income source · 2025
+          </div>
+
+          <p>
+            This was the highest provincial share reported in the
+            General Household Survey 2025.
+          </p>
+
+        </article>
+
+
+        <article class="card card-hypothesis col-6">
+
+          <span class="label label-hypothesis">
+            CIAS research question
+          </span>
+
+          <h3>
+            What does a remittance actually mean?
+          </h3>
+
+          <p>
+            A recurring transfer from a family member working elsewhere
+            may represent dependency, but it can also represent a stable
+            household financial relationship.
+          </p>
+
+          <p>
+            CIAS must not collapse those different realities into one
+            risk assumption.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MIGRATION
+         ===================================================== -->
+
+    <section id="migration">
+
+      <h2>
+        Migration and the Gauteng connection
+      </h2>
+
+      <div class="grid">
+
+
+        <article class="card card-evidence col-7">
+
+          <span class="label label-evidence">
+            Stats SA · 2026
+          </span>
+
+          <h3>
+            Limpopo-to-Gauteng is a major migration stream
+          </h3>
+
+          <p>
+            Stats SA reported that among period migrants between
+            2017 and 2022, the most common provincial migration stream
+            was Limpopo to Gauteng, accounting for 13.4%.
+          </p>
+
+          <p>
+            This connects two CIAS research layers directly:
+            economic activity may be generated in Gauteng while household
+            support and obligations remain in Limpopo.
+          </p>
+
+        </article>
+
+
+        <article class="card card-hypothesis col-5">
+
+          <span class="label label-hypothesis">
+            CIAS implication
+          </span>
+
+          <h3>
+            Financial lives cross provincial borders
+          </h3>
+
+          <p>
+            A financial profile built only around the place where income
+            is earned may misunderstand the household economy that income
+            supports.
+          </p>
+
+          <p>
+            CIAS should investigate continuity across locations rather than
+            treat mobility as instability.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INVISIBLE TRADER
+         ===================================================== -->
+
+    <section id="invisible-trader">
+
+      <h2>
+        Thohoyandou and the invisible trader
+      </h2>
+
+      <p class="section-intro">
+        Thohoyandou is useful because formal stores, transport,
+        government services, schools, households, agriculture and
+        street trade intersect within one regional commercial system.
+      </p>
+
+
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+
+            <tr>
+              <th>Environment</th>
+              <th>Possible observable signal</th>
+              <th>Possible meaning</th>
+              <th>Alternative explanation</th>
+              <th>Bias risk</th>
+            </tr>
+
+          </thead>
+
+
+          <tbody>
+
+            <tr>
+              <td>Street vendor</td>
+
+              <td>
+                Repeated stock purchases and daily sales
+              </td>
+
+              <td>
+                Business continuity
+              </td>
+
+              <td>
+                Seasonal or weather-sensitive demand
+              </td>
+
+              <td>
+                Penalising cash activity
+              </td>
+            </tr>
+
+
+            <tr>
+              <td>
+                Agricultural household
+              </td>
+
+              <td>
+                Seasonal sales, input purchases and harvest-linked income
+              </td>
+
+              <td>
+                Productive economic activity
+              </td>
+
+              <td>
+                Normal agricultural seasonality
+              </td>
+
+              <td>
+                Misreading seasonal income as instability
+              </td>
+            </tr>
+
+
+            <tr>
+              <td>
+                Remittance-supported household
+              </td>
+
+              <td>
+                Recurring transfers from elsewhere
+              </td>
+
+              <td>
+                Stable support network
+              </td>
+
+              <td>
+                Household dependency
+              </td>
+
+              <td>
+                Treating family support as automatic weakness
+              </td>
+            </tr>
+
+
+            <tr>
+              <td>
+                Micro-retailer
+              </td>
+
+              <td>
+                Restocking, supplier payments and small recurring
+                customer payments
+              </td>
+
+              <td>
+                Economic continuity
+              </td>
+
+              <td>
+                Low profit margin
+              </td>
+
+              <td>
+                Overvaluing turnover
+              </td>
+            </tr>
+
+
+            <tr>
+              <td>
+                Rural service business
+              </td>
+
+              <td>
+                Mobile payments, cash deposits and repeat clients
+              </td>
+
+              <td>
+                Established demand
+              </td>
+
+              <td>
+                Limited digital record
+              </td>
+
+              <td>
+                Digital-data bias
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INFRASTRUCTURE QUESTION
+         ===================================================== -->
+
+    <section id="infrastructure-question">
+
+      <h2>
+        The infrastructure question
+      </h2>
+
+      <div class="callout">
+
+        <div class="research-question">
+          How should a financial intelligence system interpret a trader
+          whose business is interrupted by the road, water, electricity
+          or connectivity around them rather than by the quality of the
+          business itself?
+        </div>
+
+      </div>
+
+
+      <div class="grid callout-spaced">
+
+
+        <article class="card card-hypothesis col-4">
+
+          <span class="label label-hypothesis">
+            Roads
+          </span>
+
+          <h3>
+            Access affects turnover
+          </h3>
+
+          <p>
+            Poor road conditions can alter travel time,
+            delivery cost, customer movement and supplier reliability.
+          </p>
+
+        </article>
+
+
+        <article class="card card-hypothesis col-4">
+
+          <span class="label label-hypothesis">
+            Utilities
+          </span>
+
+          <h3>
+            Infrastructure affects expense patterns
+          </h3>
+
+          <p>
+            Water and electricity interruptions can create emergency
+            purchases and abnormal operating costs.
+          </p>
+
+        </article>
+
+
+        <article class="card card-hypothesis col-4">
+
+          <span class="label label-hypothesis">
+            Connectivity
+          </span>
+
+          <h3>
+            Digital absence may be structural
+          </h3>
+
+          <p>
+            Low digital transaction volume may reflect network access,
+            device cost or user literacy rather than weak economic activity.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         RESEARCH QUESTIONS
+         ===================================================== -->
+
+    <section id="research-questions">
+
+      <h2>
+        Research questions for Limpopo
+      </h2>
+
+      <div class="grid">
+
+
+        <article class="card col-6">
+
+          <h3>
+            01 · Rural economic visibility
+          </h3>
+
+          <p>
+            Which recurring financial behaviours are visible among traders,
+            farmers and households around Thohoyandou, and which remain
+            undocumented?
+          </p>
+
+        </article>
+
+
+        <article class="card col-6">
+
+          <h3>
+            02 · Infrastructure
+          </h3>
+
+          <p>
+            How much apparent income volatility is caused by roads,
+            transport, water, electricity or connectivity rather than
+            financial behaviour?
+          </p>
+
+        </article>
+
+
+        <article class="card col-6">
+
+          <h3>
+            03 · Agriculture
+          </h3>
+
+          <p>
+            How should CIAS distinguish normal seasonal agricultural income
+            from harmful instability?
+          </p>
+
+        </article>
+
+
+        <article class="card col-6">
+
+          <h3>
+            04 · Remittances
+          </h3>
+
+          <p>
+            When do recurring remittances represent financial continuity,
+            and when do they represent vulnerability?
+          </p>
+
+        </article>
+
+
+        <article class="card col-6">
+
+          <h3>
+            05 · Local production
+          </h3>
+
+          <p>
+            Which local supply and production relationships strengthen
+            household or micro-business resilience?
+          </p>
+
+        </article>
+
+
+        <article class="card col-6">
+
+          <h3>
+            06 · Street trade
+          </h3>
+
+          <p>
+            What evidence could responsibly describe the continuity of
+            cash-first street businesses without forcing them into
+            digital-only behaviour?
+          </p>
+
+        </article>
+
+
+        <article class="card col-6">
+
+          <h3>
+            07 · Youth
+          </h3>
+
+          <p>
+            How does Limpopo's unusually young population affect future
+            demand for education, entrepreneurship and financial
+            infrastructure?
+          </p>
+
+        </article>
+
+
+        <article class="card col-6">
+
+          <h3>
+            08 · Bias
+          </h3>
+
+          <p>
+            How do we prevent rural location, language,
+            remittance reliance or limited digital activity from becoming
+            proxies for financial unreliability?
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         WORKING HYPOTHESIS
+         ===================================================== -->
+
+    <section id="working-hypothesis">
+
+      <h2>
+        Working Limpopo hypothesis
+      </h2>
+
+      <div class="callout">
+
+        In Limpopo, financial reliability may be expressed through forms
+        of economic continuity that are more rural, seasonal, agricultural,
+        cash-based and household-networked than conventional credit systems
+        are designed to describe.
+
+        Thohoyandou provides a useful environment for testing whether those
+        patterns can be observed without confusing infrastructure constraints
+        or rurality with individual risk.
+
+      </div>
+
+
+      <div class="callout callout-warning callout-spaced">
+
+        <strong>
+          No resultant yet.
+        </strong>
+
+        This page intentionally does not introduce the founder's Thohoyandou
+        experience, the school collaboration, the educational AI programme,
+        the proposed street-vendor financial inclusion mechanism or the later
+        multi-bank CIAS infrastructure concept.
+
+        Those belong on the final cross-province conclusion after all four
+        problem layers are complete.
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SOURCES
+         ===================================================== -->
+
+    <section id="sources">
+
+      <h2>
+        Research sources
+      </h2>
+
+
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+
+            <tr>
+              <th>Source</th>
+              <th>Use</th>
+              <th>Status</th>
+            </tr>
+
+          </thead>
+
+
+          <tbody>
+
+
+            <tr>
+
+              <td>
+                <a
+                  href="https://www.statssa.gov.za/publications/P0302/P03022026.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Stats SA — Mid-year Population Estimates 2026
+                </a>
+              </td>
+
+              <td>
+                Limpopo population, age structure and provincial
+                demographic context.
+              </td>
+
+              <td>
+                Current primary evidence
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <a
+                  href="https://www.statssa.gov.za/publications/P0211/P02112ndQuarter2026.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Stats SA — QLFS Q2 2026
+                </a>
+              </td>
+
+              <td>
+                Official unemployment and labour-underutilisation statistics.
+              </td>
+
+              <td>
+                Current primary evidence
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <a
+                  href="https://www.statssa.gov.za/?p=18824"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Stats SA — Economic growth: Limpopo the biggest winner
+                </a>
+              </td>
+
+              <td>
+                Provincial real GDP growth and industries contributing
+                to 2024 growth.
+              </td>
+
+              <td>
+                Recent primary evidence
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <a
+                  href="https://www.limpopo.gov.za/wp-content/uploads/2025/02/State-of-the-Province-Address-2025-26-February-2025.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Limpopo Provincial Government — SOPA 2025
+                </a>
+              </td>
+
+              <td>
+                Water-access and infrastructure context.
+              </td>
+
+              <td>
+                Recent primary provincial source
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <a
+                  href="https://investsalimpopo.co.za/main-economic-sectors/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  InvestSA Limpopo — Main Economic Sectors
+                </a>
+              </td>
+
+              <td>
+                Mining, agriculture and investment-sector context.
+                Older figures are treated as timeline data.
+              </td>
+
+              <td>
+                Institutional investment source
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <a
+                  href="https://www.statssa.gov.za/publications/P0318/P03182025.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Stats SA — General Household Survey 2025
+                </a>
+              </td>
+
+              <td>
+                Household income sources and Limpopo remittance reliance.
+              </td>
+
+              <td>
+                Current primary evidence
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <a
+                  href="https://www.statssa.gov.za/?p=19221"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Stats SA — Internal Migration 2026
+                </a>
+              </td>
+
+              <td>
+                Limpopo-to-Gauteng migration stream.
+              </td>
+
+              <td>
+                Current primary evidence
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                <a
+                  href="https://policyresearch.limpopo.gov.za/bitstream/handle/123456789/636/Agric%25%0920Study%20Summary.pdf?sequence=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Limpopo agriculture study — rurality estimate
+                </a>
+              </td>
+
+              <td>
+                Historical 89% rural figure only.
+              </td>
+
+              <td>
+                Historical timeline source
+              </td>
+
+            </tr>
+
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+
+  <footer class="research-footer">
+
+    Prepared for NEURORDER (Pty) Ltd ·
+    CIAS — Credit Intelligence Assistance Scoring ·
+    Limpopo Provincial Research Layer.
+
+    <br /><br />
+
+    Research status: exploratory.
+    Current evidence, hypotheses and historical timeline material
+    are intentionally separated.
+
+  </footer>
+
+
+</body>
+
+</html>

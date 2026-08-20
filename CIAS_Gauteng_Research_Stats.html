@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>CIAS Gauteng Research Layer | NEURORDER</title>
+
+  <meta
+    name="description"
+    content="NEURORDER CIAS provincial research layer examining Gauteng's population, unemployment, urban economic complexity, informal activity, youth exclusion, financial infrastructure and alternative indicators of financial reliability."
+  />
+
+  <style>
+    :root {
+      --bg: #05080d;
+      --bg-soft: #0a1018;
+      --text: #f6f8fb;
+      --muted: #a9b4c2;
+      --line: rgba(255, 255, 255, 0.12);
+      --card: rgba(255, 255, 255, 0.065);
+      --card-strong: rgba(255, 255, 255, 0.095);
+
+      --gold: #d9b461;
+      --blue: #67d3ff;
+      --green: #98dfb0;
+      --red: #f3a3aa;
+      --violet: #bba0ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, #102540 0%, transparent 35%),
+        linear-gradient(180deg, #04070b 0%, #0a0f17 100%);
+      color: var(--text);
+      font-family: Inter, Manrope, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #84dcff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      min-height: 92vh;
+      padding: 48px clamp(22px, 5vw, 78px);
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .hero {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 36px;
+      align-items: end;
+    }
+
+    .kicker {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.17em;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 16px 0 22px;
+      font-size: clamp(48px, 7vw, 94px);
+      line-height: 0.93;
+      letter-spacing: -0.06em;
+    }
+
+    .lead {
+      max-width: 900px;
+      color: #dbe4ef;
+      font-size: clamp(18px, 2vw, 25px);
+    }
+
+    .research-badge {
+      display: inline-flex;
+      margin-top: 26px;
+      padding: 10px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(217, 180, 97, 0.5);
+      background: rgba(217, 180, 97, 0.08);
+      color: #f1d48b;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .hero-image {
+      min-height: 540px;
+      overflow: hidden;
+      border-radius: 34px;
+      border: 1px solid var(--line);
+      position: relative;
+      background: #0d1218;
+      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 540px;
+      object-fit: cover;
+      display: block;
+      filter: contrast(1.05) brightness(0.87);
+    }
+
+    .hero-image::after {
+      content: "Johannesburg: formal corporate power and informal economic survival exist within the same urban system.";
+      position: absolute;
+      bottom: 58px;
+      left: 18px;
+      right: 18px;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(0, 0, 0, 0.62);
+      color: #edf5fc;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    main {
+      padding: 0 clamp(22px, 5vw, 78px) 90px;
+    }
+
+    section {
+      max-width: 1220px;
+      margin: 0 auto 78px;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: clamp(30px, 4vw, 54px);
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      font-size: 23px;
+    }
+
+    p {
+      color: #dce3eb;
+    }
+
+    .sub {
+      max-width: 920px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .span-3 {
+      grid-column: span 3;
+    }
+
+    .span-4 {
+      grid-column: span 4;
+    }
+
+    .span-5 {
+      grid-column: span 5;
+    }
+
+    .span-6 {
+      grid-column: span 6;
+    }
+
+    .span-7 {
+      grid-column: span 7;
+    }
+
+    .span-8 {
+      grid-column: span 8;
+    }
+
+    .span-12 {
+      grid-column: span 12;
+    }
+
+    .card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background:
+        linear-gradient(
+          180deg,
+          var(--card-strong),
+          var(--card)
+        );
+    }
+
+    .metric {
+      margin-bottom: 10px;
+      font-size: 43px;
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: -0.045em;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+    }
+
+    .metric-note {
+      margin-top: 12px;
+      color: #d5dde7;
+      font-size: 14px;
+    }
+
+    .verified {
+      border-top: 3px solid var(--green);
+    }
+
+    .hypothesis {
+      border-top: 3px solid var(--violet);
+    }
+
+    .timeline-source {
+      border-top: 3px solid var(--gold);
+    }
+
+    .label {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 9px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .label-evidence {
+      color: #b8f4c7;
+      background: rgba(152, 223, 176, 0.12);
+      border: 1px solid rgba(152, 223, 176, 0.35);
+    }
+
+    .label-hypothesis {
+      color: #d6c7ff;
+      background: rgba(187, 160, 255, 0.12);
+      border: 1px solid rgba(187, 160, 255, 0.35);
+    }
+
+    .label-timeline {
+      color: #f4d994;
+      background: rgba(217, 180, 97, 0.12);
+      border: 1px solid rgba(217, 180, 97, 0.35);
+    }
+
+    .callout {
+      padding: 22px 24px;
+      border-left: 5px solid var(--gold);
+      border-radius: 20px;
+      background: rgba(217, 180, 97, 0.09);
+      color: #f8ecd0;
+      font-size: 17px;
+    }
+
+    .warning {
+      border-left-color: var(--red);
+      background: rgba(243, 163, 170, 0.08);
+      color: #ffe0e3;
+    }
+
+    .visual-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    figure {
+      margin: 0;
+      overflow: hidden;
+      background: #080c12;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+    }
+
+    figcaption {
+      padding: 15px 17px 18px;
+      color: #c8d3df;
+      font-size: 14px;
+    }
+
+    .timeline {
+      padding-left: 24px;
+      border-left: 2px solid rgba(217, 180, 97, 0.5);
+    }
+
+    .event {
+      position: relative;
+      margin-bottom: 28px;
+    }
+
+    .event::before {
+      content: "";
+      position: absolute;
+      left: -33px;
+      top: 7px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 8px rgba(217, 180, 97, 0.1);
+    }
+
+    .event strong {
+      display: block;
+      margin-bottom: 7px;
+      color: #ffffff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: rgba(255, 255, 255, 0.07);
+      color: #ffffff;
+    }
+
+    td {
+      color: #dce4ed;
+    }
+
+    .source-table {
+      overflow-x: auto;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+    }
+
+    .footer-note {
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: #909ca9;
+      font-size: 13px;
+    }
+
+
+    .image-credit {
+      margin-top: 10px;
+      color: #93a2b3;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .image-credit a {
+      color: #8edfff;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .hero-credit {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      z-index: 2;
+      max-width: 58%;
+      padding: 7px 10px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.72);
+      color: #dbe7f2;
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .hero-credit a {
+      color: #9de2ff;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .visual-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        min-height: 360px;
+      }
+
+      .hero-image img {
+        min-height: 360px;
+      }
+
+      .span-3,
+      .span-4,
+      .span-5,
+      .span-6,
+      .span-7,
+      .span-8,
+      .span-12 {
+        grid-column: span 12;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="hero">
+
+    <div>
+      <div class="kicker">
+        NEURORDER Research / CIAS Provincial Research Layer
+      </div>
+
+      <h1>
+        Gauteng:<br>
+        Urban Economic Complexity
+      </h1>
+
+      <p class="lead">
+        Gauteng provides CIAS with a dense urban environment where
+        corporate wealth, formal employment, informal enterprise,
+        migration, youth unemployment, township economies and digital
+        financial activity exist alongside one another.
+      </p>
+
+      <p class="lead">
+        The research question is not whether people outside traditional
+        credit systems should automatically receive credit. It is whether
+        repeated economic behaviour contains responsible, measurable and
+        ethically usable information about financial reliability.
+      </p>
+
+      <div class="research-badge">
+        CIAS Gauteng · Research before resultant
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img
+        src="images/johannesburg_skyline_converted.jpg"
+        alt="Johannesburg skyline representing Gauteng's corporate and urban economy"
+      />
+      <div class="hero-credit">
+        Photo:
+        <a
+          href="https://commons.wikimedia.org/wiki/File:Johannesburg_Skyline.jpg"
+          target="_blank"
+          rel="noopener"
+        >
+          Johannesburg Skyline · Wikimedia Commons
+        </a>
+        · CC BY-SA 3.0
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<main>
+
+  <!-- INTRODUCTION -->
+
+  <section>
+    <h2>Why Gauteng?</h2>
+
+    <p class="sub">
+      Gauteng is the strongest starting environment for examining how
+      conventional and unconventional forms of economic participation
+      overlap. It contains South Africa's largest urban economic
+      concentration while simultaneously carrying substantial
+      unemployment, informal activity and migration pressures.
+    </p>
+
+    <div class="callout">
+      <strong>Province-specific CIAS role:</strong>
+      Gauteng represents <strong>Urban Economic Complexity</strong>.
+      The province allows CIAS to investigate whether financial continuity
+      can be recognised across highly varied, mobile and mixed-income
+      economic environments.
+    </div>
+  </section>
+
+
+  <!-- CURRENT STATISTICS -->
+
+  <section>
+    <h2>Current statistical layer</h2>
+
+    <p class="sub">
+      Recent statistics should form the primary evidence layer.
+      Older material is used only where necessary to explain historical
+      development.
+    </p>
+
+    <div class="grid">
+
+      <article class="card span-3 verified">
+        <div class="label label-evidence">Verified evidence</div>
+
+        <div class="metric">≈16.3m</div>
+
+        <div class="metric-label">
+          Gauteng population · 2026
+        </div>
+
+        <p class="metric-note">
+          Stats SA's 2026 mid-year population estimates place Gauteng at
+          approximately 16.3 million residents.
+        </p>
+      </article>
+
+
+      <article class="card span-3 verified">
+        <div class="label label-evidence">Verified evidence</div>
+
+        <div class="metric">34.6%</div>
+
+        <div class="metric-label">
+          Gauteng unemployment · Q2 2026
+        </div>
+
+        <p class="metric-note">
+          Gauteng remains under significant labour-market pressure despite
+          being the country's dominant provincial economic centre.
+        </p>
+      </article>
+
+
+      <article class="card span-3 verified">
+        <div class="label label-evidence">Verified evidence</div>
+
+        <div class="metric">60.9%</div>
+
+        <div class="metric-label">
+          SA unemployment ages 15–24 · Q1 2026
+        </div>
+
+        <p class="metric-note">
+          National youth statistics provide an important structural
+          comparison when considering Gauteng's large young urban population.
+        </p>
+      </article>
+
+
+      <article class="card span-3 verified">
+        <div class="label label-evidence">Verified evidence</div>
+
+        <div class="metric">40.6%</div>
+
+        <div class="metric-label">
+          SA unemployment ages 25–34 · Q1 2026
+        </div>
+
+        <p class="metric-note">
+          Exclusion remains severe even beyond the youngest labour-force
+          category.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- POPULATION -->
+
+  <section>
+    <h2>Population pressure and economic concentration</h2>
+
+    <div class="grid">
+
+      <article class="card span-7 verified">
+        <div class="label label-evidence">Verified evidence</div>
+
+        <h3>One province carries an unusually large share of the country</h3>
+
+        <p>
+          Gauteng contains roughly one quarter of South Africa's population
+          while occupying a very small proportion of its physical land area.
+          Johannesburg, Tshwane and Ekurhuleni therefore function as dense
+          economic magnets for employment, education, migration,
+          entrepreneurship and household survival.
+        </p>
+
+        <p>
+          Density itself does not create unemployment, but it intensifies
+          competition for jobs, housing, transport, education and access to
+          business opportunities.
+        </p>
+      </article>
+
+
+      <article class="card span-5 hypothesis">
+        <div class="label label-hypothesis">CIAS hypothesis</div>
+
+        <h3>Migration may create incomplete financial narratives</h3>
+
+        <p>
+          A person may earn income in Gauteng while supporting relatives in
+          Limpopo, Mpumalanga, North West, KwaZulu-Natal or another country.
+          Their financial life therefore extends beyond their immediate
+          location.
+        </p>
+
+        <p>
+          CIAS should investigate whether recurring obligations such as
+          remittances represent financial stress, responsible obligation
+          fulfilment, or a combination of both.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- VISUALS -->
+
+  <section>
+    <h2>Three environments we are observing</h2>
+
+    <div class="visual-grid">
+
+      <figure>
+        <img
+          src="images/gauteng_johannesburg_corporate.jpg"
+          alt="Sandton City and the Johannesburg corporate district"
+        />
+
+        <figcaption>
+          <strong>Corporate Gauteng.</strong>
+          Johannesburg contains major financial institutions, headquarters,
+          professional services and the country's central listed-equity
+          market infrastructure.
+
+          <div class="image-credit">
+            Photo:
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Sandton.jpg"
+              target="_blank"
+              rel="noopener"
+            >
+              Sandton · Jeff Attaway · Wikimedia Commons
+            </a>
+            · CC BY 2.0
+          </div>
+        </figcaption>
+      </figure>
+
+
+      <figure>
+        <img
+          src="images/gauteng_township_economy.jpg"
+          alt="Fruit vendor and informal street trade in Johannesburg"
+        />
+
+        <figcaption>
+          <strong>Informal urban Gauteng.</strong>
+          Economic participation also happens through food sales, salons,
+          repair businesses, transport, street trade, services and other
+          micro-enterprises.
+
+          <div class="image-credit">
+            Photo:
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Fruit_vendor_in_Johannesburg.jpg"
+              target="_blank"
+              rel="noopener"
+            >
+              Fruit vendor in Johannesburg · Ossewa · Wikimedia Commons
+            </a>
+            · CC BY-SA 4.0
+          </div>
+        </figcaption>
+      </figure>
+
+
+      <figure>
+        <img
+          src="images/gauteng_urban_mobility.jpg"
+          alt="Minibus taxi and urban mobility in Maboneng, Johannesburg"
+        />
+
+        <figcaption>
+          <strong>Mobile Gauteng.</strong>
+          Workers and entrepreneurs move across municipalities and economic
+          zones, creating financial lives that do not always fit one
+          employer, one salary or one neighbourhood.
+
+          <div class="image-credit">
+            Photo:
+            <a
+              href="https://commons.wikimedia.org/wiki/File:2._Minibus_taxi_in_Maboneng,_Johannesburg,_South_Africa.jpg"
+              target="_blank"
+              rel="noopener"
+            >
+              Minibus taxi in Maboneng · Shade Schutze Photography · Wikimedia Commons
+            </a>
+            · CC BY-SA 4.0
+          </div>
+        </figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+
+  <!-- TIMELINE -->
+
+  <section>
+    <h2>The unemployment timeline</h2>
+
+    <p class="sub">
+      We should not describe South African unemployment as one permanently
+      stagnant line from the early 2000s. The historical evidence is more
+      complicated.
+    </p>
+
+    <div class="timeline">
+
+      <div class="event">
+        <strong>Early 2000s — severe structural unemployment</strong>
+
+        South Africa entered the century with high unemployment and deep
+        inequality inherited from the previous economic and spatial order.
+        Gauteng attracted job seekers because of its concentration of
+        businesses, mines, finance, government services and urban
+        opportunities.
+      </div>
+
+
+      <div class="event">
+        <strong>Mid-2000s to 2008 — improvement before the global shock</strong>
+
+        Employment conditions improved during part of the decade.
+        This is important because it means the period should not be
+        represented as uninterrupted deterioration.
+      </div>
+
+
+      <div class="event">
+        <strong>2008 onward — global financial crisis and weakened momentum</strong>
+
+        The international financial crisis disrupted employment growth.
+        South Africa subsequently experienced prolonged challenges involving
+        weak economic growth, electricity constraints, investment weakness
+        and labour-market exclusion.
+      </div>
+
+
+      <div class="event">
+        <strong>2020 — COVID-19 disruption</strong>
+
+        Lockdowns and business interruption created an extraordinary labour
+        and income shock, particularly for lower-income households and
+        businesses dependent on physical trade.
+      </div>
+
+
+      <div class="event">
+        <strong>2024–2026 — persistent structural exclusion</strong>
+
+        Gauteng remains South Africa's dominant economic province while still
+        recording unemployment above one third of its labour force.
+        The coexistence of economic concentration and unemployment is one of
+        the central contradictions CIAS needs to understand.
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- YOUTH -->
+
+  <section>
+    <h2>Youth are not “the problem” — youth exclusion is evidence of it</h2>
+
+    <div class="grid">
+
+      <article class="card span-6 verified">
+        <div class="label label-evidence">Verified evidence</div>
+
+        <h3>Young South Africans face extraordinary labour-market barriers</h3>
+
+        <p>
+          Stats SA reported unemployment of approximately 60.9% among people
+          aged 15–24 and 40.6% among those aged 25–34 in Q1 2026.
+        </p>
+
+        <p>
+          These numbers should not be interpreted as young people themselves
+          being the cause of unemployment. They indicate a system struggling
+          to convert education, potential and population growth into economic
+          participation.
+        </p>
+      </article>
+
+
+      <article class="card span-6 hypothesis">
+        <div class="label label-hypothesis">Working theory</div>
+
+        <h3>Education may be producing credentials faster than opportunity</h3>
+
+        <p>
+          CIAS research can examine whether the transition from education to
+          work leaves young people economically invisible despite possessing
+          skills, informal business activity or recurring income.
+        </p>
+
+        <p>
+          A separate education-policy investigation would be needed before
+          claiming that South African schooling itself causes unemployment.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- EDUCATION -->
+
+  <section>
+    <h2>Learning versus discovery</h2>
+
+    <div class="callout">
+      A key NEURORDER research hypothesis is that education should not only
+      teach learners how to reproduce existing knowledge, but should also
+      strengthen experimentation, entrepreneurship, technical creation and
+      problem-solving.
+    </div>
+
+    <div class="grid" style="margin-top: 18px;">
+
+      <article class="card span-6 hypothesis">
+        <div class="label label-hypothesis">Research hypothesis</div>
+
+        <h3>Employment dependence</h3>
+
+        <p>
+          Where young people are primarily prepared to seek employment from
+          large existing organisations, an economy may develop more job
+          seekers than job creators.
+        </p>
+
+        <p>
+          This is a hypothesis to investigate rather than a conclusion.
+        </p>
+      </article>
+
+
+      <article class="card span-6 hypothesis">
+        <div class="label label-hypothesis">Research hypothesis</div>
+
+        <h3>Entrepreneurial discovery</h3>
+
+        <p>
+          CIAS may eventually help recognise credible economic activity among
+          people building micro-enterprises before those businesses have
+          conventional financial documentation.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- CORPORATE / JSE -->
+
+  <section>
+    <h2>Johannesburg's corporate concentration</h2>
+
+    <p class="sub">
+      Gauteng is not economically weak. That is precisely what makes its
+      unemployment problem significant.
+    </p>
+
+    <div class="grid">
+
+      <article class="card span-7 verified">
+        <div class="label label-evidence">Economic context</div>
+
+        <h3>Johannesburg sits at the centre of South African corporate finance</h3>
+
+        <p>
+          Johannesburg hosts the Johannesburg Stock Exchange and a large
+          concentration of corporate headquarters, banks, technology
+          businesses, professional services firms and multinational
+          operations.
+        </p>
+
+        <p>
+          This creates significant economic output, but corporate
+          concentration does not automatically produce broad participation
+          across every community.
+        </p>
+      </article>
+
+
+      <article class="card span-5 hypothesis">
+        <div class="label label-hypothesis">Research question</div>
+
+        <h3>Who participates in the value created?</h3>
+
+        <p>
+          Earlier CIAS discussion referenced estimates suggesting roughly one
+          third of JSE-listed equities may be held by non-resident investors.
+        </p>
+
+        <p>
+          Before formal publication, the ownership figure should be supported
+          by a current primary financial-market source. The research value is
+          the broader question:
+        </p>
+
+        <p>
+          <strong>
+            How much locally generated corporate value translates into
+            household-level financial opportunity?
+          </strong>
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- CURRENCY -->
+
+  <section>
+    <h2>The rand and external economic pressure</h2>
+
+    <div class="grid">
+
+      <article class="card span-6 verified">
+        <div class="label label-evidence">Economic context</div>
+
+        <h3>A globally connected economy</h3>
+
+        <p>
+          The South African rand trades within global foreign-exchange
+          markets and responds to domestic economic performance, inflation,
+          interest rates, commodity cycles, investment flows and international
+          risk conditions.
+        </p>
+      </article>
+
+
+      <article class="card span-6 hypothesis">
+        <div class="label label-hypothesis">CIAS relevance</div>
+
+        <h3>Macro pressure becomes household pressure</h3>
+
+        <p>
+          Currency weakness can increase imported input costs, fuel-related
+          pressure and business expenses.
+        </p>
+
+        <p>
+          For a micro-business, what appears to be “unstable expenditure”
+          may actually represent adaptation to changing input prices.
+          CIAS must therefore avoid interpreting every form of volatility as
+          poor financial behaviour.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- DPI -->
+
+  <section>
+    <h2>Digital Public Infrastructure</h2>
+
+    <div class="grid">
+
+      <article class="card span-5 verified">
+        <div class="label label-evidence">Policy evidence</div>
+
+        <h3>South Africa is actively pursuing digital transformation</h3>
+
+        <p>
+          Government has identified digital public infrastructure and
+          digital transformation as important components of modernising state
+          services and improving access.
+        </p>
+      </article>
+
+
+      <article class="card span-7 hypothesis">
+        <div class="label label-hypothesis">CIAS theory</div>
+
+        <h3>DPI deficiency may contribute to economic invisibility</h3>
+
+        <p>
+          The CIAS hypothesis is not that insufficient DPI alone caused
+          unemployment.
+        </p>
+
+        <p>
+          Instead, inadequate interoperability between identity, payments,
+          business records, education, government services and financial
+          systems may make it harder for economically active people to
+          demonstrate their participation.
+        </p>
+
+        <p>
+          CIAS should investigate whether better infrastructure can transform
+          previously invisible activity into consent-based, interpretable
+          financial evidence.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- INFORMAL ECONOMY -->
+
+  <section>
+    <h2>The invisible economy</h2>
+
+    <p class="sub">
+      Gauteng contains economic behaviour that may be very real while still
+      appearing weak or incomplete inside conventional documentation systems.
+    </p>
+
+    <div class="grid">
+
+      <article class="card span-4">
+        <h3>Township micro-enterprises</h3>
+
+        <p>
+          Food sellers, salons, repair businesses, retail stalls and very
+          small service companies may trade continuously without producing
+          conventional audited business records.
+        </p>
+      </article>
+
+
+      <article class="card span-4">
+        <h3>Gig and platform workers</h3>
+
+        <p>
+          Delivery workers and e-hailing drivers may produce recurring
+          digital transaction evidence while having income that changes from
+          week to week.
+        </p>
+      </article>
+
+
+      <article class="card span-4">
+        <h3>Domestic and household workers</h3>
+
+        <p>
+          Income may arrive from several households instead of a single
+          employer, making a person's true economic continuity harder to
+          describe using a conventional salary model.
+        </p>
+      </article>
+
+
+      <article class="card span-4">
+        <h3>Youth micro-entrepreneurs</h3>
+
+        <p>
+          Digital services, food businesses, clothing, beauty services,
+          tutoring, repairs and creative work may begin informally before
+          formal company infrastructure exists.
+        </p>
+      </article>
+
+
+      <article class="card span-4">
+        <h3>Mobile and migrant workers</h3>
+
+        <p>
+          Economic activity can span municipalities, provinces and national
+          borders, while conventional records describe only one part of the
+          person's financial life.
+        </p>
+      </article>
+
+
+      <article class="card span-4">
+        <h3>Cash-first traders</h3>
+
+        <p>
+          A profitable cash-based activity may produce less digital evidence
+          than a weaker business that uses electronic payment channels.
+          CIAS must not automatically reward digitisation itself.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- SIGNALS -->
+
+  <section>
+    <h2>What could CIAS actually observe?</h2>
+
+    <div class="source-table">
+
+      <table>
+        <thead>
+          <tr>
+            <th>CIAS concept</th>
+            <th>Possible observable behaviour</th>
+            <th>What we must not assume</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td><strong>Frequency</strong></td>
+
+            <td>
+              Repeated sales, deposits, supplier payments or recurring
+              financial activity.
+            </td>
+
+            <td>
+              Frequent transactions do not automatically mean financial
+              resilience.
+            </td>
+          </tr>
+
+
+          <tr>
+            <td><strong>Consistency</strong></td>
+
+            <td>
+              Economic activity continuing across weeks or months.
+            </td>
+
+            <td>
+              Stable-looking activity does not automatically predict debt
+              repayment.
+            </td>
+          </tr>
+
+
+          <tr>
+            <td><strong>Volume</strong></td>
+
+            <td>
+              Total economic throughput.
+            </td>
+
+            <td>
+              Large turnover does not mean strong margins or affordability.
+            </td>
+          </tr>
+
+
+          <tr>
+            <td><strong>Longevity</strong></td>
+
+            <td>
+              Length of time a person or micro-business has remained
+              economically active.
+            </td>
+
+            <td>
+              Longevity alone does not establish creditworthiness.
+            </td>
+          </tr>
+
+
+          <tr>
+            <td><strong>Growth</strong></td>
+
+            <td>
+              Increasing sales, customer activity, savings or business scale.
+            </td>
+
+            <td>
+              Rapid growth may also increase expenses and risk.
+            </td>
+          </tr>
+
+
+          <tr>
+            <td><strong>Repayment behaviour</strong></td>
+
+            <td>
+              Evidence of obligations being fulfilled repeatedly.
+            </td>
+
+            <td>
+              Informal repayments require careful verification and consent.
+            </td>
+          </tr>
+
+
+          <tr>
+            <td><strong>Network trust</strong></td>
+
+            <td>
+              Transaction relationships, supplier continuity or verified
+              economic relationships.
+            </td>
+
+            <td>
+              Community opinion, popularity, ethnicity or social status
+              cannot become reputation scoring.
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </section>
+
+
+  <!-- VOLUME PROBLEM -->
+
+  <section>
+    <h2>Why transaction volume can mislead us</h2>
+
+    <div class="grid">
+
+      <article class="card span-6">
+        <h3>Trader A</h3>
+
+        <div class="metric">R10,000</div>
+        <div class="metric-label">Monthly inflow</div>
+
+        <p>
+          Expenses: approximately R9,800
+        </p>
+
+        <p>
+          Remaining margin: approximately R200
+        </p>
+      </article>
+
+
+      <article class="card span-6">
+        <h3>Trader B</h3>
+
+        <div class="metric">R6,000</div>
+        <div class="metric-label">Monthly inflow</div>
+
+        <p>
+          Expenses: approximately R3,000
+        </p>
+
+        <p>
+          Remaining margin: approximately R3,000
+        </p>
+      </article>
+
+    </div>
+
+    <div class="callout warning" style="margin-top: 18px;">
+      If CIAS simply assigns the largest weighting to transaction volume,
+      Trader A may appear stronger even though Trader B may possess much more
+      financial resilience. Gauteng research should therefore test the
+      current Frequency / Consistency / Volume weighting rather than attempt
+      to prove it.
+    </div>
+  </section>
+
+
+  <!-- FINANCIAL CONTINUITY -->
+
+  <section>
+    <h2>Emerging concept: economic continuity</h2>
+
+    <div class="callout">
+      A person may not receive a salary but may repeatedly earn, spend,
+      restock, transfer, save and fulfil obligations over long periods.
+
+      <br><br>
+
+      CIAS should investigate whether this pattern represents
+      <strong>economic continuity</strong> — a measurable form of financial
+      participation that traditional documentation may fail to describe.
+    </div>
+  </section>
+
+
+  <!-- GAUTENG MATRIX -->
+
+  <section>
+    <h2>Gauteng Research Matrix</h2>
+
+    <div class="source-table">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Population / environment</th>
+            <th>Possible signal</th>
+            <th>Possible meaning</th>
+            <th>Alternative explanation</th>
+            <th>Research risk</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>Township micro-enterprise</td>
+
+            <td>
+              Repeated sales, supplier payments, restocking
+            </td>
+
+            <td>
+              Business continuity
+            </td>
+
+            <td>
+              High turnover but low profit
+            </td>
+
+            <td>
+              Overvaluing volume
+            </td>
+          </tr>
+
+
+          <tr>
+            <td>Gig worker</td>
+
+            <td>
+              Frequent platform income
+            </td>
+
+            <td>
+              Recurring economic activity
+            </td>
+
+            <td>
+              High fuel, vehicle or platform costs
+            </td>
+
+            <td>
+              Ignoring expense structure
+            </td>
+          </tr>
+
+
+          <tr>
+            <td>Domestic worker</td>
+
+            <td>
+              Several recurring household payments
+            </td>
+
+            <td>
+              Income continuity from multiple sources
+            </td>
+
+            <td>
+              Employment relationships may be unstable
+            </td>
+
+            <td>
+              Misreading fragmented income
+            </td>
+          </tr>
+
+
+          <tr>
+            <td>Migrant / mobile worker</td>
+
+            <td>
+              Income plus recurring remittances
+            </td>
+
+            <td>
+              Consistent obligation fulfilment
+            </td>
+
+            <td>
+              Household financial pressure
+            </td>
+
+            <td>
+              Punishing family support
+            </td>
+          </tr>
+
+
+          <tr>
+            <td>Cash trader</td>
+
+            <td>
+              Repeated stock purchases and observed business activity
+            </td>
+
+            <td>
+              Economic continuity
+            </td>
+
+            <td>
+              Limited auditable transaction data
+            </td>
+
+            <td>
+              Digital-data bias
+            </td>
+          </tr>
+
+
+          <tr>
+            <td>Youth entrepreneur</td>
+
+            <td>
+              Small recurring payments and customer growth
+            </td>
+
+            <td>
+              Emerging enterprise
+            </td>
+
+            <td>
+              Short operating history
+            </td>
+
+            <td>
+              Penalising new businesses
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+  </section>
+
+
+  <!-- QUESTIONS -->
+
+  <section>
+    <h2>Gauteng research questions</h2>
+
+    <div class="grid">
+
+      <article class="card span-6">
+        <h3>01 · Recurring activity</h3>
+        <p>
+          What forms of recurring financial activity are observable among
+          under-documented workers and micro-enterprises in Gauteng?
+        </p>
+      </article>
+
+
+      <article class="card span-6">
+        <h3>02 · Frequency</h3>
+        <p>
+          Does transaction frequency provide meaningful evidence of economic
+          continuity?
+        </p>
+      </article>
+
+
+      <article class="card span-6">
+        <h3>03 · Irregular income</h3>
+        <p>
+          How should irregular but recurring income be distinguished from
+          genuinely unstable income?
+        </p>
+      </article>
+
+
+      <article class="card span-6">
+        <h3>04 · Volume</h3>
+        <p>
+          Does transaction volume indicate resilience, or can it produce
+          misleading conclusions?
+        </p>
+      </article>
+
+
+      <article class="card span-6">
+        <h3>05 · Longevity</h3>
+        <p>
+          Can longevity of economic activity contribute useful reliability
+          information?
+        </p>
+      </article>
+
+
+      <article class="card span-6">
+        <h3>06 · Cash activity</h3>
+        <p>
+          How should CIAS represent cash-based economic activity where
+          digital evidence is incomplete?
+        </p>
+      </article>
+
+
+      <article class="card span-6">
+        <h3>07 · Household obligations</h3>
+        <p>
+          How should remittances, dependants and shared financial
+          responsibilities affect interpretation?
+        </p>
+      </article>
+
+
+      <article class="card span-6">
+        <h3>08 · Occupation</h3>
+        <p>
+          Do different forms of employment and enterprise require different
+          CIAS interpretations?
+        </p>
+      </article>
+
+
+      <article class="card span-6">
+        <h3>09 · Normal volatility</h3>
+        <p>
+          How can CIAS distinguish financial instability from ordinary
+          volatility in informal economic activity?
+        </p>
+      </article>
+
+
+      <article class="card span-6">
+        <h3>10 · Bias</h3>
+        <p>
+          Which variables create the greatest risk of discrimination,
+          exclusion or false classification?
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- WORKING HYPOTHESIS -->
+
+  <section>
+    <h2>Working Gauteng hypothesis</h2>
+
+    <div class="callout">
+      In Gauteng's highly urbanised and economically diverse environment,
+      repeated patterns of financial activity may provide evidence of
+      economic continuity and financial reliability among individuals and
+      micro-enterprises whose conventional credit histories do not fully
+      represent their economic behaviour.
+    </div>
+
+    <div class="callout warning" style="margin-top: 18px;">
+      <strong>No final resultant is being added at this stage.</strong>
+      Gauteng is an evidence layer. The proposed CIAS solution should only be
+      developed after Gauteng, Western Cape, Limpopo and North West have been
+      compared.
+    </div>
+  </section>
+
+
+  <!-- RESEARCH PRINCIPLE -->
+
+  <section>
+    <h2>What this research must not do</h2>
+
+    <div class="grid">
+
+      <article class="card span-4">
+        <h3>No poverty scoring</h3>
+        <p>
+          CIAS must never turn poverty, township residence or low income into
+          a negative character judgement.
+        </p>
+      </article>
+
+
+      <article class="card span-4">
+        <h3>No identity proxies</h3>
+        <p>
+          Race, nationality, language, neighbourhood or migration status
+          cannot become substitutes for financial behaviour.
+        </p>
+      </article>
+
+
+      <article class="card span-4">
+        <h3>No automatic credit claims</h3>
+        <p>
+          Observing economic continuity does not by itself establish
+          affordability or predict repayment.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- SOURCES -->
+
+  <section>
+    <h2>Research sources</h2>
+
+    <p class="sub">
+      Primary and recent resources should carry the strongest evidentiary
+      weight. Historical material should be clearly treated as timeline
+      evidence. Photographs used on this page are separately credited to their
+      original Wikimedia Commons file pages and are not treated as research
+      evidence.
+    </p>
+
+    <div class="source-table">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Resource</th>
+            <th>Research use</th>
+            <th>Classification</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>
+              <a
+                href="https://www.statssa.gov.za/publications/P0302/P03022026.pdf"
+                target="_blank"
+                rel="noopener"
+              >
+                Stats SA — Mid-year Population Estimates 2026
+              </a>
+            </td>
+
+            <td>
+              Gauteng population and provincial demographic context.
+            </td>
+
+            <td>Current primary evidence</td>
+          </tr>
+
+
+          <tr>
+            <td>
+              <a
+                href="https://www.statssa.gov.za/publications/P0211/P02112ndQuarter2026.pdf"
+                target="_blank"
+                rel="noopener"
+              >
+                Stats SA — Quarterly Labour Force Survey Q2 2026
+              </a>
+            </td>
+
+            <td>
+              Gauteng employment and unemployment statistics.
+            </td>
+
+            <td>Current primary evidence</td>
+          </tr>
+
+
+          <tr>
+            <td>
+              <a
+                href="https://www.statssa.gov.za/?p=19526"
+                target="_blank"
+                rel="noopener"
+              >
+                Stats SA — Youth labour-market statistics
+              </a>
+            </td>
+
+            <td>
+              Youth unemployment and labour-force exclusion.
+            </td>
+
+            <td>Current primary evidence</td>
+          </tr>
+
+
+          <tr>
+            <td>
+              <a
+                href="https://www.statssa.gov.za/?m=2025"
+                target="_blank"
+                rel="noopener"
+              >
+                Statistics South Africa — 2025 publication archive
+              </a>
+            </td>
+
+            <td>
+              Supporting recent national and provincial economic statistics.
+            </td>
+
+            <td>Primary evidence archive</td>
+          </tr>
+
+
+          <tr>
+            <td>
+              <a
+                href="https://www.worldometers.info/world-population/south-africa-population/"
+                target="_blank"
+                rel="noopener"
+              >
+                Worldometer — South Africa Population
+              </a>
+            </td>
+
+            <td>
+              Secondary population comparison only.
+            </td>
+
+            <td>Secondary source</td>
+          </tr>
+
+
+          <tr>
+            <td>
+              <a
+                href="https://www.gov.za/news/media-statements/presidency-launch-roadmap-digital-transformation-government-12-may-2025"
+                target="_blank"
+                rel="noopener"
+              >
+                Presidency — Roadmap for Digital Transformation of Government
+              </a>
+            </td>
+
+            <td>
+              Digital public infrastructure and government transformation
+              policy context.
+            </td>
+
+            <td>Current primary policy evidence</td>
+          </tr>
+
+
+          <tr>
+            <td>
+              <a
+                href="https://www.resbank.co.za/"
+                target="_blank"
+                rel="noopener"
+              >
+                South African Reserve Bank
+              </a>
+            </td>
+
+            <td>
+              Currency, financial stability and payment-system context.
+            </td>
+
+            <td>Primary financial source</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+  </section>
+
+
+  <!-- FINAL RESEARCH POSITION -->
+
+  <section>
+    <h2>Gauteng's role in the four-province study</h2>
+
+    <div class="card">
+
+      <div class="kicker">
+        CIAS PROVINCIAL ARCHITECTURE
+      </div>
+
+      <h3 style="font-size: 34px; margin-top: 12px;">
+        GAUTENG = URBAN ECONOMIC COMPLEXITY
+      </h3>
+
+      <p>
+        Gauteng should determine whether CIAS can identify meaningful
+        patterns of financial continuity across highly varied, mobile,
+        informal, entrepreneurial and mixed-income urban environments.
+      </p>
+
+      <p>
+        The province should not be used simply to confirm the original CIAS
+        scoring formula. It should challenge the formula.
+      </p>
+
+      <p>
+        If the evidence eventually shows that consistency, longevity,
+        repayment behaviour or another variable matters more than transaction
+        volume, the CIAS model should change accordingly.
+      </p>
+
+    </div>
+  </section>
+
+
+  <section>
+    <p class="footer-note">
+      Prepared for NEURORDER (Pty) Ltd · CIAS — Credit Intelligence
+      Assistance Scoring · Gauteng Provincial Research Layer.
+
+      <br><br>
+
+      Research status: exploratory. Verified statistics, working hypotheses
+      and historical timeline material are intentionally separated. Current
+      statistics should be refreshed before formal publication or academic
+      submission.
+    </p>
+  </section>
+
+</main>
+
+</body>
+</html>

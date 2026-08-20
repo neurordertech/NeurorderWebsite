@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="CIAS Research Gateway — Credit Intelligence Assistance Scoring by NEURORDER."
+    >
+
+    <meta
+        name="theme-color"
+        content="#020409"
+    >
+
+    <title>CIAS Research Gateway | NEURORDER</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="images/favicon.png"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        :root {
+            --bg: #020409;
+            --surface: rgba(7, 13, 23, 0.78);
+            --surface-soft: rgba(255, 255, 255, 0.025);
+
+            --text: #f7f9fc;
+
+            --muted:
+                rgba(
+                    220,
+                    229,
+                    241,
+                    0.64
+                );
+
+            --faint:
+                rgba(
+                    220,
+                    229,
+                    241,
+                    0.40
+                );
+
+            --border:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.10
+                );
+
+            --blue: #58b4ff;
+            --blue-bright: #9bdcff;
+
+            --page-width: 1180px;
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            min-height: 100%;
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            min-height: 100%;
+            margin: 0;
+
+            overflow-x: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 50% 12%,
+                    rgba(40, 126, 255, 0.14),
+                    transparent 32%
+                ),
+                radial-gradient(
+                    circle at 12% 76%,
+                    rgba(24, 84, 160, 0.08),
+                    transparent 28%
+                ),
+                #020409;
+
+            color: var(--text);
+
+            font-family:
+                "Inter",
+                sans-serif;
+
+            -webkit-font-smoothing:
+                antialiased;
+        }
+
+
+        body::before {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: -4;
+
+            pointer-events: none;
+
+            content: "";
+
+            background-image:
+                radial-gradient(
+                    circle at 14% 20%,
+                    rgba(255,255,255,.65) 0 1px,
+                    transparent 1.4px
+                ),
+                radial-gradient(
+                    circle at 72% 30%,
+                    rgba(100,190,255,.75) 0 1px,
+                    transparent 1.5px
+                ),
+                radial-gradient(
+                    circle at 37% 73%,
+                    rgba(255,255,255,.48) 0 1px,
+                    transparent 1.4px
+                ),
+                radial-gradient(
+                    circle at 87% 72%,
+                    rgba(72,166,255,.60) 0 1px,
+                    transparent 1.5px
+                );
+
+            background-size:
+                320px 320px,
+                430px 430px,
+                530px 530px,
+                650px 650px;
+
+            opacity: .22;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ====================================================== */
+
+        .site-header {
+            position: sticky;
+
+            top: 0;
+
+            z-index: 50;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.07);
+
+            background:
+                rgba(2,4,9,.80);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+
+        .header-inner {
+            width:
+                min(
+                    calc(100% - 40px),
+                    var(--page-width)
+                );
+
+            min-height: 78px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 24px;
+
+            margin-inline: auto;
+        }
+
+
+        .brand {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 12px;
+        }
+
+
+        .brand img {
+            width: 38px;
+            height: 38px;
+
+            object-fit: contain;
+        }
+
+
+        .brand-copy {
+            display: grid;
+
+            gap: 1px;
+        }
+
+
+        .brand-copy strong {
+            font-family:
+                "Manrope",
+                sans-serif;
+
+            font-size: .82rem;
+            font-weight: 600;
+
+            letter-spacing: .16em;
+        }
+
+
+        .brand-copy span {
+            color: var(--faint);
+
+            font-size: .56rem;
+
+            letter-spacing: .18em;
+        }
+
+
+        .header-status {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            color: var(--faint);
+
+            font-size: .58rem;
+            font-weight: 600;
+
+            letter-spacing: .16em;
+
+            text-transform: uppercase;
+        }
+
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: var(--blue-bright);
+
+            box-shadow:
+                0 0 11px
+                rgba(91,184,255,.9);
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+            width:
+                min(
+                    calc(100% - 40px),
+                    var(--page-width)
+                );
+
+            min-height: 84svh;
+
+            display: flex;
+
+            align-items: center;
+
+            margin-inline: auto;
+
+            padding:
+                90px
+                0
+                80px;
+        }
+
+
+        .hero-grid {
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1.1fr)
+                minmax(300px, .8fr);
+
+            gap:
+                clamp(
+                    44px,
+                    7vw,
+                    95px
+                );
+
+            align-items: center;
+        }
+
+
+        .eyebrow {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            margin-bottom: 24px;
+
+            color: var(--blue-bright);
+
+            font-size: .62rem;
+            font-weight: 600;
+
+            letter-spacing: .24em;
+
+            text-transform: uppercase;
+        }
+
+
+        .eyebrow-dot {
+            width: 6px;
+            height: 6px;
+
+            border-radius: 50%;
+
+            background: var(--blue-bright);
+
+            box-shadow:
+                0 0 12px
+                rgba(91,184,255,.85);
+        }
+
+
+        .hero h1 {
+            max-width: 760px;
+
+            margin: 0;
+
+            font-family:
+                "Manrope",
+                sans-serif;
+
+            font-size:
+                clamp(
+                    3.5rem,
+                    8vw,
+                    7.4rem
+                );
+
+            font-weight: 400;
+
+            line-height: .90;
+
+            letter-spacing: -.07em;
+        }
+
+
+        .hero h1 span {
+            color:
+                rgba(237,244,251,.34);
+        }
+
+
+        .hero-intro {
+            max-width: 670px;
+
+            margin:
+                29px
+                0
+                0;
+
+            color: var(--muted);
+
+            font-size:
+                clamp(
+                    .96rem,
+                    1.5vw,
+                    1.08rem
+                );
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           LOCK CARD
+        ====================================================== */
+
+        .lock-card {
+            position: relative;
+
+            padding:
+                34px
+                30px;
+
+            border:
+                1px solid
+                rgba(108,195,255,.18);
+
+            background:
+                linear-gradient(
+                    150deg,
+                    rgba(14,29,49,.72),
+                    rgba(4,8,15,.86)
+                );
+
+            box-shadow:
+                0 36px 95px
+                rgba(0,0,0,.30);
+        }
+
+
+        .lock-card::before {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 1px;
+
+            content: "";
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(91,184,255,.76),
+                    transparent
+                );
+        }
+
+
+        .lock-icon {
+            width: 54px;
+            height: 54px;
+
+            display: grid;
+
+            place-items: center;
+
+            margin-bottom: 22px;
+
+            border:
+                1px solid
+                rgba(125,207,255,.22);
+
+            border-radius: 50%;
+
+            color: var(--blue-bright);
+
+            font-size: 1.2rem;
+        }
+
+
+        .lock-label {
+            margin: 0;
+
+            color: var(--blue-bright);
+
+            font-size: .59rem;
+            font-weight: 600;
+
+            letter-spacing: .22em;
+
+            text-transform: uppercase;
+        }
+
+
+        .lock-card h2 {
+            margin:
+                14px
+                0
+                0;
+
+            font-family:
+                "Manrope",
+                sans-serif;
+
+            font-size:
+                clamp(
+                    1.55rem,
+                    3vw,
+                    2.25rem
+                );
+
+            font-weight: 500;
+
+            line-height: 1.2;
+
+            letter-spacing: -.035em;
+        }
+
+
+        .lock-card p {
+            margin:
+                15px
+                0
+                0;
+
+            color: var(--muted);
+
+            font-size: .82rem;
+
+            line-height: 1.75;
+        }
+
+
+        /* =====================================================
+           OBJECTIVE
+        ====================================================== */
+
+        .section {
+            width:
+                min(
+                    calc(100% - 40px),
+                    var(--page-width)
+                );
+
+            margin-inline: auto;
+
+            padding:
+                100px
+                0;
+        }
+
+
+        .section-heading {
+            max-width: 760px;
+        }
+
+
+        .section-kicker {
+            margin: 0;
+
+            color: var(--blue-bright);
+
+            font-size: .60rem;
+            font-weight: 600;
+
+            letter-spacing: .22em;
+
+            text-transform: uppercase;
+        }
+
+
+        .section-heading h2 {
+            margin:
+                15px
+                0
+                0;
+
+            font-family:
+                "Manrope",
+                sans-serif;
+
+            font-size:
+                clamp(
+                    2.5rem,
+                    5vw,
+                    5rem
+                );
+
+            font-weight: 400;
+
+            line-height: 1;
+
+            letter-spacing: -.055em;
+        }
+
+
+        .section-heading p {
+            margin:
+                22px
+                0
+                0;
+
+            color: var(--muted);
+
+            font-size: 1rem;
+
+            line-height: 1.85;
+        }
+
+
+        .objective-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 14px;
+
+            margin-top: 48px;
+        }
+
+
+        .objective-card {
+            min-height: 210px;
+
+            padding:
+                28px
+                24px;
+
+            border:
+                1px solid
+                var(--border);
+
+            background:
+                rgba(255,255,255,.018);
+        }
+
+
+        .objective-number {
+            color: var(--blue-bright);
+
+            font-size: .56rem;
+            font-weight: 600;
+
+            letter-spacing: .20em;
+
+            text-transform: uppercase;
+        }
+
+
+        .objective-card h3 {
+            margin:
+                18px
+                0
+                0;
+
+            font-family:
+                "Manrope",
+                sans-serif;
+
+            font-size: 1.15rem;
+            font-weight: 500;
+
+            line-height: 1.35;
+        }
+
+
+        .objective-card p {
+            margin:
+                13px
+                0
+                0;
+
+            color: var(--muted);
+
+            font-size: .78rem;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           RESEARCHERS
+        ====================================================== */
+
+        .researchers {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 16px;
+
+            margin-top: 44px;
+        }
+
+
+        .researcher-card {
+            padding:
+                30px;
+
+            border:
+                1px solid
+                var(--border);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(12,25,43,.48),
+                    rgba(4,9,17,.32)
+                );
+        }
+
+
+        .researcher-role {
+            color: var(--blue-bright);
+
+            font-size: .58rem;
+            font-weight: 600;
+
+            letter-spacing: .18em;
+
+            text-transform: uppercase;
+        }
+
+
+        .researcher-card h3 {
+            margin:
+                14px
+                0
+                0;
+
+            font-family:
+                "Manrope",
+                sans-serif;
+
+            font-size:
+                clamp(
+                    1.5rem,
+                    3vw,
+                    2.3rem
+                );
+
+            font-weight: 500;
+
+            letter-spacing: -.035em;
+        }
+
+
+        .researcher-card p {
+            margin:
+                15px
+                0
+                0;
+
+            color: var(--muted);
+
+            font-size: .82rem;
+
+            line-height: 1.75;
+        }
+
+
+        /* =====================================================
+           PROVINCES
+        ====================================================== */
+
+        .province-intro {
+            max-width: 720px;
+        }
+
+
+        .province-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 16px;
+
+            margin-top: 45px;
+        }
+
+
+        .province-card {
+            position: relative;
+
+            min-height: 270px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: flex-end;
+
+            padding:
+                30px;
+
+            overflow: hidden;
+
+            border:
+                1px solid
+                var(--border);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(10,22,38,.72),
+                    rgba(3,7,13,.86)
+                );
+
+            transition:
+                transform 220ms ease,
+                border-color 220ms ease,
+                background 220ms ease;
+        }
+
+
+        .province-card::before {
+            position: absolute;
+
+            top: -70px;
+            right: -60px;
+
+            width: 190px;
+            height: 190px;
+
+            border:
+                1px solid
+                rgba(91,184,255,.10);
+
+            border-radius: 50%;
+
+            content: "";
+        }
+
+
+        .province-card:hover {
+            border-color:
+                rgba(112,202,255,.30);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(13,31,54,.82),
+                    rgba(3,7,13,.90)
+                );
+
+            transform:
+                translateY(-3px);
+        }
+
+
+        .province-code {
+            position: absolute;
+
+            top: 24px;
+            left: 26px;
+
+            color:
+                rgba(155,220,255,.58);
+
+            font-size: .56rem;
+            font-weight: 600;
+
+            letter-spacing: .20em;
+
+            text-transform: uppercase;
+        }
+
+
+        .province-card h3 {
+            margin: 0;
+
+            font-family:
+                "Manrope",
+                sans-serif;
+
+            font-size:
+                clamp(
+                    1.9rem,
+                    4vw,
+                    3rem
+                );
+
+            font-weight: 500;
+
+            letter-spacing: -.045em;
+        }
+
+
+        .province-card p {
+            max-width: 460px;
+
+            margin:
+                13px
+                0
+                0;
+
+            color: var(--muted);
+
+            font-size: .78rem;
+
+            line-height: 1.7;
+        }
+
+
+        .province-link {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            margin-top: 20px;
+
+            color: var(--blue-bright);
+
+            font-size: .66rem;
+            font-weight: 600;
+
+            letter-spacing: .08em;
+        }
+
+
+        .province-link span {
+            opacity: .72;
+        }
+
+
+        /* =====================================================
+           NOTICE
+        ====================================================== */
+
+        .research-note {
+            margin-top: 48px;
+
+            padding:
+                24px
+                25px;
+
+            border:
+                1px solid
+                rgba(92,183,255,.12);
+
+            background:
+                rgba(54,129,221,.04);
+
+            color:
+                rgba(220,229,241,.52);
+
+            font-size: .72rem;
+
+            line-height: 1.75;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        .site-footer {
+            border-top:
+                1px solid
+                rgba(255,255,255,.07);
+        }
+
+
+        .footer-inner {
+            width:
+                min(
+                    calc(100% - 40px),
+                    var(--page-width)
+                );
+
+            min-height: 92px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 22px;
+
+            margin-inline: auto;
+
+            color: var(--faint);
+
+            font-size: .60rem;
+
+            letter-spacing: .12em;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media (max-width: 850px) {
+
+            .hero-grid,
+            .objective-grid,
+            .researchers,
+            .province-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .hero {
+                padding-top: 70px;
+            }
+
+
+            .lock-card {
+                max-width: 620px;
+            }
+
+        }
+
+
+        @media (max-width: 620px) {
+
+            .header-status {
+                display: none;
+            }
+
+
+            .hero,
+            .section {
+                width:
+                    min(
+                        calc(100% - 28px),
+                        var(--page-width)
+                    );
+            }
+
+
+            .hero {
+                min-height: auto;
+
+                padding:
+                    72px
+                    0
+                    60px;
+            }
+
+
+            .section {
+                padding:
+                    75px
+                    0;
+            }
+
+
+            .province-card {
+                min-height: 230px;
+            }
+
+
+            .footer-inner {
+                flex-direction: column;
+
+                justify-content: center;
+
+                padding:
+                    25px
+                    0;
+
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <a
+                class="brand"
+                href="index.html"
+                aria-label="NEURORDER home"
+            >
+
+                <img
+                    src="images/logo.png"
+                    alt=""
+                >
+
+                <div class="brand-copy">
+
+                    <strong>
+                        CIAS
+                    </strong>
+
+                    <span>
+                        NEURORDER RESEARCH
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <div class="header-status">
+
+                <span class="status-dot"></span>
+
+                Research environment locked
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <main>
+
+
+        <section class="hero">
+
+            <div class="hero-grid">
+
+
+                <div>
+
+                    <div class="eyebrow">
+
+                        <span class="eyebrow-dot"></span>
+
+                        Credit Intelligence Assistance Scoring
+
+                    </div>
+
+
+                    <h1>
+
+                        Research first.
+
+                        <br>
+
+                        <span>
+                            Decisions later.
+                        </span>
+
+                    </h1>
+
+
+                    <p class="hero-intro">
+
+                        CIAS is NEURORDER's research into whether
+                        alternative economic activity and behavioural
+                        indicators can help describe financial
+                        reliability where traditional credit records
+                        are incomplete, limited or unavailable.
+
+                    </p>
+
+                </div>
+
+
+
+                <aside class="lock-card">
+
+                    <div class="lock-icon">
+                        🔒
+                    </div>
+
+
+                    <p class="lock-label">
+                        Access status
+                    </p>
+
+
+                    <h2>
+                        Locked for legalisation and research.
+                    </h2>
+
+
+                    <p>
+
+                        The scoring environment is not currently
+                        open for public use.
+
+                        CIAS remains under research, methodology
+                        development, legal review, external moderation
+                        and validation before any broader deployment
+                        is considered.
+
+                    </p>
+
+                </aside>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             OBJECTIVE
+        ================================================== -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <p class="section-kicker">
+                    The research objective
+                </p>
+
+
+                <h2>
+                    What are we trying to understand?
+                </h2>
+
+
+                <p>
+
+                    CIAS is not designed to simply create another
+                    traditional credit score.
+
+                    The research asks whether patterns of activity,
+                    consistency, economic volume, stability and other
+                    observable financial behaviours may provide useful
+                    context when a person's financial life is not fully
+                    represented by conventional credit records.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="objective-grid">
+
+
+                <article class="objective-card">
+
+                    <span class="objective-number">
+                        01 · Visibility
+                    </span>
+
+
+                    <h3>
+                        Understand financial activity that is usually unseen.
+                    </h3>
+
+
+                    <p>
+
+                        Explore whether recurring economic behaviour
+                        can provide structured information about people
+                        who participate in informal or under-documented
+                        economic activity.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="objective-card">
+
+                    <span class="objective-number">
+                        02 · Methodology
+                    </span>
+
+
+                    <h3>
+                        Test whether simple rules can produce useful signals.
+                    </h3>
+
+
+                    <p>
+
+                        Examine whether transparent rule-based scoring
+                        can provide understandable financial indicators
+                        before more advanced modelling is considered.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="objective-card">
+
+                    <span class="objective-number">
+                        03 · Inclusion
+                    </span>
+
+
+                    <h3>
+                        Explore more inclusive financial intelligence.
+                    </h3>
+
+
+                    <p>
+
+                        Study whether alternative financial context may
+                        help reduce information gaps without replacing
+                        responsible lending, legal assessment or human
+                        judgement.
+
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RESEARCHERS
+        ================================================== -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <p class="section-kicker">
+                    Research development
+                </p>
+
+
+                <h2>
+                    Building the system and the methodology.
+                </h2>
+
+
+                <p>
+
+                    The current work brings together systems analysis
+                    and research methodology.
+
+                    The goal is to ensure that the technical scoring
+                    environment and the research questions develop
+                    alongside one another rather than allowing the
+                    software to move ahead of the evidence.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="researchers">
+
+
+                <article class="researcher-card">
+
+                    <span class="researcher-role">
+                        Systems Analyst
+                    </span>
+
+
+                    <h3>
+                        Bruno João Elias
+                    </h3>
+
+
+                    <p>
+
+                        Focused on translating the CIAS research model
+                        into a structured technical system.
+
+                        The systems work explores how financial activity,
+                        scoring variables and transparent rule logic can
+                        be represented consistently within a usable
+                        prototype environment.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="researcher-card">
+
+                    <span class="researcher-role">
+                        Methodology Researcher
+                    </span>
+
+
+                    <h3>
+                        Ntokozo Mzekandaba
+                    </h3>
+
+
+                    <p>
+
+                        Focused on the research methodology behind the
+                        model and the scoring system. Contact Mr N. Mzekandaba
+                        for more. Contact Us webpage will direct you to NEURORDER
+                        workspace emailing hub.
+
+                    </p>
+
+                </article>
+
+
+            </div>
+
+
+
+            <div class="research-note">
+
+                CIAS is an active research initiative.
+                Nothing displayed in this environment should be
+                interpreted as a final consumer credit score,
+                lending decision, financial advice or approved
+                commercial credit-assessment product.
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PROVINCES
+        ================================================== -->
+
+        <section class="section">
+
+            <div class="section-heading province-intro">
+
+                <p class="section-kicker">
+                    Provincial research preview
+                </p>
+
+
+                <h2>
+                    Four environments. Four different economic contexts.
+                </h2>
+
+
+                <p>
+
+                    The next stage of the CIAS research layer will
+                    document why selected provinces matter to the study,
+                    what economic environments are being observed and
+                    what the research is attempting to learn from each
+                    location.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="province-grid">
+
+
+                <!-- GAUTENG -->
+
+                <a
+                    class="province-card"
+                    href="CIAS_Gauteng_Research_Stats.html"
+                >
+
+                    <span class="province-code">
+                        Province 01
+                    </span>
+
+
+                    <h3>
+                        Gauteng
+                    </h3>
+
+
+                    <p>
+
+                        A dense urban and economic environment with
+                        formal employment, informal trade, micro-enterprise
+                        activity and significant movement between economic
+                        sectors.
+
+                    </p>
+
+
+                    <span class="province-link">
+
+                        Research page coming next
+
+                        <span>
+                            →
+                        </span>
+
+                    </span>
+
+                </a>
+
+
+
+                <!-- NORTH WEST -->
+
+                <a
+                    class="province-card"
+                    href="CIAS_North_West_Research_Stats.html"
+                >
+
+                    <span class="province-code">
+                        Province 02
+                    </span>
+
+
+                    <h3>
+                        North West
+                    </h3>
+
+
+                    <p>
+
+                        A research environment shaped by smaller towns,
+                        mining-linked communities, informal income
+                        activity and varying access to traditional
+                        financial infrastructure.
+
+                    </p>
+
+
+                    <span class="province-link">
+
+                        Research page coming next
+
+                        <span>
+                            →
+                        </span>
+
+                    </span>
+
+                </a>
+
+
+
+                <!-- WESTERN CAPE -->
+
+                <a
+                    class="province-card"
+                    href="  CIAS_Western_Cape_Research_Stats.html"
+                >
+
+                    <span class="province-code">
+                        Province 03
+                    </span>
+
+
+                    <h3>
+                        Western Cape
+                    </h3>
+
+
+                    <p>
+
+                        A diverse urban and peri-urban research setting
+                        with formal employment, service industries,
+                        township economies and informal entrepreneurial
+                        activity.
+
+                    </p>
+
+
+                    <span class="province-link">
+
+                        Research page coming next
+
+                        <span>
+                            →
+                        </span>
+
+                    </span>
+
+                </a>
+
+
+
+                <!-- LIMPOPO -->
+
+                <a
+                    class="province-card"
+                    href="CIAS_Limpopo_Research_Stats.html"
+                >
+
+                    <span class="province-code">
+                        Province 04
+                    </span>
+
+
+                    <h3>
+                        Limpopo
+                    </h3>
+
+
+                    <p>
+
+                        A key research environment for understanding
+                        informal economic participation, local trade,
+                        rural and peri-urban financial behaviour and
+                        communities that may have limited traditional
+                        credit visibility.
+
+                    </p>
+
+
+                    <span class="province-link">
+
+                        Research page coming next
+
+                        <span>
+                            →
+                        </span>
+
+                    </span>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <span>
+                CIAS · Credit Intelligence Assistance Scoring
+            </span>
+
+            <span>
+                NEURORDER Research · South Africa
+            </span>
+
+            <span>
+                © 2026 NEURORDER (Pty) Ltd.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

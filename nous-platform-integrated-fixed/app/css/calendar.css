@@ -1,0 +1,2064 @@
+/* ==========================================================
+   NOUS Calendar
+   Real-time temporal workspace
+   ========================================================== */
+
+:root {
+  --calendar-bg: #02050a;
+  --calendar-panel: rgba(7, 12, 20, 0.78);
+  --calendar-panel-strong: rgba(10, 16, 26, 0.94);
+  --calendar-border: rgba(255, 255, 255, 0.09);
+  --calendar-border-strong: rgba(255, 255, 255, 0.15);
+
+  --calendar-text: #f7f9fc;
+  --calendar-muted: #8f9bab;
+  --calendar-muted-soft: #667080;
+
+  --calendar-blue: #6da8ff;
+  --calendar-blue-soft: rgba(109, 168, 255, 0.14);
+  --calendar-blue-strong: rgba(109, 168, 255, 0.28);
+
+  --calendar-today: #ff4b4b;
+
+  --calendar-radius-lg: 28px;
+  --calendar-radius-md: 18px;
+  --calendar-radius-sm: 12px;
+
+  --calendar-max-width: 1500px;
+}
+
+
+/* ==========================================================
+   Page
+   ========================================================== */
+
+body {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(58, 102, 160, 0.14),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(25, 53, 92, 0.12),
+      transparent 30%
+    ),
+    var(--calendar-bg);
+
+  color: var(--calendar-text);
+}
+
+.nous-calendar-page {
+  width: min(
+    calc(100% - 48px),
+    var(--calendar-max-width)
+  );
+
+  margin-inline: auto;
+  padding: 38px 0 100px;
+}
+
+
+/* ==========================================================
+   Top Bar
+   ========================================================== */
+
+.calendar-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  padding-bottom: 28px;
+  margin-bottom: 24px;
+
+  border-bottom: 1px solid var(--calendar-border);
+}
+
+.calendar-brand-block {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ==========================================================
+   Dynamic NOUS Calendar Icon
+   ========================================================== */
+
+.calendar-icon-wrap {
+  width: 110px;
+  height: 110px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+
+  box-shadow: none;
+  overflow: visible;
+}
+
+.nous-calendar-icon {
+  display: block;
+
+  width: 104px;
+  height: 104px;
+
+  object-fit: contain;
+
+  background: transparent;
+  border: 0;
+  outline: 0;
+
+  user-select: none;
+  pointer-events: none;
+
+  filter:
+    drop-shadow(0 14px 24px rgba(0, 0, 0, 0.42))
+    drop-shadow(0 0 12px rgba(109, 168, 255, 0.08));
+
+  transform: translateZ(0);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.nous-calendar-icon {
+  width: 78px;
+  height: 78px;
+
+  object-fit: contain;
+
+  user-select: none;
+  pointer-events: none;
+
+  filter:
+    drop-shadow(0 10px 20px rgba(0, 0, 0, 0.45));
+}
+
+.calendar-brand-copy {
+  min-width: 0;
+}
+
+.calendar-eyebrow {
+  margin: 0 0 8px;
+
+  color: var(--calendar-blue);
+
+  font-size: 0.72rem;
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.calendar-brand-copy h1 {
+  margin: 0;
+
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.calendar-period-summary {
+  margin: 8px 0 0;
+
+  color: var(--calendar-muted);
+  font-size: 0.93rem;
+}
+
+
+/* ==========================================================
+   Live Time Block
+   ========================================================== */
+
+.calendar-live-block {
+  text-align: right;
+}
+
+.calendar-live-date {
+  margin: 0 0 6px;
+
+  color: var(--calendar-muted);
+
+  font-size: 0.9rem;
+}
+
+.calendar-live-time {
+  margin: 0;
+
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  font-weight: 500;
+
+  letter-spacing: -0.045em;
+
+  font-variant-numeric: tabular-nums;
+}
+
+.calendar-timezone {
+  margin: 8px 0 0;
+
+  color: var(--calendar-muted-soft);
+
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+}
+
+
+/* ==========================================================
+   Control Bar
+   ========================================================== */
+
+.calendar-control-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 24px;
+}
+
+.calendar-view-switcher {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  border: 1px solid var(--calendar-border);
+  border-radius: 999px;
+}
+
+.calendar-view-button {
+  min-width: 80px;
+
+  padding: 10px 18px;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: transparent;
+  color: var(--calendar-muted);
+
+  font: inherit;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.calendar-view-button:hover {
+  color: var(--calendar-text);
+}
+
+.calendar-view-button.is-active {
+  background: rgba(255, 255, 255, 0.09);
+  color: var(--calendar-text);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.calendar-navigation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.calendar-nav-button,
+.calendar-today-button {
+  height: 42px;
+
+  border: 1px solid var(--calendar-border);
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--calendar-text);
+
+  font: inherit;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.calendar-nav-button {
+  width: 42px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  font-size: 1rem;
+}
+
+.calendar-today-button {
+  padding: 0 18px;
+  border-radius: 999px;
+}
+
+.calendar-nav-button:hover,
+.calendar-today-button:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: var(--calendar-border-strong);
+}
+
+.calendar-nav-button:active,
+.calendar-today-button:active,
+.calendar-view-button:active {
+  transform: scale(0.97);
+}
+
+
+/* ==========================================================
+   Scale Header
+   ========================================================== */
+
+.calendar-scale-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  margin-bottom: 16px;
+}
+
+.calendar-scale-label {
+  margin: 0 0 8px;
+
+  color: var(--calendar-muted-soft);
+
+  font-size: 0.68rem;
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+}
+
+#calendar-view-title {
+  margin: 0;
+
+  font-size: clamp(1.75rem, 3vw, 2.7rem);
+  letter-spacing: -0.035em;
+}
+
+.calendar-scale-meta {
+  color: var(--calendar-muted);
+
+  font-size: 0.88rem;
+}
+
+
+/* ==========================================================
+   Main Calendar Shell
+   ========================================================== */
+
+.calendar-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 310px;
+
+  min-height: 690px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--calendar-border);
+  border-radius: var(--calendar-radius-lg);
+
+  background: var(--calendar-panel);
+
+  backdrop-filter: blur(24px);
+
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.26);
+}
+
+.calendar-viewport {
+  min-width: 0;
+  min-height: 690px;
+
+  position: relative;
+
+  overflow: auto;
+}
+
+
+/* ==========================================================
+   Context Panel
+   ========================================================== */
+
+.calendar-context-panel {
+  border-left: 1px solid var(--calendar-border);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.025),
+      rgba(255, 255, 255, 0.01)
+    );
+
+  padding: 28px;
+}
+
+.calendar-context-empty {
+  position: sticky;
+  top: 28px;
+}
+
+.calendar-context-label {
+  margin: 0 0 12px;
+
+  color: var(--calendar-blue);
+
+  font-size: 0.68rem;
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+}
+
+.calendar-context-panel h3 {
+  margin: 0 0 10px;
+
+  font-size: 1.35rem;
+}
+
+.calendar-context-panel p {
+  color: var(--calendar-muted);
+  line-height: 1.6;
+}
+
+
+/* ==========================================================
+   Shared Calendar Render Elements
+   Used later by calendar.js
+   ========================================================== */
+
+.calendar-grid {
+  display: grid;
+}
+
+.calendar-cell {
+  position: relative;
+
+  border-right: 1px solid var(--calendar-border);
+  border-bottom: 1px solid var(--calendar-border);
+
+  min-width: 0;
+
+  transition:
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.calendar-cell:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.calendar-cell.is-today {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(109, 168, 255, 0.055),
+      rgba(109, 168, 255, 0.015)
+    );
+}
+
+.calendar-cell.is-selected {
+  box-shadow:
+    inset 0 0 0 1px var(--calendar-blue);
+}
+
+.calendar-date-number {
+  display: inline-grid;
+  place-items: center;
+
+  min-width: 30px;
+  height: 30px;
+
+  padding-inline: 7px;
+
+  border-radius: 999px;
+
+  font-size: 0.9rem;
+}
+
+.calendar-date-number.is-today {
+  background: var(--calendar-today);
+  color: white;
+}
+
+
+/* ==========================================================
+   Weekday Headers
+   ========================================================== */
+
+.calendar-weekday-header {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+
+  border-bottom: 1px solid var(--calendar-border);
+
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.calendar-weekday {
+  padding: 12px 14px;
+
+  color: var(--calendar-muted);
+
+  text-align: center;
+
+  font-size: 0.78rem;
+  font-weight: 600;
+
+  border-right: 1px solid var(--calendar-border);
+}
+
+.calendar-weekday:last-child {
+  border-right: 0;
+}
+
+
+/* ==========================================================
+   Month View
+   ========================================================== */
+
+.calendar-month-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+
+  min-height: 620px;
+}
+
+.calendar-month-cell {
+  min-height: 118px;
+
+  padding: 10px;
+}
+
+.calendar-month-cell.is-outside-month {
+  opacity: 0.34;
+}
+
+
+/* ==========================================================
+   Day / Week Timeline
+   ========================================================== */
+
+.calendar-time-grid {
+  position: relative;
+}
+
+.calendar-hour-row {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+
+  min-height: 72px;
+
+  border-bottom: 1px solid var(--calendar-border);
+}
+
+.calendar-hour-label {
+  padding: 8px 12px 0 0;
+
+  color: var(--calendar-muted-soft);
+
+  text-align: right;
+
+  font-size: 0.72rem;
+
+  font-variant-numeric: tabular-nums;
+}
+
+.calendar-hour-space {
+  border-left: 1px solid var(--calendar-border);
+}
+
+.calendar-now-line {
+  position: absolute;
+
+  left: 72px;
+  right: 0;
+
+  height: 1px;
+
+  background: var(--calendar-blue);
+
+  pointer-events: none;
+
+  box-shadow:
+    0 0 12px rgba(109, 168, 255, 0.65);
+}
+
+.calendar-now-line::before {
+  content: "";
+
+  position: absolute;
+  left: -5px;
+  top: -4px;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: var(--calendar-blue);
+}
+
+
+/* ==========================================================
+   Year View
+   ========================================================== */
+
+.calendar-year-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 1px;
+
+  background: var(--calendar-border);
+}
+
+.calendar-year-month {
+  min-height: 250px;
+
+  padding: 22px;
+
+  background: var(--calendar-panel-strong);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.calendar-year-month:hover {
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.calendar-year-month-title {
+  margin: 0 0 18px;
+
+  color: var(--calendar-blue);
+
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+
+/* ==========================================================
+   Event Chips
+   ========================================================== */
+
+.calendar-event {
+  display: block;
+
+  margin-top: 6px;
+  padding: 5px 8px;
+
+  overflow: hidden;
+
+  border-radius: 7px;
+
+  background: var(--calendar-blue-soft);
+
+  color: var(--calendar-text);
+
+  font-size: 0.74rem;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  border: 1px solid rgba(109, 168, 255, 0.16);
+}
+
+
+/* ==========================================================
+   Quick Create Button
+   ========================================================== */
+
+.calendar-create-button {
+  position: fixed;
+
+  right: 32px;
+  bottom: 32px;
+
+  width: 58px;
+  height: 58px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(109, 168, 255, 0.96),
+      rgba(72, 122, 196, 0.96)
+    );
+
+  color: white;
+
+  font-size: 1.9rem;
+  font-weight: 300;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 18px 48px rgba(0, 0, 0, 0.38),
+    0 0 28px rgba(109, 168, 255, 0.2);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.calendar-create-button:hover {
+  transform: translateY(-2px) scale(1.04);
+
+  box-shadow:
+    0 24px 58px rgba(0, 0, 0, 0.42),
+    0 0 36px rgba(109, 168, 255, 0.28);
+}
+
+
+/* ==========================================================
+   Scrollbars
+   ========================================================== */
+
+.calendar-viewport {
+  scrollbar-width: thin;
+  scrollbar-color:
+    rgba(255, 255, 255, 0.15)
+    transparent;
+}
+
+.calendar-viewport::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.calendar-viewport::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.calendar-viewport::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+}
+
+
+/* ==========================================================
+   Responsive
+   ========================================================== */
+
+@media (max-width: 1050px) {
+  .calendar-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-context-panel {
+    border-left: 0;
+    border-top: 1px solid var(--calendar-border);
+  }
+
+  .calendar-year-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+@media (max-width: 760px) {
+  .nous-calendar-page {
+    width: min(calc(100% - 24px), var(--calendar-max-width));
+    padding-top: 20px;
+  }
+
+  .calendar-topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .calendar-live-block {
+    width: 100%;
+    text-align: left;
+  }
+
+  .calendar-control-bar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .calendar-view-switcher {
+    width: 100%;
+  }
+
+  .calendar-view-button {
+    flex: 1;
+    min-width: 0;
+    padding-inline: 10px;
+  }
+
+  .calendar-navigation {
+    justify-content: flex-end;
+  }
+
+  .calendar-scale-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .calendar-year-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-month-cell {
+    min-height: 90px;
+  }
+
+  .calendar-create-button {
+    right: 18px;
+    bottom: 18px;
+  }
+}
+
+
+@media (max-width: 520px) {
+  .calendar-brand-block {
+    align-items: flex-start;
+  }
+
+    .calendar-icon-wrap {
+    width: 76px;
+    height: 76px;
+    }
+
+    .nous-calendar-icon {
+    width: 72px;
+    height: 72px;
+    }
+
+  .nous-calendar-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .calendar-brand-copy h1 {
+    font-size: 2rem;
+  }
+
+  .calendar-live-time {
+    font-size: 2.35rem;
+  }
+
+  .calendar-nav-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .calendar-today-button {
+    height: 40px;
+  }
+
+  .calendar-context-panel {
+    padding: 22px;
+  }
+}
+
+/* ==========================================================
+   NOUS CALENDAR — UNIVERSAL EVENT SYSTEM
+   ========================================================== */
+
+body.calendar-modal-open {
+  overflow: hidden;
+}
+
+
+/* ==========================================================
+   CREATE EVENT MODAL
+   ========================================================== */
+
+.calendar-event-modal[hidden] {
+  display: none !important;
+}
+
+.calendar-event-modal {
+  position: fixed;
+  inset: 0;
+
+  z-index: 1200;
+
+  display: grid;
+  place-items: center;
+
+  padding: 24px;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    opacity 180ms ease;
+}
+
+.calendar-event-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/* ==========================================================
+   MODAL BACKDROP
+   ========================================================== */
+
+.calendar-event-backdrop {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+
+  background:
+    rgba(0, 2, 7, 0.78);
+
+  backdrop-filter:
+    blur(18px);
+
+  -webkit-backdrop-filter:
+    blur(18px);
+
+  cursor: default;
+}
+
+
+/* ==========================================================
+   MODAL DIALOG
+   ========================================================== */
+
+.calendar-event-dialog {
+  position: relative;
+  z-index: 1;
+
+  width:
+    min(
+      620px,
+      100%
+    );
+
+  max-height:
+    min(
+      840px,
+      calc(100vh - 48px)
+    );
+
+  overflow-y: auto;
+
+  padding: 30px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.1
+    );
+
+  border-radius:
+    28px;
+
+  background:
+    linear-gradient(
+      155deg,
+      rgba(
+        16,
+        24,
+        38,
+        0.98
+      ),
+      rgba(
+        4,
+        8,
+        15,
+        0.99
+      )
+    );
+
+  box-shadow:
+    0 40px 120px
+    rgba(
+      0,
+      0,
+      0,
+      0.65
+    ),
+    0 0 60px
+    rgba(
+      109,
+      168,
+      255,
+      0.08
+    );
+
+  transform:
+    translateY(14px)
+    scale(0.985);
+
+  transition:
+    transform 200ms ease;
+}
+
+.calendar-event-modal.is-open
+.calendar-event-dialog {
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+/* ==========================================================
+   MODAL SCROLLBAR
+   ========================================================== */
+
+.calendar-event-dialog {
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.16
+    )
+    transparent;
+}
+
+.calendar-event-dialog::-webkit-scrollbar {
+  width: 7px;
+}
+
+.calendar-event-dialog::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.calendar-event-dialog::-webkit-scrollbar-thumb {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.15
+    );
+
+  border-radius:
+    999px;
+}
+
+
+/* ==========================================================
+   MODAL HEADER
+   ========================================================== */
+
+.calendar-event-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  margin-bottom: 28px;
+}
+
+.calendar-event-header p {
+  margin:
+    0
+    0
+    8px;
+
+  color:
+    var(
+      --calendar-blue
+    );
+
+  font-size:
+    0.67rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.18em;
+
+  text-transform:
+    uppercase;
+}
+
+.calendar-event-header h2 {
+  margin: 0;
+
+  color:
+    var(
+      --calendar-text
+    );
+
+  font-size:
+    clamp(
+      1.65rem,
+      4vw,
+      2.2rem
+    );
+
+  font-weight:
+    650;
+
+  letter-spacing:
+    -0.035em;
+}
+
+
+/* ==========================================================
+   CLOSE BUTTON
+   ========================================================== */
+
+.calendar-event-close {
+  width: 40px;
+  height: 40px;
+
+  flex:
+    0
+    0
+    auto;
+
+  display: grid;
+  place-items: center;
+
+  border:
+    1px solid
+    var(
+      --calendar-border
+    );
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.035
+    );
+
+  color:
+    var(
+      --calendar-muted
+    );
+
+  font-size:
+    1.45rem;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.calendar-event-close:hover {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
+  border-color:
+    var(
+      --calendar-border-strong
+    );
+
+  color:
+    var(
+      --calendar-text
+    );
+
+  transform:
+    rotate(4deg);
+}
+
+
+/* ==========================================================
+   EVENT FORM
+   ========================================================== */
+
+#calendar-event-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+
+/* ==========================================================
+   FORM FIELDS
+   ========================================================== */
+
+.calendar-field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.calendar-field > span {
+  color:
+    var(
+      --calendar-muted
+    );
+
+  font-size:
+    0.72rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.08em;
+
+  text-transform:
+    uppercase;
+}
+
+.calendar-field-row {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 14px;
+}
+
+
+/* ==========================================================
+   INPUTS
+   ========================================================== */
+
+.calendar-field input,
+.calendar-field select,
+.calendar-field textarea {
+  width: 100%;
+
+  box-sizing:
+    border-box;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.09
+    );
+
+  border-radius:
+    14px;
+
+  outline: none;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.035
+    );
+
+  color:
+    var(
+      --calendar-text
+    );
+
+  font:
+    inherit;
+
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.calendar-field input,
+.calendar-field select {
+  height: 48px;
+
+  padding:
+    0
+    14px;
+}
+
+.calendar-field textarea {
+  min-height: 104px;
+
+  padding: 14px;
+
+  resize: vertical;
+}
+
+.calendar-field input::placeholder,
+.calendar-field textarea::placeholder {
+  color:
+    var(
+      --calendar-muted-soft
+    );
+}
+
+
+/* ==========================================================
+   FIELD FOCUS
+   ========================================================== */
+
+.calendar-field input:focus,
+.calendar-field select:focus,
+.calendar-field textarea:focus {
+  border-color:
+    rgba(
+      109,
+      168,
+      255,
+      0.62
+    );
+
+  background:
+    rgba(
+      109,
+      168,
+      255,
+      0.045
+    );
+
+  box-shadow:
+    0
+    0
+    0
+    3px
+    rgba(
+      109,
+      168,
+      255,
+      0.09
+    );
+}
+
+
+/* ==========================================================
+   DATE / TIME FIELD SUPPORT
+   ========================================================== */
+
+.calendar-field input[type="date"],
+.calendar-field input[type="time"] {
+  color-scheme:
+    dark;
+}
+
+.calendar-field select {
+  appearance:
+    auto;
+
+  cursor:
+    pointer;
+}
+
+
+/* ==========================================================
+   DISABLED TIME FIELDS
+   ========================================================== */
+
+.calendar-field input:disabled {
+  opacity: 0.4;
+
+  cursor:
+    not-allowed;
+}
+
+
+/* ==========================================================
+   ALL DAY CHECKBOX
+   ========================================================== */
+
+.calendar-check-field {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap: 10px;
+
+  width:
+    fit-content;
+
+  color:
+    var(
+      --calendar-muted
+    );
+
+  font-size:
+    0.84rem;
+
+  cursor:
+    pointer;
+}
+
+.calendar-check-field input {
+  width: 17px;
+  height: 17px;
+
+  accent-color:
+    var(
+      --calendar-blue
+    );
+}
+
+
+/* ==========================================================
+   FORM NOTICE
+   ========================================================== */
+
+.calendar-event-notice {
+  min-height: 20px;
+
+  margin: 2px 0 0;
+
+  color:
+    var(
+      --calendar-muted
+    );
+
+  font-size:
+    0.78rem;
+
+  line-height:
+    1.5;
+}
+
+
+/* ==========================================================
+   EVENT ACTIONS
+   ========================================================== */
+
+.calendar-event-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  padding-top: 10px;
+}
+
+.calendar-event-primary,
+.calendar-event-secondary {
+  min-height: 46px;
+
+  padding:
+    0
+    20px;
+
+  border-radius:
+    999px;
+
+  font:
+    inherit;
+
+  font-size:
+    0.84rem;
+
+  font-weight:
+    700;
+
+  cursor:
+    pointer;
+
+  transition:
+    transform 180ms ease,
+    opacity 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.calendar-event-secondary {
+  border:
+    1px solid
+    var(
+      --calendar-border
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.035
+    );
+
+  color:
+    var(
+      --calendar-muted
+    );
+}
+
+.calendar-event-primary {
+  border: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #79afff,
+      #527fce
+    );
+
+  color:
+    #06101e;
+
+  box-shadow:
+    0
+    12px
+    32px
+    rgba(
+      70,
+      126,
+      210,
+      0.2
+    );
+}
+
+.calendar-event-secondary:hover {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.07
+    );
+
+  color:
+    var(
+      --calendar-text
+    );
+}
+
+.calendar-event-primary:hover,
+.calendar-event-secondary:hover {
+  transform:
+    translateY(
+      -1px
+    );
+}
+
+.calendar-event-primary:disabled {
+  opacity:
+    0.48;
+
+  cursor:
+    wait;
+
+  transform:
+    none;
+}
+
+
+/* ==========================================================
+   EVENTS INSIDE MONTH CELLS
+   ========================================================== */
+
+.calendar-cell-events {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  margin-top: 8px;
+
+  overflow: hidden;
+}
+
+.calendar-event-chip {
+  display: block;
+
+  width: 100%;
+
+  box-sizing:
+    border-box;
+
+  overflow: hidden;
+
+  padding:
+    5px
+    7px;
+
+  border:
+    1px solid
+    rgba(
+      109,
+      168,
+      255,
+      0.16
+    );
+
+  border-radius:
+    7px;
+
+  background:
+    var(
+      --calendar-blue-soft
+    );
+
+  color:
+    var(
+      --calendar-text
+    );
+
+  font-size:
+    0.69rem;
+
+  line-height:
+    1.15;
+
+  text-align:
+    left;
+
+  text-overflow:
+    ellipsis;
+
+  white-space:
+    nowrap;
+}
+
+.calendar-event-more {
+  color:
+    var(
+      --calendar-muted
+    );
+
+  font-size:
+    0.65rem;
+
+  font-weight:
+    700;
+}
+
+
+/* ==========================================================
+   CONTEXT PANEL EVENT CARDS
+   ========================================================== */
+
+#calendar-context-copy {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.calendar-context-event {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding: 14px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.07
+    );
+
+  border-radius:
+    14px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.025
+    );
+}
+
+.calendar-context-event small {
+  color:
+    var(
+      --calendar-blue
+    );
+
+  font-size:
+    0.6rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.1em;
+
+  text-transform:
+    uppercase;
+}
+
+.calendar-context-event strong {
+  color:
+    var(
+      --calendar-text
+    );
+
+  font-size:
+    0.9rem;
+
+  font-weight:
+    650;
+}
+
+.calendar-context-event span {
+  color:
+    var(
+      --calendar-muted
+    );
+
+  font-size:
+    0.73rem;
+}
+
+
+/* ==========================================================
+   DAY VIEW EVENTS
+   ========================================================== */
+
+.calendar-hour-space {
+  position: relative;
+
+  padding:
+    6px
+    10px;
+}
+
+.calendar-day-event {
+  display: block;
+
+  width:
+    min(
+      420px,
+      100%
+    );
+
+  margin-bottom:
+    4px;
+
+  padding:
+    8px
+    12px;
+
+  border:
+    1px solid
+    rgba(
+      109,
+      168,
+      255,
+      0.2
+    );
+
+  border-radius:
+    10px;
+
+  background:
+    rgba(
+      109,
+      168,
+      255,
+      0.12
+    );
+
+  color:
+    var(
+      --calendar-text
+    );
+
+  font:
+    inherit;
+
+  font-size:
+    0.75rem;
+
+  text-align:
+    left;
+
+  cursor:
+    pointer;
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.calendar-day-event:hover {
+  background:
+    rgba(
+      109,
+      168,
+      255,
+      0.18
+    );
+
+  border-color:
+    rgba(
+      109,
+      168,
+      255,
+      0.35
+    );
+}
+
+
+/* ==========================================================
+   WEEK VIEW
+   ========================================================== */
+
+.calendar-week-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      7,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  min-height:
+    690px;
+}
+
+.calendar-week-day {
+  display: flex;
+  flex-direction: column;
+
+  align-items:
+    flex-start;
+
+  gap: 8px;
+
+  min-width: 0;
+
+  padding: 18px;
+
+  border: 0;
+  border-right:
+    1px solid
+    var(
+      --calendar-border
+    );
+
+  background:
+    transparent;
+
+  color:
+    var(
+      --calendar-text
+    );
+
+  text-align:
+    left;
+
+  cursor:
+    pointer;
+
+  transition:
+    background 180ms ease;
+}
+
+.calendar-week-day:last-child {
+  border-right: 0;
+}
+
+.calendar-week-day:hover {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.025
+    );
+}
+
+.calendar-week-day small {
+  color:
+    var(
+      --calendar-muted
+    );
+
+  font-size:
+    0.7rem;
+
+  text-transform:
+    uppercase;
+}
+
+.calendar-week-day strong {
+  font-size:
+    1.6rem;
+
+  font-weight:
+    500;
+}
+
+.calendar-week-day span {
+  color:
+    var(
+      --calendar-muted-soft
+    );
+
+  font-size:
+    0.7rem;
+}
+
+
+/* ==========================================================
+   YEAR VIEW EVENT COUNT
+   ========================================================== */
+
+.calendar-year-event-count {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  margin-top:
+    8px;
+
+  padding:
+    5px
+    8px;
+
+  border-radius:
+    999px;
+
+  background:
+    var(
+      --calendar-blue-soft
+    );
+
+  color:
+    var(
+      --calendar-blue
+    );
+
+  font-size:
+    0.68rem;
+
+  font-weight:
+    700;
+}
+
+
+/* ==========================================================
+   MOBILE EVENT MODAL
+   ========================================================== */
+
+@media (
+  max-width:
+  640px
+) {
+  .calendar-event-modal {
+    padding:
+      12px;
+  }
+
+  .calendar-event-dialog {
+    max-height:
+      calc(
+        100vh -
+        24px
+      );
+
+    padding:
+      22px;
+
+    border-radius:
+      22px;
+  }
+
+  .calendar-field-row {
+    grid-template-columns:
+      1fr;
+  }
+
+  .calendar-event-actions {
+    flex-direction:
+      column-reverse;
+
+    align-items:
+      stretch;
+  }
+
+  .calendar-event-primary,
+  .calendar-event-secondary {
+    width:
+      100%;
+  }
+
+  .calendar-week-grid {
+    grid-template-columns:
+      1fr;
+
+    min-height:
+      auto;
+  }
+
+  .calendar-week-day {
+    min-height:
+      96px;
+
+    border-right:
+      0;
+
+    border-bottom:
+      1px solid
+      var(
+        --calendar-border
+      );
+  }
+}

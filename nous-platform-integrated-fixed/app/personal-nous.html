@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="A private conversation with NOUS."
+  >
+
+  <title>NOUS — Personal Companion</title>
+
+
+  <link
+    rel="stylesheet"
+    href="./css/tokens.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/personal-nous.css"
+  >
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+  ></script>
+
+  <script
+    src="../js/supabase-config.js"
+  ></script>
+
+  <script
+    src="./js/auth-guard.js"
+    defer
+  ></script>
+
+  <script
+    src="./js/personal-nous.js"
+    defer
+  ></script>
+
+</head>
+
+
+<body>
+
+  <div
+    class="nous-chat-background"
+    aria-hidden="true"
+  >
+    <div class="nous-chat-glow"></div>
+  </div>
+
+
+  <div class="nous-chat-shell">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="nous-chat-header">
+
+      <a
+        class="nous-chat-brand"
+        href="./personal.html"
+        aria-label="Return to Personal"
+      >
+
+        <img
+          src="../assets/logo/nouslogo.png"
+          alt=""
+        >
+
+        <span>
+          NOUS
+        </span>
+
+      </a>
+
+
+      <div class="nous-chat-context">
+
+        <small>
+          PERSONAL COMPANION
+        </small>
+
+        <strong>
+          Private conversation
+        </strong>
+
+      </div>
+
+
+      <a
+        class="nous-chat-back"
+        href="./personal.html"
+      >
+        Personal
+        <span aria-hidden="true">→</span>
+      </a>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONVERSATION
+    ====================================================== -->
+
+    <main class="nous-chat-main">
+
+
+      <section
+        class="nous-chat-conversation"
+        id="nous-chat-conversation"
+        aria-live="polite"
+      >
+
+        <div class="nous-chat-welcome">
+
+          <div
+            class="nous-chat-orb"
+            aria-hidden="true"
+          >
+
+            <span></span>
+
+            <img
+              src="../assets/logo/nouslogo.png"
+              alt=""
+            >
+
+          </div>
+
+
+          <p class="nous-chat-eyebrow">
+            NOUS PERSONAL
+          </p>
+
+
+          <h1>
+            What’s on your mind?
+          </h1>
+
+
+          <p>
+            This is your private space with NOUS.
+            Talk, think, plan, reflect or ask for help.
+          </p>
+
+        </div>
+
+
+        <div
+          class="nous-message-list"
+          id="nous-message-list"
+        ></div>
+
+      </section>
+
+
+      <!-- =====================================================
+           COMPOSER
+      ====================================================== -->
+
+      <div class="nous-chat-composer-shell">
+
+        <form
+          class="nous-chat-composer"
+          id="nous-chat-form"
+        >
+
+          <textarea
+            id="nous-chat-input"
+            rows="1"
+            placeholder="Message NOUS..."
+            aria-label="Message NOUS"
+            required
+          ></textarea>
+
+
+          <button
+            id="nous-chat-send"
+            type="submit"
+            aria-label="Send message"
+          >
+            ↑
+          </button>
+
+        </form>
+
+
+        <p class="nous-chat-caption">
+          NOUS can use information you explicitly permit inside your Personal space.
+        </p>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+
+</html>

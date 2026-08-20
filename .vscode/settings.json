@@ -4,26 +4,11 @@
   "deno.enable": true,
 
   "deno.enablePaths": [
-    "supabase/functions"
+    "./nous-platform-integrated-fixed/remote-function-backup/nous-companion-live",
+    "./nous-platform-integrated-fixed/supabase/functions"
   ],
 
   "deno.lint": true,
-
-  "deno.unstable": [
-    "bare-node-builtins",
-    "byonm",
-    "sloppy-imports",
-    "unsafe-proto",
-    "webgpu",
-    "broadcast-channel",
-    "worker-options",
-    "cron",
-    "kv",
-    "ffi",
-    "fs",
-    "http",
-    "net"
-  ],
 
   "[typescript]": {
     "editor.defaultFormatter": "denoland.vscode-deno"

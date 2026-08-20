@@ -1,0 +1,16 @@
+.git
+.git/**
+node_modules
+node_modules/**
+.vscode
+.vscode/**
+.DS_Store
+**/.DS_Store
+supabase
+supabase/**
+temporary-launch
+temporary-launch/**
+nous-platform
+nous-platform/**
+nous-platform-integrated-fixed
+nous-platform-integrated-fixed/**

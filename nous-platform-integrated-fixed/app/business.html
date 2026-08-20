@@ -1,0 +1,1927 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="NOUS Business — organisational intelligence, progress, applications, calendar and executive signals."
+  >
+
+  <title>Business — NOUS</title>
+
+  <link
+    rel="stylesheet"
+    href="./css/tokens.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/shell.css?v=20260804-2"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/business.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/live-business.css"
+  >
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="./js/auth-guard.js" defer></script>
+</head>
+
+
+<body>
+
+  <!-- =====================================================
+       AMBIENT BACKGROUND
+  ====================================================== -->
+
+  <div
+    class="ambient-background"
+    aria-hidden="true"
+  >
+    <div class="ambient-orb ambient-orb-one"></div>
+    <div class="ambient-orb ambient-orb-two"></div>
+    <div class="ambient-grid"></div>
+  </div>
+
+
+  <!-- =====================================================
+       APP SHELL
+  ====================================================== -->
+
+  <div class="app-shell business-shell">
+
+
+    <!-- ===================================================
+         TOPBAR
+    ==================================================== -->
+
+    <header class="topbar">
+
+      <a
+        class="brand business-brand"
+        href="./index.html"
+        aria-label="NOUS home"
+      >
+        <img
+          class="business-brand-logo"
+          src="../assets/logo/nouslogo.png"
+          alt=""
+        >
+
+        <span class="brand-name">
+          NOUS
+        </span>
+      </a>
+
+
+      <div class="topbar-context">
+
+        <span class="context-label">
+          Current space
+        </span>
+
+        <strong
+          class="context-value"
+          id="current-space-label"
+        >
+          Business
+        </strong>
+
+      </div>
+
+
+      <div class="topbar-actions">
+
+        <button
+          class="icon-button"
+          id="business-search-button"
+          type="button"
+          aria-label="Search NOUS"
+          title="Search"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"
+            />
+          </svg>
+        </button>
+
+
+        <a
+          class="profile-button business-profile-link"
+          id="business-profile-link"
+          href="./identity.html"
+          aria-label="Open your NOUS profile and identity"
+          title="Open profile"
+        >
+
+          <span
+            class="profile-avatar"
+            id="business-profile-avatar"
+            aria-hidden="true"
+          >
+            NM
+          </span>
+
+          <span class="profile-copy">
+
+            <strong id="business-profile-name">
+              Ntokozo
+            </strong>
+
+            <small id="business-profile-organisation">
+              NEURORDER
+            </small>
+
+          </span>
+
+        </a>
+
+      </div>
+
+    </header>
+
+
+    <!-- ===================================================
+         BUSINESS EXPERIENCE
+    ==================================================== -->
+
+    <main class="business-experience">
+
+
+      <!-- =================================================
+           HERO
+      ================================================== -->
+
+      <section class="business-hero">
+
+        <div class="business-hero-copy">
+
+          <p class="eyebrow">
+            NOUS BUSINESS
+          </p>
+
+          <h1>
+            Everything important,
+            <span>in one place.</span>
+          </h1>
+
+          <p class="business-hero-description">
+            Understand the organisation, continue active work and
+            move with greater clarity.
+          </p>
+
+          <div class="organisation-status">
+
+            <span class="organisation-status-dot"></span>
+
+            <div>
+              <small>
+                Organisation status
+              </small>
+
+              <strong>
+                Operational
+              </strong>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PRECISION CLOCK
+        ================================================== -->
+
+        <div
+          class="nous-precision-clock business-clock"
+          data-nous-clock
+          aria-label="Current local time"
+        >
+
+          <p class="precision-clock-label">
+            NOUS PRECISION TIME
+          </p>
+
+          <div class="precision-clock-time">
+
+            <span
+              class="precision-clock-unit"
+              data-clock-hours
+            >
+              00
+            </span>
+
+            <span
+              class="precision-clock-divider"
+              aria-hidden="true"
+            >
+              :
+            </span>
+
+            <span
+              class="precision-clock-unit"
+              data-clock-minutes
+            >
+              00
+            </span>
+
+            <span
+              class="precision-clock-divider"
+              aria-hidden="true"
+            >
+              :
+            </span>
+
+            <span
+              class="precision-clock-unit precision-clock-seconds"
+              data-clock-seconds
+            >
+              00
+            </span>
+
+          </div>
+
+
+          <div class="precision-clock-meta">
+
+            <span data-clock-date>
+              LOADING CURRENT DATE
+            </span>
+
+            <span aria-hidden="true">
+              ·
+            </span>
+
+            <span
+              class="precision-clock-zone"
+              data-clock-zone
+            >
+              LOCAL TIME
+            </span>
+
+          </div>
+
+
+          <div class="business-clock-footer">
+
+            <button
+              class="business-clock-open"
+              id="business-clock-open"
+              type="button"
+            >
+              Explore time
+              <span aria-hidden="true">→</span>
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           INTELLIGENCE SLIDER
+      ================================================== -->
+
+      <section
+        class="business-slider-section"
+        aria-labelledby="business-slider-title"
+      >
+
+        <div class="section-heading business-section-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              INTELLIGENCE
+            </p>
+
+            <h2 id="business-slider-title">
+              Signals for better decisions.
+            </h2>
+
+          </div>
+
+
+          <div class="slider-controls">
+
+            <button
+              class="slider-control"
+              id="business-slider-previous"
+              type="button"
+              aria-label="Previous business signal"
+            >
+              ←
+            </button>
+
+            <button
+              class="slider-control"
+              id="business-slider-next"
+              type="button"
+              aria-label="Next business signal"
+            >
+              →
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="business-slider"
+          id="business-slider"
+          aria-live="polite"
+        >
+
+          <!-- SLIDE 1 -->
+
+          <article
+            class="business-slide is-active"
+            data-business-slide
+          >
+
+            <div class="business-slide-visual slide-visual-one">
+
+              <div
+                class="signal-orbit"
+                aria-hidden="true"
+              >
+                <span class="signal-orbit-core"></span>
+                <span class="signal-orbit-ring ring-one"></span>
+                <span class="signal-orbit-ring ring-two"></span>
+              </div>
+
+            </div>
+
+
+            <div class="business-slide-content">
+
+              <p class="business-slide-label">
+                TODAY’S SIGNAL
+              </p>
+
+              <h3>
+                Measure daily execution,
+                not only monthly outcomes.
+              </h3>
+
+              <p>
+                Organisations gain clearer visibility when progress,
+                delays and decisions are reviewed continuously.
+              </p>
+
+              <button
+                class="business-slide-action"
+                type="button"
+              >
+                Explore signal
+                <span aria-hidden="true">→</span>
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <!-- SLIDE 2 -->
+
+          <article
+            class="business-slide"
+            data-business-slide
+          >
+
+            <div class="business-slide-visual slide-visual-two">
+
+              <div
+                class="software-constellation"
+                aria-hidden="true"
+              >
+
+                <span class="software-node node-large">
+                  AI
+                </span>
+
+                <span class="software-node node-small node-one">
+                  365
+                </span>
+
+                <span class="software-node node-small node-two">
+                  BI
+                </span>
+
+                <span class="software-node node-small node-three">
+                  CRM
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="business-slide-content">
+
+              <p class="business-slide-label">
+                AI SOFTWARE
+              </p>
+
+              <h3>
+                Build a calmer operating system
+                around your existing tools.
+              </h3>
+
+              <p>
+                Connect communication, documents, meetings and
+                intelligence without forcing teams into one rigid app.
+              </p>
+
+              <button
+                class="business-slide-action"
+                type="button"
+              >
+                Review applications
+                <span aria-hidden="true">→</span>
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <!-- SLIDE 3 -->
+
+          <article
+            class="business-slide"
+            data-business-slide
+          >
+
+            <div class="business-slide-visual slide-visual-three">
+
+              <div
+                class="research-visual"
+                aria-hidden="true"
+              >
+                <span class="research-line"></span>
+                <span class="research-line"></span>
+                <span class="research-line"></span>
+                <span class="research-line"></span>
+              </div>
+
+            </div>
+
+
+            <div class="business-slide-content">
+
+              <p class="business-slide-label">
+                NOUS OBSERVATION
+              </p>
+
+              <h3>
+                Your research work is ready
+                for the next structured phase.
+              </h3>
+
+              <p>
+                External moderation, methodology and prototype
+                development can now be organised as one connected
+                programme.
+              </p>
+
+              <button
+                class="business-slide-action"
+                type="button"
+              >
+                Continue research
+                <span aria-hidden="true">→</span>
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <div class="business-slider-progress">
+
+            <button
+              class="slider-progress-item is-active"
+              data-slide-index="0"
+              type="button"
+              aria-label="Show slide 1"
+            ></button>
+
+            <button
+              class="slider-progress-item"
+              data-slide-index="1"
+              type="button"
+              aria-label="Show slide 2"
+            ></button>
+
+            <button
+              class="slider-progress-item"
+              data-slide-index="2"
+              type="button"
+              aria-label="Show slide 3"
+            ></button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           WORKSPACE INTELLIGENCE
+      ================================================== -->
+
+      <section
+        class="business-intelligence-section"
+        aria-labelledby="business-observation-title"
+      >
+
+        <article class="workspace-intelligence-panel">
+
+          <div
+            class="intelligence-panel-mark"
+            aria-hidden="true"
+          >
+            <span></span>
+          </div>
+
+
+          <div class="intelligence-panel-copy">
+
+            <p class="eyebrow">
+              WORKSPACE INTELLIGENCE
+            </p>
+
+            <h2 id="business-observation-title">
+              Today’s observation.
+            </h2>
+
+            <p
+              id="workspace-observation-text"
+              aria-live="polite"
+            >
+              Reviewing your Business workspace…
+            </p>
+
+          </div>
+
+
+          <button
+            class="intelligence-panel-action"
+            id="organise-with-nous-button"
+            type="button"
+          >
+            Organise with NOUS
+            <span aria-hidden="true">→</span>
+          </button>
+
+        </article>
+
+      </section>
+
+
+      <!-- =================================================
+           ANALYTICS
+      ================================================== -->
+
+      <section
+        class="business-analytics-section"
+        id="business-analytics"
+        aria-labelledby="business-analytics-title"
+      >
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              ANALYTICS
+            </p>
+
+            <h2 id="business-analytics-title">
+              Understand the organisation as it moves.
+            </h2>
+
+          </div>
+
+
+          <button
+            class="text-button"
+            id="view-full-analytics"
+            type="button"
+          >
+            View full analytics
+          </button>
+
+        </div>
+
+
+        <div class="analytics-grid">
+
+
+          <!-- PROJECTS -->
+
+          <article
+            class="analytics-card analytics-card-actionable"
+            id="projects-analytics-card"
+            tabindex="0"
+            role="button"
+            aria-label="Open Business projects"
+          >
+
+            <div class="analytics-card-top">
+
+              <span>
+                Projects
+              </span>
+
+              <small id="projects-period-label">
+                Current workspace
+              </small>
+
+            </div>
+
+
+            <div class="analytics-value-row">
+
+              <strong id="projects-analytics-value">
+                00
+              </strong>
+
+              <span
+                class="analytics-change"
+                id="projects-analytics-change"
+              >
+                No projects
+              </span>
+
+            </div>
+
+
+            <div
+              class="analytics-empty-visual"
+              id="projects-analytics-visual"
+              aria-hidden="true"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+
+            <p id="projects-analytics-description">
+              No projects have been added to this Business workspace yet.
+            </p>
+
+
+            <span class="analytics-card-link">
+              Open projects
+              <span aria-hidden="true">↗</span>
+            </span>
+
+          </article>
+
+
+          <!-- EXECUTION -->
+
+          <article
+            class="analytics-card analytics-card-actionable"
+            id="execution-analytics-card"
+            tabindex="0"
+            role="button"
+            aria-label="Open Business calendar"
+          >
+
+            <div class="analytics-card-top">
+
+              <span>
+                Execution
+              </span>
+
+              <small>
+                Scheduled work
+              </small>
+
+            </div>
+
+
+            <div class="analytics-value-row">
+
+              <strong id="execution-analytics-value">
+                0%
+              </strong>
+
+              <span
+                class="analytics-change"
+                id="execution-analytics-change"
+              >
+                No schedule
+              </span>
+
+            </div>
+
+
+            <div class="analytics-progress">
+
+              <span
+                id="execution-analytics-progress"
+                style="width: 0%"
+              ></span>
+
+            </div>
+
+
+            <p id="execution-analytics-description">
+              Schedule project work in the NOUS Calendar to begin measuring execution.
+            </p>
+
+
+            <span class="analytics-card-link">
+              Open calendar
+              <span aria-hidden="true">↗</span>
+            </span>
+
+          </article>
+
+
+          <!-- RESEARCH -->
+
+          <article
+            class="analytics-card analytics-card-actionable"
+            id="research-analytics-card"
+            tabindex="0"
+            role="button"
+            aria-label="Open the latest research project"
+          >
+
+            <div class="analytics-card-top">
+
+              <span>
+                Research
+              </span>
+
+              <small id="research-project-label">
+                No active project
+              </small>
+
+            </div>
+
+
+            <div class="analytics-value-row">
+
+              <strong id="research-analytics-value">
+                0%
+              </strong>
+
+              <span
+                class="analytics-change"
+                id="research-analytics-change"
+              >
+                Not started
+              </span>
+
+            </div>
+
+
+            <div class="analytics-progress">
+
+              <span
+                id="research-analytics-progress"
+                style="width: 0%"
+              ></span>
+
+            </div>
+
+
+            <p id="research-analytics-description">
+              Add a research project with milestones to display verified progress.
+            </p>
+
+
+            <span class="analytics-card-link">
+              View research
+              <span aria-hidden="true">↗</span>
+            </span>
+
+          </article>
+
+
+          <!-- TEAM -->
+
+          <article
+            class="analytics-card analytics-card-actionable"
+            id="team-analytics-card"
+            tabindex="0"
+            role="button"
+            aria-label="Open organisation team workspace"
+          >
+
+            <div class="analytics-card-top">
+
+              <span>
+                Team
+              </span>
+
+              <small id="team-organisation-label">
+                Organisation
+              </small>
+
+            </div>
+
+
+            <div class="analytics-value-row">
+
+              <strong id="team-analytics-value">
+                01
+              </strong>
+
+              <span
+                class="analytics-change"
+                id="team-analytics-change"
+              >
+                You
+              </span>
+
+            </div>
+
+
+            <div
+              class="team-presence"
+              id="team-presence"
+              aria-label="Current organisation members"
+            >
+              <span id="current-member-avatar">
+                NM
+              </span>
+            </div>
+
+
+            <p id="team-analytics-description">
+              Add verified organisation members to create a shared team workspace.
+            </p>
+
+
+            <span class="analytics-card-link">
+              Open team
+              <span aria-hidden="true">↗</span>
+            </span>
+
+          </article>
+
+        </div>
+
+
+        <p
+          class="business-analytics-notice"
+          id="business-analytics-notice"
+          role="status"
+          aria-live="polite"
+        ></p>
+
+      </section>
+
+
+      <!-- =================================================
+           APPLICATIONS
+      ================================================== -->
+
+      <section
+        class="business-applications-section"
+        aria-labelledby="business-applications-title"
+      >
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              APPLICATIONS
+            </p>
+
+            <h2 id="business-applications-title">
+              Your business tools, connected.
+            </h2>
+
+          </div>
+
+
+          <button
+            class="text-button"
+            id="manage-business-apps"
+            type="button"
+          >
+            Manage applications
+          </button>
+
+        </div>
+
+
+        <div
+          class="business-app-dock"
+          id="business-app-dock"
+          aria-label="Connected Business applications"
+        >
+          <!-- Applications rendered by business-live.js -->
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           BUSINESS CALENDAR
+      ================================================== -->
+
+      <section
+        class="business-calendar-section"
+        aria-labelledby="business-calendar-title"
+      >
+
+        <div class="business-calendar-layout">
+
+
+          <div class="business-calendar-heading">
+
+            <p class="eyebrow">
+              NOUS CALENDAR
+            </p>
+
+            <h2 id="business-calendar-title">
+              Today’s executive schedule.
+            </h2>
+
+            <p>
+              A focused view of the moments that require your
+              attention today.
+            </p>
+
+            <button
+              class="calendar-open-button"
+              type="button"
+            >
+              Open full calendar
+              <span aria-hidden="true">→</span>
+            </button>
+
+          </div>
+
+
+          <div class="business-timeline">
+
+            <article class="timeline-entry is-current">
+
+              <time datetime="09:30">
+                09:30
+              </time>
+
+              <div class="timeline-marker">
+                <span></span>
+              </div>
+
+              <div class="timeline-entry-copy">
+
+                <small>
+                  Leadership
+                </small>
+
+                <h3>
+                  Executive review
+                </h3>
+
+                <p>
+                  Review active priorities and current blockers.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <article class="timeline-entry">
+
+              <time datetime="11:00">
+                11:00
+              </time>
+
+              <div class="timeline-marker">
+                <span></span>
+              </div>
+
+              <div class="timeline-entry-copy">
+
+                <small>
+                  Research
+                </small>
+
+                <h3>
+                  External moderation preparation
+                </h3>
+
+                <p>
+                  Organise supporting documentation and feedback.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <article class="timeline-entry">
+
+              <time datetime="14:30">
+                14:30
+              </time>
+
+              <div class="timeline-marker">
+                <span></span>
+              </div>
+
+              <div class="timeline-entry-copy">
+
+                <small>
+                  NOUS Platform
+                </small>
+
+                <h3>
+                  Business workspace development
+                </h3>
+
+                <p>
+                  Continue interface implementation and review.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <article class="timeline-entry">
+
+              <time datetime="17:30">
+                17:30
+              </time>
+
+              <div class="timeline-marker">
+                <span></span>
+              </div>
+
+              <div class="timeline-entry-copy">
+
+                <small>
+                  Review
+                </small>
+
+                <h3>
+                  End-of-day intelligence summary
+                </h3>
+
+                <p>
+                  Understand what moved and what continues tomorrow.
+                </p>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           BUSINESS WORKSPACE
+      ================================================== -->
+
+      <section
+        class="business-projects-section"
+        id="business-workspace"
+        aria-labelledby="business-projects-title"
+      >
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              WORKSPACE
+            </p>
+
+            <h2 id="business-projects-title">
+              Your work, in one place.
+            </h2>
+
+            <p class="business-workspace-description">
+              Files, projects and activity from your connected applications.
+            </p>
+
+          </div>
+
+
+          <button
+            class="text-button"
+            id="view-all-work"
+            type="button"
+          >
+            View all work
+          </button>
+
+        </div>
+
+
+        <div
+          class="business-project-grid"
+          id="business-workspace-grid"
+          aria-live="polite"
+          aria-busy="true"
+        >
+
+          <article
+            class="business-workspace-state"
+            id="business-workspace-loading"
+          >
+
+            <span
+              class="project-folder"
+              aria-hidden="true"
+            >
+              <span class="project-folder-tab"></span>
+              <span class="project-folder-body"></span>
+            </span>
+
+
+            <span class="project-copy">
+
+              <small>
+                NOUS WORKSPACE
+              </small>
+
+              <strong>
+                Loading your work…
+              </strong>
+
+              <span>
+                Checking your projects and connected applications.
+              </span>
+
+            </span>
+
+          </article>
+
+        </div>
+
+
+        <p
+          class="business-workspace-notice"
+          id="business-workspace-notice"
+          role="status"
+          aria-live="polite"
+        ></p>
+
+      </section>
+
+    </main>
+
+
+    <!-- ===================================================
+         SEARCH PANEL
+    ==================================================== -->
+
+    <div
+      class="business-search-panel"
+      id="business-search-panel"
+      aria-hidden="true"
+    >
+
+      <button
+        class="business-search-backdrop"
+        id="business-search-backdrop"
+        type="button"
+        aria-label="Close search"
+      ></button>
+
+
+      <section
+        class="business-search-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="business-search-title"
+      >
+
+        <div class="business-search-header">
+
+          <div>
+
+            <p class="eyebrow">
+              NOUS SEARCH
+            </p>
+
+            <h2 id="business-search-title">
+              Search your organisation
+            </h2>
+
+          </div>
+
+
+          <button
+            class="business-search-close"
+            id="business-search-close"
+            type="button"
+            aria-label="Close search"
+          >
+            ×
+          </button>
+
+        </div>
+
+
+        <label
+          class="business-search-field"
+          for="business-search-input"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"
+            />
+          </svg>
+
+          <input
+            id="business-search-input"
+            type="search"
+            placeholder="Search projects, applications, documents or people..."
+            autocomplete="off"
+          >
+
+        </label>
+
+
+        <div
+          class="business-search-results"
+          id="business-search-results"
+        >
+
+          <button
+            type="button"
+            data-search-item="NOUS Platform project"
+          >
+            <small>PROJECT</small>
+            <strong>NOUS Platform</strong>
+            <span>Application and intelligence development</span>
+          </button>
+
+
+          <button
+            type="button"
+            data-search-item="Credit Scoring research"
+          >
+            <small>RESEARCH</small>
+            <strong>Credit Scoring</strong>
+            <span>Methodology and external moderation</span>
+          </button>
+
+
+          <button
+            type="button"
+            data-search-item="NOUS Calendar"
+          >
+            <small>APPLICATION</small>
+            <strong>NOUS Calendar</strong>
+            <span>Organisation schedule and time intelligence</span>
+          </button>
+
+
+          <button
+            type="button"
+            data-search-item="iNtsikelelo Foundation"
+          >
+            <small>FOUNDATION</small>
+            <strong>iNtsikelelo</strong>
+            <span>Partnership and programme development</span>
+          </button>
+
+        </div>
+
+
+        <p
+          class="business-search-message"
+          id="business-search-message"
+        >
+          Search currently works across the Business interface.
+          Database search will be connected later.
+        </p>
+
+      </section>
+
+    </div>
+
+
+    <!-- ===================================================
+         CREATE BUSINESS PROJECT
+         IMPORTANT:
+         Independent from search overlay
+    ==================================================== -->
+
+    <div
+      class="business-project-modal"
+      id="business-project-modal"
+      aria-hidden="true"
+      hidden
+    >
+
+      <button
+        class="business-project-modal-backdrop"
+        id="business-project-modal-backdrop"
+        type="button"
+        aria-label="Close project creator"
+      ></button>
+
+
+      <section
+        class="business-project-modal-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="business-project-modal-title"
+      >
+
+        <div class="business-project-modal-header">
+
+          <div>
+
+            <p class="eyebrow">
+              NOUS WORKSPACE
+            </p>
+
+            <h2 id="business-project-modal-title">
+              New project
+            </h2>
+
+          </div>
+
+
+          <button
+            class="business-project-modal-close"
+            id="business-project-modal-close"
+            type="button"
+            aria-label="Close project creator"
+          >
+            ×
+          </button>
+
+        </div>
+
+
+        <form id="business-project-form">
+
+
+          <label class="business-project-field">
+
+            <span>
+              Project name
+            </span>
+
+            <input
+              id="business-project-title"
+              type="text"
+              maxlength="160"
+              placeholder="Name your project"
+              required
+            >
+
+          </label>
+
+
+          <label class="business-project-field">
+
+            <span>
+              Description
+            </span>
+
+            <textarea
+              id="business-project-description"
+              rows="4"
+              maxlength="1000"
+              placeholder="What are you working on?"
+            ></textarea>
+
+          </label>
+
+
+          <p
+            class="business-project-form-notice"
+            id="business-project-form-notice"
+            role="status"
+            aria-live="polite"
+          ></p>
+
+
+          <div class="business-project-modal-actions">
+
+            <button
+              class="business-project-cancel"
+              id="business-project-cancel"
+              type="button"
+            >
+              Cancel
+            </button>
+
+
+            <button
+              class="business-project-save"
+              id="business-project-save"
+              type="submit"
+            >
+              Create project
+            </button>
+
+          </div>
+
+        </form>
+
+      </section>
+
+    </div>
+
+
+    <!-- ===================================================
+         TIME MODAL
+    ==================================================== -->
+
+    <button
+      class="time-modal-backdrop"
+      id="time-modal-backdrop"
+      type="button"
+      aria-label="Close time and calendar"
+      hidden
+    ></button>
+
+
+    <section
+      class="time-modal"
+      id="time-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-labelledby="time-modal-title"
+      hidden
+    >
+
+      <div class="time-modal-header">
+
+        <div>
+
+          <p class="eyebrow">
+            NOUS TIME
+          </p>
+
+          <h2 id="time-modal-title">
+            Time and calendar
+          </h2>
+
+        </div>
+
+
+        <button
+          class="time-modal-close"
+          id="time-modal-close"
+          type="button"
+          aria-label="Close time and calendar"
+        >
+          <span aria-hidden="true">
+            ×
+          </span>
+        </button>
+
+      </div>
+
+
+      <div class="time-modal-divider"></div>
+
+
+      <div class="time-modal-clock-card">
+
+        <p class="time-modal-clock-label">
+          CURRENT SOUTH AFRICAN TIME
+        </p>
+
+
+        <div
+          class="time-modal-clock"
+          aria-label="Current South African Standard Time"
+        >
+
+          <span data-time-modal-hours>
+            00
+          </span>
+
+          <span aria-hidden="true">
+            :
+          </span>
+
+          <span data-time-modal-minutes>
+            00
+          </span>
+
+          <span aria-hidden="true">
+            :
+          </span>
+
+          <span data-time-modal-seconds>
+            00
+          </span>
+
+        </div>
+
+
+        <p class="time-modal-date">
+
+          <span data-time-modal-date>
+            Loading current date
+          </span>
+
+          <span aria-hidden="true">
+            ·
+          </span>
+
+          <span>
+            SAST
+          </span>
+
+        </p>
+
+      </div>
+
+
+      <div class="time-modal-actions">
+
+        <button
+          class="time-view-today"
+          id="time-view-today"
+          type="button"
+        >
+          View today
+        </button>
+
+
+        <button
+          class="time-open-schedule"
+          id="time-open-schedule"
+          type="button"
+        >
+          Open schedule
+          <span aria-hidden="true">
+            →
+          </span>
+        </button>
+
+      </div>
+
+
+      <p class="time-modal-note">
+        NOUS Calendar operates on South African Standard Time.
+      </p>
+
+    </section>
+
+
+    <!-- ===================================================
+         FLOATING COMPANION
+    ==================================================== -->
+
+    <button
+      class="floating-companion"
+      id="floating-companion"
+      type="button"
+      aria-label="Open NOUS Companion"
+    >
+      <span
+        class="floating-symbol"
+        aria-hidden="true"
+      ></span>
+
+      <span>
+        Ask NOUS
+      </span>
+    </button>
+
+
+    <!-- ===================================================
+         COMPANION DRAWER
+    ==================================================== -->
+
+    <div
+      class="companion-drawer"
+      id="companion-drawer"
+      aria-hidden="true"
+    >
+
+      <button
+        class="drawer-backdrop"
+        id="drawer-backdrop"
+        type="button"
+        aria-label="Close Companion"
+      ></button>
+
+
+      <aside
+        class="drawer-panel"
+        aria-label="NOUS Companion preview"
+      >
+
+        <div class="drawer-header">
+
+          <div>
+
+            <p class="eyebrow">
+              COMPANION
+            </p>
+
+            <h2>
+              Begin with NOUS
+            </h2>
+
+          </div>
+
+
+          <button
+            class="drawer-close"
+            id="drawer-close"
+            type="button"
+            aria-label="Close Companion"
+          >
+            ×
+          </button>
+
+        </div>
+
+
+        <div class="drawer-body">
+
+          <div class="companion-welcome">
+
+            <span
+              class="companion-mark"
+              aria-hidden="true"
+            ></span>
+
+            <p>
+              I am ready to help you understand, organise or continue
+              your business work.
+            </p>
+
+          </div>
+
+
+          <form
+            class="drawer-form"
+            id="drawer-form"
+          >
+
+            <label for="drawer-message">
+              What is on your mind?
+            </label>
+
+            <textarea
+              id="drawer-message"
+              name="message"
+              rows="4"
+              placeholder="Ask NOUS something..."
+            ></textarea>
+
+            <button type="submit">
+              Send to O.R.U.L.E.
+              <span aria-hidden="true">→</span>
+            </button>
+
+          </form>
+
+
+          <p
+            class="drawer-notice"
+            id="drawer-notice"
+          >
+            Backend connection will be added in the next phase.
+          </p>
+
+        </div>
+
+      </aside>
+
+    </div>
+
+
+    <!-- ===================================================
+         BUSINESS APPLICATION MANAGER
+    ==================================================== -->
+
+    <div
+      class="business-app-modal"
+      id="business-app-modal"
+      aria-hidden="true"
+    >
+
+      <button
+        class="business-app-modal-backdrop"
+        id="business-app-modal-backdrop"
+        type="button"
+        aria-label="Close application manager"
+      ></button>
+
+
+      <section
+        class="business-app-modal-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="business-app-modal-title"
+      >
+
+        <div class="business-app-modal-header">
+
+          <div>
+
+            <p class="eyebrow">
+              APPLICATIONS
+            </p>
+
+            <h2 id="business-app-modal-title">
+              Add a business application
+            </h2>
+
+          </div>
+
+
+          <button
+            class="business-app-modal-close"
+            id="business-app-modal-close"
+            type="button"
+            aria-label="Close application manager"
+          >
+            ×
+          </button>
+
+        </div>
+
+
+        <div
+          class="available-app-grid"
+          id="available-business-apps"
+        >
+
+
+          <button
+            class="available-app"
+            type="button"
+            data-add-app="OneDrive"
+          >
+            <strong>
+              OneDrive
+            </strong>
+
+            <span>
+              Cloud documents and storage
+            </span>
+          </button>
+
+
+          <button
+            class="available-app"
+            type="button"
+            data-add-app="SharePoint"
+          >
+            <strong>
+              SharePoint
+            </strong>
+
+            <span>
+              Team sites and internal resources
+            </span>
+          </button>
+
+
+          <button
+            class="available-app"
+            type="button"
+            data-add-app="Power BI"
+          >
+            <strong>
+              Power BI
+            </strong>
+
+            <span>
+              Business analytics and reporting
+            </span>
+          </button>
+
+
+          <button
+            class="available-app"
+            type="button"
+            data-add-app="Slack"
+          >
+            <strong>
+              Slack
+            </strong>
+
+            <span>
+              Team communication
+            </span>
+          </button>
+
+
+          <button
+            class="available-app"
+            type="button"
+            data-add-app="Zoom"
+          >
+            <strong>
+              Zoom
+            </strong>
+
+            <span>
+              Meetings and calls
+            </span>
+          </button>
+
+
+          <button
+            class="available-app"
+            type="button"
+            data-add-app="Custom"
+          >
+            <strong>
+              Custom application
+            </strong>
+
+            <span>
+              Add another business tool
+            </span>
+          </button>
+
+        </div>
+
+
+        <p
+          class="business-app-modal-notice"
+          id="business-app-modal-notice"
+          role="status"
+          aria-live="polite"
+        >
+          Select an application to add it to your Business dock.
+        </p>
+
+      </section>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       SCRIPTS
+  ====================================================== -->
+
+  <script
+    src="./js/business.js"
+    defer
+  ></script>
+
+  <script
+    src="./js/business-live.js"
+    defer
+  ></script>
+
+  <script
+    src="./js/shell.js"
+    defer
+  ></script>
+
+</body>
+
+</html>

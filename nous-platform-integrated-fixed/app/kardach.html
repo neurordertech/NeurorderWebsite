@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>NOUS Kardach</title>
+
+  <meta
+    name="description"
+    content="NOUS Kardach — Device connectivity, Bluetooth, Wi-Fi and IoT."
+  >
+
+  <link rel="stylesheet" href="./css/tokens.css">
+  <link rel="stylesheet" href="./css/shell.css">
+  <link rel="stylesheet" href="./css/kardach.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../js/supabase-config.js"></script>
+
+<script
+  src="./js/auth-guard.js"
+  defer
+></script>
+
+<script
+  src="./js/kardach.js"
+  defer
+></script>
+</head>
+
+<body>
+
+<div class="ambient-background">
+    <div class="ambient-orb ambient-orb-one"></div>
+    <div class="ambient-orb ambient-orb-two"></div>
+    <div class="ambient-grid"></div>
+</div>
+
+<div class="app-shell">
+
+<header class="topbar">
+
+<div class="topbar-brand">
+
+<img
+src="../assets/logo/nouslogo.png"
+alt="NOUS"
+class="topbar-logo"
+>
+
+<span>NOUS</span>
+
+</div>
+
+<nav class="topbar-nav">
+
+<span class="space-label">
+CURRENT SPACE
+</span>
+
+<strong>
+Kardach
+</strong>
+
+</nav>
+
+<div
+class="profile-button"
+id="profile-button"
+>
+
+<img
+id="profile-avatar"
+class="profile-avatar"
+src="../assets/logo/nouslogo.png"
+alt=""
+>
+
+<div>
+
+<strong
+id="profile-name"
+>
+Loading...
+</strong>
+
+<small
+id="profile-organisation"
+>
+Loading...
+</small>
+
+</div>
+
+</div>
+
+</header>
+
+<main class="kardach-page">
+
+<section class="hero-card">
+
+<p class="eyebrow">
+
+NOUS KARDACH
+
+</p>
+
+<h1>
+
+Device Connectivity
+
+</h1>
+
+<p>
+
+Secure communication between NOUS and nearby devices using Bluetooth,
+Wi-Fi and future connection technologies.
+
+</p>
+
+</section>
+
+<section class="status-grid">
+
+<article class="status-card">
+
+<small>
+
+Internet
+
+</small>
+
+<h3
+id="network-status"
+>
+
+Checking...
+
+</h3>
+
+</article>
+
+<article class="status-card">
+
+<small>
+
+Bluetooth
+
+</small>
+
+<h3
+id="bluetooth-status"
+>
+
+Checking...
+
+</h3>
+
+</article>
+
+<article class="status-card">
+
+<small>
+
+Presence
+
+</small>
+
+<h3
+id="presence-status"
+>
+
+Unknown
+
+</h3>
+
+</article>
+
+<article class="status-card">
+
+<small>
+
+Nearby Devices
+
+</small>
+
+<h3
+id="nearby-count"
+>
+
+0
+
+</h3>
+
+</article>
+
+</section>
+
+<section class="connection-grid">
+
+<article class="panel">
+
+<h2>
+
+Bluetooth
+
+</h2>
+
+<p>
+
+Connect Bluetooth Low Energy devices.
+
+</p>
+
+<button
+id="scan-bluetooth"
+class="primary-button"
+>
+
+Scan Bluetooth
+
+</button>
+
+</article>
+
+<article class="panel">
+
+<h2>
+
+Wi-Fi
+
+</h2>
+
+<p>
+
+Inspect the current network environment.
+
+</p>
+
+<button
+id="scan-network"
+class="secondary-button"
+>
+
+Network Status
+
+</button>
+
+</article>
+
+</section>
+
+<section class="panel">
+
+<h2>
+
+Trusted Devices
+
+</h2>
+
+<div
+id="trusted-device-list"
+class="trusted-device-list"
+>
+
+<p>
+
+No trusted devices yet.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="panel">
+
+<h2>
+
+Nearby Devices
+
+</h2>
+
+<div
+id="nearby-device-list"
+class="trusted-device-list"
+>
+
+<p>
+
+Scan to discover nearby devices.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="panel">
+
+<h2>
+
+Automations
+
+</h2>
+
+<div class="automation-list">
+
+<div class="automation-item">
+
+<span>
+
+📍 Presence Detection
+
+</span>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="presence-enabled"
+>
+
+<span></span>
+
+</label>
+
+</div>
+
+<div class="automation-item">
+
+<span>
+
+🔔 Device Notifications
+
+</span>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="notifications-enabled"
+>
+
+<span></span>
+
+</label>
+
+</div>
+
+<div class="automation-item">
+
+<span>
+
+🎙 Wake Phrase
+
+</span>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="wakephrase-enabled"
+>
+
+<span></span>
+
+</label>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="panel">
+
+<h2>
+
+Future Technologies
+
+</h2>
+
+<div class="future-grid">
+
+<div class="future-item">Bluetooth LE</div>
+
+<div class="future-item">Wi-Fi</div>
+
+<div class="future-item">QR Pairing</div>
+
+<div class="future-item">NFC</div>
+
+<div class="future-item">Ultra Wideband</div>
+
+<div class="future-item">Matter</div>
+
+<div class="future-item">Thread</div>
+
+<div class="future-item">Smart Home</div>
+
+<div class="future-item">Medical Devices</div>
+
+<div class="future-item">Vehicle Integration</div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+</body>
+</html>

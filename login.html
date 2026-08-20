@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
@@ -10,12 +11,20 @@
 
     <meta
         name="description"
-        content="Subscribe to receive an email when Version 2 of the NEURORDER website and the NOUS Platform go live."
+        content="Sign in to your NEURORDER and NOUS account."
     >
 
-    <meta name="theme-color" content="#02050a">
+    <meta
+        name="theme-color"
+        content="#020409"
+    >
 
-    <title>Notify Me | NEURORDER</title>
+    <title>Sign In | NOUS by NEURORDER</title>
+
+
+    <!-- =====================================================
+         ICON
+    ====================================================== -->
 
     <link
         rel="icon"
@@ -23,336 +32,1263 @@
         type="image/png"
     >
 
+
+    <!-- =====================================================
+         FONTS
+    ====================================================== -->
+
     <link
-        rel="stylesheet"
-        href="css/subscribe.css"
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
     >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         ICONS
+    ====================================================== -->
 
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     >
+
+
+    <style>
+
+        :root {
+            --bg: #020409;
+
+            --panel:
+                rgba(
+                    7,
+                    13,
+                    23,
+                    0.88
+                );
+
+            --text: #f7f9fc;
+
+            --muted:
+                rgba(
+                    221,
+                    229,
+                    240,
+                    0.62
+                );
+
+            --faint:
+                rgba(
+                    221,
+                    229,
+                    240,
+                    0.38
+                );
+
+            --border:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.10
+                );
+
+            --blue: #5bb8ff;
+            --blue-bright: #8bd3ff;
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+            margin: 0;
+        }
+
+
+        body {
+            min-height: 100svh;
+
+            display: grid;
+
+            grid-template-rows:
+                auto
+                1fr
+                auto;
+
+            background:
+                radial-gradient(
+                    circle at 50% 18%,
+                    rgba(
+                        43,
+                        132,
+                        235,
+                        0.15
+                    ),
+                    transparent 30%
+                ),
+                #020409;
+
+            color: var(--text);
+
+            font-family:
+                "Inter",
+                sans-serif;
+
+            -webkit-font-smoothing:
+                antialiased;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        button,
+        input {
+            font: inherit;
+        }
+
+
+        /* =================================================
+           HEADER
+        ================================================== */
+
+        .auth-header {
+            display: flex;
+
+            width:
+                min(
+                    calc(100% - 48px),
+                    1180px
+                );
+
+            min-height: 82px;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 24px;
+
+            margin-inline: auto;
+
+            border-bottom:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.06
+                );
+        }
+
+
+        .brand {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+        }
+
+
+        .brand img {
+            width: 40px;
+            height: 40px;
+
+            object-fit: contain;
+        }
+
+
+        .brand span {
+            font-family:
+                "Manrope",
+                sans-serif;
+
+            font-size: 0.82rem;
+            font-weight: 600;
+
+            letter-spacing: 0.18em;
+        }
+
+
+        .back-link {
+            color:
+                var(--muted);
+
+            font-size: 0.75rem;
+        }
+
+
+        .back-link:hover {
+            color: #ffffff;
+        }
+
+
+        /* =================================================
+           MAIN
+        ================================================== */
+
+        .auth-main {
+            display: grid;
+
+            place-items: center;
+
+            padding:
+                70px
+                24px;
+        }
+
+
+        .auth-layout {
+            display: grid;
+
+            width:
+                min(
+                    100%,
+                    970px
+                );
+
+            grid-template-columns:
+                minmax(
+                    0,
+                    1fr
+                )
+                minmax(
+                    340px,
+                    420px
+                );
+
+            gap:
+                clamp(
+                    48px,
+                    8vw,
+                    110px
+                );
+
+            align-items: center;
+        }
+
+
+        /* =================================================
+           INTRO
+        ================================================== */
+
+        .auth-intro {
+            max-width: 500px;
+        }
+
+
+        .eyebrow {
+            margin: 0;
+
+            color:
+                var(--blue-bright);
+
+            font-size: 0.64rem;
+            font-weight: 600;
+
+            letter-spacing: 0.20em;
+
+            text-transform: uppercase;
+        }
+
+
+        .auth-intro h1 {
+            margin:
+                18px
+                0
+                0;
+
+            font-family:
+                "Manrope",
+                sans-serif;
+
+            font-size:
+                clamp(
+                    3rem,
+                    7vw,
+                    5.8rem
+                );
+
+            font-weight: 400;
+
+            line-height: 0.94;
+
+            letter-spacing:
+                -0.055em;
+        }
+
+
+        .auth-intro h1 span {
+            display: block;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.34
+                );
+        }
+
+
+        .auth-intro p:last-child {
+            margin:
+                25px
+                0
+                0;
+
+            color:
+                var(--muted);
+
+            line-height: 1.75;
+
+            font-size: 0.88rem;
+        }
+
+
+        /* =================================================
+           CARD
+        ================================================== */
+
+        .auth-card {
+            padding:
+                30px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 26px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(
+                        8,
+                        16,
+                        29,
+                        0.92
+                    ),
+                    rgba(
+                        4,
+                        8,
+                        15,
+                        0.94
+                    )
+                );
+
+            box-shadow:
+                0
+                24px
+                80px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.25
+                );
+        }
+
+
+        .auth-card-header {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .auth-logo {
+            width: 44px;
+            height: 44px;
+
+            display: grid;
+            place-items: center;
+
+            border:
+                1px solid
+                rgba(
+                    112,
+                    201,
+                    255,
+                    0.24
+                );
+
+            border-radius: 50%;
+
+            background:
+                rgba(
+                    67,
+                    153,
+                    255,
+                    0.06
+                );
+        }
+
+
+        .auth-logo img {
+            width: 70%;
+            height: 70%;
+
+            object-fit: contain;
+        }
+
+
+        .auth-card-header div:last-child {
+            display: grid;
+
+            gap: 3px;
+        }
+
+
+        .auth-card-header strong {
+            font-family:
+                "Manrope",
+                sans-serif;
+
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+
+        .auth-card-header span {
+            color:
+                var(--faint);
+
+            font-size: 0.65rem;
+        }
+
+
+        /* =================================================
+           FORM
+        ================================================== */
+
+        .auth-form {
+            display: grid;
+
+            gap: 17px;
+        }
+
+
+        .field {
+            display: grid;
+
+            gap: 8px;
+        }
+
+
+        .field label {
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.70
+                );
+
+            font-size: 0.68rem;
+            font-weight: 500;
+        }
+
+
+        .field-input {
+            position: relative;
+        }
+
+
+        .field-input i {
+            position: absolute;
+
+            top: 50%;
+            left: 14px;
+
+            color:
+                var(--faint);
+
+            font-size: 0.80rem;
+
+            transform:
+                translateY(-50%);
+        }
+
+
+        .field-input input {
+            width: 100%;
+            min-height: 48px;
+
+            padding:
+                0
+                14px
+                0
+                42px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 13px;
+
+            outline: none;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.025
+                );
+
+            color: #ffffff;
+
+            transition:
+                border-color 160ms ease,
+                box-shadow 160ms ease;
+        }
+
+
+        .field-input input:focus {
+            border-color:
+                rgba(
+                    113,
+                    202,
+                    255,
+                    0.48
+                );
+
+            box-shadow:
+                0
+                0
+                0
+                3px
+                rgba(
+                    83,
+                    168,
+                    255,
+                    0.07
+                );
+        }
+
+
+        .field-input input::placeholder {
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.27
+                );
+        }
+
+
+        /* =================================================
+           MESSAGE
+        ================================================== */
+
+        .auth-message {
+            margin: 0;
+
+            padding:
+                11px
+                13px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 11px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.02
+                );
+
+            color:
+                var(--muted);
+
+            font-size: 0.70rem;
+
+            line-height: 1.5;
+        }
+
+
+        .auth-message[hidden] {
+            display: none;
+        }
+
+
+        .auth-message.is-error {
+            border-color:
+                rgba(
+                    255,
+                    85,
+                    105,
+                    0.25
+                );
+
+            color:
+                #ff9eaa;
+        }
+
+
+        .auth-message.is-success {
+            border-color:
+                rgba(
+                    92,
+                    206,
+                    161,
+                    0.24
+                );
+
+            color:
+                #a3e7ca;
+        }
+
+
+        /* =================================================
+           BUTTON
+        ================================================== */
+
+        .auth-submit {
+            width: 100%;
+
+            min-height: 50px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            border:
+                1px solid
+                rgba(
+                    119,
+                    203,
+                    255,
+                    0.40
+                );
+
+            border-radius: 999px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(
+                        55,
+                        150,
+                        255,
+                        0.26
+                    ),
+                    rgba(
+                        24,
+                        72,
+                        135,
+                        0.16
+                    )
+                );
+
+            color: #ffffff;
+
+            cursor: pointer;
+
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+
+        .auth-submit:disabled {
+            opacity: 0.55;
+
+            cursor: wait;
+        }
+
+
+        /* =================================================
+           BOTTOM
+        ================================================== */
+
+        .auth-bottom {
+            margin-top: 22px;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid
+                var(--border);
+
+            color:
+                var(--muted);
+
+            font-size: 0.72rem;
+
+            text-align: center;
+        }
+
+
+        .auth-bottom a {
+            color:
+                var(--blue-bright);
+
+            font-weight: 500;
+        }
+
+
+        /* =================================================
+           CONTEXT
+        ================================================== */
+
+        .return-context {
+            display: none;
+
+            margin-bottom: 18px;
+
+            padding:
+                11px
+                13px;
+
+            border:
+                1px solid
+                rgba(
+                    96,
+                    190,
+                    255,
+                    0.14
+                );
+
+            border-radius: 12px;
+
+            background:
+                rgba(
+                    51,
+                    129,
+                    230,
+                    0.045
+                );
+
+            color:
+                var(--muted);
+
+            font-size: 0.69rem;
+
+            line-height: 1.5;
+        }
+
+
+        .return-context.visible {
+            display: block;
+        }
+
+
+        .return-context strong {
+            color:
+                var(--blue-bright);
+
+            font-weight: 500;
+        }
+
+
+        /* =================================================
+           FOOTER
+        ================================================== */
+
+        .auth-footer {
+            width:
+                min(
+                    calc(100% - 48px),
+                    1180px
+                );
+
+            min-height: 80px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-inline: auto;
+
+            border-top:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.06
+                );
+
+            color:
+                var(--faint);
+
+            font-size: 0.64rem;
+        }
+
+
+        /* =================================================
+           RESPONSIVE
+        ================================================== */
+
+        @media (max-width: 800px) {
+
+            .auth-layout {
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .auth-intro {
+                text-align: center;
+
+                margin-inline: auto;
+            }
+
+
+            .auth-card {
+                width:
+                    min(
+                        100%,
+                        430px
+                    );
+
+                margin-inline: auto;
+            }
+
+        }
+
+
+        @media (max-width: 520px) {
+
+            .auth-header,
+            .auth-footer {
+                width:
+                    calc(
+                        100% - 32px
+                    );
+            }
+
+
+            .auth-header {
+                min-height: 70px;
+            }
+
+
+            .auth-main {
+                padding:
+                    45px
+                    16px;
+            }
+
+
+            .auth-card {
+                padding:
+                    24px
+                    20px;
+            }
+
+
+            .auth-footer {
+                flex-direction: column;
+
+                justify-content: center;
+
+                padding:
+                    22px
+                    0;
+
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
 </head>
 
-<body>
 
-    <div class="subscribe-page">
+<body data-auth-page="login">
 
-        <header class="subscribe-header">
 
-            <a
-                href="index.html"
-                class="subscribe-brand"
-                aria-label="Return to the NEURORDER homepage"
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="auth-header">
+
+        <a
+            class="brand"
+            href="index.html"
+            aria-label="NEURORDER home"
+        >
+
+            <img
+                src="images/NeurorderBody.png"
+                alt=""
             >
-                <img
-                    src="images/NeurorderBody.png"
-                    alt="NEURORDER"
-                >
-            </a>
 
-            <nav aria-label="Temporary website navigation">
-                <a href="index.html">
-                    Home
-                </a>
+            <span>
+                NEURORDER
+            </span>
 
-                <a href="about.html">
-                    About
-                </a>
+        </a>
 
-                <a href="news.html">
-                    News
-                </a>
-            </nav>
 
-        </header>
+        <a
+            class="back-link"
+            href="nous-news.html"
+        >
+            Return to NOUS News
+        </a>
 
-        <main class="subscribe-main">
+    </header>
 
-            <section class="subscribe-card">
 
-                <div
-                    class="subscribe-symbol"
-                    aria-hidden="true"
-                >
-                    <span class="orbit orbit-one"></span>
-                    <span class="orbit orbit-two"></span>
-                    <span class="orbit orbit-three"></span>
 
-                    <div class="symbol-core">
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="auth-main">
+
+        <div class="auth-layout">
+
+
+            <!-- =================================================
+                 INTRO
+            ================================================== -->
+
+            <section class="auth-intro">
+
+                <p class="eyebrow">
+                    NOUS IDENTITY
+                </p>
+
+
+                <h1>
+                    Welcome back.
+                    <span>
+                        Continue where you left off.
+                    </span>
+                </h1>
+
+
+                <p>
+                    Your NEURORDER account is also your NOUS
+                    identity. Sign in once to participate in
+                    NOUS News, discussions and connected NOUS
+                    experiences.
+                </p>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 LOGIN CARD
+            ================================================== -->
+
+            <section class="auth-card">
+
+                <div class="auth-card-header">
+
+                    <div class="auth-logo">
+
                         <img
                             src="images/logo.png"
                             alt=""
                         >
+
                     </div>
+
+
+                    <div>
+
+                        <strong>
+                            Sign in to NOUS
+                        </strong>
+
+                        <span>
+                            NEURORDER Intelligence Network
+                        </span>
+
+                    </div>
+
                 </div>
 
-                <div class="subscribe-content">
 
-                    <p class="subscribe-eyebrow">
-                        NEURORDER VERSION 2
-                    </p>
 
-                    <h1>
-                        Let us notify you when we go live.
-                    </h1>
+                <!-- RETURN CONTEXT -->
 
-                    <p class="subscribe-description">
-                        We are preparing the next version of the
-                        NEURORDER website and the public preview of
-                        the NOUS Platform.
-                    </p>
+                <div
+                    class="return-context"
+                    id="returnContext"
+                >
 
-                    <p class="subscribe-description">
-                        Leave your email address and we will notify
-                        you when the new experience becomes available.
-                    </p>
+                    <strong>
+                        Returning to NOUS News.
+                    </strong>
 
-                    <form
-                        class="subscribe-form"
-                        id="launchSubscribeForm"
-                    >
+                    After signing in, you will continue
+                    automatically.
 
-                        <label for="subscriberEmail">
+                </div>
+
+
+
+                <!-- MESSAGE -->
+
+                <p
+                    class="auth-message"
+                    id="authMessage"
+                    hidden
+                    aria-live="polite"
+                ></p>
+
+
+
+                <!-- FORM -->
+
+                <form
+                    class="auth-form"
+                    id="loginForm"
+                >
+
+
+                    <div class="field">
+
+                        <label for="loginEmail">
                             Email address
                         </label>
 
-                        <div class="subscribe-input-row">
 
-                            <div class="subscribe-input-wrap">
+                        <div class="field-input">
 
-                                <i
-                                    class="fa-regular fa-envelope"
-                                    aria-hidden="true"
-                                ></i>
+                            <i
+                                class="fa-regular fa-envelope"
+                                aria-hidden="true"
+                            ></i>
 
-                                <input
-                                    id="subscriberEmail"
-                                    name="email"
-                                    type="email"
-                                    placeholder="name@example.com"
-                                    autocomplete="email"
-                                    required
-                                >
-
-                            </div>
-
-                            <button type="submit">
-                                Notify Me
-
-                                <i
-                                    class="fa-solid fa-arrow-right"
-                                    aria-hidden="true"
-                                ></i>
-                            </button>
-
-                        </div>
-
-                        <label class="consent-row">
 
                             <input
-                                id="subscriberConsent"
-                                name="consent"
-                                type="checkbox"
+                                id="loginEmail"
+                                name="email"
+                                type="email"
+                                autocomplete="email"
+                                placeholder="name@example.com"
                                 required
                             >
 
-                            <span>
-                                I agree to receive a launch notification
-                                from NEURORDER. My email will only be used
-                                for this purpose.
-                            </span>
-
-                        </label>
-
-                        <p
-                            class="form-status"
-                            id="subscribeStatus"
-                            aria-live="polite"
-                        ></p>
-
-                    </form>
-
-                    <div class="subscribe-divider"></div>
-
-                    <div class="subscribe-actions">
-
-                        <a href="index.html">
-                            <i
-                                class="fa-solid fa-arrow-left"
-                                aria-hidden="true"
-                            ></i>
-
-                            Return Home
-                        </a>
-
-                        <a href="news.html">
-                            Explore Nous News
-
-                            <i
-                                class="fa-solid fa-arrow-right"
-                                aria-hidden="true"
-                            ></i>
-                        </a>
+                        </div>
 
                     </div>
+
+
+
+                    <div class="field">
+
+                        <label for="loginPassword">
+                            Password
+                        </label>
+
+
+                        <div class="field-input">
+
+                            <i
+                                class="fa-solid fa-lock"
+                                aria-hidden="true"
+                            ></i>
+
+
+                            <input
+                                id="loginPassword"
+                                name="password"
+                                type="password"
+                                autocomplete="current-password"
+                                placeholder="Enter your password"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <button
+                        class="auth-submit"
+                        type="submit"
+                    >
+
+                        <span>
+                            Sign in
+                        </span>
+
+                        <i
+                            class="fa-solid fa-arrow-right"
+                            aria-hidden="true"
+                        ></i>
+
+                    </button>
+
+                </form>
+
+
+
+                <div class="auth-bottom">
+
+                    Don't have a NOUS account?
+
+                    <a
+                        href="signup.html"
+                        id="createAccountLink"
+                    >
+                        Create one
+                    </a>
 
                 </div>
 
             </section>
 
-        </main>
+        </div>
 
-        <footer class="subscribe-footer">
+    </main>
 
-            <p>
-                Powered by NEURORDER Intelligence.
-            </p>
 
-            <p>
-                © 2026 NEURORDER (Pty) Ltd.
-            </p>
 
-        </footer>
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
 
-    </div>
+    <footer class="auth-footer">
 
- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="../js/supabase.js"></script>
+        <span>
+            NOUS by NEURORDER
+        </span>
 
-<script>
-    const subscribeForm =
-        document.getElementById("launchSubscribeForm");
 
-    const subscriberEmail =
-        document.getElementById("subscriberEmail");
+        <span>
+            © 2026 NEURORDER (Pty) Ltd.
+        </span>
 
-    const subscriberConsent =
-        document.getElementById("subscriberConsent");
+    </footer>
 
-    const subscribeStatus =
-        document.getElementById("subscribeStatus");
 
-    const submitButton =
-        subscribeForm.querySelector('button[type="submit"]');
 
-    subscribeForm.addEventListener(
-        "submit",
-        async (event) => {
-            event.preventDefault();
+    <!-- =====================================================
+         SUPABASE + AUTH
+    ====================================================== -->
 
-            const email =
-                subscriberEmail.value
-                    .trim()
-                    .toLowerCase();
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-            subscribeStatus.textContent = "";
-            subscribeStatus.className = "form-status";
+<script src="js/supabase.js"></script>
 
-            if (!email) {
-                showStatus(
-                    "Please enter your email address.",
-                    "error"
-                );
-                return;
-            }
+<script src="js/auth.js"></script>
 
-            if (!subscriberConsent.checked) {
-                showStatus(
-                    "Please agree to receive the launch notification.",
-                    "error"
-                );
-                return;
-            }
 
-            if (
-                typeof window.supabaseClient === "undefined"
-            ) {
-                console.error(
-                    "window.supabaseClient was not found. Check the supabase.js path."
-                );
 
-                showStatus(
-                    "The subscription service is unavailable. Please try again shortly.",
-                    "error"
-                );
+    <!-- =====================================================
+         LOGIN PAGE CONTEXT
+    ====================================================== -->
 
-                return;
-            }
+    <script>
 
-            setSubmitting(true);
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
 
-            try {
-                const { data, error } =
-                    await window.supabaseClient.rpc(
-                        "subscribe_to_launch",
-                        {
-                            subscriber_email: email,
-                            subscriber_consent: true
-                        }
+                const parameters =
+                    new URLSearchParams(
+                        window.location.search
                     );
 
-                if (error) {
-                    throw error;
+
+                const returnTo =
+                    parameters.get(
+                        "returnTo"
+                    );
+
+
+                const returnContext =
+                    document.getElementById(
+                        "returnContext"
+                    );
+
+
+                const createAccountLink =
+                    document.getElementById(
+                        "createAccountLink"
+                    );
+
+
+                /*
+                 * Show context when the user came
+                 * from NOUS News.
+                 */
+
+                if (
+                    returnTo ===
+                    "/nous-news.html"
+                ) {
+
+                    returnContext
+                        ?.classList
+                        .add(
+                            "visible"
+                        );
+
                 }
 
-                console.log(
-                    "Launch subscription saved:",
-                    data
-                );
 
-                showStatus(
-                    "You’re on the list. We’ll notify you when NEURORDER Version 2 and the NOUS Platform go live.",
-                    "success"
-                );
+                /*
+                 * Preserve returnTo when moving
+                 * from login → signup.
+                 */
 
-                subscribeForm.reset();
+                if (
+                    returnTo &&
+                    returnTo.startsWith("/") &&
+                    !returnTo.startsWith("//") &&
+                    createAccountLink
+                ) {
 
-            } catch (error) {
-                console.error(
-                    "Launch subscription failed:",
-                    error
-                );
+                    createAccountLink.href =
+                        `signup.html?returnTo=${encodeURIComponent(
+                            returnTo
+                        )}`;
 
-                showStatus(
-                    error?.message ||
-                    "We could not save your email. Please try again.",
-                    "error"
-                );
+                }
 
-            } finally {
-                setSubmitting(false);
             }
-        }
-    );
+        );
 
-    function setSubmitting(isSubmitting) {
-        submitButton.disabled = isSubmitting;
-
-        submitButton.innerHTML = isSubmitting
-            ? `
-                Saving…
-                <i
-                    class="fa-solid fa-spinner fa-spin"
-                    aria-hidden="true"
-                ></i>
-            `
-            : `
-                Notify Me
-                <i
-                    class="fa-solid fa-arrow-right"
-                    aria-hidden="true"
-                ></i>
-            `;
-    }
-
-    function showStatus(message, type) {
-        subscribeStatus.textContent = message;
-        subscribeStatus.className =
-            `form-status ${type}`;
-    }
-</script>
-
+    </script>
 
 </body>
+
 </html>

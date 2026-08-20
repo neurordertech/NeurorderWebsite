@@ -1,0 +1,127 @@
+/* =========================================================
+   NOUS — GLOBAL FOUNDATION
+   Keep this file minimal.
+   Page-specific styling belongs in the page CSS files.
+========================================================= */
+
+:root {
+  --bg: #02050a;
+  --surface: #070b12;
+
+  --text: #f7f8fa;
+  --muted: #9aa6b2;
+
+  --border: rgba(255, 255, 255, 0.10);
+
+  --nous-blue: #6f7cff;
+  --nous-violet: #7668ff;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+html {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  width: 100%;
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  background: var(--bg);
+  color: var(--text);
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* =========================================================
+   BASIC ELEMENT RESET
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+button {
+  border: 0;
+}
+
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.visually-hidden {
+  position: absolute !important;
+
+  width: 1px !important;
+  height: 1px !important;
+
+  padding: 0 !important;
+  margin: -1px !important;
+
+  overflow: hidden !important;
+
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+
+  border: 0 !important;
+}

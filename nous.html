@@ -1,28 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>NOUS Companion | NEURORDER</title>
-<h1 id="lockedTitle">NOUS COMPANION</h1>
-
-  <link rel="icon" href="images/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon.png">
-  <link rel="apple-touch-icon" href="images/favicon.png">
-
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/nous.css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-  <!-- Google AdSense -->
-  <script async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2116967709675155"
-          crossorigin="anonymous"></script>
-</head>
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
 
@@ -33,29 +11,42 @@
 
     <meta
         name="description"
-        content="NOUS Companion is currently locked while NEURORDER prepares the public NOUS Platform experience."
+        content="NOUS by NEURORDER. A new South African intelligence experience. Public deployment 28 August 2026."
     >
 
-    <meta name="theme-color" content="#020409">
+    <meta
+        name="theme-color"
+        content="#020409"
+    >
 
+    <title>NOUS | NEURORDER</title>
+
+
+    <!-- =====================================================
+         FAVICONS
+    ====================================================== -->
 
     <link
         rel="icon"
-        type="image/x-icon"
         href="images/favicon.ico"
+        sizes="any"
     >
 
     <link
         rel="icon"
         type="image/png"
-        sizes="32x32"
         href="images/favicon.png"
     >
 
     <link
         rel="apple-touch-icon"
-        href="images/logo.png"
+        href="images/favicon.png"
     >
+
+
+    <!-- =====================================================
+         FONTS
+    ====================================================== -->
 
     <link
         rel="preconnect"
@@ -69,1099 +60,2316 @@
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap"
         rel="stylesheet"
     >
 
+
+    <!-- =====================================================
+         ICONS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         EXISTING SITE CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+    <!-- =====================================================
+         NOUS PAGE CSS
+    ====================================================== -->
+
     <style>
+
         :root {
-            --background: #020409;
-            --surface: rgba(6, 12, 22, 0.72);
-            --surface-strong: rgba(9, 17, 30, 0.92);
-            --text: #f7f9fc;
-            --muted: rgba(214, 224, 239, 0.66);
-            --faint: rgba(214, 224, 239, 0.42);
-            --border: rgba(255, 255, 255, 0.13);
-            --blue: #50a9ff;
-            --blue-bright: #83c7ff;
-            --blue-soft: rgba(58, 155, 255, 0.2);
-            --page-width: 1240px;
+            --nous-bg: #020409;
+
+            --nous-text:
+                #f7f9fc;
+
+            --nous-muted:
+                rgba(
+                    220,
+                    230,
+                    242,
+                    0.66
+                );
+
+            --nous-faint:
+                rgba(
+                    220,
+                    230,
+                    242,
+                    0.42
+                );
+
+            --nous-border:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.10
+                );
+
+            --nous-blue:
+                #58adff;
+
+            --nous-blue-bright:
+                #9bd5ff;
+
+            --nous-max:
+                1400px;
         }
+
 
         * {
-            box-sizing: border-box;
+            box-sizing:
+                border-box;
         }
+
 
         html {
-            min-height: 100%;
-            scroll-behavior: smooth;
+            scroll-behavior:
+                smooth;
         }
+
 
         body {
-            min-height: 100%;
             margin: 0;
-            overflow-x: hidden;
+
+            min-height:
+                100vh;
+
+            overflow-x:
+                hidden;
+
             background:
                 radial-gradient(
-                    circle at 50% 26%,
-                    rgba(18, 92, 177, 0.15),
+                    circle at 75% 35%,
+                    rgba(
+                        28,
+                        116,
+                        210,
+                        0.14
+                    ),
+                    transparent 33%
+                ),
+
+                radial-gradient(
+                    circle at 20% 50%,
+                    rgba(
+                        21,
+                        77,
+                        150,
+                        0.08
+                    ),
                     transparent 34%
                 ),
-                radial-gradient(
-                    circle at 20% 72%,
-                    rgba(10, 67, 139, 0.09),
-                    transparent 30%
-                ),
-                #020409;
-            color: var(--text);
-            font-family: "Inter", sans-serif;
+
+                var(--nous-bg);
+
+            color:
+                var(--nous-text);
+
+            font-family:
+                "Inter",
+                sans-serif;
+
+            -webkit-font-smoothing:
+                antialiased;
         }
 
-        body::before {
-            position: fixed;
-            inset: 0;
-            z-index: -4;
-            pointer-events: none;
-            content: "";
-            background-image:
-                radial-gradient(
-                    circle at 10% 18%,
-                    rgba(255, 255, 255, 0.8) 0 1px,
-                    transparent 1.4px
-                ),
-                radial-gradient(
-                    circle at 72% 32%,
-                    rgba(87, 171, 255, 0.85) 0 1px,
-                    transparent 1.5px
-                ),
-                radial-gradient(
-                    circle at 34% 76%,
-                    rgba(255, 255, 255, 0.55) 0 1px,
-                    transparent 1.4px
-                ),
-                radial-gradient(
-                    circle at 88% 68%,
-                    rgba(71, 154, 255, 0.65) 0 1px,
-                    transparent 1.5px
-                );
-            background-size:
-                330px 330px,
-                420px 420px,
-                520px 520px,
-                610px 610px;
-            opacity: 0.26;
-        }
 
         a {
-            color: inherit;
-            text-decoration: none;
+            color:
+                inherit;
+
+            text-decoration:
+                none;
         }
+
 
         button,
         a {
-            -webkit-tap-highlight-color: transparent;
+            -webkit-tap-highlight-color:
+                transparent;
         }
 
-        .site-shell {
-            display: grid;
-            min-height: 100svh;
-            grid-template-rows: auto 1fr auto;
-        }
+
+        /* =====================================================
+           HEADER
+        ====================================================== */
 
         .site-header {
-            position: relative;
-            z-index: 20;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.09);
-            background: rgba(2, 4, 9, 0.78);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
+            position:
+                relative;
+
+            z-index:
+                50;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            width:
+                min(
+                    calc(100% - 48px),
+                    1320px
+                );
+
+            min-height:
+                82px;
+
+            margin-inline:
+                auto;
+
+            border-bottom:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.08
+                );
         }
 
-        .header-inner {
-            display: flex;
-            width: min(
-                calc(100% - 48px),
-                var(--page-width)
-            );
-            min-height: 82px;
-            align-items: center;
-            justify-content: space-between;
-            gap: 36px;
-            margin-inline: auto;
+
+        .nav-logo {
+            display:
+                block;
+
+            width:
+                auto;
+
+            height:
+                42px;
+
+            object-fit:
+                contain;
         }
 
-        .brand {
-            display: inline-flex;
-            align-items: center;
-            gap: 13px;
-        }
-
-        .brand img {
-            width: 42px;
-            height: 42px;
-            object-fit: contain;
-        }
-
-        .brand span {
-            font-family: "Manrope", sans-serif;
-            font-size: 0.92rem;
-            font-weight: 500;
-            letter-spacing: 0.22em;
-        }
 
         .desktop-nav {
-            display: flex;
-            align-items: center;
-            gap: clamp(18px, 2.6vw, 38px);
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                clamp(
+                    16px,
+                    2vw,
+                    30px
+                );
         }
+
 
         .desktop-nav a {
-            position: relative;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.78rem;
-            font-weight: 500;
-            letter-spacing: 0.04em;
+            position:
+                relative;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.67
+                );
+
+            font-size:
+                0.76rem;
+
+            font-weight:
+                500;
+
             transition:
-                color 220ms ease,
-                transform 220ms ease;
+                color
+                0.2s ease;
         }
 
-        .desktop-nav a::after {
-            position: absolute;
-            right: 0;
-            bottom: -31px;
-            left: 0;
-            height: 2px;
-            content: "";
-            background: var(--blue);
-            box-shadow: 0 0 14px rgba(63, 162, 255, 0.9);
-            transform: scaleX(0);
-            transition: transform 240ms ease;
-        }
 
         .desktop-nav a:hover,
-        .desktop-nav a:focus-visible,
         .desktop-nav a.active {
-            color: #ffffff;
+            color:
+                #ffffff;
         }
 
-        .desktop-nav a:hover::after,
-        .desktop-nav a:focus-visible::after,
+
         .desktop-nav a.active::after {
-            transform: scaleX(1);
+            position:
+                absolute;
+
+            right:
+                0;
+
+            bottom:
+                -31px;
+
+            left:
+                0;
+
+            height:
+                2px;
+
+            content:
+                "";
+
+            background:
+                var(--nous-blue);
+
+            box-shadow:
+                0
+                0
+                15px
+                rgba(
+                    88,
+                    173,
+                    255,
+                    0.8
+                );
         }
 
-        .mobile-menu-button {
-            display: none;
-            width: 44px;
-            height: 44px;
-            place-items: center;
-            border: 1px solid var(--border);
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.03);
-            cursor: pointer;
-        }
 
-        .mobile-menu-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 5px);
-            gap: 4px;
-        }
+        /* =====================================================
+           MOBILE MENU
+        ====================================================== */
 
-        .mobile-menu-grid span {
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.82);
-        }
+        .mobile-menu-btn {
+            display:
+                none;
 
-        .mobile-menu {
-            display: none;
-            padding: 10px 24px 24px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            background: rgba(2, 4, 9, 0.95);
-        }
+            width:
+                44px;
 
-        .mobile-menu.open {
-            display: grid;
-        }
+            height:
+                44px;
 
-        .mobile-menu a {
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-            color: rgba(255, 255, 255, 0.76);
-            font-size: 0.88rem;
-        }
+            grid-template-columns:
+                repeat(
+                    2,
+                    5px
+                );
 
-        .mobile-menu a.active {
-            color: var(--blue-bright);
-        }
+            place-content:
+                center;
 
-        .locked-main {
-            display: grid;
-            place-items: center;
+            gap:
+                4px;
+
             padding:
-                clamp(72px, 9vw, 126px)
+                0;
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.13
+                );
+
+            border-radius:
+                50%;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.025
+                );
+
+            cursor:
+                pointer;
+        }
+
+
+        .mobile-menu-btn .dot {
+            width:
+                5px;
+
+            height:
+                5px;
+
+            border-radius:
+                50%;
+
+            background:
+                var(--nous-blue);
+
+            box-shadow:
+                0
+                0
+                7px
+                rgba(
+                    88,
+                    173,
+                    255,
+                    0.5
+                );
+        }
+
+
+        .mobile-menu-panel {
+            display:
+                none;
+
+            position:
+                relative;
+
+            z-index:
+                49;
+
+            padding:
+                8px
                 24px
-                clamp(76px, 9vw, 118px);
+                24px;
+
+            border-bottom:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.08
+                );
+
+            background:
+                rgba(
+                    2,
+                    4,
+                    9,
+                    0.98
+                );
         }
 
-        .locked-content {
-            width: min(100%, 760px);
-            text-align: center;
+
+        .mobile-menu-panel.open {
+            display:
+                grid;
         }
 
-        .nous-orbit {
-            position: relative;
-            display: grid;
-            width: clamp(190px, 24vw, 280px);
-            aspect-ratio: 1;
-            place-items: center;
-            margin: 0 auto 50px;
+
+        .mobile-menu-panel a {
+            padding:
+                15px 0;
+
+            border-bottom:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.07
+                );
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.72
+                );
+
+            font-size:
+                0.86rem;
         }
 
-        .orbit-ring {
-            position: absolute;
-            inset: 0;
-            border: 1px solid rgba(78, 169, 255, 0.28);
-            border-radius: 50%;
+
+        .mobile-menu-panel a.active {
+            color:
+                var(--nous-blue-bright);
         }
 
-        .orbit-ring-one {
-            inset: 11%;
-            border-color: rgba(91, 181, 255, 0.64);
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .nous-launch {
+            position:
+                relative;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            min-height:
+                calc(
+                    100svh - 82px
+                );
+
+            overflow:
+                hidden;
+        }
+
+
+        .nous-launch::before {
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            z-index:
+                1;
+
+            pointer-events:
+                none;
+
+            content:
+                "";
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(
+                        2,
+                        4,
+                        9,
+                        0.99
+                    ) 0%,
+
+                    rgba(
+                        2,
+                        4,
+                        9,
+                        0.90
+                    ) 34%,
+
+                    rgba(
+                        2,
+                        4,
+                        9,
+                        0.38
+                    ) 68%,
+
+                    rgba(
+                        2,
+                        4,
+                        9,
+                        0.34
+                    ) 100%
+                );
+        }
+
+
+        .nous-launch-inner {
+            position:
+                relative;
+
+            z-index:
+                5;
+
+            display:
+                grid;
+
+            width:
+                min(
+                    calc(
+                        100% - 64px
+                    ),
+                    var(--nous-max)
+                );
+
+            margin-inline:
+                auto;
+
+            grid-template-columns:
+                minmax(
+                    0,
+                    0.9fr
+                )
+                minmax(
+                    440px,
+                    1.1fr
+                );
+
+            grid-template-areas:
+                "copy visual"
+                "stores stores";
+
+            align-items:
+                center;
+
+            column-gap:
+                60px;
+
+            row-gap:
+                26px;
+
+            padding:
+                68px
+                0
+                52px;
+        }
+
+
+        /* =====================================================
+           LEFT COPY
+        ====================================================== */
+
+        .nous-copy {
+            grid-area:
+                copy;
+
+            position:
+                relative;
+
+            z-index:
+                10;
+
+            max-width:
+                620px;
+        }
+
+
+        .status-row {
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            gap:
+                9px;
+
+            margin-bottom:
+                25px;
+
+            padding:
+                8px
+                13px;
+
+            border:
+                1px solid
+                rgba(
+                    88,
+                    173,
+                    255,
+                    0.24
+                );
+
+            border-radius:
+                999px;
+
+            background:
+                rgba(
+                    43,
+                    131,
+                    218,
+                    0.07
+                );
+
+            color:
+                var(--nous-blue-bright);
+
+            font-size:
+                0.63rem;
+
+            font-weight:
+                600;
+
+            letter-spacing:
+                0.17em;
+
+            text-transform:
+                uppercase;
+        }
+
+
+        .status-dot {
+            width:
+                6px;
+
+            height:
+                6px;
+
+            border-radius:
+                50%;
+
+            background:
+                var(--nous-blue);
+
             box-shadow:
-                0 0 28px rgba(50, 145, 255, 0.12),
-                inset 0 0 25px rgba(50, 145, 255, 0.08);
-            animation: spinClockwise 18s linear infinite;
+                0
+                0
+                12px
+                rgba(
+                    88,
+                    173,
+                    255,
+                    0.95
+                );
         }
 
-        .orbit-ring-two {
-            inset: 0;
-            border-style: dashed;
-            opacity: 0.48;
-            animation: spinCounter 28s linear infinite;
+
+        .nous-eyebrow {
+            margin:
+                0
+                0
+                14px;
+
+            color:
+                rgba(
+                    210,
+                    226,
+                    243,
+                    0.5
+                );
+
+            font-size:
+                0.67rem;
+
+            font-weight:
+                600;
+
+            letter-spacing:
+                0.24em;
+
+            text-transform:
+                uppercase;
         }
 
-        .orbit-ring-three {
-            inset: 20%;
-            border-color: rgba(255, 255, 255, 0.16);
-            animation: breatheRing 5.5s ease-in-out infinite;
+
+        .nous-copy h1 {
+            margin:
+                0;
+
+            font-family:
+                "Manrope",
+                sans-serif;
+
+            font-size:
+                clamp(
+                    4.5rem,
+                    7vw,
+                    7.6rem
+                );
+
+            font-weight:
+                300;
+
+            letter-spacing:
+                -0.055em;
+
+            line-height:
+                0.9;
         }
 
-        .orbit-point {
-            position: absolute;
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #d5edff;
+
+        .nous-copy h2 {
+            max-width:
+                570px;
+
+            margin:
+                27px
+                0
+                0;
+
+            font-family:
+                "Manrope",
+                sans-serif;
+
+            font-size:
+                clamp(
+                    1.45rem,
+                    2.5vw,
+                    2.35rem
+                );
+
+            font-weight:
+                300;
+
+            line-height:
+                1.22;
+
+            letter-spacing:
+                -0.025em;
+        }
+
+
+        .nous-copy h2 span {
+            color:
+                var(--nous-blue-bright);
+        }
+
+
+        .nous-description {
+            max-width:
+                550px;
+
+            margin:
+                23px
+                0
+                0;
+
+            color:
+                var(--nous-muted);
+
+            font-family:
+                "Manrope",
+                sans-serif;
+
+            font-size:
+                0.98rem;
+
+            font-weight:
+                300;
+
+            line-height:
+                1.8;
+        }
+
+
+        /* =====================================================
+           DEPLOYMENT DATE
+        ====================================================== */
+
+        .deployment {
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                17px;
+
+            margin-top:
+                30px;
+        }
+
+
+        .deployment-line {
+            width:
+                38px;
+
+            height:
+                1px;
+
+            background:
+                var(--nous-blue);
+
             box-shadow:
-                0 0 10px rgba(116, 198, 255, 1),
-                0 0 26px rgba(68, 165, 255, 0.8);
+                0
+                0
+                12px
+                rgba(
+                    88,
+                    173,
+                    255,
+                    0.7
+                );
         }
 
-        .point-one {
-            top: 16%;
-            right: 20%;
+
+        .deployment-copy small {
+            display:
+                block;
+
+            margin-bottom:
+                4px;
+
+            color:
+                var(--nous-faint);
+
+            font-size:
+                0.58rem;
+
+            font-weight:
+                600;
+
+            letter-spacing:
+                0.18em;
+
+            text-transform:
+                uppercase;
         }
 
-        .point-two {
-            right: 5%;
-            bottom: 34%;
+
+        .deployment-copy strong {
+            font-family:
+                "Manrope",
+                sans-serif;
+
+            font-size:
+                0.96rem;
+
+            font-weight:
+                500;
         }
 
-        .point-three {
-            bottom: 11%;
-            left: 28%;
+
+        /* =====================================================
+           RIGHT IMAGE
+        ====================================================== */
+
+        .nous-visual {
+            grid-area:
+                visual;
+
+            position:
+                relative;
+
+            z-index:
+                3;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            width:
+                100%;
+
+            min-height:
+                540px;
         }
 
-        .point-four {
-            top: 34%;
-            left: 4%;
-        }
 
-        .nous-core {
-            position: relative;
-            z-index: 3;
-            display: grid;
-            width: 52%;
-            aspect-ratio: 1;
-            place-items: center;
-            border: 1px solid rgba(87, 177, 255, 0.62);
-            border-radius: 50%;
+        .nous-visual::before {
+            position:
+                absolute;
+
+            width:
+                82%;
+
+            aspect-ratio:
+                1;
+
+            border-radius:
+                50%;
+
+            content:
+                "";
+
             background:
                 radial-gradient(
                     circle,
-                    rgba(12, 36, 68, 0.78),
-                    rgba(2, 7, 15, 0.96) 68%
+                    rgba(
+                        44,
+                        143,
+                        236,
+                        0.18
+                    ),
+
+                    rgba(
+                        14,
+                        60,
+                        112,
+                        0.06
+                    ) 48%,
+
+                    transparent
+                    70%
                 );
-            box-shadow:
-                inset 0 0 38px rgba(52, 145, 255, 0.13),
-                0 0 34px rgba(50, 147, 255, 0.18);
+
+            filter:
+                blur(
+                    16px
+                );
         }
 
-        .nous-core img {
-            width: 64%;
-            height: 64%;
-            object-fit: contain;
-            animation: coreFloat 5s ease-in-out infinite;
+
+        .nous-visual img {
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            display:
+                block;
+
+            width:
+                min(
+                    100%,
+                    700px
+                );
+
+            max-height:
+                640px;
+
+            object-fit:
+                contain;
+
+            filter:
+                drop-shadow(
+                    0
+                    30px
+                    70px
+                    rgba(
+                        0,
+                        0,
+                        0,
+                        0.5
+                    )
+                )
+
+                drop-shadow(
+                    0
+                    0
+                    55px
+                    rgba(
+                        50,
+                        143,
+                        232,
+                        0.12
+                    )
+                );
+
+            animation:
+                nousFloat
+                7s
+                ease-in-out
+                infinite;
         }
 
-        .lock-symbol {
-            position: relative;
-            width: 44px;
-            height: 36px;
-            margin: 0 auto 30px;
-            border: 2px solid rgba(255, 255, 255, 0.83);
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(65, 154, 255, 0.15);
+
+        @keyframes nousFloat {
+
+            0%,
+            100% {
+                transform:
+                    translateY(
+                        0
+                    );
+            }
+
+            50% {
+                transform:
+                    translateY(
+                        -10px
+                    );
+            }
+
         }
 
-        .lock-symbol::before {
-            position: absolute;
-            top: -23px;
-            left: 50%;
-            width: 24px;
-            height: 25px;
-            border: 2px solid rgba(255, 255, 255, 0.83);
-            border-bottom: 0;
-            border-radius: 15px 15px 0 0;
-            content: "";
-            transform: translateX(-50%);
-        }
+        /* =====================================================
+           NOUS COMPANION WEB BROWSER
+           PRIMARY WEB ACCESS — LARGE + BRIGHT
+        ====================================================== */
 
-        .lock-symbol::after {
-            position: absolute;
-            top: 14px;
-            left: 50%;
-            width: 4px;
-            height: 10px;
-            border-radius: 999px;
-            content: "";
-            background: var(--blue-bright);
-            box-shadow: 0 0 12px rgba(77, 169, 255, 0.85);
-            transform: translateX(-50%);
-        }
-
-        .eyebrow {
-            margin: 0 0 17px;
-            color: var(--blue-bright);
-            font-size: 0.68rem;
-            font-weight: 600;
-            letter-spacing: 0.28em;
-            text-transform: uppercase;
-        }
-
-        .locked-content h1 {
-            margin: 0;
-            font-family: "Manrope", sans-serif;
-            font-size: clamp(2.2rem, 6vw, 4.7rem);
-            font-weight: 300;
-            letter-spacing: clamp(0.08em, 1.5vw, 0.2em);
-            line-height: 1.08;
-            text-indent: clamp(0.08em, 1.5vw, 0.2em);
-        }
-
-        .title-line {
-            width: 74px;
-            height: 1px;
-            margin: 25px auto;
-            background: var(--blue);
-            box-shadow:
-                0 0 10px rgba(72, 166, 255, 0.95),
-                0 0 26px rgba(50, 145, 255, 0.56);
-        }
-
-        .locked-message {
-            max-width: 520px;
-            margin: 0 auto;
-            color: var(--muted);
-            font-family: "Manrope", sans-serif;
-            font-size: clamp(0.95rem, 1.7vw, 1.12rem);
-            font-weight: 300;
-            line-height: 1.8;
-        }
-
-        .powered-by {
-            margin: 22px 0 0;
-            color: var(--faint);
-            font-size: 0.69rem;
-            font-weight: 500;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-        }
-
-        .locked-actions {
+        .nous-access-options {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 14px;
-            margin-top: 36px;
+            flex-direction: column;
+            align-items: center;
+
+            gap: 24px;
+
+            width: 100%;
         }
 
-        .action-button {
+        .nous-browser-link {
+            position: relative;
+            isolation: isolate;
+
             display: inline-flex;
-            min-width: 190px;
-            min-height: 52px;
             align-items: center;
             justify-content: center;
-            gap: 11px;
-            padding: 0 24px;
-            border: 1px solid rgba(91, 180, 255, 0.56);
+
+            gap: 14px;
+
+            min-width: 360px;
+
+            padding: 19px 32px;
+
+            border:
+                1px solid
+                rgba(125, 215, 255, 0.82);
+
             border-radius: 999px;
+
             background:
                 linear-gradient(
-                    135deg,
-                    rgba(50, 137, 241, 0.22),
-                    rgba(13, 46, 91, 0.18)
+                    120deg,
+                    rgba(79, 195, 255, 0.30),
+                    rgba(133, 111, 255, 0.15) 45%,
+                    rgba(255, 145, 205, 0.28)
                 );
-            box-shadow:
-                inset 0 1px 0 rgba(255, 255, 255, 0.12),
-                0 10px 34px rgba(0, 73, 164, 0.16);
-            color: #f6fbff;
-            font-size: 0.8rem;
-            font-weight: 500;
-            letter-spacing: 0.06em;
-            transition:
-                transform 240ms ease,
-                border-color 240ms ease,
-                box-shadow 240ms ease,
-                background 240ms ease;
-        }
 
-        .action-button:hover,
-        .action-button:focus-visible {
-            border-color: rgba(141, 208, 255, 0.9);
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(61, 154, 255, 0.36),
-                    rgba(20, 68, 132, 0.28)
-                );
-            box-shadow:
-                inset 0 1px 0 rgba(255, 255, 255, 0.2),
-                0 12px 40px rgba(0, 94, 211, 0.27),
-                0 0 38px rgba(55, 150, 255, 0.14);
-            transform: translateY(-2px);
-        }
-
-        .action-button.secondary {
-            border-color: var(--border);
-            background: rgba(255, 255, 255, 0.025);
-            color: rgba(255, 255, 255, 0.76);
-        }
-
-        .action-button.secondary:hover,
-        .action-button.secondary:focus-visible {
-            border-color: rgba(255, 255, 255, 0.34);
             color: #ffffff;
+
+            font-family:
+                "Inter",
+                sans-serif;
+
+            font-size: 1rem;
+            font-weight: 700;
+
+            letter-spacing: -0.01em;
+
+            box-shadow:
+                0 0 18px rgba(90, 211, 255, 0.58),
+                0 0 48px rgba(90, 211, 255, 0.28),
+                0 0 72px rgba(255, 148, 207, 0.22),
+                inset 0 0 22px rgba(255, 255, 255, 0.08);
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+
+            overflow: visible;
         }
 
-        .button-icon {
-            font-size: 1rem;
+        .nous-browser-link::before {
+            content: "";
+
+            position: absolute;
+            inset: -10px;
+
+            z-index: -2;
+
+            border-radius: inherit;
+
+            background:
+                linear-gradient(
+                    100deg,
+                    #55d5ff,
+                    #7de7ff,
+                    #8d6dff,
+                    #ff91ce,
+                    #ffb4dc,
+                    #55d5ff
+                );
+
+            opacity: 0.56;
+
+            filter:
+                blur(24px)
+                saturate(1.55);
+
+            transition:
+                opacity 0.25s ease,
+                filter 0.25s ease;
         }
+
+        .nous-browser-link::after {
+            content: "";
+
+            position: absolute;
+            inset: 1px;
+
+            z-index: -1;
+
+            border-radius: inherit;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(7, 24, 39, 0.88),
+                    rgba(18, 15, 38, 0.84) 50%,
+                    rgba(39, 12, 31, 0.84)
+                );
+        }
+
+        .nous-browser-dot {
+            width: 10px;
+            height: 10px;
+
+            flex: 0 0 auto;
+
+            border-radius: 50%;
+
+            background: #76ddff;
+
+            box-shadow:
+                0 0 8px #76ddff,
+                0 0 18px rgba(118, 221, 255, 1),
+                0 0 32px rgba(255, 150, 208, 0.70);
+        }
+
+        .nous-browser-link i {
+            color: #a9eaff;
+
+            font-size: 0.82rem;
+
+            text-shadow:
+                0 0 12px
+                rgba(112, 219, 255, 0.75);
+
+            transition:
+                transform 0.25s ease,
+                color 0.25s ease;
+        }
+
+        .nous-browser-link:hover {
+            color: #ffffff;
+
+            border-color:
+                rgba(255, 255, 255, 0.95);
+
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(80, 207, 255, 0.42),
+                    rgba(141, 109, 255, 0.22) 45%,
+                    rgba(255, 143, 205, 0.38)
+                );
+
+            box-shadow:
+                0 0 24px rgba(93, 216, 255, 0.85),
+                0 0 62px rgba(93, 216, 255, 0.46),
+                0 0 95px rgba(255, 146, 205, 0.34),
+                inset 0 0 28px rgba(255, 255, 255, 0.10);
+
+            transform:
+                translateY(-3px)
+                scale(1.025);
+
+            text-decoration: none;
+        }
+
+        .nous-browser-link:hover::before {
+            opacity: 0.82;
+
+            filter:
+                blur(27px)
+                saturate(1.8)
+                brightness(1.22);
+        }
+
+        .nous-browser-link:hover i {
+            color: #ffffff;
+
+            transform:
+                translate(3px, -3px);
+        }
+
+        @media (max-width: 520px) {
+
+            .nous-browser-link {
+                width: min(100%, 360px);
+                min-width: 0;
+
+                padding: 17px 22px;
+
+                font-size: 0.9rem;
+            }
+
+        }
+
+
+
+
+        /* =====================================================
+           STORE BUTTONS
+           FULL WIDTH BELOW TEXT + IMAGE
+        ====================================================== */
+
+        .store-section {
+            grid-area:
+                stores;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            width:
+                100%;
+
+            padding-top:
+                5px;
+        }
+
+
+        .store-links {
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                22px;
+
+            width:
+                100%;
+        }
+
+
+        .store-badge {
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            flex:
+                0 0 auto;
+
+            padding:
+                0;
+
+            border:
+                0;
+
+            border-radius:
+                12px;
+
+            background:
+                transparent;
+
+            cursor:
+                pointer;
+
+            transition:
+                transform
+                0.2s ease,
+
+                filter
+                0.2s ease;
+        }
+
+
+        .store-badge img {
+            display:
+                block;
+
+            width:
+                auto;
+
+            height:
+                72px;
+
+            object-fit:
+                contain;
+        }
+
+
+        .store-badge:hover {
+            transform:
+                translateY(
+                    -4px
+                )
+                scale(
+                    1.025
+                );
+
+            filter:
+                drop-shadow(
+                    0
+                    10px
+                    25px
+                    rgba(
+                        88,
+                        173,
+                        255,
+                        0.28
+                    )
+                );
+        }
+
+
+        .store-badge:active {
+            transform:
+                scale(
+                    0.97
+                );
+        }
+
+
+        /* =====================================================
+           LOCKED NOTICE
+        ====================================================== */
+
+        .launch-note {
+            position:
+                relative;
+
+            z-index:
+                6;
+
+            border-top:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.08
+                );
+
+            border-bottom:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.08
+                );
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.012
+                );
+        }
+
+
+        .launch-note-inner {
+            display:
+                flex;
+
+            width:
+                min(
+                    calc(
+                        100% - 48px
+                    ),
+                    1320px
+                );
+
+            min-height:
+                78px;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            gap:
+                24px;
+
+            margin-inline:
+                auto;
+        }
+
+
+        .launch-note p {
+            margin:
+                0;
+
+            color:
+                rgba(
+                    218,
+                    229,
+                    241,
+                    0.52
+                );
+
+            font-size:
+                0.72rem;
+
+            line-height:
+                1.6;
+        }
+
+
+        .launch-note strong {
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.83
+                );
+
+            font-weight:
+                500;
+        }
+
+
+        .news-preview-link {
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            gap:
+                9px;
+
+            flex:
+                0 0 auto;
+
+            color:
+                var(--nous-blue-bright);
+
+            font-size:
+                0.72rem;
+
+            font-weight:
+                500;
+
+            transition:
+                opacity
+                0.2s ease,
+
+                transform
+                0.2s ease;
+        }
+
+
+        .news-preview-link:hover {
+            opacity:
+                0.8;
+
+            transform:
+                translateX(
+                    2px
+                );
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
 
         .site-footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.09);
-            background: rgba(2, 4, 9, 0.72);
+            background:
+                #020409;
         }
+
 
         .footer-inner {
-            display: flex;
-            width: min(
-                calc(100% - 48px),
-                var(--page-width)
-            );
-            min-height: 92px;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-            margin-inline: auto;
-            color: rgba(210, 221, 237, 0.45);
-            font-size: 0.68rem;
+            display:
+                flex;
+
+            width:
+                min(
+                    calc(
+                        100% - 48px
+                    ),
+                    1320px
+                );
+
+            min-height:
+                92px;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            gap:
+                25px;
+
+            margin-inline:
+                auto;
+
+            color:
+                rgba(
+                    213,
+                    225,
+                    239,
+                    0.4
+                );
+
+            font-size:
+                0.66rem;
         }
+
 
         .footer-brand {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.72rem;
-            font-weight: 500;
-            letter-spacing: 0.18em;
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            gap:
+                10px;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.7
+                );
+
+            font-size:
+                0.69rem;
+
+            font-weight:
+                600;
+
+            letter-spacing:
+                0.16em;
         }
+
 
         .footer-brand img {
-            width: 28px;
-            height: 28px;
-            object-fit: contain;
+            width:
+                27px;
+
+            height:
+                27px;
+
+            object-fit:
+                contain;
         }
 
-        @keyframes spinClockwise {
-            to {
-                transform: rotate(360deg);
-            }
-        }
 
-        @keyframes spinCounter {
-            to {
-                transform: rotate(-360deg);
-            }
-        }
+        /* =====================================================
+           TABLET
+        ====================================================== */
 
-        @keyframes breatheRing {
-            0%,
-            100% {
-                opacity: 0.45;
-                transform: scale(0.96);
-            }
+        @media (
+            max-width:
+            980px
+        ) {
 
-            50% {
-                opacity: 0.9;
-                transform: scale(1.04);
-            }
-        }
-
-        @keyframes coreFloat {
-            0%,
-            100% {
-                transform: translateY(0) scale(1);
-                filter: drop-shadow(
-                    0 0 5px rgba(86, 176, 255, 0.25)
-                );
-            }
-
-            50% {
-                transform: translateY(-4px) scale(1.025);
-                filter: drop-shadow(
-                    0 0 15px rgba(86, 176, 255, 0.65)
-                );
-            }
-        }
-
-        @media (max-width: 880px) {
             .desktop-nav {
-                display: none;
+                display:
+                    none;
             }
 
-            .mobile-menu-button {
-                display: grid;
+
+            .mobile-menu-btn {
+                display:
+                    grid;
             }
 
-            .header-inner {
-                min-height: 72px;
+
+            .nous-launch {
+                min-height:
+                    auto;
             }
 
-            .locked-main {
-                padding-top: 66px;
+
+            .nous-launch::before {
+                background:
+                    linear-gradient(
+                        180deg,
+
+                        rgba(
+                            2,
+                            4,
+                            9,
+                            0.99
+                        ) 0%,
+
+                        rgba(
+                            2,
+                            4,
+                            9,
+                            0.90
+                        ) 45%,
+
+                        rgba(
+                            2,
+                            4,
+                            9,
+                            0.48
+                        ) 100%
+                    );
             }
+
+
+            .nous-launch-inner {
+                grid-template-columns:
+                    1fr;
+
+                grid-template-areas:
+                    "copy"
+                    "visual"
+                    "stores";
+
+                gap:
+                    30px;
+
+                padding:
+                    60px
+                    0
+                    58px;
+            }
+
+
+            .nous-copy {
+                max-width:
+                    720px;
+            }
+
+
+            .nous-visual {
+                min-height:
+                    auto;
+            }
+
+
+            .nous-visual img {
+                width:
+                    min(
+                        100%,
+                        620px
+                    );
+            }
+
+
+            .store-section {
+                padding-top:
+                    0;
+            }
+
         }
 
-        @media (max-width: 640px) {
-            .header-inner,
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (
+            max-width:
+            640px
+        ) {
+
+            .site-header,
+            .nous-launch-inner,
+            .launch-note-inner,
             .footer-inner {
-                width: min(100% - 32px, var(--page-width));
+                width:
+                    min(
+                        calc(
+                            100% - 32px
+                        ),
+                        1320px
+                    );
             }
 
-            .brand span {
-                font-size: 0.77rem;
-                letter-spacing: 0.16em;
+
+            .site-header {
+                min-height:
+                    72px;
             }
 
-            .brand img {
-                width: 36px;
-                height: 36px;
+
+            .nav-logo {
+                height:
+                    36px;
             }
 
-            .nous-orbit {
-                margin-bottom: 44px;
+
+            .nous-launch-inner {
+                padding:
+                    52px
+                    0
+                    52px;
+
+                gap:
+                    28px;
             }
 
-            .locked-actions {
-                flex-direction: column;
-                width: min(100%, 340px);
-                margin-inline: auto;
+
+            .nous-copy h1 {
+                font-size:
+                    clamp(
+                        3.8rem,
+                        21vw,
+                        6rem
+                    );
             }
 
-            .action-button {
-                width: 100%;
+
+            .store-links {
+                gap:
+                    10px;
             }
+
+
+            .store-badge img {
+                height:
+                    48px;
+
+                max-width:
+                    44vw;
+            }
+
+
+            .launch-note-inner {
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-start;
+
+                padding:
+                    22px
+                    0;
+            }
+
 
             .footer-inner {
-                flex-direction: column;
-                justify-content: center;
-                padding: 24px 0;
-                text-align: center;
+                flex-direction:
+                    column;
+
+                justify-content:
+                    center;
+
+                padding:
+                    25px
+                    0;
+
+                text-align:
+                    center;
             }
+
         }
 
-        @media (prefers-reduced-motion: reduce) {
+
+        @media (
+            prefers-reduced-motion:
+            reduce
+        ) {
+
             *,
             *::before,
             *::after {
-                scroll-behavior: auto !important;
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    0.01ms !important;
             }
+
         }
+
     </style>
+
 </head>
 
+
 <body>
-    <div class="site-shell">
 
-        <header class="site-header">
-            <div class="header-inner">
 
-                <a
-                    href="index.html"
-                    class="brand"
-                    aria-label="NEURORDER home"
-                >
-                    <img
-                        src="images/NeurorderBody.png"
-                        alt=""
-                    >
-
-                    <span>NEURORDER</span>
-                </a>
-
-                <nav
-                    class="desktop-nav"
-                    aria-label="Primary navigation"
-                >
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="foundation.html">Foundation</a>
-                    <a href="news.html">News</a>
-                    <a
-                        href="companion.html"
-                        class="active"
-                    >
-                        Nous Companion
-                    </a>
-                </nav>
-
-                <button
-                    class="mobile-menu-button"
-                    id="mobileMenuButton"
-                    type="button"
-                    aria-label="Open navigation menu"
-                    aria-controls="mobileMenu"
-                    aria-expanded="false"
-                >
-                    <span
-                        class="mobile-menu-grid"
-                        aria-hidden="true"
-                    >
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </button>
-
-            </div>
-
-            <nav
-                class="mobile-menu"
-                id="mobileMenu"
-                aria-label="Mobile navigation"
-            >
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="foundation.html">Foundation</a>
-                <a href="news.html">News</a>
-
-                <a
-                    href="companion.html"
-                    class="active"
-                >
-                    Nous Companion
-                </a>
-            </nav>
-        </header>
-
-        <main class="locked-main">
-            <section
-                class="locked-content"
-                aria-labelledby="lockedTitle"
-            >
-
-                <div
-                    class="nous-orbit"
-                    aria-hidden="true"
-                >
-                    <div class="orbit-ring orbit-ring-one"></div>
-                    <div class="orbit-ring orbit-ring-two"></div>
-                    <div class="orbit-ring orbit-ring-three"></div>
-
-                    <span class="orbit-point point-one"></span>
-                    <span class="orbit-point point-two"></span>
-                    <span class="orbit-point point-three"></span>
-                    <span class="orbit-point point-four"></span>
-
-                    <div class="nous-core">
-                        <img
-                            src="images/logo.png"
-                            alt=""
-                        >
-                    </div>
-                </div>
-
-                <div
-                    class="lock-symbol"
-                    aria-hidden="true"
-                ></div>
-
-                <p class="eyebrow">
-                    NEURORDER INTELLIGENCE
-                </p>
-
-                <h1 id="lockedTitle">
-                    NOUS COMPANION
-                </h1>
-
-                <div
-                    class="title-line"
-                    aria-hidden="true"
-                ></div>
-
-                <p class="locked-message">
-                    This experience is currently locked.
-                    Access will become available through the
-                    public NOUS Platform.
-                </p>
-
-                <p class="powered-by">
-                    Powered by NEURORDER Intelligence
-                </p>
-
-                <div class="locked-actions">
-                    <a
-                        href="index.html"
-                        class="action-button"
-                    >
-                        <span
-                            class="button-icon"
-                            aria-hidden="true"
-                        >
-                            ⌂
-                        </span>
-
-                        Return Home
-                    </a>
-
-                    <a
-                        href="news.html"
-                        class="action-button secondary"
-                    >
-                        <span
-                            class="button-icon"
-                            aria-hidden="true"
-                        >
-                            ◫
-                        </span>
-
-                        Latest News
-                    </a>
-                </div>
-
-            </section>
-        </main>
-
-        <footer class="site-footer">
-            <div class="footer-inner">
-
-                <div class="footer-brand">
-                    <img
-                        src="images/logo.png"
-                        alt=""
-                    >
-
-                    <span>NEURORDER</span>
-                </div>
-
-                <span>
-                    New Order. Smarter Future.
-                </span>
-
-                <span>
-                    © 2026 Neurorder Research. All Rights Reserved.
-                </span>
-
-            </div>
-        </footer>
-
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const menuButton =
-                document.getElementById("mobileMenuButton");
-
-            const mobileMenu =
-                document.getElementById("mobileMenu");
-
-            if (!menuButton || !mobileMenu) {
-                return;
-            }
-
-            menuButton.addEventListener("click", () => {
-                const isOpen =
-                    mobileMenu.classList.toggle("open");
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    String(isOpen)
-                );
-
-                menuButton.setAttribute(
-                    "aria-label",
-                    isOpen
-                        ? "Close navigation menu"
-                        : "Open navigation menu"
-                );
-            });
-
-            mobileMenu
-                .querySelectorAll("a")
-                .forEach((link) => {
-                    link.addEventListener("click", () => {
-                        mobileMenu.classList.remove("open");
-
-                        menuButton.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
-
-                        menuButton.setAttribute(
-                            "aria-label",
-                            "Open navigation menu"
-                        );
-                    });
-                });
-        });
-    </script>
-</body>
-</html>
-<body>
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
 <header class="site-header">
-  <a href="index.html">
-    <img src="images/NeurorderBody.png" alt="Neurorder Logo" class="nav-logo">
-  </a>
 
-  <nav class="desktop-nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="research.html">Research</a>
-    <a href="credit-scoring.html">Credit Scoring</a>
-    <a href="foundation.html">Foundation</a>
-    <a href="news.html">News</a>
-    <a href="nous.html" class="active">Nous</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+    <a
+        href="index.html"
+        aria-label="NEURORDER home"
+    >
 
-  <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </button>
+        <img
+            src="images/NeurorderBody.png"
+            alt="NEURORDER"
+            class="nav-logo"
+        >
+
+    </a>
+
+
+    <nav
+        class="desktop-nav"
+        aria-label="Primary navigation"
+    >
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="research.html">
+            Research
+        </a>
+
+        <a href="cias.html">
+            CIAS
+        </a>
+
+        <a href="foundation.html">
+            Foundation
+        </a>
+
+        <a href="news.html">
+            News
+        </a>
+
+        <a
+            href="nous.html"
+            class="active"
+        >
+            Nous
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <button
+        class="mobile-menu-btn"
+        id="mobileMenuButton"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="mobileMenu"
+        aria-expanded="false"
+    >
+
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+
+    </button>
+
 </header>
 
-<div class="mobile-menu-panel" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="research.html">Research</a>
-  <a href="credit-scoring.html">Credit Scoring</a>
-  <a href="foundation.html">Foundation</a>
-  <a href="news.html">News</a>
-  <a href="nous.html">Nous</a>
-  <a href="contact.html">Contact</a>
-</div>
+
+<!-- =========================================================
+     MOBILE MENU
+========================================================= -->
+
+<nav
+    class="mobile-menu-panel"
+    id="mobileMenu"
+    aria-label="Mobile navigation"
+>
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <a href="about.html">
+        About
+    </a>
+
+    <a href="research.html">
+        Research
+    </a>
+
+    <a href="cias.html">
+        CIAS
+    </a>
+
+    <a href="foundation.html">
+        Foundation
+    </a>
+
+    <a href="news.html">
+        News
+    </a>
+
+    <a
+        href="nous.html"
+        class="active"
+    >
+        Nous
+    </a>
+
+    <a href="contact.html">
+        Contact
+    </a>
+
+</nav>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
 
 <main>
 
-  <section class="nous-hero">
 
-    <div class="nous-hero-copy">
-      <p class="nous-eyebrow">NEURORDER NOUS</p>
+    <!-- =====================================================
+         LOCKED NOUS HERO
+    ====================================================== -->
 
-      <h1>Nous.</h1>
+    <section class="nous-launch">
 
-      <h2 class="nous-orule">
-        <span><strong>O</strong>bserve.</span>
-        <span><strong>R</strong>eason.</span>
-        <span><strong>U</strong>nderstand.</span>
-        <span><strong>L</strong>earn.</span>
-        <span><strong>E</strong>volve.</span>
-      </h2>
+        <div class="nous-launch-inner">
 
-      <p class="nous-description">
-        Inspired by the Greek concept of <strong>Nous</strong>, Neurorder introduces
-        <strong>O.R.U.L.E.</strong> — a philosophy of intelligence that guides how
-        people and AI observe the world, reason through complexity, understand
-        deeply, learn continuously and evolve together.
-      </p>
 
-      <div class="nous-actions">
-        <a href="nous-news.html" class="nous-btn nous-btn-primary">
-          Enter Nous Intelligence
-        </a>
+            <!-- =============================================
+                 LEFT — TEXT
+            ============================================== -->
 
-        <a href="news.html" class="nous-btn nous-btn-outline">
-          Explore the Vision
-        </a>
+            <div class="nous-copy">
 
-      
-      </div>
-    </div>
 
-<div class="nous-alpha-visual">
-  <img
-    src="images/spectrumalpha.png"
-    alt="Neurorder Alpha prism spectrum">
-</div>
+                <div class="status-row">
 
-    <br>
-    <br>
+                    <span
+                        class="status-dot"
+                        aria-hidden="true"
+                    ></span>
 
-  </section>
+                    Public deployment pending
 
-  <section class="nous-section nous-meaning">
-    <p class="nous-eyebrow">WHAT IS NOUS?</p>
-    <h2 class="nous-section-title">A modern mind for a complex world.</h2>
+                </div>
 
-    <div class="nous-meaning-grid">
-      <article class="nous-meaning-card">
-        <i class="fas fa-circle-nodes"></i>
-        <h3>Intelligence</h3>
-        <p>We gather signals from the world.</p>
-      </article>
 
-      <article class="nous-meaning-card">
-        <i class="fas fa-landmark"></i>
-        <h3>Reason</h3>
-        <p>We help you think clearly and deeply.</p>
-      </article>
+                <p class="nous-eyebrow">
+                    NEURORDER INTELLIGENCE
+                </p>
 
-      <article class="nous-meaning-card">
-        <i class="fas fa-atom"></i>
-        <h3>Understanding</h3>
-        <p>We connect ideas across disciplines.</p>
-      </article>
 
-      <article class="nous-meaning-card">
-        <i class="fas fa-book-open"></i>
-        <h3>Knowledge</h3>
-        <p>We build a library that grows with you.</p>
-      </article>
+                <h1>
+                    NOUS
+                </h1>
 
-      <article class="nous-meaning-card">
-        <i class="fas fa-head-side-virus"></i>
-        <h3>Mind</h3>
-        <p>We create space for reflection and action.</p>
-      </article>
-    </div>
-  </section>
 
-  <section class="nous-cape-visual">
-    <img src="images/capetownnous.png"
-         alt="Cape Town under an astronomical digital sky">
-  </section>
+                <h2>
 
-  <section class="nous-section nous-ecosystem">
-    <div class="nous-ecosystem-panel">
-      <div>
-        <p class="nous-eyebrow">THE NOUS ECOSYSTEM</p>
-        <h2>Everything you need.<br>In one intelligent space.</h2>
-      </div>
+                    A new South African
 
-      <div class="nous-tools">
-        <article><i class="fas fa-rss"></i><span>News Feed</span></article>
-        <article><i class="fas fa-robot"></i><span>AI Assistant</span></article>
-        <article><i class="fas fa-flask"></i><span>Research</span></article>
-        <article><i class="fas fa-graduation-cap"></i><span>Learning</span></article>
-        <article><i class="fas fa-folder-open"></i><span>Workspace</span></article>
-        <article><i class="fas fa-chart-line"></i><span>Coach</span></article>
-      </div>
-    </div>
-  </section>
+                    <span>
+                        intelligence experience.
+                    </span>
 
-  <section class="nous-final-banner">
-    <div>
-      <h2>The future is open.<br>Understanding is power.</h2>
+                </h2>
 
-      <p>
-        Step into Neurorder Nous and be part of a smarter, more aware generation.
-      </p>
 
-      <a href="nous-news.html" class="nous-btn nous-btn-primary">
-        Enter Nous Intelligence
-      </a>
-    </div>
-  </section>
+                <p class="nous-description">
+
+                    NOUS is NEURORDER's emerging
+                    intelligence platform — designed
+                    to bring AI, work, learning,
+                    information and everyday digital
+                    life into one connected experience.
+
+                </p>
+
+
+                <div class="deployment">
+
+                    <span
+                        class="deployment-line"
+                        aria-hidden="true"
+                    ></span>
+
+
+                    <div class="deployment-copy">
+
+                        <small>
+                            Public deployment
+                        </small>
+
+                        <strong>
+                            28 August 2026
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =============================================
+                 RIGHT — MAIN IMAGE
+            ============================================== -->
+
+            <div class="nous-visual">
+
+                <img
+                    src="images/neurorderfloat.png"
+                    alt="NOUS by NEURORDER"
+                >
+
+            </div>
+
+
+            <!-- =============================================
+                 CENTRED BELOW TEXT + IMAGE
+            ============================================== -->
+
+            <div class="store-section">
+
+                <div class="nous-access-options">
+
+
+                    <!-- NOUS COMPANION WEB BROWSER -->
+
+                    <a
+                        href="https://nouscompanion.com"
+                        class="nous-browser-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Open NOUS Companion in your web browser"
+                    >
+
+                        <span
+                            class="nous-browser-dot"
+                            aria-hidden="true"
+                        ></span>
+
+                        <span>
+                            Nous Companion Web Browser
+                        </span>
+
+                        <i
+                            class="fa-solid fa-arrow-up-right-from-square"
+                            aria-hidden="true"
+                        ></i>
+
+                    </a>
+
+
+                    <!-- APP STORES -->
+
+                    <div class="store-links">
+
+
+                        <!-- APPLE APP STORE -->
+
+                        <a
+                            class="store-badge"
+                            href="https://www.apple.com/app-store/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Open the Apple App Store"
+                        >
+
+                            <img
+                                src="images/applestorelogo.svg.png"
+                                alt="Download on the App Store"
+                            >
+
+                        </a>
+
+
+                        <!-- GOOGLE PLAY STORE -->
+
+                        <a
+                            class="store-badge"
+                            href="https://play.google.com/store"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Open the Google Play Store"
+                        >
+
+                            <img
+                                src="images/googleplaystorelogo.png"
+                                alt="Get it on Google Play"
+                            >
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LOCKED NOTICE
+    ====================================================== -->
+
+    <section class="launch-note">
+
+        <div class="launch-note-inner">
+
+            <p>
+
+                <strong>
+                    NOUS Platform access remains locked.
+                </strong>
+
+                &nbsp;Public deployment is scheduled
+                for 28 August 2026.
+
+            </p>
+
+
+            <a
+                href="news.html"
+                class="news-preview-link"
+            >
+
+                Explore NOUS News
+
+                <i
+                    class="fa-solid fa-arrow-right"
+                    aria-hidden="true"
+                ></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
 
 </main>
 
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
 <footer class="site-footer">
-  <div class="footer-top">
-    <div class="footer-brand">
-      <img src="images/logo.png" alt="Neurorder Logo" class="footer-logo">
-      <h2>NEURORDER</h2>
-      <p>New Order.<br>Smarter Future.</p>
+
+    <div class="footer-inner">
+
+
+        <div class="footer-brand">
+
+            <img
+                src="images/logo.png"
+                alt=""
+            >
+
+            <span>
+                NEURORDER
+            </span>
+
+        </div>
+
+
+        <span>
+            New Order. Smarter Future.
+        </span>
+
+
+        <span>
+            © 2026 NEURORDER (Pty) Ltd.
+        </span>
+
+
     </div>
 
-    <div class="footer-column">
-      <h3>Research</h3>
-      <a href="research.html">Digital Public Infrastructure</a>
-      <a href="credit-scoring.html">Credit Scoring</a>
-      <a href="news.html">Latest Research</a>
-    </div>
-
-    <div class="footer-column">
-      <h3>Company</h3>
-      <a href="about.html">About</a>
-      <a href="foundation.html">Foundation</a>
-      <a href="contact.html">Contact</a>
-    </div>
-
-    <div class="footer-column">
-      <h3>Legal</h3>
-      <a href="documents/NEURORDER_Legal_Documents.pdf#page=1" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-      <a href="documents/NEURORDER_Legal_Documents.pdf#page=7" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a>
-    </div>
-  </div>
-
-  <div class="footer-divider"></div>
-
-  <div class="footer-bottom">
-    <div class="footer-socials">
-      <a href="#" aria-label="LinkedIn">
-        <img src="images/linkedin.png" alt="LinkedIn" class="footer-social-icon">
-      </a>
-
-      <a href="https://substack.com/@nmzekandaba" target="_blank" rel="noopener noreferrer" aria-label="Substack">
-        <img src="images/substack.png" alt="Substack" class="footer-social-icon">
-      </a>
-
-      <a href="mailto:info@neurorder.com" aria-label="Email">
-        <img src="images/gmail.png" alt="Email" class="footer-social-icon">
-      </a>
-
-      <a href="news.html" aria-label="Neurorder News">
-        <img src="images/newsintelligence.png" alt="Neurorder News" class="footer-social-icon">
-      </a>
-    </div>
-
-    <p class="footer-copy">© 2026 Neurorder Research. All Rights Reserved.</p>
-  </div>
 </footer>
 
-<script src="js/script.js"></script>
+
+<!-- =========================================================
+     MOBILE MENU SCRIPT
+========================================================= -->
+
+<script>
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        () => {
+
+            const button =
+                document.getElementById(
+                    "mobileMenuButton"
+                );
+
+            const menu =
+                document.getElementById(
+                    "mobileMenu"
+                );
+
+
+            if (
+                !button ||
+                !menu
+            ) {
+                return;
+            }
+
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    const open =
+                        menu.classList.toggle(
+                            "open"
+                        );
+
+
+                    button.setAttribute(
+                        "aria-expanded",
+                        String(open)
+                    );
+
+
+                    button.setAttribute(
+                        "aria-label",
+                        open
+                            ? "Close navigation menu"
+                            : "Open navigation menu"
+                    );
+
+                }
+            );
+
+
+            menu
+                .querySelectorAll(
+                    "a"
+                )
+                .forEach(
+                    (
+                        link
+                    ) => {
+
+                        link.addEventListener(
+                            "click",
+                            () => {
+
+                                menu.classList.remove(
+                                    "open"
+                                );
+
+
+                                button.setAttribute(
+                                    "aria-expanded",
+                                    "false"
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+        }
+    );
+
+</script>
+
 
 </body>
+
 </html>

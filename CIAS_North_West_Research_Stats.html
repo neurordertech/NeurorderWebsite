@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CIAS North West Research Layer | NEURORDER</title>
+
+<meta
+  name="description"
+  content="NEURORDER CIAS provincial research layer focused on Rustenburg, Boitekong and Potchefstroom: unemployment, mining dependence, township enterprise, youth exclusion, digital access and financial visibility."
+>
+
+<style>
+:root {
+  --bg: #05080d;
+  --bg2: #0a1118;
+  --text: #f5f8fb;
+  --muted: #aab6c4;
+  --line: rgba(255,255,255,.12);
+  --card: rgba(255,255,255,.055);
+
+  --gold: #d6b45f;
+  --green: #95dfae;
+  --violet: #b69cff;
+  --blue: #6fd3ff;
+  --red: #f4a5ad;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, #183044 0, transparent 32%),
+    linear-gradient(180deg, #04070b, #091019 65%, #05080d);
+
+  color: var(--text);
+  font-family: Inter, Manrope, Arial, sans-serif;
+  line-height: 1.65;
+}
+
+a {
+  color: #8bdfff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* HERO */
+
+header {
+  min-height: 92vh;
+  padding: 48px clamp(22px, 5vw, 78px);
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero {
+  max-width: 1400px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 34px;
+  align-items: end;
+}
+
+.kicker {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+h1 {
+  font-size: clamp(48px, 7vw, 94px);
+  line-height: .94;
+  letter-spacing: -.055em;
+  margin: 14px 0 20px;
+}
+
+.lead {
+  font-size: clamp(18px, 2vw, 24px);
+  color: #dae4ee;
+  max-width: 900px;
+}
+
+.hero-media {
+  border: 1px solid var(--line);
+  border-radius: 32px;
+  overflow: hidden;
+  min-height: 540px;
+  position: relative;
+  background: #10161e;
+}
+
+.hero-media img {
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+  display: block;
+
+  filter:
+    contrast(1.05)
+    brightness(.86);
+}
+
+.hero-media .caption {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+
+  background: rgba(0,0,0,.64);
+
+  padding: 16px 18px;
+  border-radius: 18px;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.badge {
+  display: inline-flex;
+  margin-top: 24px;
+
+  padding: 10px 14px;
+
+  border: 1px solid rgba(214,180,95,.45);
+  border-radius: 999px;
+
+  background: rgba(214,180,95,.08);
+
+  color: #f0d58a;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+/* MAIN */
+
+main {
+  padding: 0 clamp(22px,5vw,78px) 90px;
+}
+
+section {
+  max-width: 1220px;
+  margin: 0 auto 74px;
+}
+
+h2 {
+  font-size: clamp(31px,4vw,54px);
+  line-height: 1;
+  letter-spacing: -.04em;
+  margin: 0 0 16px;
+}
+
+h3 {
+  font-size: 23px;
+  margin: 0 0 10px;
+}
+
+.sub {
+  color: var(--muted);
+  font-size: 18px;
+  max-width: 920px;
+}
+
+
+/* GRID */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  gap: 18px;
+}
+
+.c3 { grid-column: span 3; }
+.c4 { grid-column: span 4; }
+.c5 { grid-column: span 5; }
+.c6 { grid-column: span 6; }
+.c7 { grid-column: span 7; }
+.c8 { grid-column: span 8; }
+.c12 { grid-column: span 12; }
+
+
+/* CARDS */
+
+.card {
+  padding: 24px;
+
+  border: 1px solid var(--line);
+  border-radius: 27px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.075),
+      var(--card)
+    );
+}
+
+.evidence {
+  border-top: 3px solid var(--green);
+}
+
+.hypothesis {
+  border-top: 3px solid var(--violet);
+}
+
+.timeline {
+  border-top: 3px solid var(--gold);
+}
+
+
+/* LABELS */
+
+.label {
+  display: inline-block;
+
+  margin-bottom: 11px;
+
+  border-radius: 999px;
+
+  padding: 6px 9px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.le {
+  background: rgba(149,223,174,.11);
+  border: 1px solid rgba(149,223,174,.35);
+  color: #b9f3c9;
+}
+
+.lh {
+  background: rgba(182,156,255,.11);
+  border: 1px solid rgba(182,156,255,.35);
+  color: #d4c6ff;
+}
+
+.lt {
+  background: rgba(214,180,95,.11);
+  border: 1px solid rgba(214,180,95,.35);
+  color: #f0d58a;
+}
+
+
+/* METRICS */
+
+.metric {
+  font-size: 43px;
+  line-height: 1;
+  font-weight: 850;
+  letter-spacing: -.045em;
+
+  margin: 3px 0 8px;
+}
+
+.metric-label {
+  font-size: 12px;
+  color: var(--muted);
+
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+
+/* CALLOUTS */
+
+.callout {
+  padding: 22px 24px;
+
+  border-radius: 20px;
+  border-left: 5px solid var(--gold);
+
+  background: rgba(214,180,95,.08);
+
+  color: #f8ecd2;
+}
+
+.warning {
+  border-left-color: var(--red);
+
+  background: rgba(244,165,173,.08);
+
+  color: #ffe1e4;
+}
+
+
+/* VISUALS */
+
+.visuals {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 18px;
+}
+
+figure {
+  margin: 0;
+
+  border: 1px solid var(--line);
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  background: #080c11;
+}
+
+figure img {
+  width: 100%;
+  height: 270px;
+
+  object-fit: cover;
+  display: block;
+}
+
+figcaption {
+  padding: 15px 17px 18px;
+
+  color: #c9d4df;
+
+  font-size: 14px;
+}
+
+
+/* TABLES */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 14px;
+
+  border-bottom: 1px solid var(--line);
+
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: rgba(255,255,255,.07);
+  color: white;
+}
+
+.table-wrap {
+  overflow: auto;
+
+  border: 1px solid var(--line);
+  border-radius: 24px;
+}
+
+.quote {
+  font-size: 25px;
+  line-height: 1.35;
+  letter-spacing: -.02em;
+
+  color: #fff;
+}
+
+
+/* FOOTER */
+
+footer {
+  max-width: 1220px;
+  margin: 0 auto;
+
+  color: #8f9aa6;
+
+  font-size: 13px;
+
+  border-top: 1px solid var(--line);
+
+  padding-top: 24px;
+  padding-bottom: 60px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px) {
+
+  .hero,
+  .visuals {
+    grid-template-columns: 1fr;
+  }
+
+  .c3,
+  .c4,
+  .c5,
+  .c6,
+  .c7,
+  .c8,
+  .c12 {
+    grid-column: span 12;
+  }
+
+  .hero-media,
+  .hero-media img {
+    min-height: 360px;
+    height: 360px;
+  }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- HERO -->
+
+<header>
+
+<div class="hero">
+
+<div>
+
+<div class="kicker">
+NEURORDER Research / CIAS Provincial Research Layer
+</div>
+
+<h1>
+North West:<br>
+Access Before Intelligence
+</h1>
+
+<p class="lead">
+Rustenburg and Boitekong expose a difficult contradiction:
+some of the world's most valuable mineral activity exists beside
+communities facing unemployment, poverty, uneven infrastructure
+and businesses that struggle to become visible to formal financial
+systems.
+</p>
+
+<p class="lead">
+Potchefstroom adds a second contrast: a university and innovation
+environment exists in the same province. CIAS therefore asks not
+only whether advanced technology can be built, but whether people
+have the knowledge, access and financial literacy required to
+benefit from it.
+</p>
+
+<div class="badge">
+Problem layer only · Resultant intentionally withheld
+</div>
+
+</div>
+
+
+<div class="hero-media">
+
+<img
+src="assets/images/cias/north-west/nw_boitekong_digital_access.jpg"
+alt="Community digital access initiative in Boitekong, Rustenburg"
+>
+
+<div class="caption">
+Boitekong: community effort, digital access and entrepreneurship
+exist alongside high unemployment and poverty.
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- WHY NORTH WEST -->
+
+<section>
+
+<h2>Why North West?</h2>
+
+<p class="sub">
+North West gives CIAS a different research function from Gauteng
+and the Western Cape. It allows us to study the gap between
+<strong>resource wealth and household opportunity</strong>,
+and between
+<strong>advanced technology and practical access</strong>.
+</p>
+
+<div class="callout">
+
+<strong>Province-specific CIAS role:</strong>
+
+North West =
+<strong>Access, literacy and economic visibility</strong>.
+
+The research asks whether financially active people and
+micro-enterprises can participate in increasingly digital systems
+when skills, infrastructure, records and formal business support
+are uneven.
+
+</div>
+
+</section>
+
+
+
+<!-- CURRENT LABOUR STATISTICS -->
+
+<section>
+
+<h2>The current labour-market pressure</h2>
+
+<div class="grid">
+
+
+<article class="card c3 evidence">
+
+<span class="label le">
+Verified evidence
+</span>
+
+<div class="metric">
+38.1%
+</div>
+
+<div class="metric-label">
+North West official unemployment · Q2 2026
+</div>
+
+<p>
+Stats SA records a rise from 35.3% in Q1 2026
+to 38.1% in Q2 2026.
+</p>
+
+</article>
+
+
+
+<article class="card c3 evidence">
+
+<span class="label le">
+Verified evidence
+</span>
+
+<div class="metric">
+56.0%
+</div>
+
+<div class="metric-label">
+North West LU3 · Q2 2026
+</div>
+
+<p>
+The wider measure combining unemployment with the potential
+labour force shows a much deeper level of labour underutilisation.
+</p>
+
+</article>
+
+
+
+<article class="card c3 evidence">
+
+<span class="label le">
+Verified evidence
+</span>
+
+<div class="metric">
+-15k
+</div>
+
+<div class="metric-label">
+North West employment change · Q2 2026
+</div>
+
+<p>
+Stats SA reported that North West employment fell by roughly
+15,000 quarter-on-quarter.
+</p>
+
+</article>
+
+
+
+<article class="card c3 evidence">
+
+<span class="label le">
+Verified evidence
+</span>
+
+<div class="metric">
+47.4%
+</div>
+
+<div class="metric-label">
+SA youth unemployment ages 15–34 · Q2 2026
+</div>
+
+<p>
+Nationally, youth unemployment increased in Q2 2026,
+making youth exclusion central to the provincial research question.
+</p>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+
+<!-- TREND -->
+
+<section>
+
+<h2>Recent North West trend</h2>
+
+<div class="grid">
+
+
+<div class="card c8 evidence">
+
+<img
+src="assets/images/cias/north-west/north_west_unemployment_trend.png"
+alt="Line chart showing North West official unemployment rate from Q2 2025 to Q2 2026"
+style="
+width:100%;
+border-radius:18px;
+display:block;
+background:white;
+"
+>
+
+</div>
+
+
+<div class="card c4 timeline">
+
+<span class="label lt">
+Recent timeline
+</span>
+
+<h3>
+Improvement did not become stability
+</h3>
+
+<p>
+The official rate moved from 40.1% in Q2 2025
+to 35.1% in Q4 2025,
+before rising again to 38.1% in Q2 2026.
+</p>
+
+<p>
+This is important for CIAS:
+a province can show statistical improvement while households
+and small businesses remain vulnerable to reversals.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- RUSTENBURG -->
+
+<section>
+
+<h2>
+Rustenburg: wealth beside exclusion
+</h2>
+
+<div class="grid">
+
+
+<article class="card c7 evidence">
+
+<span class="label le">
+Place evidence
+</span>
+
+<h3>
+A mining city does not automatically become an inclusive city
+</h3>
+
+<p>
+Rustenburg's economy is strongly shaped by platinum-group-metal
+mining and the businesses and migration patterns surrounding it.
+</p>
+
+<p>
+Historic research on the city described how the mining boom
+produced winners and losers, with gated residential development
+and mining-linked wealth existing alongside rapidly growing
+settlements such as Boitekong.
+</p>
+
+<p>
+That historical material is older than the three-year window,
+so it should be treated as
+<strong>timeline evidence</strong>,
+not a current statistic.
+</p>
+
+</article>
+
+
+
+<article class="card c5 hypothesis">
+
+<span class="label lh">
+CIAS research hypothesis
+</span>
+
+<h3>
+Economic proximity is not the same as economic participation
+</h3>
+
+<p>
+A household can live near major mines, contractors and retail
+activity without having the documentation, business networks,
+skills or financial profile needed to participate in the
+higher-value parts of that economy.
+</p>
+
+<p>
+CIAS should study that gap rather than assume that living near
+industry improves financial opportunity.
+</p>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+
+<!-- BOITEKONG -->
+
+<section>
+
+<h2>
+Boitekong: not a deficit story
+</h2>
+
+<p class="sub">
+Ranyaka describes Boitekong as a township about 8 km north of
+Rustenburg with deep Batswana heritage, affected by the
+consequences of mining, high unemployment and poverty,
+but also characterised by residents actively working to
+transform their community.
+</p>
+
+
+<div class="grid">
+
+
+<article class="card c4 evidence">
+
+<span class="label le">
+Community evidence
+</span>
+
+<h3>
+Local enterprise exists
+</h3>
+
+<p>
+Recent Boitekong profiles document entrepreneurs working in
+food, beauty, organic products, branding and design.
+</p>
+
+<p>
+The question is therefore not whether enterprise exists;
+it is what prevents that enterprise from scaling,
+documenting itself and reaching larger markets.
+</p>
+
+</article>
+
+
+
+<article class="card c4 evidence">
+
+<span class="label le">
+Digital-access evidence
+</span>
+
+<h3>
+Computer literacy is already a recognised need
+</h3>
+
+<p>
+Community initiatives in Boitekong have supported
+computer literacy and job-readiness programmes.
+</p>
+
+<p>
+This is useful evidence for CIAS because it shows that digital
+participation cannot be assumed merely because AI or fintech
+products exist.
+</p>
+
+</article>
+
+
+
+<article class="card c4 hypothesis">
+
+<span class="label lh">
+Research question
+</span>
+
+<h3>
+When is a business invisible?
+</h3>
+
+<p>
+A business can have customers, stock movement and community trust
+yet remain difficult for lenders, insurers, digital platforms or
+formal suppliers to interpret if its records are incomplete.
+</p>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+
+<!-- VISUALS -->
+
+<section>
+
+<h2>
+Three North West environments
+</h2>
+
+
+<div class="visuals">
+
+
+<figure>
+
+<img
+src="assets/images/cias/north-west/nw_boitekong_digital_access.jpg"
+alt="Boitekong community digital literacy support"
+>
+
+<figcaption>
+
+<strong>Boitekong.</strong>
+
+Digital inclusion and community-led development are not abstract
+ideas here; they are practical needs tied to jobs and opportunity.
+
+</figcaption>
+
+</figure>
+
+
+
+<figure>
+
+<img
+src="assets/images/cias/north-west/nw_potchefstroom_gateway.jpg"
+alt="Potchefstroom city gateway"
+>
+
+<figcaption>
+
+<strong>Potchefstroom.</strong>
+
+A university and regional-service city gives the study a contrast
+in education, formal institutions and innovation capacity.
+
+</figcaption>
+
+</figure>
+
+
+
+<figure>
+
+<img
+src="assets/images/cias/north-west/north_west_unemployment_trend.png"
+alt="North West unemployment trend chart"
+>
+
+<figcaption>
+
+<strong>Provincial labour pressure.</strong>
+
+The unemployment rate improved during 2025 but rose again in 2026,
+illustrating fragility rather than a solved problem.
+
+</figcaption>
+
+</figure>
+
+
+</div>
+
+</section>
+
+
+
+<!-- POTCHEFSTROOM -->
+
+<section>
+
+<h2>
+Potchefstroom: the education and innovation contrast
+</h2>
+
+<div class="grid">
+
+
+<article class="card c6 evidence">
+
+<span class="label le">
+Recent evidence
+</span>
+
+<h3>
+An innovation ecosystem exists
+</h3>
+
+<p>
+North-West University's Entrepreneurship and Innovation Hub,
+launched in 2025, was designed to turn ideas into businesses and
+connect young entrepreneurs with mentorship, skills development
+and markets.
+</p>
+
+<p>
+In 2026, NWU described the initiative as moving from vision toward
+impact.
+</p>
+
+</article>
+
+
+
+<article class="card c6 hypothesis">
+
+<span class="label lh">
+CIAS research question
+</span>
+
+<h3>
+How far does that ecosystem travel?
+</h3>
+
+<p>
+If advanced knowledge, entrepreneurship support and digital
+infrastructure are concentrated around institutions,
+CIAS should ask how easily those capabilities reach township
+businesses, informal traders, rural entrepreneurs and young
+people outside university systems.
+</p>
+
+</article>
+
+
+</div>
+
+
+<div
+class="callout"
+style="margin-top:18px;"
+>
+
+The contrast is useful:
+
+<strong>
+Potchefstroom shows what structured access can look like;
+Boitekong shows why access cannot be assumed.
+</strong>
+
+The study should avoid presenting either place as one-dimensional.
+
+</div>
+
+</section>
+
+
+
+<!-- EDUCATION -->
+
+<section>
+
+<h2>
+Education matters, but we must phrase it carefully
+</h2>
+
+
+<div class="grid">
+
+
+<article class="card c6 evidence">
+
+<span class="label le">
+Verified national evidence
+</span>
+
+<h3>
+Education level changes labour-market outcomes
+</h3>
+
+<p>
+Stats SA's Q2 2026 labour-force data recorded national
+unemployment of:
+</p>
+
+<p>
+<strong>39.2%</strong> among people with less than matric,
+<br>
+<strong>36.0%</strong> among matric holders,
+<br>
+<strong>24.0%</strong> among those with other tertiary
+qualifications,
+<br>
+and <strong>12.4%</strong> among graduates.
+</p>
+
+<p>
+This does not prove that education alone solves unemployment,
+but it shows a strong relationship between educational attainment
+and labour-market outcomes.
+</p>
+
+</article>
+
+
+
+<article class="card c6 hypothesis">
+
+<span class="label lh">
+North West hypothesis
+</span>
+
+<h3>
+AI literacy must be part of economic inclusion
+</h3>
+
+<p>
+Introducing advanced AI into a community without digital literacy,
+financial literacy, affordable access and practical relevance
+risks widening an existing divide.
+</p>
+
+<p>
+CIAS should therefore study comprehension and usability,
+not only model accuracy.
+</p>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+
+<!-- BUSINESS PRESSURES -->
+
+<section>
+
+<h2>
+What businesses may actually be struggling with
+</h2>
+
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>
+Pressure
+</th>
+
+<th>
+What it can look like in Rustenburg / Boitekong
+</th>
+
+<th>
+Why CIAS cares
+</th>
+
+<th>
+What we must not assume
+</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+
+<tr>
+
+<td>
+High unemployment
+</td>
+
+<td>
+Small local demand, income volatility,
+many job seekers and side businesses.
+</td>
+
+<td>
+Irregular income may still contain recurring patterns.
+</td>
+
+<td>
+Unemployment does not mean financial irresponsibility.
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>
+Mining dependence
+</td>
+
+<td>
+Local spending and contracting can be exposed to mining cycles,
+commodity prices and employment changes.
+</td>
+
+<td>
+CIAS must distinguish individual behaviour from industry shocks.
+</td>
+
+<td>
+Volatility caused by the local economy is not automatically
+borrower risk.
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>
+Weak documentation
+</td>
+
+<td>
+Cash sales, handwritten records, informal supplier arrangements
+and personal/business money mixing.
+</td>
+
+<td>
+Financial activity may be real but difficult to interpret.
+</td>
+
+<td>
+Missing records are not proof that no business exists.
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>
+Digital-access gap
+</td>
+
+<td>
+Limited devices, data costs, low computer confidence
+or limited exposure to business software.
+</td>
+
+<td>
+An AI system must be understandable and accessible.
+</td>
+
+<td>
+Smartphone ownership equals neither digital literacy
+nor financial literacy.
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>
+Market access
+</td>
+
+<td>
+Local entrepreneurs may struggle to reach corporate customers
+or larger procurement networks.
+</td>
+
+<td>
+Growth signals can be constrained by opportunity,
+not capability.
+</td>
+
+<td>
+Small scale does not automatically imply weak business quality.
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>
+Financial literacy
+</td>
+
+<td>
+Difficulty separating revenue, profit, expenses,
+working capital, debt and personal consumption.
+</td>
+
+<td>
+CIAS research should test whether guidance changes
+financial behaviour.
+</td>
+
+<td>
+Low financial literacy should never become a punitive score.
+</td>
+
+</tr>
+
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+
+<!-- AI PROBLEM -->
+
+<section>
+
+<h2>
+The “advanced AI” problem
+</h2>
+
+
+<div class="callout">
+
+<div class="quote">
+
+Who benefits from advanced artificial intelligence if the people
+expected to use it do not yet understand what it is,
+how it reaches a decision,
+or how their own financial behaviour is being interpreted?
+
+</div>
+
+</div>
+
+
+<div
+class="grid"
+style="margin-top:18px;"
+>
+
+
+<article class="card c4 hypothesis">
+
+<span class="label lh">
+Comprehension
+</span>
+
+<h3>
+Explainability before sophistication
+</h3>
+
+<p>
+CIAS should test whether users can understand the financial
+concepts being measured and challenge errors.
+</p>
+
+</article>
+
+
+
+<article class="card c4 hypothesis">
+
+<span class="label lh">
+Access
+</span>
+
+<h3>
+Infrastructure before assumption
+</h3>
+
+<p>
+The research should document device, connectivity,
+language and digital-literacy constraints before designing
+AI workflows.
+</p>
+
+</article>
+
+
+
+<article class="card c4 hypothesis">
+
+<span class="label lh">
+Agency
+</span>
+
+<h3>
+Guidance rather than surveillance
+</h3>
+
+<p>
+Financial data should help people understand and improve their
+position, not quietly create another opaque classification system.
+</p>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+
+<!-- MATRIX -->
+
+<section>
+
+<h2>
+North West research matrix
+</h2>
+
+
+<div class="table-wrap">
+
+<table>
+
+
+<thead>
+
+<tr>
+
+<th>
+Environment
+</th>
+
+<th>
+Observed signal
+</th>
+
+<th>
+Possible meaning
+</th>
+
+<th>
+Alternative explanation
+</th>
+
+<th>
+Bias risk
+</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+
+<tr>
+
+<td>
+Boitekong micro-enterprise
+</td>
+
+<td>
+Repeated cash or digital sales
+</td>
+
+<td>
+Economic continuity
+</td>
+
+<td>
+Low margins / unstable demand
+</td>
+
+<td>
+Overvaluing turnover
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>
+Mining-linked household
+</td>
+
+<td>
+Salary or contractor income with abrupt changes
+</td>
+
+<td>
+Formal income capacity
+</td>
+
+<td>
+Commodity or contractor cycle
+</td>
+
+<td>
+Blaming household for sector shock
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>
+Youth side business
+</td>
+
+<td>
+Small recurring transfers and customer payments
+</td>
+
+<td>
+Emerging enterprise
+</td>
+
+<td>
+Short trading history
+</td>
+
+<td>
+Penalising youth/newness
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>
+Informal trader
+</td>
+
+<td>
+Stock purchases and recurring selling activity
+</td>
+
+<td>
+Business continuity
+</td>
+
+<td>
+Incomplete records
+</td>
+
+<td>
+Digital-document bias
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>
+Potchefstroom entrepreneur
+</td>
+
+<td>
+Training, mentorship, formal accounts
+</td>
+
+<td>
+Institutional support
+</td>
+
+<td>
+Access advantage
+</td>
+
+<td>
+Comparing unlike environments
+</td>
+
+</tr>
+
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+
+<!-- QUESTIONS -->
+
+<section>
+
+<h2>
+North West research questions
+</h2>
+
+
+<div class="grid">
+
+
+<article class="card c6">
+
+<h3>
+01 · Access
+</h3>
+
+<p>
+What technological and financial infrastructure do
+micro-enterprises in Rustenburg and Boitekong actually have
+access to?
+</p>
+
+</article>
+
+
+
+<article class="card c6">
+
+<h3>
+02 · Literacy
+</h3>
+
+<p>
+How well do business owners understand revenue,
+profit, working capital, debt, interest and credit records?
+</p>
+
+</article>
+
+
+
+<article class="card c6">
+
+<h3>
+03 · Mining dependence
+</h3>
+
+<p>
+How should CIAS distinguish household or business instability
+from volatility caused by mining and contractor cycles?
+</p>
+
+</article>
+
+
+
+<article class="card c6">
+
+<h3>
+04 · Visibility
+</h3>
+
+<p>
+Which real business activities remain invisible because they are
+cash-based or poorly documented?
+</p>
+
+</article>
+
+
+
+<article class="card c6">
+
+<h3>
+05 · Education contrast
+</h3>
+
+<p>
+What support exists around Potchefstroom's institutional ecosystem
+that is harder to reach in township or informal settings?
+</p>
+
+</article>
+
+
+
+<article class="card c6">
+
+<h3>
+06 · AI readiness
+</h3>
+
+<p>
+What must a user understand before an AI-supported financial tool
+can be considered informed, useful and fair?
+</p>
+
+</article>
+
+
+
+<article class="card c6">
+
+<h3>
+07 · Language and explanation
+</h3>
+
+<p>
+How should financial and AI concepts be communicated so that
+technical terminology does not itself become an exclusion barrier?
+</p>
+
+</article>
+
+
+
+<article class="card c6">
+
+<h3>
+08 · Bias
+</h3>
+
+<p>
+Which data gaps could cause a system to misread poverty,
+informal housing, location or low digital usage as financial
+unreliability?
+</p>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+
+<!-- HYPOTHESIS -->
+
+<section>
+
+<h2>
+Working North West hypothesis
+</h2>
+
+
+<div class="callout">
+
+In North West, the usefulness of alternative financial intelligence
+may depend as much on
+
+<strong>
+access, comprehension and financial literacy
+</strong>
+
+as on the availability of transaction data.
+
+Rustenburg and Boitekong provide a setting in which resource wealth
+and informal economic participation coexist,
+while Potchefstroom provides a contrasting institutional
+and innovation environment.
+
+</div>
+
+
+<div
+class="callout warning"
+style="margin-top:18px;"
+>
+
+<strong>
+No resultant yet.
+</strong>
+
+This page intentionally does not present NEURORDER's proposed
+educational AI programme, the founder's personal Boitekong
+experience, or the final banking/CIAS infrastructure concept.
+
+Those belong on the cross-province resultant/conclusion layer
+after the four provincial problem studies have been completed.
+
+</div>
+
+</section>
+
+
+
+<!-- SOURCES -->
+
+<section>
+
+<h2>
+Research sources
+</h2>
+
+
+<div class="table-wrap">
+
+<table>
+
+
+<thead>
+
+<tr>
+
+<th>
+Source
+</th>
+
+<th>
+Use
+</th>
+
+<th>
+Status
+</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+
+<tr>
+
+<td>
+
+<a
+href="https://www.statssa.gov.za/?p=19804"
+target="_blank"
+rel="noopener"
+>
+
+Stats SA — QLFS Q2 2026 media release
+
+</a>
+
+</td>
+
+<td>
+National unemployment, youth unemployment and
+North West employment change.
+</td>
+
+<td>
+Current primary evidence
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>
+
+<a
+href="https://www.statssa.gov.za/publications/P0211/P02112ndQuarter2026.pdf"
+target="_blank"
+rel="noopener"
+>
+
+Stats SA — QLFS Q2 2026 full report
+
+</a>
+
+</td>
+
+<td>
+North West official unemployment 38.1%,
+LU3 56.0% and education-level unemployment.
+</td>
+
+<td>
+Current primary evidence
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>
+
+<a
+href="https://ranyaka.co.za/boitekong/"
+target="_blank"
+rel="noopener"
+>
+
+Ranyaka — Boitekong
+
+</a>
+
+</td>
+
+<td>
+Local place context, poverty/unemployment and
+community-led transformation.
+</td>
+
+<td>
+Current local/context source
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>
+
+<a
+href="https://ranyaka.co.za/2023/04/24/getting-connected-in-boitekong/"
+target="_blank"
+rel="noopener"
+>
+
+Ranyaka — Getting Connected in Boitekong
+
+</a>
+
+</td>
+
+<td>
+Digital literacy and job-readiness context.
+</td>
+
+<td>
+Recent local evidence
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>
+
+<a
+href="https://sundayworld.co.za/news/north-west-unemployment-rate-rises-to-highest-level-poverty-prevalent/"
+target="_blank"
+rel="noopener"
+>
+
+Sunday World — North West unemployment
+
+</a>
+
+</td>
+
+<td>
+Recent timeline context for provincial unemployment.
+</td>
+
+<td>
+Recent secondary source
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>
+
+<a
+href="https://www.southafricanlabourbulletin.org.za/wp-content/uploads/2021/11/2.-Gated-Rustenburg.pdf"
+target="_blank"
+rel="noopener"
+>
+
+South African Labour Bulletin — Gated Rustenburg
+
+</a>
+
+</td>
+
+<td>
+Historical mining-boom, spatial inequality and
+Boitekong context.
+</td>
+
+<td>
+Historical timeline source
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>
+
+<a
+href="https://news.nwu.ac.za/entrepreneurship-and-innovation-hub-moves-vision-impact"
+target="_blank"
+rel="noopener"
+>
+
+NWU — Entrepreneurship and Innovation Hub
+
+</a>
+
+</td>
+
+<td>
+Potchefstroom entrepreneurship and institutional-support contrast.
+</td>
+
+<td>
+Current primary institutional source
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>
+
+<a
+href="https://www.statssa.gov.za/?p=18255"
+target="_blank"
+rel="noopener"
+>
+
+Stats SA — South Africa's Informal Economy
+
+</a>
+
+</td>
+
+<td>
+National informal-business context and
+documentation/education challenges.
+</td>
+
+<td>
+Recent primary evidence
+</td>
+
+</tr>
+
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+Prepared for NEURORDER (Pty) Ltd ·
+CIAS — Credit Intelligence Assistance Scoring ·
+North West Provincial Research Layer.
+
+<br><br>
+
+Research status: exploratory.
+
+Evidence, hypotheses and historical timeline material
+are intentionally separated.
+
+</footer>
+
+
+</body>
+</html>

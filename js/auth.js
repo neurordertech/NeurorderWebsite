@@ -2,41 +2,150 @@
    NEURORDER — PRODUCTION AUTHENTICATION
 ========================================================= */
 
+"use strict";
+
+
+/* =========================================================
+   CONFIG
+========================================================= */
+
+const DEFAULT_AUTH_DESTINATION =
+  "/nous-news.html";
+
+const NOUS_DESTINATION =
+  "/nous.html";
+
+
+/* =========================================================
+   SUPABASE CLIENT
+========================================================= */
+
 function getAuthClient() {
   return (
+    window.NOUS_SUPABASE ||
     window.nousSupabase ||
     window.supabaseClient ||
     null
   );
 }
 
-function showAuthMessage(message, type = "") {
-  const box = document.getElementById("authMessage");
+
+/* =========================================================
+   SAFE RETURN DESTINATION
+========================================================= */
+
+function getSafeReturnTo() {
+  const parameters =
+    new URLSearchParams(
+      window.location.search
+    );
+
+  const returnTo =
+    parameters.get(
+      "returnTo"
+    );
+
+  if (!returnTo) {
+    return null;
+  }
+
+  /*
+   * Only allow local site paths.
+   *
+   * Valid:
+   * /nous-news.html
+   * /nous.html
+   * /about.html
+   *
+   * Invalid:
+   * https://another-site.com
+   * javascript:...
+   */
+
+  if (
+    !returnTo.startsWith("/") ||
+    returnTo.startsWith("//")
+  ) {
+    console.warn(
+      "[AUTH] Unsafe returnTo rejected:",
+      returnTo
+    );
+
+    return null;
+  }
+
+  return returnTo;
+}
+
+
+/* =========================================================
+   BUILD ABSOLUTE SITE URL
+========================================================= */
+
+function buildSiteUrl(path) {
+  return new URL(
+    path,
+    window.location.origin
+  ).href;
+}
+
+
+/* =========================================================
+   AUTH MESSAGE
+========================================================= */
+
+function showAuthMessage(
+  message,
+  type = ""
+) {
+  const box =
+    document.getElementById(
+      "authMessage"
+    );
 
   if (!box) {
-    console.log(`[Auth message] ${message}`);
+    console.log(
+      `[Auth message] ${message}`
+    );
+
     return;
   }
 
-  box.textContent = message;
+  box.textContent =
+    message;
 
-  box.className = type
-    ? `auth-message ${type}`
-    : "auth-message";
+  box.className =
+    type
+      ? `auth-message ${type}`
+      : "auth-message";
 
-  box.hidden = false;
+  box.hidden =
+    false;
 }
 
-function setAuthButtonLoading(button, loading, text) {
+
+/* =========================================================
+   BUTTON LOADING
+========================================================= */
+
+function setAuthButtonLoading(
+  button,
+  loading,
+  text
+) {
   if (!button) {
     return;
   }
 
-  if (!button.dataset.originalHtml) {
-    button.dataset.originalHtml = button.innerHTML;
+  if (
+    !button.dataset.originalHtml
+  ) {
+    button.dataset.originalHtml =
+      button.innerHTML;
   }
 
-  button.disabled = loading;
+  button.disabled =
+    loading;
 
   if (loading) {
     button.innerHTML = `
@@ -44,8 +153,72 @@ function setAuthButtonLoading(button, loading, text) {
       <i class="fas fa-circle-notch fa-spin"></i>
     `;
   } else {
-    button.innerHTML = button.dataset.originalHtml;
+    button.innerHTML =
+      button.dataset.originalHtml;
   }
+}
+
+
+/* =========================================================
+   POST-AUTH REDIRECT
+========================================================= */
+
+function redirectAfterAuth() {
+  /*
+   * Priority 1:
+   * Explicit ?returnTo=/...
+   */
+
+  const returnTo =
+    getSafeReturnTo();
+
+  if (returnTo) {
+    window.location.href =
+      buildSiteUrl(
+        returnTo
+      );
+
+    return;
+  }
+
+
+  /*
+   * Priority 2:
+   * Existing saved destination.
+   */
+
+  const savedDestination =
+    localStorage.getItem(
+      "neurorderDestination"
+    );
+
+  localStorage.removeItem(
+    "neurorderDestination"
+  );
+
+
+  if (
+    savedDestination ===
+    "nous"
+  ) {
+    window.location.href =
+      buildSiteUrl(
+        NOUS_DESTINATION
+      );
+
+    return;
+  }
+
+
+  /*
+   * Default:
+   * NOUS News.
+   */
+
+  window.location.href =
+    buildSiteUrl(
+      DEFAULT_AUTH_DESTINATION
+    );
 }
 
 
@@ -53,12 +226,15 @@ function setAuthButtonLoading(button, loading, text) {
    SIGN UP
 ========================================================= */
 
-async function signUpWithEmail(event) {
+async function signUpWithEmail(
+  event
+) {
   if (event) {
     event.preventDefault();
   }
 
-  const client = getAuthClient();
+  const client =
+    getAuthClient();
 
   if (!client) {
     showAuthMessage(
@@ -66,33 +242,59 @@ async function signUpWithEmail(event) {
       "is-error"
     );
 
+    console.error(
+      "[AUTH] Supabase client unavailable during signup."
+    );
+
     return;
   }
 
+
   const nameInput =
-    document.getElementById("signupName");
+    document.getElementById(
+      "signupName"
+    );
 
   const emailInput =
-    document.getElementById("signupEmail");
+    document.getElementById(
+      "signupEmail"
+    );
 
   const passwordInput =
-    document.getElementById("signupPassword");
+    document.getElementById(
+      "signupPassword"
+    );
 
   const submitButton =
     document.querySelector(
       "#signupForm button[type='submit']"
     );
 
+
   const fullName =
-    nameInput?.value.trim() || "";
+    nameInput
+      ?.value
+      .trim() ||
+    "";
 
   const email =
-    emailInput?.value.trim().toLowerCase() || "";
+    emailInput
+      ?.value
+      .trim()
+      .toLowerCase() ||
+    "";
 
   const password =
-    passwordInput?.value || "";
+    passwordInput
+      ?.value ||
+    "";
 
-  if (!fullName || !email || !password) {
+
+  if (
+    !fullName ||
+    !email ||
+    !password
+  ) {
     showAuthMessage(
       "Please complete your name, email and password.",
       "is-error"
@@ -101,7 +303,11 @@ async function signUpWithEmail(event) {
     return;
   }
 
-  if (password.length < 8) {
+
+  if (
+    password.length <
+    8
+  ) {
     showAuthMessage(
       "Your password must contain at least 8 characters.",
       "is-error"
@@ -110,37 +316,77 @@ async function signUpWithEmail(event) {
     return;
   }
 
+
   setAuthButtonLoading(
     submitButton,
     true,
     "Creating account…"
   );
 
+
   showAuthMessage(
-    "Creating your Nous account…"
+    "Creating your NOUS account…"
   );
 
+
   try {
+    /*
+     * Preserve returnTo through email confirmation.
+     */
+
+    const returnTo =
+      getSafeReturnTo() ||
+      DEFAULT_AUTH_DESTINATION;
+
+
+    const confirmationUrl =
+      new URL(
+        "/login.html",
+        window.location.origin
+      );
+
+
+    confirmationUrl
+      .searchParams
+      .set(
+        "confirmed",
+        "true"
+      );
+
+
+    confirmationUrl
+      .searchParams
+      .set(
+        "returnTo",
+        returnTo
+      );
+
+
     const {
       data,
       error
-    } = await client.auth.signUp({
-      email,
-      password,
+    } =
+      await client.auth
+        .signUp({
+          email,
+          password,
 
-      options: {
-        data: {
-          full_name: fullName
-        },
+          options: {
+            data: {
+              full_name:
+                fullName
+            },
 
-        emailRedirectTo:
-          "https://neurorder.com/login.html?confirmed=true"
-      }
-    });
+            emailRedirectTo:
+              confirmationUrl.href
+          }
+        });
+
 
     if (error) {
       throw error;
     }
+
 
     if (!data?.user) {
       throw new Error(
@@ -148,35 +394,63 @@ async function signUpWithEmail(event) {
       );
     }
 
+
+    /*
+     * Some Supabase configurations sign
+     * users in immediately.
+     */
+
     if (data.session) {
       showAuthMessage(
         "Your account was created and you are signed in.",
         "is-success"
       );
 
-      window.location.href =
-        "https://neurorder.com/nous-news.html";
+
+      setTimeout(
+        redirectAfterAuth,
+        350
+      );
+
 
       return;
     }
+
+
+    /*
+     * Email confirmation required.
+     */
 
     showAuthMessage(
       "Your account was created. Check your email and confirm your account before logging in.",
       "is-success"
     );
 
+
     if (passwordInput) {
-      passwordInput.value = "";
+      passwordInput.value =
+        "";
     }
+
+
   } catch (error) {
-    console.error("Signup error:", error);
+    console.error(
+      "[AUTH] Signup error:",
+      error
+    );
+
 
     let message =
       error?.message ||
       "Your account could not be created.";
 
+
+    const lowerMessage =
+      message.toLowerCase();
+
+
     if (
-      message.toLowerCase().includes(
+      lowerMessage.includes(
         "user already registered"
       )
     ) {
@@ -184,19 +458,23 @@ async function signUpWithEmail(event) {
         "An account already exists for this email. Please log in instead.";
     }
 
+
     if (
-      message.toLowerCase().includes(
+      lowerMessage.includes(
         "signup is disabled"
       )
     ) {
       message =
-        "New account registration is currently disabled in Supabase.";
+        "New account registration is currently disabled.";
     }
+
 
     showAuthMessage(
       message,
       "is-error"
     );
+
+
   } finally {
     setAuthButtonLoading(
       submitButton,
@@ -210,39 +488,67 @@ async function signUpWithEmail(event) {
    LOGIN
 ========================================================= */
 
-async function loginWithEmail(event) {
+async function loginWithEmail(
+  event
+) {
   if (event) {
     event.preventDefault();
   }
 
-  const client = getAuthClient();
+
+  const client =
+    getAuthClient();
+
 
   if (!client) {
-  console.log(
-    "Login successful. Opening Nous…"
-  );
+    console.error(
+      "[AUTH] Supabase client unavailable during login."
+    );
+
+
+    showAuthMessage(
+      "The authentication service did not load. Refresh the page.",
+      "is-error"
+    );
+
 
     return;
   }
 
+
   const emailInput =
-    document.getElementById("loginEmail");
+    document.getElementById(
+      "loginEmail"
+    );
 
   const passwordInput =
-    document.getElementById("loginPassword");
+    document.getElementById(
+      "loginPassword"
+    );
 
   const submitButton =
     document.querySelector(
       "#loginForm button[type='submit']"
     );
 
+
   const email =
-    emailInput?.value.trim().toLowerCase() || "";
+    emailInput
+      ?.value
+      .trim()
+      .toLowerCase() ||
+    "";
 
   const password =
-    passwordInput?.value || "";
+    passwordInput
+      ?.value ||
+    "";
 
-  if (!email || !password) {
+
+  if (
+    !email ||
+    !password
+  ) {
     showAuthMessage(
       "Please enter your email and password.",
       "is-error"
@@ -251,79 +557,83 @@ async function loginWithEmail(event) {
     return;
   }
 
+
   setAuthButtonLoading(
     submitButton,
     true,
     "Signing in…"
   );
 
+
   showAuthMessage(
     "Signing you in…"
   );
+
 
   try {
     const {
       data,
       error
-    } = await client.auth.signInWithPassword({
-      email,
-      password
-    });
+    } =
+      await client.auth
+        .signInWithPassword({
+          email,
+          password
+        });
+
 
     if (error) {
       throw error;
     }
 
-    if (!data?.user || !data?.session) {
+
+    if (
+      !data?.user ||
+      !data?.session
+    ) {
       throw new Error(
         "Supabase did not create a login session."
       );
     }
 
+
     showAuthMessage(
-      "Login successful. Opening Nous…",
+      "Login successful. Opening NOUS…",
       "is-success"
     );
 
-    const savedDestination =
-      localStorage.getItem(
-        "neurorderDestination"
-      );
 
-    const urlDestination =
-      new URLSearchParams(
-        window.location.search
-      ).get("returnTo");
+    /*
+     * Important:
+     *
+     * If NOUS News sent:
+     *
+     * login.html?returnTo=/nous-news.html
+     *
+     * this now returns directly to NOUS News.
+     */
 
-    localStorage.removeItem(
-      "neurorderDestination"
+    setTimeout(
+      redirectAfterAuth,
+      250
     );
 
-    if (urlDestination) {
-      window.location.href =
-        urlDestination;
 
-      return;
-    }
-
-    if (savedDestination === "nous") {
-      window.location.href =
-        "https://neurorder.com/nous.html";
-
-      return;
-    }
-
-    window.location.href =
-      "https://neurorder.com/nous-news.html";
   } catch (error) {
-    console.error("Login error:", error);
+    console.error(
+      "[AUTH] Login error:",
+      error
+    );
+
 
     let message =
       error?.message ||
       "Login was unsuccessful.";
 
+
     const lowerMessage =
       message.toLowerCase();
+
 
     if (
       lowerMessage.includes(
@@ -334,6 +644,7 @@ async function loginWithEmail(event) {
         "The email or password is incorrect, or this account has not been created.";
     }
 
+
     if (
       lowerMessage.includes(
         "email not confirmed"
@@ -343,10 +654,13 @@ async function loginWithEmail(event) {
         "Confirm your email address before logging in.";
     }
 
+
     showAuthMessage(
       message,
       "is-error"
     );
+
+
   } finally {
     setAuthButtonLoading(
       submitButton,
@@ -360,27 +674,39 @@ async function loginWithEmail(event) {
    LOGOUT
 ========================================================= */
 
-async function logout(event) {
+async function logout(
+  event
+) {
   if (event) {
     event.preventDefault();
   }
 
-  const client = getAuthClient();
+
+  const client =
+    getAuthClient();
+
 
   if (client) {
-    const { error } =
-      await client.auth.signOut();
+    const {
+      error
+    } =
+      await client.auth
+        .signOut();
+
 
     if (error) {
       console.error(
-        "Logout error:",
+        "[AUTH] Logout error:",
         error
       );
     }
   }
 
+
   window.location.href =
-    "https://neurorder.com/login.html";
+    buildSiteUrl(
+      "/login.html"
+    );
 }
 
 
@@ -391,27 +717,42 @@ async function logout(event) {
 document.addEventListener(
   "DOMContentLoaded",
   async () => {
+
     const client =
       getAuthClient();
 
+
     if (!client) {
       console.error(
-        "Supabase authentication client was not loaded."
+        "[AUTH] Supabase authentication client was not loaded."
       );
+
 
       showAuthMessage(
         "The authentication service did not load.",
         "is-error"
       );
 
+
       return;
     }
 
+
+    /* =====================================================
+       FORMS
+    ====================================================== */
+
     const signupForm =
-      document.getElementById("signupForm");
+      document.getElementById(
+        "signupForm"
+      );
+
 
     const loginForm =
-      document.getElementById("loginForm");
+      document.getElementById(
+        "loginForm"
+      );
+
 
     if (signupForm) {
       signupForm.addEventListener(
@@ -420,6 +761,7 @@ document.addEventListener(
       );
     }
 
+
     if (loginForm) {
       loginForm.addEventListener(
         "submit",
@@ -427,8 +769,16 @@ document.addEventListener(
       );
     }
 
+
+    /* =====================================================
+       LOGOUT
+    ====================================================== */
+
     const logoutButton =
-      document.getElementById("logoutBtn");
+      document.getElementById(
+        "logoutBtn"
+      );
+
 
     if (logoutButton) {
       logoutButton.addEventListener(
@@ -437,54 +787,130 @@ document.addEventListener(
       );
     }
 
+
+    /* =====================================================
+       SESSION
+    ====================================================== */
+
     const {
       data,
       error
-    } = await client.auth.getSession();
+    } =
+      await client.auth
+        .getSession();
+
 
     if (error) {
       console.warn(
-        "Could not read authentication session:",
+        "[AUTH] Could not read authentication session:",
         error
       );
     }
 
+
     const user =
-      data?.session?.user || null;
+      data?.session?.user ||
+      null;
+
+
+    /* =====================================================
+       AUTH / GUEST UI
+    ====================================================== */
 
     document
-      .querySelectorAll(".auth-only")
-      .forEach((element) => {
-        element.style.display =
-          user ? "" : "none";
-      });
+      .querySelectorAll(
+        ".auth-only"
+      )
+      .forEach(
+        (
+          element
+        ) => {
+          element.style.display =
+            user
+              ? ""
+              : "none";
+        }
+      );
+
 
     document
-      .querySelectorAll(".guest-only")
-      .forEach((element) => {
-        element.style.display =
-          user ? "none" : "";
-      });
+      .querySelectorAll(
+        ".guest-only"
+      )
+      .forEach(
+        (
+          element
+        ) => {
+          element.style.display =
+            user
+              ? "none"
+              : "";
+        }
+      );
+
+
+    /* =====================================================
+       CONFIRMATION MESSAGE
+    ====================================================== */
 
     const parameters =
       new URLSearchParams(
         window.location.search
       );
 
+
     if (
-      parameters.get("confirmed") === "true"
+      parameters.get(
+        "confirmed"
+      ) ===
+      "true"
     ) {
       showAuthMessage(
         "Your email has been confirmed. You may now log in.",
         "is-success"
       );
     }
+
+
+    /* =====================================================
+       ALREADY SIGNED IN + RETURN TO
+    ====================================================== */
+
+    /*
+     * Example:
+     *
+     * User presses Sign In from NOUS News,
+     * but they already have an active session.
+     *
+     * We can send them directly back instead
+     * of making them authenticate again.
+     */
+
+    const returnTo =
+      getSafeReturnTo();
+
+
+    if (
+      user &&
+      returnTo &&
+      (
+        document.body.dataset.authPage ===
+          "login" ||
+        loginForm
+      )
+    ) {
+      window.location.href =
+        buildSiteUrl(
+          returnTo
+        );
+    }
+
   }
 );
 
 
 /* =========================================================
-   EXPOSE FUNCTIONS FOR EXISTING INLINE HTML
+   EXPOSE FUNCTIONS
 ========================================================= */
 
 window.signUpWithEmail =

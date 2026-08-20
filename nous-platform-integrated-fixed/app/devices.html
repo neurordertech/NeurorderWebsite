@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Devices — NOUS</title>
+
+  <link
+    rel="stylesheet"
+    href="./css/tokens.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/shell.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/devices.css"
+  >
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="./js/auth-guard.js" defer></script>
+</head>
+
+<body>
+  <div class="ambient-background" aria-hidden="true">
+    <div class="ambient-orb ambient-orb-one"></div>
+    <div class="ambient-orb ambient-orb-two"></div>
+    <div class="ambient-grid"></div>
+  </div>
+
+  <div class="app-shell">
+
+    <header class="topbar">
+      <a
+        class="brand"
+        href="./index.html"
+        aria-label="NOUS home"
+      >
+        <img
+        class="devices-brand-logo"
+        src="../assets/logo/nouslogo.png"
+        alt=""
+        >
+
+        <span class="brand-name">
+          NOUS
+        </span>
+      </a>
+
+      <div class="topbar-context">
+        <span class="context-label">
+          Current space
+        </span>
+
+        <strong class="context-value">
+          Devices
+        </strong>
+      </div>
+
+      <a
+        class="profile-button"
+        href="./identity.html"
+        aria-label="Open profile"
+      >
+        <span class="profile-avatar">
+          NM
+        </span>
+
+        <span class="profile-copy">
+          <strong>
+            Profile
+          </strong>
+
+          <small>
+            Device identity
+          </small>
+        </span>
+      </a>
+    </header>
+
+    <main class="devices-page">
+
+      <section class="devices-hero">
+        <p class="eyebrow">
+          NOUS DEVICES
+        </p>
+
+        <h1>
+          Your connected world.
+        </h1>
+
+        <p>
+          Discover, connect and manage trusted devices
+          across Bluetooth and local networks.
+        </p>
+      </section>
+
+      <section class="device-connect-grid">
+
+        <article class="device-connect-card">
+          <p class="eyebrow">
+            BLUETOOTH
+          </p>
+
+          <h2>
+            Nearby devices
+          </h2>
+
+          <p>
+            Discover Bluetooth Low Energy devices
+            that can connect to NOUS.
+          </p>
+
+          <button
+            id="scan-bluetooth"
+            type="button"
+          >
+            Scan Bluetooth
+          </button>
+        </article>
+
+        <article class="device-connect-card">
+          <p class="eyebrow">
+            WI-FI
+          </p>
+
+          <h2>
+            Network devices
+          </h2>
+
+          <p>
+            Check your current network and prepare
+            local device discovery.
+          </p>
+
+        <button
+        id="scan-network"
+        type="button"
+        >
+        Network status
+        </button>
+        </article>
+
+      </section>
+
+      <section class="devices-status-section">
+        <div>
+          <p class="eyebrow">
+            CONNECTION STATUS
+          </p>
+
+          <h2>
+            Current environment
+          </h2>
+        </div>
+
+        <div class="device-status-grid">
+
+          <article class="device-status-card">
+            <span>
+              Internet
+            </span>
+
+            <strong id="network-status">
+              Checking...
+            </strong>
+          </article>
+
+          <article class="device-status-card">
+            <span>
+              Bluetooth
+            </span>
+
+            <strong id="bluetooth-status">
+              Checking...
+            </strong>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="trusted-devices-section">
+        <div>
+          <p class="eyebrow">
+            TRUSTED DEVICES
+          </p>
+
+          <h2>
+            Your devices
+          </h2>
+        </div>
+
+        <div
+          class="trusted-device-list"
+          id="trusted-device-list"
+        >
+          <p>
+            No trusted devices yet.
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script
+    src="./js/devices.js"
+    defer
+  ></script>
+</body>
+</html>
